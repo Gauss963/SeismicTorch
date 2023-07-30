@@ -1,4 +1,4 @@
-# TorchTinyML
+# SeismicTorch
 Seismic Event Classification using Convolutional Neutral Network applied to time series data.
 
 This machine learning application to seismology uses a CNN to classify seismic events into earthquakes, active seismic sources and noise based on raw waveform records with a duration of 480 seconds using MEMS.
