@@ -65,21 +65,6 @@ int main() {
         std::chrono::duration<double, std::milli> diff = end - start;
         durations[i] = diff.count(); // 將時間轉換為毫秒
     }
-
-//    // 計算平均時間
-//    double sum = std::accumulate(durations.begin(), durations.end(), 0.0);
-//    double average = sum / durations.size();
-//
-//    // 找出最大時間
-//    double max_duration = *std::max_element(durations.begin(), durations.end());
-//
-//    // 計算標準差
-//    double sq_sum = std::inner_product(durations.begin(), durations.end(), durations.begin(), 0.0);
-//    double stddev = std::sqrt(sq_sum / durations.size() - average * average);
-//
-//    std::cout << "Average time: " << average << " ms\n";
-//    std::cout << "Max time: " << max_duration << " ms\n";
-//    std::cout << "Standard deviation: " << stddev << " ms\n";
     
     // 計算平均時間
     double sum = std::accumulate(durations.begin(), durations.end(), 0.0);
