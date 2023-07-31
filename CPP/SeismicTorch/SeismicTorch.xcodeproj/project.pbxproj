@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		400A70A32A76420800A1BC49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 400A70A22A76420800A1BC49 /* main.cpp */; };
+		4012FD072A777CCD00561DF3 /* evaluateModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4012FD052A777CCD00561DF3 /* evaluateModel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		400A709F2A76420800A1BC49 /* SeismicTorch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SeismicTorch; sourceTree = BUILT_PRODUCTS_DIR; };
 		400A70A22A76420800A1BC49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4012FD052A777CCD00561DF3 /* evaluateModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = evaluateModel.cpp; sourceTree = "<group>"; };
+		4012FD062A777CCD00561DF3 /* evaluateModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = evaluateModel.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				400A70A22A76420800A1BC49 /* main.cpp */,
+				4012FD052A777CCD00561DF3 /* evaluateModel.cpp */,
+				4012FD062A777CCD00561DF3 /* evaluateModel.hpp */,
 			);
 			path = SeismicTorch;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4012FD072A777CCD00561DF3 /* evaluateModel.cpp in Sources */,
 				400A70A32A76420800A1BC49 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
