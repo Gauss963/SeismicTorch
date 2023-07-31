@@ -26,7 +26,8 @@ int main() {
     at::Tensor output = module.forward(inputs).toTensor();
     
     // 使用softmax獲得最後的輸出
-    at::Tensor softmax_output = torch::softmax(output, /*dim=*/-1);
+    // at::Tensor softmax_output = torch::softmax(output, /*dim=*/-1);
+    at::Tensor softmax_output = torch::softmax(output, -1);
     std::cout << softmax_output << '\n';
     
     return 0;
