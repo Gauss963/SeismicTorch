@@ -10,6 +10,7 @@
 #include <iomanip>
 
 #include "evaluateModel.hpp"
+#include "sacio.hpp"
 
 int main() {
     torch::jit::script::Module module;

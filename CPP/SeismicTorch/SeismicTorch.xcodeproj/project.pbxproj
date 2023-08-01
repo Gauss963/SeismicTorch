@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4001BDF12A78933700F611DA /* sacio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4001BDEF2A78933700F611DA /* sacio.cpp */; };
 		400A70A32A76420800A1BC49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 400A70A22A76420800A1BC49 /* main.cpp */; };
 		4012FD072A777CCD00561DF3 /* evaluateModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4012FD052A777CCD00561DF3 /* evaluateModel.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4001BDEF2A78933700F611DA /* sacio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sacio.cpp; sourceTree = "<group>"; };
+		4001BDF02A78933700F611DA /* sacio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sacio.hpp; sourceTree = "<group>"; };
 		400A709F2A76420800A1BC49 /* SeismicTorch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SeismicTorch; sourceTree = BUILT_PRODUCTS_DIR; };
 		400A70A22A76420800A1BC49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4012FD052A777CCD00561DF3 /* evaluateModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = evaluateModel.cpp; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				400A70A22A76420800A1BC49 /* main.cpp */,
+				4001BDEF2A78933700F611DA /* sacio.cpp */,
+				4001BDF02A78933700F611DA /* sacio.hpp */,
 				4012FD052A777CCD00561DF3 /* evaluateModel.cpp */,
 				4012FD062A777CCD00561DF3 /* evaluateModel.hpp */,
 			);
@@ -126,6 +131,7 @@
 			files = (
 				4012FD072A777CCD00561DF3 /* evaluateModel.cpp in Sources */,
 				400A70A32A76420800A1BC49 /* main.cpp in Sources */,
+				4001BDF12A78933700F611DA /* sacio.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
