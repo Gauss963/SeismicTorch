@@ -42,5 +42,13 @@ int main() {
     
     evaluateModel();
     
+    std::string file = "../../data_QSIS_Event/5AFE5/RCEC.08f.5AFE5.TW.C2.HLX.2022.01.03.09.46.37.sac";
+//    SACHEAD hd;
+//    float *data;
+//    int i;
+//
+//    data = read_sac(file, &hd);
+//    printf("npts=%d delta=%f \n", hd.npts, hd.delta);
+    
     return 0;
 }

@@ -59,25 +59,27 @@
 
 ************************************************************/
 
-int    read_sachead(const char *name, SACHEAD *hd) {
-  FILE        *strm;
 
-  if ((strm = fopen(name, "rb")) == NULL) {
-     fprintf(stderr, "Unable to open %s\n",name);
-     return -1;
-  }
-
-  if (fread(hd, sizeof(SACHEAD), 1, strm) != 1) {
-     fprintf(stderr, "Error in reading SAC header %s\n",name);
-     fclose(strm);
-     return -1;
-  }
-
-  if ( testByte((char *)hd) ) swab4((char *) hd, HD_SIZE);
-
-  fclose(strm);
-  return 0;
-
+int read_sachead(const char *name, SACHEAD *hd)
+{
+    FILE *strm;
+    
+    if ((strm = fopen(name, "rb")) == NULL)
+    {
+        fprintf(stderr, "Unable to open %s\n",name);
+        return -1;
+    }
+    
+    if (fread(hd, sizeof(SACHEAD), 1, strm) != 1)
+    {
+        fprintf(stderr, "Error in reading SAC header %s\n",name);
+        fclose(strm);
+        return -1;
+    }
+    
+    if ( testByte((char *)hd) ) swab4((char *) hd, HD_SIZE);
+    fclose(strm);
+    return 0;
 }
 
 
@@ -97,45 +99,47 @@ int    read_sachead(const char *name, SACHEAD *hd) {
   Return:    float pointer to the data array, NULL if failed
 
 ************************************************************/
-
-float*    read_sac(const char *name, SACHEAD *hd) {
-  FILE        *strm;
-  float        *ar;
-  unsigned    sz;
-  int        byteSwap;
-
-  if ((strm = fopen(name, "rb")) == NULL) {
-     fprintf(stderr, "Unable to open %s\n",name);
-     return NULL;
-  }
-
-  if (fread(hd, sizeof(SACHEAD), 1, strm) != 1) {
-     fprintf(stderr, "Error in reading SAC header %s\n",name);
-     return NULL;
-  }
-
-  if ( (byteSwap=testByte((char *)hd)) ) swab4((char *) hd, HD_SIZE);
-
-  sz = hd->npts*sizeof(float);
-  if (hd->iftype == IRLIM || hd->iftype == IAMPH || hd->iftype == IXY) sz *= 2;
-  if ((ar = (float *) malloc(sz)) == NULL) {
-     fprintf(stderr, "Error in allocating memory for reading %s\n",name);
-     return NULL;
-  }
-
-  if (fread((char *) ar, sz, 1, strm) != 1) {
-     fprintf(stderr, "Error in reading SAC data %s\n",name);
-     return NULL;
-  }
-
-  fclose(strm);
-
-  if ( byteSwap ) swab4((char *) ar, sz);
-
-  return ar;
-
+float* read_sac(const char *name, SACHEAD *hd)
+{
+    FILE        *strm;
+    float        *ar;
+    unsigned    sz;
+    int        byteSwap;
+    
+    if ((strm = fopen(name, "rb")) == NULL)
+    {
+        fprintf(stderr, "Unable to open %s\n",name);
+        return NULL;
+    }
+    
+    if (fread(hd, sizeof(SACHEAD), 1, strm) != 1)
+    {
+        fprintf(stderr, "Error in reading SAC header %s\n",name);
+        return NULL;
+    }
+    
+    if ( (byteSwap=testByte((char *)hd)) ) swab4((char *) hd, HD_SIZE);
+    
+    sz = hd->npts*sizeof(float);
+    if (hd->iftype == IRLIM || hd->iftype == IAMPH || hd->iftype == IXY) sz *= 2;
+    if ((ar = (float *) malloc(sz)) == NULL)
+    {
+        fprintf(stderr, "Error in allocating memory for reading %s\n",name);
+        return NULL;
+    }
+    
+    if (fread((char *) ar, sz, 1, strm) != 1)
+    {
+        fprintf(stderr, "Error in reading SAC data %s\n",name);
+        return NULL;
+    }
+    
+    fclose(strm);
+    
+    if ( byteSwap ) swab4((char *) ar, sz);
+    
+    return ar;
 }
-
 
 /***********************************************************
 
@@ -153,31 +157,34 @@ float*    read_sac(const char *name, SACHEAD *hd) {
 
 ************************************************************/
 
-int    write_sac(const char *name, SACHEAD hd, const float *ar) {
-  FILE        *strm;
-  int        error = 0;
-  unsigned    sz;
-  sz = hd.npts*sizeof(float);
-  if (hd.iftype == IRLIM || hd.iftype == IAMPH || hd.iftype == IXY) sz *= 2;
-
-  if ( !error && (strm = fopen(name, "w")) == NULL ) {
-     fprintf(stderr,"Error in opening file for writing %s\n",name);
-     error = 1;
-  }
-
-  if ( !error && fwrite(&hd, sizeof(SACHEAD), 1, strm) != 1 ) {
-     fprintf(stderr,"Error in writing SAC header for writing %s\n",name);
-     error = 1;
-  }
-
-  if ( !error && fwrite(ar, sz, 1, strm) != 1 ) {
-     fprintf(stderr,"Error in writing SAC data for writing %s\n",name);
-     error = 1;
-  }
-  fclose(strm);
-
-  return (error==0) ? 0 : -1;
-
+int write_sac(const char *name, SACHEAD hd, const float *ar)
+{
+    FILE        *strm;
+    int        error = 0;
+    unsigned    sz;
+    sz = hd.npts*sizeof(float);
+    if (hd.iftype == IRLIM || hd.iftype == IAMPH || hd.iftype == IXY) sz *= 2;
+    
+    if ( !error && (strm = fopen(name, "w")) == NULL )
+    {
+        fprintf(stderr,"Error in opening file for writing %s\n",name);
+        error = 1;
+    }
+    
+    if ( !error && fwrite(&hd, sizeof(SACHEAD), 1, strm) != 1 )
+    {
+        fprintf(stderr,"Error in writing SAC header for writing %s\n",name);
+        error = 1;
+    }
+    
+    if ( !error && fwrite(ar, sz, 1, strm) != 1 )
+    {
+        fprintf(stderr,"Error in writing SAC data for writing %s\n",name);
+        error = 1;
+    }
+    fclose(strm);
+    
+    return (error == 0) ? 0 : -1;
 }
 
 
@@ -196,17 +203,19 @@ int    write_sac(const char *name, SACHEAD hd, const float *ar) {
 
 *******************************************************/
 
-void    swab4(char *pt, int n) {
-  int i;
-  char temp;
-  for(i=0;i<n;i+=4) {
-    temp = pt[i+3];
-    pt[i+3] = pt[i];
-    pt[i] = temp;
-    temp = pt[i+2];
-    pt[i+2] = pt[i+1];
-    pt[i+1] = temp;
-  }
+void swab4(char *pt, int n)
+{
+    int i;
+    char temp;
+    for(i = 0; i < n; i += 4)
+    {
+        temp = pt[i+3];
+        pt[i+3] = pt[i];
+        pt[i] = temp;
+        temp = pt[i+2];
+        pt[i+2] = pt[i+1];
+        pt[i+1] = temp;
+    }
 }
 
 
@@ -226,17 +235,18 @@ void    swab4(char *pt, int n) {
 
 ************************************************************/
 
-SACHEAD    sachdr(float dt, int ns, float b0) {
-  SACHEAD    hd = sac_null;
-  hd.npts = ns;
-  hd.delta = dt;
-  hd.b = b0;
-  hd.o = 0.;
-  hd.e = b0+(ns-1)*hd.delta;
-  hd.iztype = IO;
-  hd.iftype = ITIME;
-  hd.leven = TRUE;
-  return hd;
+SACHEAD sachdr(float dt, int ns, float b0)
+{
+    SACHEAD    hd = sac_null;
+    hd.npts = ns;
+    hd.delta = dt;
+    hd.b = b0;
+    hd.o = 0.;
+    hd.e = b0+(ns-1)*hd.delta;
+    hd.iztype = IO;
+    hd.iftype = ITIME;
+    hd.leven = TRUE;
+    return hd;
 }
 
 
@@ -257,102 +267,106 @@ SACHEAD    sachdr(float dt, int ns, float b0) {
 
 ************************************************************/
 
-int    wrtsac2(const char    *name,
-        int        n,
-        const float    *x,
-        const float    *y
-    ) {
-  SACHEAD    hd = sac_null;
-  float        *ar;
-  unsigned    sz;
-  int        exit_code;
+int wrtsac2(const char *name, int n, const float *x, const float *y)
+{
+    SACHEAD    hd = sac_null;
+    float        *ar;
+    unsigned    sz;
+    int        exit_code;
 
-  hd.npts = n;
-  hd.iftype = IXY;
-  hd.leven = FALSE;
+    hd.npts = n;
+    hd.iftype = IXY;
+    hd.leven = FALSE;
 
-  sz = n*sizeof(float);
+    sz = n*sizeof(float);
 
-  if ( (ar = (float *) malloc(2*sz)) == NULL ) {
-     fprintf(stderr, "error in allocating memory%s\n",name);
-     return -1;
-  }
+    if ( (ar = (float *) malloc(2*sz)) == NULL )
+    {
+        fprintf(stderr, "error in allocating memory%s\n",name);
+        return -1;
+    }
 
-  if (memcpy(ar, y, sz) == NULL) {
-     fprintf(stderr, "error in copying data %s\n",name);
-     free(ar);
-     return -1;
-  }
-  if (memcpy(ar+n, x, sz) == NULL) {
-     fprintf(stderr, "error in copying data %s\n",name);
-     free(ar);
-     return -1;
-  }
+    if (memcpy(ar, y, sz) == NULL)
+    {
+        fprintf(stderr, "error in copying data %s\n",name);
+        free(ar);
+        return -1;
+    }
+    if (memcpy(ar+n, x, sz) == NULL)
+    {
+        fprintf(stderr, "error in copying data %s\n",name);
+        free(ar);
+        return -1;
+    }
 
-  exit_code = write_sac(name, hd, ar);
-  
-  free(ar);
-  
-  return exit_code;
+    exit_code = write_sac(name, hd, ar);
 
+    free(ar);
+
+    return exit_code;
 }
 
 
 /*for fortran--read evenly-spaced data */
-void    rdsac0_(const char *name, float *dt, int *ns, float *b0, float *ar) {
-   int i;
-   SACHEAD hd;
-   float *temp;
-   temp = read_sac(name,&hd);
-   *dt = hd.delta;
-   *ns = hd.npts;
-   *b0 = hd.b;
-   for(i=0;i<*ns;i++) ar[i]=temp[i];
-   free(temp);
+void rdsac0_(const char *name, float *dt, int *ns, float *b0, float *ar)
+{
+    int i;
+    SACHEAD hd;
+    float *temp;
+    temp = read_sac(name,&hd);
+    *dt = hd.delta;
+    *ns = hd.npts;
+    *b0 = hd.b;
+    for(i=0;i<*ns;i++) ar[i]=temp[i];
+    free(temp);
 }
 
 
 /*for fortran--read evely-spaced data with header, make sure hdr size >= 158 */
-void    my_brsac_(char *name, float *hdr, int *hdi, char *hdc, float *ar, int *err) {
-   int i, *ipt;
-   float *temp;
-   char *cpt;
-   cpt = strchr(name, (int) ' '); *cpt = 0;
-   *err = 0;
-   temp = read_sac(name, (SACHEAD *)hdr);
-   if (temp == NULL) {*err = -1; return;}
-   ipt = (int *) (hdr + 70);
-   for(i=0;i<30;i++) hdi[i] = ipt[i];
-   cpt = (char *)  (hdr + 110);
-   for(i=0;i<192;i++) hdc[i] = cpt[i];
-   for(i=0;i<hdi[9];i++) ar[i]=temp[i];
-   free(temp);
+void    my_brsac_(char *name, float *hdr, int *hdi, char *hdc, float *ar, int *err)
+{
+    int i, *ipt;
+    float *temp;
+    char *cpt;
+    cpt = strchr(name, (int) ' '); *cpt = 0;
+    *err = 0;
+    temp = read_sac(name, (SACHEAD *)hdr);
+    if (temp == NULL) {*err = -1; return;}
+    ipt = (int *) (hdr + 70);
+    for(i=0;i<30;i++) hdi[i] = ipt[i];
+    cpt = (char *)  (hdr + 110);
+    for(i=0;i<192;i++) hdc[i] = cpt[i];
+    for(i=0;i<hdi[9];i++) ar[i]=temp[i];
+    free(temp);
 }
 
 
 /* for fortran--write evenly-spaced data */
-void    wrtsac0_(const char *name, float *dt, int *ns, float *b0, float *dist, const float *ar) {
-  SACHEAD hd;
-  hd = sachdr(*dt,*ns,*b0);
-  hd.dist = *dist;
-  write_sac(name, hd, ar);
+void wrtsac0_(const char *name, float *dt, int *ns, float *b0, float *dist, const float *ar)
+{
+    SACHEAD hd;
+    hd = sachdr(*dt,*ns,*b0);
+    hd.dist = *dist;
+    write_sac(name, hd, ar);
 }
 
 
 /* for fortran--write x-y data */
-void    wrtsac2_(const char *name, int n, const float *x, const float *y) {
-  wrtsac2(name, n, x, y);
+void wrtsac2_(const char *name, int n, const float *x, const float *y)
+{
+    wrtsac2(name, n, x, y);
 }
 
 
 /* for fortran--write evenly-spaced data with comp orientation */
-void    wrtsac3_(const char *name, float dt, int ns, float b0, float dist, float cmpaz, float cmpinc, const float *ar) {
-  SACHEAD hd;
-  hd = sachdr(dt,ns,b0);
-  hd.dist = dist;
-  hd.cmpaz=cmpaz;
-  hd.cmpinc=cmpinc;
-  write_sac(name, hd, ar);
+void wrtsac3_(const char *name, float dt, int ns, float b0, float dist, float cmpaz, float cmpinc, const float *ar)
+{
+    SACHEAD hd;
+    hd = sachdr(dt,ns,b0);
+    hd.dist = dist;
+    hd.cmpaz=cmpaz;
+    hd.cmpinc=cmpinc;
+    write_sac(name, hd, ar);
 }
 
 
@@ -379,236 +393,246 @@ void    wrtsac3_(const char *name, float dt, int ns, float b0, float dist, float
 
 ************************************************************/
 
-float*    read_sac2(const char    *name,
-        SACHEAD        *hd,
-        int        tmark,
-        float        t1,
-        float        t2
-    ) {
-  FILE        *strm;
-  int        nn, nt1, nt2, npts, byteSwap;
-  float        tref, *ar, *fpt;
+float* read_sac2(const char *name, SACHEAD *hd, int tmark, float t1, float t2)
+{
+    FILE *strm;
+    int nn, nt1, nt2, npts, byteSwap;
+    float tref, *ar, *fpt;
 
-  if ((strm = fopen(name, "rb")) == NULL) {
-     fprintf(stderr, "Unable to open %s\n",name);
-     return NULL;
-  }
+    if ((strm = fopen(name, "rb")) == NULL)
+    {
+      fprintf(stderr, "Unable to open %s\n",name);
+      return NULL;
+    }
 
-  if (fread(hd, sizeof(SACHEAD), 1, strm) != 1) {
-     fprintf(stderr, "Error in reading SAC header %s\n",name);
-     return NULL;
-  }
+    if (fread(hd, sizeof(SACHEAD), 1, strm) != 1)
+    {
+      fprintf(stderr, "Error in reading SAC header %s\n",name);
+      return NULL;
+    }
 
-  if ( (byteSwap=testByte((char *)hd)) ) swab4((char *) hd, HD_SIZE);
+    if ( (byteSwap=testByte((char *)hd)) ) swab4((char *) hd, HD_SIZE);
 
-  nn = (int) rint((t2-t1)/hd->delta);
-  if (nn<=0 || (ar = (float *) calloc(nn,sizeof(float)))==NULL) {
-     fprintf(stderr, "Error in allocating memory for reading %s n=%d\n",name,nn);
-     return NULL;
-  }
-  tref = 0.;
-  if (tmark==-5 || tmark==-3 || tmark==-2 || (tmark>=0&&tmark<10) ) {
-     tref = *( (float *) hd + 10 + tmark);
-     if (tref==-12345.) {
-        fprintf(stderr,"Time mark undefined in %s\n",name);
+    nn = (int) rint((t2-t1)/hd->delta);
+    if (nn<=0 || (ar = (float *) calloc(nn,sizeof(float))) == NULL)
+    {
+      fprintf(stderr, "Error in allocating memory for reading %s n=%d\n",name,nn);
+      return NULL;
+    }
+    tref = 0.;
+    if (tmark==-5 || tmark==-3 || tmark==-2 || (tmark>=0&&tmark<10) )
+    {
+        tref = *( (float *) hd + 10 + tmark);
+        if (tref == -12345.)
+        {
+            fprintf(stderr,"Time mark undefined in %s\n",name);
+            return NULL;
+        }
+    }
+    t1 += tref;
+    nt1 = (int) rint((t1-hd->b)/hd->delta);
+    nt2 = nt1+nn;
+    npts = hd->npts;
+    hd->npts = nn;
+    hd->b = t1;
+    hd->e = t1+nn*hd->delta;
+
+    if ( nt1>=npts || nt2<0 ) return ar;
+
+    if (nt1<0)
+    {
+        fpt = ar-nt1;
+        nt1 = 0;
+    }
+    else
+    {
+        if (fseek(strm,nt1*sizeof(float),SEEK_CUR) < 0)
+        {
+            fprintf(stderr, "error in seek %s\n",name);
+            return NULL;
+        }
+        fpt = ar;
+    }
+    if (nt2>npts) nt2=npts;
+    nn = nt2-nt1;
+    if (fread((char *) fpt, sizeof(float), nn, strm) != nn)
+    {
+        fprintf(stderr, "Error in reading SAC data %s\n",name);
         return NULL;
-     }
-  }
-  t1 += tref;
-  nt1 = (int) rint((t1-hd->b)/hd->delta);
-  nt2 = nt1+nn;
-  npts = hd->npts;
-  hd->npts = nn;
-  hd->b = t1;
-  hd->e = t1+nn*hd->delta;
-
-  if ( nt1>=npts || nt2<0 ) return ar;
-
-  if (nt1<0) {
-     fpt = ar-nt1;
-     nt1 = 0;
-  } else {
-     if (fseek(strm,nt1*sizeof(float),SEEK_CUR) < 0) {
-    fprintf(stderr, "error in seek %s\n",name);
-    return NULL;
-     }
-     fpt = ar;
-  }
-  if (nt2>npts) nt2=npts;
-  nn = nt2-nt1;
-  if (fread((char *) fpt, sizeof(float), nn, strm) != nn) {
-     fprintf(stderr, "Error in reading SAC data %s\n",name);
-     return NULL;
-  }
-  fclose(strm);
-  if (byteSwap) swab4((char *) fpt, nn*sizeof(float));
-  return ar;
-
+    }
+    fclose(strm);
+    if (byteSwap) swab4((char *) fpt, nn*sizeof(float));
+    return ar;
 }
 
 
 /*reset reference time in sac header*/
-void    ResetSacTime(SACHEAD *hd) {
-     hd->o = 0.;
-     hd->a = 0.;
-     hd->nzyear = -12345;
-     hd->nzjday = -12345;
-     hd->nzhour = -12345;
-     hd->nzmin = -12345;
-     hd->nzsec = -12345;
-     hd->nzmsec = -12345;
+void ResetSacTime(SACHEAD *hd)
+{
+    hd->o = 0.;
+    hd->a = 0.;
+    hd->nzyear = -12345;
+    hd->nzjday = -12345;
+    hd->nzhour = -12345;
+    hd->nzmin = -12345;
+    hd->nzsec = -12345;
+    hd->nzmsec = -12345;
 }
 
 
 /*find the index of sac head field name, return -1 if not found*/
-int    sac_head_index(const char *name) {
-  if(strcmp(name,"delta")==0) return(0);
-  else if (strcmp(name,"delta")==0)     return(0);
-  else if (strcmp(name,"depmin")==0)     return(1);
-  else if (strcmp(name,"depmax")==0)     return(2);
-  else if (strcmp(name,"scale")==0)     return(3);
-  else if (strcmp(name,"odelta")==0)     return(4);
-  else if (strcmp(name,"b")==0)         return(5);
-  else if (strcmp(name,"e")==0)          return(6);
-  else if (strcmp(name,"o")==0)          return(7);
-  else if (strcmp(name,"a")==0)         return(8);
-  else if (strcmp(name,"internal1")==0)     return(9);
-  else if (strcmp(name,"t0")==0)     return(10);
-  else if (strcmp(name,"t1")==0)     return(11);
-  else if (strcmp(name,"t2")==0)     return(12);
-  else if (strcmp(name,"t3")==0)     return(13);
-  else if (strcmp(name,"t4")==0)     return(14);
-  else if (strcmp(name,"t5")==0)     return(15);
-  else if (strcmp(name,"t6")==0)     return(16);
-  else if (strcmp(name,"t7")==0)     return(17);
-  else if (strcmp(name,"t8")==0)     return(18);
-  else if (strcmp(name,"t9")==0)     return(19);
-  else if (strcmp(name,"f")==0)         return(20);
-  else if (strcmp(name,"resp0")==0)     return(21);
-  else if (strcmp(name,"resp1")==0)     return(22);
-  else if (strcmp(name,"resp2")==0)     return(23);
-  else if (strcmp(name,"resp3")==0)     return(24);
-  else if (strcmp(name,"resp4")==0)     return(25);
-  else if (strcmp(name,"resp5")==0)     return(26);
-  else if (strcmp(name,"resp6")==0)     return(27);
-  else if (strcmp(name,"resp7")==0)     return(28);
-  else if (strcmp(name,"resp8")==0)     return(29);
-  else if (strcmp(name,"resp9")==0)     return(30);
-  else if (strcmp(name,"stla")==0)     return(31);
-  else if (strcmp(name,"stlo")==0)     return(32);
-  else if (strcmp(name,"stel")==0)     return(33);
-  else if (strcmp(name,"stdp")==0)     return(34);
-  else if (strcmp(name,"evla")==0)     return(35);
-  else if (strcmp(name,"evlo")==0)     return(36);
-  else if (strcmp(name,"evel")==0)     return(37);
-  else if (strcmp(name,"evdp")==0)     return(38);
-  else if (strcmp(name,"unused1")==0)     return(39);
-  else if (strcmp(name,"user0")==0)     return(40);
-  else if (strcmp(name,"user1")==0)     return(41);
-  else if (strcmp(name,"user2")==0)     return(42);
-  else if (strcmp(name,"user3")==0)     return(43);
-  else if (strcmp(name,"user4")==0)     return(44);
-  else if (strcmp(name,"user5")==0)     return(45);
-  else if (strcmp(name,"user6")==0)     return(46);
-  else if (strcmp(name,"user7")==0)     return(47);
-  else if (strcmp(name,"user8")==0)     return(48);
-  else if (strcmp(name,"user9")==0)     return(49);
-  else if (strcmp(name,"dist")==0)     return(50);
-  else if (strcmp(name,"az")==0)     return(51);
-  else if (strcmp(name,"baz")==0)     return(52);
-  else if (strcmp(name,"gcarc")==0)     return(53);
-  else if (strcmp(name,"internal2")==0)     return(54);
-  else if (strcmp(name,"internal3")==0)     return(55);
-  else if (strcmp(name,"depmen")==0)     return(56);
-  else if (strcmp(name,"cmpaz")==0)     return(57);
-  else if (strcmp(name,"cmpinc")==0)     return(58);
-  else if (strcmp(name,"unused2")==0)     return(59);
-  else if (strcmp(name,"unused3")==0)     return(60);
-  else if (strcmp(name,"unused4")==0)     return(61);
-  else if (strcmp(name,"unused5")==0)     return(62);
-  else if (strcmp(name,"unused6")==0)     return(63);
-  else if (strcmp(name,"unused7")==0)     return(64);
-  else if (strcmp(name,"unused8")==0)     return(65);
-  else if (strcmp(name,"unused9")==0)     return(66);
-  else if (strcmp(name,"unused10")==0)     return(67);
-  else if (strcmp(name,"unused11")==0)     return(68);
-  else if (strcmp(name,"unused12")==0)     return(69);
-  else if (strcmp(name,"nzyear")==0)     return(70);
-  else if (strcmp(name,"nzjday")==0)     return(71);
-  else if (strcmp(name,"nzhour")==0)     return(72);
-  else if (strcmp(name,"nzmin")==0)     return(73);
-  else if (strcmp(name,"nzsec")==0)     return(74);
-  else if (strcmp(name,"nzmsec")==0)     return(75);
-  else if (strcmp(name,"internal4")==0)     return(76);
-  else if (strcmp(name,"internal5")==0)     return(77);
-  else if (strcmp(name,"internal6")==0)     return(78);
-  else if (strcmp(name,"npts")==0)     return(79);
-  else if (strcmp(name,"internal7")==0)     return(80);
-  else if (strcmp(name,"internal8")==0)     return(81);
-  else if (strcmp(name,"unused13")==0)     return(82);
-  else if (strcmp(name,"unused14")==0)     return(83);
-  else if (strcmp(name,"unused15")==0)     return(84);
-  else if (strcmp(name,"iftype")==0)     return(85);
-  else if (strcmp(name,"idep")==0)     return(86);
-  else if (strcmp(name,"iztype")==0)     return(87);
-  else if (strcmp(name,"unused16")==0)     return(88);
-  else if (strcmp(name,"iinst")==0)     return(89);
-  else if (strcmp(name,"istreg")==0)     return(90);
-  else if (strcmp(name,"ievreg")==0)     return(91);
-  else if (strcmp(name,"ievtyp")==0)     return(92);
-  else if (strcmp(name,"iqual")==0)     return(93);
-  else if (strcmp(name,"isynth")==0)     return(94);
-  else if (strcmp(name,"unused17")==0)     return(95);
-  else if (strcmp(name,"unused18")==0)     return(96);
-  else if (strcmp(name,"unused19")==0)     return(97);
-  else if (strcmp(name,"unused20")==0)     return(98);
-  else if (strcmp(name,"unused21")==0)     return(99);
-  else if (strcmp(name,"unused22")==0)     return(100);
-  else if (strcmp(name,"unused23")==0)     return(101);
-  else if (strcmp(name,"unused24")==0)     return(102);
-  else if (strcmp(name,"unused25")==0)     return(103);
-  else if (strcmp(name,"unused26")==0)     return(104);
-  else if (strcmp(name,"leven")==0)     return(105);
-  else if (strcmp(name,"lpspol")==0)     return(106);
-  else if (strcmp(name,"lovrok")==0)     return(107);
-  else if (strcmp(name,"lcalda")==0)     return(108);
-  else if (strcmp(name,"unused27")==0)     return(109);
-  else if (strcmp(name,"kstnm")==0)     return(110);
-  else if (strcmp(name,"kevnm")==0)     return(111);
-  else if (strcmp(name,"khole")==0)     return(112);
-  else if (strcmp(name,"ko")==0)     return(113);
-  else if (strcmp(name,"ka")==0)     return(114);
-  else if (strcmp(name,"kt0")==0)     return(115);
-  else if (strcmp(name,"kt1")==0)     return(116);
-  else if (strcmp(name,"kt2")==0)     return(117);
-  else if (strcmp(name,"kt3")==0)     return(118);
-  else if (strcmp(name,"kt4")==0)     return(119);
-  else if (strcmp(name,"kt5")==0)     return(120);
-  else if (strcmp(name,"kt6")==0)     return(121);
-  else if (strcmp(name,"kt7")==0)     return(122);
-  else if (strcmp(name,"kt8")==0)     return(123);
-  else if (strcmp(name,"kt9")==0)     return(124);
-  else if (strcmp(name,"kf")==0)     return(125);
-  else if (strcmp(name,"kuser0")==0)     return(126);
-  else if (strcmp(name,"kuser1")==0)     return(127);
-  else if (strcmp(name,"kuser2")==0)     return(128);
-  else if (strcmp(name,"kcmpnm")==0)     return(129);
-  else if (strcmp(name,"knetwk")==0)     return(130);
-  else if (strcmp(name,"kdatrd")==0)     return(131);
-  else if (strcmp(name,"kinst")==0)     return(132);
-  else if (strcmp(name,"kztime")==0)     return(133);
-  else return -1;
+int    sac_head_index(const char *name)
+{
+    if(strcmp(name,"delta")==0) return(0);
+    else if (strcmp(name,"delta")==0)     return(0);
+    else if (strcmp(name,"depmin")==0)     return(1);
+    else if (strcmp(name,"depmax")==0)     return(2);
+    else if (strcmp(name,"scale")==0)     return(3);
+    else if (strcmp(name,"odelta")==0)     return(4);
+    else if (strcmp(name,"b")==0)         return(5);
+    else if (strcmp(name,"e")==0)          return(6);
+    else if (strcmp(name,"o")==0)          return(7);
+    else if (strcmp(name,"a")==0)         return(8);
+    else if (strcmp(name,"internal1")==0)     return(9);
+    else if (strcmp(name,"t0")==0)     return(10);
+    else if (strcmp(name,"t1")==0)     return(11);
+    else if (strcmp(name,"t2")==0)     return(12);
+    else if (strcmp(name,"t3")==0)     return(13);
+    else if (strcmp(name,"t4")==0)     return(14);
+    else if (strcmp(name,"t5")==0)     return(15);
+    else if (strcmp(name,"t6")==0)     return(16);
+    else if (strcmp(name,"t7")==0)     return(17);
+    else if (strcmp(name,"t8")==0)     return(18);
+    else if (strcmp(name,"t9")==0)     return(19);
+    else if (strcmp(name,"f")==0)         return(20);
+    else if (strcmp(name,"resp0")==0)     return(21);
+    else if (strcmp(name,"resp1")==0)     return(22);
+    else if (strcmp(name,"resp2")==0)     return(23);
+    else if (strcmp(name,"resp3")==0)     return(24);
+    else if (strcmp(name,"resp4")==0)     return(25);
+    else if (strcmp(name,"resp5")==0)     return(26);
+    else if (strcmp(name,"resp6")==0)     return(27);
+    else if (strcmp(name,"resp7")==0)     return(28);
+    else if (strcmp(name,"resp8")==0)     return(29);
+    else if (strcmp(name,"resp9")==0)     return(30);
+    else if (strcmp(name,"stla")==0)     return(31);
+    else if (strcmp(name,"stlo")==0)     return(32);
+    else if (strcmp(name,"stel")==0)     return(33);
+    else if (strcmp(name,"stdp")==0)     return(34);
+    else if (strcmp(name,"evla")==0)     return(35);
+    else if (strcmp(name,"evlo")==0)     return(36);
+    else if (strcmp(name,"evel")==0)     return(37);
+    else if (strcmp(name,"evdp")==0)     return(38);
+    else if (strcmp(name,"unused1")==0)     return(39);
+    else if (strcmp(name,"user0")==0)     return(40);
+    else if (strcmp(name,"user1")==0)     return(41);
+    else if (strcmp(name,"user2")==0)     return(42);
+    else if (strcmp(name,"user3")==0)     return(43);
+    else if (strcmp(name,"user4")==0)     return(44);
+    else if (strcmp(name,"user5")==0)     return(45);
+    else if (strcmp(name,"user6")==0)     return(46);
+    else if (strcmp(name,"user7")==0)     return(47);
+    else if (strcmp(name,"user8")==0)     return(48);
+    else if (strcmp(name,"user9")==0)     return(49);
+    else if (strcmp(name,"dist")==0)     return(50);
+    else if (strcmp(name,"az")==0)     return(51);
+    else if (strcmp(name,"baz")==0)     return(52);
+    else if (strcmp(name,"gcarc")==0)     return(53);
+    else if (strcmp(name,"internal2")==0)     return(54);
+    else if (strcmp(name,"internal3")==0)     return(55);
+    else if (strcmp(name,"depmen")==0)     return(56);
+    else if (strcmp(name,"cmpaz")==0)     return(57);
+    else if (strcmp(name,"cmpinc")==0)     return(58);
+    else if (strcmp(name,"unused2")==0)     return(59);
+    else if (strcmp(name,"unused3")==0)     return(60);
+    else if (strcmp(name,"unused4")==0)     return(61);
+    else if (strcmp(name,"unused5")==0)     return(62);
+    else if (strcmp(name,"unused6")==0)     return(63);
+    else if (strcmp(name,"unused7")==0)     return(64);
+    else if (strcmp(name,"unused8")==0)     return(65);
+    else if (strcmp(name,"unused9")==0)     return(66);
+    else if (strcmp(name,"unused10")==0)     return(67);
+    else if (strcmp(name,"unused11")==0)     return(68);
+    else if (strcmp(name,"unused12")==0)     return(69);
+    else if (strcmp(name,"nzyear")==0)     return(70);
+    else if (strcmp(name,"nzjday")==0)     return(71);
+    else if (strcmp(name,"nzhour")==0)     return(72);
+    else if (strcmp(name,"nzmin")==0)     return(73);
+    else if (strcmp(name,"nzsec")==0)     return(74);
+    else if (strcmp(name,"nzmsec")==0)     return(75);
+    else if (strcmp(name,"internal4")==0)     return(76);
+    else if (strcmp(name,"internal5")==0)     return(77);
+    else if (strcmp(name,"internal6")==0)     return(78);
+    else if (strcmp(name,"npts")==0)     return(79);
+    else if (strcmp(name,"internal7")==0)     return(80);
+    else if (strcmp(name,"internal8")==0)     return(81);
+    else if (strcmp(name,"unused13")==0)     return(82);
+    else if (strcmp(name,"unused14")==0)     return(83);
+    else if (strcmp(name,"unused15")==0)     return(84);
+    else if (strcmp(name,"iftype")==0)     return(85);
+    else if (strcmp(name,"idep")==0)     return(86);
+    else if (strcmp(name,"iztype")==0)     return(87);
+    else if (strcmp(name,"unused16")==0)     return(88);
+    else if (strcmp(name,"iinst")==0)     return(89);
+    else if (strcmp(name,"istreg")==0)     return(90);
+    else if (strcmp(name,"ievreg")==0)     return(91);
+    else if (strcmp(name,"ievtyp")==0)     return(92);
+    else if (strcmp(name,"iqual")==0)     return(93);
+    else if (strcmp(name,"isynth")==0)     return(94);
+    else if (strcmp(name,"unused17")==0)     return(95);
+    else if (strcmp(name,"unused18")==0)     return(96);
+    else if (strcmp(name,"unused19")==0)     return(97);
+    else if (strcmp(name,"unused20")==0)     return(98);
+    else if (strcmp(name,"unused21")==0)     return(99);
+    else if (strcmp(name,"unused22")==0)     return(100);
+    else if (strcmp(name,"unused23")==0)     return(101);
+    else if (strcmp(name,"unused24")==0)     return(102);
+    else if (strcmp(name,"unused25")==0)     return(103);
+    else if (strcmp(name,"unused26")==0)     return(104);
+    else if (strcmp(name,"leven")==0)     return(105);
+    else if (strcmp(name,"lpspol")==0)     return(106);
+    else if (strcmp(name,"lovrok")==0)     return(107);
+    else if (strcmp(name,"lcalda")==0)     return(108);
+    else if (strcmp(name,"unused27")==0)     return(109);
+    else if (strcmp(name,"kstnm")==0)     return(110);
+    else if (strcmp(name,"kevnm")==0)     return(111);
+    else if (strcmp(name,"khole")==0)     return(112);
+    else if (strcmp(name,"ko")==0)     return(113);
+    else if (strcmp(name,"ka")==0)     return(114);
+    else if (strcmp(name,"kt0")==0)     return(115);
+    else if (strcmp(name,"kt1")==0)     return(116);
+    else if (strcmp(name,"kt2")==0)     return(117);
+    else if (strcmp(name,"kt3")==0)     return(118);
+    else if (strcmp(name,"kt4")==0)     return(119);
+    else if (strcmp(name,"kt5")==0)     return(120);
+    else if (strcmp(name,"kt6")==0)     return(121);
+    else if (strcmp(name,"kt7")==0)     return(122);
+    else if (strcmp(name,"kt8")==0)     return(123);
+    else if (strcmp(name,"kt9")==0)     return(124);
+    else if (strcmp(name,"kf")==0)     return(125);
+    else if (strcmp(name,"kuser0")==0)     return(126);
+    else if (strcmp(name,"kuser1")==0)     return(127);
+    else if (strcmp(name,"kuser2")==0)     return(128);
+    else if (strcmp(name,"kcmpnm")==0)     return(129);
+    else if (strcmp(name,"knetwk")==0)     return(130);
+    else if (strcmp(name,"kdatrd")==0)     return(131);
+    else if (strcmp(name,"kinst")==0)     return(132);
+    else if (strcmp(name,"kztime")==0)     return(133);
+    else return -1;
 }
 
 
-int testByte(char *hd) {
-   int ver = *((int *) (hd+304));
-   if (ver<1||ver>6) {
-       swab4((char *)&ver,4);
-       if (ver<1||ver>6) {
-           fprintf(stderr,"****** not in sac format, version = %d\n",ver);
-       }
-       return 1;
-   }
-   return 0;
+int testByte(char *hd)
+{
+    int ver = *((int *) (hd + 304));
+    if (ver < 1 || ver > 6)
+    {
+        swab4((char *)&ver, 4);
+        if (ver < 1 || ver > 6)
+        {
+            fprintf(stderr, "****** not in sac format, version = %d\n", ver);
+        }
+        return 1;
+    }
+    return 0;
 }
