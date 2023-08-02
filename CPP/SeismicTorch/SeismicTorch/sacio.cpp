@@ -159,33 +159,37 @@ float* read_sac(const char *name, SACHEAD *hd)
 
 int write_sac(const char *name, SACHEAD hd, const float *ar)
 {
-    FILE        *strm;
-    int        error = 0;
-    unsigned    sz;
+    FILE *strm;
+    int error = 0;
+    unsigned sz;
     sz = hd.npts*sizeof(float);
     if (hd.iftype == IRLIM || hd.iftype == IAMPH || hd.iftype == IXY) sz *= 2;
     
-    if ( !error && (strm = fopen(name, "w")) == NULL )
+    if ((strm = fopen(name, "w")) == NULL )
     {
         fprintf(stderr,"Error in opening file for writing %s\n",name);
         error = 1;
     }
     
-    if ( !error && fwrite(&hd, sizeof(SACHEAD), 1, strm) != 1 )
+    else
     {
-        fprintf(stderr,"Error in writing SAC header for writing %s\n",name);
-        error = 1;
+        if (fwrite(&hd, sizeof(SACHEAD), 1, strm) != 1 )
+        {
+            fprintf(stderr,"Error in writing SAC header for writing %s\n",name);
+            error = 1;
+        }
+        
+        if (fwrite(ar, sz, 1, strm) != 1 )
+        {
+            fprintf(stderr,"Error in writing SAC data for writing %s\n",name);
+            error = 1;
+        }
+        fclose(strm);
     }
-    
-    if ( !error && fwrite(ar, sz, 1, strm) != 1 )
-    {
-        fprintf(stderr,"Error in writing SAC data for writing %s\n",name);
-        error = 1;
-    }
-    fclose(strm);
     
     return (error == 0) ? 0 : -1;
 }
+
 
 
 /*****************************************************
@@ -323,7 +327,7 @@ void rdsac0_(const char *name, float *dt, int *ns, float *b0, float *ar)
 
 
 /*for fortran--read evely-spaced data with header, make sure hdr size >= 158 */
-void    my_brsac_(char *name, float *hdr, int *hdi, char *hdc, float *ar, int *err)
+void my_brsac_(char *name, float *hdr, int *hdi, char *hdc, float *ar, int *err)
 {
     int i, *ipt;
     float *temp;

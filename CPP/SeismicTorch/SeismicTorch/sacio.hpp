@@ -275,7 +275,7 @@ static SACHEAD sac_null = {
 #define TMARK    10
 #define USERN    40
 
-/* prototype for SACIO functions, they are implemented in sacio.c */
+/* prototype for SACIO functions, they are implemented in sacio.cpp */
 int    read_sachead(const char *, SACHEAD *);
 float    *read_sac(const char *, SACHEAD *);
 float    *read_sac2(const char *, SACHEAD *, int, float, float);
