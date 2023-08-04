@@ -1,15 +1,19 @@
-import os, re 
+import os, re
+
+import h5py
 import obspy
+import scipy
+import torch
+
+import keras as keras
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import scipy.signal as signal
+import tensorflow as t
+
 from obspy import UTCDateTime
 from obspy.clients.fdsn.client import Client
-import numpy as np 
-import scipy 
-import scipy.signal as signal
-import matplotlib.pyplot as plt 
-import tensorflow as tf
-import keras as keras
-import pandas as pd 
-import h5py 
 from tqdm import tqdm
 
 def quantize(A, dtype = np.int16):
@@ -425,6 +429,37 @@ def data_reader(list_IDs,
     y = keras.utils.to_categorical(y)                     
     return X.astype('float32'), y.astype('float32')
 
+# if __name__ == "__main__":
+ 
+#     srcdir = os.path.dirname(os.path.abspath(__file__))
+#     datadir = os.path.dirname(os.path.join(srcdir, "./data/"))
+#     csvfile = os.path.join(datadir, "merge.csv")
+#     h5path = os.path.join(datadir, "merge.hdf5")
+#     df = pd.read_csv(csvfile)
+#     batch_size = 256
+
+#     # create test dataset
+#     TRAINdf, TESTdf = test_train_split(df)
+#     Xtrain, Ytrain = data_reader(TRAINdf["trace_name"].values,h5path)
+#     ind = np.random.choice(Xtrain.shape[0], Xtrain.shape[0], replace = False)
+#     Xtrain = Xtrain[ind,:,:,:]
+#     Ytrain = Ytrain[ind, :]
+#     traindir = os.path.join(datadir, "train")
+#     np.savez(traindir, Xtrain = Xtrain, Ytrain = Ytrain)
+#     # dataset = tf.data.Dataset.from_tensor_slices((Xtrain,Ytrain)).batch(batch_size)
+#     # traindir = os.path.join(datadir, "waves", "train")
+#     # tf.data.Dataset.save(dataset, traindir)
+
+#     # create test dataset 
+#     Xtest, Ytest = data_reader(TESTdf["trace_name"].values, h5path, augmentation = False)
+#     ind = np.random.choice(Xtest.shape[0], Xtest.shape[0], replace = False)
+#     Xtest = Xtest[ind,:,:,:]
+#     Ytest = Ytest[ind,:]
+#     np.savez(os.path.join(datadir, "test"), Xtest = Xtest, Ytest = Ytest)
+#     # dataset = tf.data.Dataset.from_tensor_slices((Xtest,Ytest)).batch(batch_size)
+#     # testdir = os.path.join(datadir, "waves", "test")
+#     # tf.data.Dataset.save(dataset, testdir)
+
 if __name__ == "__main__":
  
     srcdir = os.path.dirname(os.path.abspath(__file__))
@@ -437,21 +472,16 @@ if __name__ == "__main__":
     # create test dataset
     TRAINdf, TESTdf = test_train_split(df)
     Xtrain, Ytrain = data_reader(TRAINdf["trace_name"].values,h5path)
-    ind = np.random.choice(Xtrain.shape[0], Xtrain.shape[0], replace = False)
+    ind = np.random.choice(Xtrain.shape[0], Xtrain.shape[0], replace=False)
     Xtrain = Xtrain[ind,:,:,:]
     Ytrain = Ytrain[ind, :]
-    traindir = os.path.join(datadir, "train")
-    np.savez(traindir, Xtrain = Xtrain, Ytrain = Ytrain)
-    # dataset = tf.data.Dataset.from_tensor_slices((Xtrain,Ytrain)).batch(batch_size)
-    # traindir = os.path.join(datadir, "waves", "train")
-    # tf.data.Dataset.save(dataset, traindir)
+    traindir = os.path.join(datadir, "train.pth")
+    torch.save({'Xtrain': Xtrain, 'Ytrain': Ytrain}, traindir)
 
     # create test dataset 
-    Xtest, Ytest = data_reader(TESTdf["trace_name"].values, h5path, augmentation = False)
-    ind = np.random.choice(Xtest.shape[0], Xtest.shape[0], replace = False)
+    Xtest, Ytest = data_reader(TESTdf["trace_name"].values,h5path, augmentation=False)
+    ind = np.random.choice(Xtest.shape[0], Xtest.shape[0], replace=False)
     Xtest = Xtest[ind,:,:,:]
     Ytest = Ytest[ind,:]
-    np.savez(os.path.join(datadir, "test"), Xtest = Xtest, Ytest = Ytest)
-    # dataset = tf.data.Dataset.from_tensor_slices((Xtest,Ytest)).batch(batch_size)
-    # testdir = os.path.join(datadir, "waves", "test")
-    # tf.data.Dataset.save(dataset, testdir)
+    testdir = os.path.join(datadir, "test.pth")
+    torch.save({'Xtest': Xtest, 'Ytest': Ytest}, testdir)
