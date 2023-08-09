@@ -8,8 +8,9 @@
 #ifndef evaluateModel_hpp
 #define evaluateModel_hpp
 
+#include <torch/script.h>
 #include <stdio.h>
 
-void evaluateModel();
+void evaluateModel(torch::jit::script::Module module);
 
 #endif /* time_evaluation_hpp */

@@ -42,7 +42,7 @@ int main() {
     
     std::vector<float> softmax_vector(softmax_output.data_ptr<float>(), softmax_output.data_ptr<float>() + softmax_output.numel());
     
-    evaluateModel();
+    evaluateModel(module);
     
 //    std::string file = "../../data_QSIS_Event/5AFE5/RCEC.08f.5AFE5.TW.C2.HLX.2022.01.03.09.46.37.sac";
 //    SACHEAD hd;

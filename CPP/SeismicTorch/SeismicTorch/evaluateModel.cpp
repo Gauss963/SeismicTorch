@@ -11,11 +11,11 @@
 
 #include "evaluateModel.hpp"
 
-void evaluateModel()
+void evaluateModel(torch::jit::script::Module module)
 {
     
-    torch::jit::script::Module module;
-    module = torch::jit::load("../../model/EarthquakeCNN_TS.pt");
+    // torch::jit::script::Module module;
+    // module = torch::jit::load("../../model/EarthquakeCNN_TS.pt");
     
     
     std::vector<double> durations(10000); // 儲存每次執行的時間
