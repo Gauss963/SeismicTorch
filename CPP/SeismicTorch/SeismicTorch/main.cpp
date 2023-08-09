@@ -23,7 +23,7 @@ int main() {
         return -1;
     }
 
-    std::cout << "model loaded\n";
+    std::cout << "model loaded" << std::endl;
 
     // 創建一個輸入張量
     at::Tensor input = torch::rand({1, 1, 80, 3});
@@ -44,13 +44,24 @@ int main() {
     
     evaluateModel(module);
     
-//    std::string file = "../../data_QSIS_Event/5AFE5/RCEC.08f.5AFE5.TW.C2.HLX.2022.01.03.09.46.37.sac";
-//    SACHEAD hd;
-//    float *data;
-//    int i;
-//
-//    data = read_sac(file, &hd);
-//    printf("npts=%d delta=%f \n", hd.npts, hd.delta);
+    
+    SACHEAD hd;
+    const char *filename = "../../data_QSIS_Event/5AFE5/RCEC.08f.5AFE5.TW.C2.HLX.2022.01.03.09.46.37.sac";
+    float *data = read_sac(filename, &hd);
+    if (data == NULL)
+    {
+        std::cerr << "Error reading the SAC file." << std::endl;
+        return -1;
+    }
+    else
+    {
+        std::cout << "sac file loaded" << std::endl;
+        std::vector<float> vecData(data, data + hd.npts);
+        std::cout << "Vector size: " << vecData.size() << std::endl;
+        
+        
+        free(data); // 使用完數據後，確保釋放內存
+    }
     
     return 0;
 }
