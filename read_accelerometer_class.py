@@ -1,10 +1,14 @@
+import time
+
 import numpy as np
-import scipy
 import obspy
+import scipy
+import torch
+
 from Phidget22.Phidget import *
 from Phidget22.Devices.Accelerometer import *
 from collections import deque
-import time
+
 import functions
 
 class EarthquakeDataCollector:
@@ -17,6 +21,9 @@ class EarthquakeDataCollector:
         self.all_data = deque(maxlen = self.data_length)
         self.ch = Accelerometer()
         self.ch.setOnAccelerationChangeHandler(self.onAccelerationChange)
+
+        self.model = torch.load('./model/EarthquakeCNN_finetuned.pth')
+        self.softmax = torch.nn.Softmax(dim = 1)
 
     def onAccelerationChange(self, self_ch, acceleration, timestamp):
         acceleration_arr = np.array(acceleration) * 9.81 * 100
