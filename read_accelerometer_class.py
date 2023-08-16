@@ -12,7 +12,7 @@ from collections import deque
 import functions
 
 class EarthquakeDataCollector:
-    def __init__(self, sampling_rate = 125, wlen = 2):
+    def __init__(self, sampling_rate = 125, wlen = 2, sleep = 1):
         self.wlen = wlen
         self.fsout = 40.0
         self.dim = int(wlen * self.fsout)
@@ -25,6 +25,8 @@ class EarthquakeDataCollector:
         self.model = torch.load('./model/EarthquakeCNN_finetuned.pth')
         self.softmax = torch.nn.Softmax(dim = 1)
 
+        self.sleep = sleep
+
     def onAccelerationChange(self, self_ch, acceleration, timestamp):
         acceleration_arr = np.array(acceleration) * 9.81 * 100
         self.all_data.append(acceleration_arr)
@@ -34,7 +36,7 @@ class EarthquakeDataCollector:
         self.ch.setDataRate(self.sampling_rate)
         try:
             while True:
-                time.sleep(2)  # Wait for 2 seconds
+                time.sleep(self.sleep)  # Wait for 2 seconds
 
                 self.feed_data = self.process_last_2_seconds_data()
                 self.feed_data = self.feed_data.reshape(1, 80, 3, 1)
@@ -44,7 +46,17 @@ class EarthquakeDataCollector:
                 self.feed_data = self.feed_data.astype(np.float32)
                 self.feed_data = functions.normalize(self.feed_data)
 
-                print(self.feed_data.shape)
+                # print(self.feed_data.shape)
+
+                X = torch.from_numpy(self.feed_data).float()
+                X = X.permute(0, 3, 1, 2)
+
+                Y = self.model(X)
+                Y = self.softmax(Y)
+                Y = Y.detach().numpy()
+
+                Y = np.round(Y * 100).astype(int)
+                print(Y)
 
         except KeyboardInterrupt:  # Allowing for a keyboard interrupt to stop the collection
             self.ch.close()
