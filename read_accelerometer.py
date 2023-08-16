@@ -12,17 +12,6 @@ import functions
 
 sampling_rate = 125
 
-def scale_amplitude(data, rate):
-    'Scale amplitude or waveforms'
-    
-    tmp = np.random.uniform(0, 1)
-    if tmp < rate:
-        data *= np.random.uniform(1, 3)
-    elif tmp < 2 * rate:
-        data /= np.random.uniform(1, 3)
-    return data
-
-
 all_data = np.empty((0, 3))
 
 def onAccelerationChange(self, acceleration, timestamp):
