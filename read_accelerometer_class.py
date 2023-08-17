@@ -25,6 +25,11 @@ class EarthquakeDataCollector:
 
         self.model_finetuned = torch.load('./model/EarthquakeCNN_finetuned.pth')
         self.model_pretrained = torch.load('./model/EarthquakeCNN.pth')
+        self.model_finetuned.eval()
+        self.model_pretrained.eval()
+
+        self.model_TS = torch.jit.load('./model/EarthquakeCNN_TS.pt')
+
         self.softmax = torch.nn.Softmax(dim = 1)
 
         self.sleep = sleep
@@ -51,7 +56,7 @@ class EarthquakeDataCollector:
                 X = torch.from_numpy(self.feed_data).float()
                 X = X.permute(0, 3, 1, 2)
 
-                Y = self.model_finetuned(X)
+                Y = self.model_TS(X)
                 Y = self.softmax(Y)
                 Y = Y.detach().numpy()
 
