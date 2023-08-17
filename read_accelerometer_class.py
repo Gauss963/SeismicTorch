@@ -12,10 +12,11 @@ from collections import deque
 import functions
 
 class EarthquakeDataCollector:
-    def __init__(self, sampling_rate = 125, wlen = 2, sleep = 1):
-        self.wlen = wlen
+    def __init__(self, sampling_rate = 125, sleep = 1):
+        self.g_acc = 9.81
         self.fsout = 40.0
-        self.dim = int(wlen * self.fsout)
+        self.wlen = 2
+        self.dim = int(self.wlen * self.fsout)
         self.sampling_rate = sampling_rate
         self.data_length = int(self.wlen * self.sampling_rate)
         self.all_data = deque(maxlen = self.data_length)
@@ -28,7 +29,7 @@ class EarthquakeDataCollector:
         self.sleep = sleep
 
     def onAccelerationChange(self, self_ch, acceleration, timestamp):
-        acceleration_arr = np.array(acceleration) * 9.81 * 100
+        acceleration_arr = np.array(acceleration) * self.g_acc * 100 # Convert to gal
         self.all_data.append(acceleration_arr)
 
     def start_collecting(self):
@@ -36,7 +37,7 @@ class EarthquakeDataCollector:
         self.ch.setDataRate(self.sampling_rate)
         try:
             while True:
-                time.sleep(self.sleep)  # Wait for 2 seconds
+                time.sleep(self.sleep)
 
                 self.feed_data = self.process_last_2_seconds_data()
                 self.feed_data = self.feed_data.reshape(1, 80, 3, 1)
@@ -45,8 +46,6 @@ class EarthquakeDataCollector:
                 self.feed_data = functions.quantize(self.feed_data)
                 self.feed_data = self.feed_data.astype(np.float32)
                 self.feed_data = functions.normalize(self.feed_data)
-
-                # print(self.feed_data.shape)
 
                 X = torch.from_numpy(self.feed_data).float()
                 X = X.permute(0, 3, 1, 2)
@@ -84,5 +83,5 @@ class EarthquakeDataCollector:
         return feed_data
 
 
-collector = EarthquakeDataCollector()
+collector = EarthquakeDataCollector(sleep = 0.5)
 collector.start_collecting()
