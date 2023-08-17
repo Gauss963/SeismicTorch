@@ -23,13 +23,14 @@ class EarthquakeDataCollector:
         self.ch = Accelerometer()
         self.ch.setOnAccelerationChangeHandler(self.onAccelerationChange)
 
-        self.model = torch.load('./model/EarthquakeCNN_finetuned.pth')
+        self.model_finetuned = torch.load('./model/EarthquakeCNN_finetuned.pth')
+        self.model_pretrained = torch.load('./model/EarthquakeCNN.pth')
         self.softmax = torch.nn.Softmax(dim = 1)
 
         self.sleep = sleep
 
     def onAccelerationChange(self, self_ch, acceleration, timestamp):
-        acceleration_arr = np.array(acceleration) * self.g_acc * 100 # Convert to gal
+        acceleration_arr = np.array(acceleration) * self.g_acc # Convert to m/s2
         self.all_data.append(acceleration_arr)
 
     def start_collecting(self):
@@ -50,7 +51,7 @@ class EarthquakeDataCollector:
                 X = torch.from_numpy(self.feed_data).float()
                 X = X.permute(0, 3, 1, 2)
 
-                Y = self.model(X)
+                Y = self.model_finetuned(X)
                 Y = self.softmax(Y)
                 Y = Y.detach().numpy()
 
