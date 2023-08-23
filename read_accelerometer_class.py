@@ -1,3 +1,4 @@
+import collections
 import time
 
 import numpy as np
@@ -7,7 +8,6 @@ import torch
 
 from Phidget22.Phidget import *
 from Phidget22.Devices.Accelerometer import *
-from collections import deque
 
 import functions
 
@@ -19,7 +19,7 @@ class EarthquakeDataCollector:
         self.dim = int(self.wlen * self.fsout)
         self.sampling_rate = sampling_rate
         self.data_length = int(self.wlen * self.sampling_rate)
-        self.all_data = deque(maxlen = self.data_length)
+        self.all_data = collections.deque(maxlen = self.data_length)
         self.ch = Accelerometer()
         self.ch.setOnAccelerationChangeHandler(self.onAccelerationChange)
 
@@ -41,7 +41,6 @@ class EarthquakeDataCollector:
 
     def beeper_trigger(self):
         if self.trigger == True:
-            pass
             print('triggered')
 
 
@@ -70,7 +69,7 @@ class EarthquakeDataCollector:
                 Y = Y.detach().numpy()
 
                 Y = np.round(Y * 100).astype(int)
-                # print(Y)
+                print(Y, end = ' ')
                 PGA = self.get_last_2_seconds_data_PGA()
                 print(PGA)
                 if PGA >= 2.0 and Y[0][2] <= 0.5:
@@ -111,5 +110,5 @@ class EarthquakeDataCollector:
         return PGA
 
 
-collector = EarthquakeDataCollector(sleep = 0.5)
+collector = EarthquakeDataCollector(sleep = 0.0)
 collector.start_collecting()
