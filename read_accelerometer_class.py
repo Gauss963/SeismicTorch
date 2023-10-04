@@ -41,7 +41,9 @@ class EarthquakeDataCollector:
 
     def beeper_trigger(self):
         if self.trigger == True:
-            print('triggered')
+            # print('triggered')
+            print("\033[91mtriggered\033[0m")
+
 
 
         self.trigger = False
