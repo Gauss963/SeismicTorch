@@ -152,8 +152,8 @@ cbar = plt.colorbar()
 cbar.set_label('Depth')
 
 # 添加轴标签
-plt.xlabel('Distance')
-plt.ylabel('Magnitude')
+plt.xlabel('Distance (km)')
+plt.ylabel('Magnitude (ML)')
 
 # 绘制分隔线
 ax = plt.gca()
