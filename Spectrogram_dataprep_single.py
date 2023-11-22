@@ -1,11 +1,12 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import obspy
-from obspy import Trace, UTCDateTime
-from scipy.signal import spectrogram
 import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+import obspy
 
 from io import BytesIO
+from obspy import Trace, UTCDateTime
+from scipy.signal import spectrogram
+
 
 # 讀取 SAC 檔案
 datadir = './dada_QSIS_test'
@@ -24,25 +25,11 @@ nperseg = 256  # 每個段的數據點數
 noverlap = nperseg // 2  # 重疊的數據點數
 
 # 計算時頻圖
-frequencies, times, Sxx = spectrogram(x_acceleration, fs=fs, nperseg=nperseg, noverlap=noverlap)
+frequencies, times, Sxx = spectrogram(x_acceleration, fs = fs, nperseg = nperseg, noverlap = noverlap)
 
 # 繪製時頻圖
-plt.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading='auto', cmap='gray')
+plt.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading = 'auto', cmap = 'gray')
 plt.axis('off')  # 隱藏座標軸
-
-
-# plt.savefig('./Spectrogram_test/spectrogram_test.png', bbox_inches = 'tight', pad_inches = 0)
-
-# plt.show()
-# plt.close()  # 關閉 Matplotlib 的顯示
-
-# # 使用 OpenCV 讀取和縮放圖片
-# img = cv2.imread('./Spectrogram_test/spectrogram_test.png')
-# img_resized = cv2.resize(img, (150, 100))
-
-# # 保存縮放後的圖片
-# cv2.imwrite('./Spectrogram_test/spectrogram_test_resized.png', img_resized)
-
 
 
 # 使用 BytesIO 將 Matplotlib 圖片保存到記憶體中
@@ -57,5 +44,56 @@ img_resized = cv2.resize(img, (150, 100))
 # 顯示原始圖片（可省略）
 plt.show()
 
+# 將縮放後的圖片轉換為 NumPy 陣列
+img_resized_gray = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
+
+img_resized_array = np.asarray(img_resized_gray)
+
+print(type(img_resized_array))
+print(img_resized_array.shape)
+
 # 保存縮放後的圖片
 cv2.imwrite('./Spectrogram_test/spectrogram_test_resized.png', img_resized)
+
+
+def stream_to_ndarray(input_Stream):
+    array_list = []
+    for i in range(3):
+        trace = input_Stream[i]
+        trace_acceleration = trace.data
+
+        fs = trace.stats.sampling_rate  # 取樣率
+        nperseg = 256  # 每個段的數據點數
+        noverlap = nperseg // 2  # 重疊的數據點數
+
+        frequencies, times, Sxx = spectrogram(trace_acceleration, fs=fs, nperseg=nperseg, noverlap=noverlap)
+
+        plt.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading='auto', cmap='gray')
+        plt.axis('off')  # 隱藏座標軸
+
+        # 使用 BytesIO 將 Matplotlib 圖片保存到記憶體中
+        img_stream = BytesIO()
+        plt.savefig(img_stream, format='png', bbox_inches='tight', pad_inches=0)
+        img_stream.seek(0)
+
+        # 使用 OpenCV 讀取並縮放圖片
+        img = cv2.imdecode(np.frombuffer(img_stream.read(), dtype=np.uint8), 1)
+        img_resized = cv2.resize(img, (150, 100))
+
+        # 將縮放後的圖片轉換為 NumPy 陣列
+        img_resized_gray = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
+        img_resized_gray_array = np.asarray(img_resized_gray)
+
+        array_list.append(img_resized_gray_array)
+
+    # 合併成一張彩色圖片 (100, 150, 3)
+    color_image = np.stack([array_list[0], array_list[1], array_list[2]], axis=-1)
+
+    return color_image
+
+colored_image = stream_to_ndarray(test_event)
+
+print(colored_image.shape)
+
+# 保存為 PNG 檔案
+cv2.imwrite('./Spectrogram_test/test_3channel_merged_image.png', colored_image)
