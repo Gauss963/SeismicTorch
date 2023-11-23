@@ -5,7 +5,6 @@ import obspy
 import scipy
 
 from io import BytesIO
-from obspy import Trace, UTCDateTime
 
 # # 提取 x 軸加速度數據
 # trace = test_event[0]
@@ -79,6 +78,7 @@ def stream_to_spectrogram_ndarray(input_Stream):
         img_resized_gray = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
         img_resized_gray_array = np.asarray(img_resized_gray)
 
+        # Plot all three channel (For test)
         cv2.imwrite('./Spectrogram_test/' + xyz[i] + '.png', img_resized)
 
         array_list.append(img_resized_gray_array)
