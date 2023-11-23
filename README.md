@@ -285,10 +285,6 @@ class EarthquakeCNN(nn.Module):
 ## Spectrogram Model Definition
 
 ```python
-import torch
-import torch.nn as nn
-from thop import profile
-
 class SpectrogramCNN(nn.Module):
     def __init__(self):
         super(SpectrogramCNN, self).__init__()
