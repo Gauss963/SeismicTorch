@@ -71,22 +71,7 @@ def stream_to_spectrogram_ndarray(input_Stream):
     return color_image
 
 if __name__ == "__main__":
-    # 讀取 SAC 檔案
-    datadir = './dada_QSIS_test'
-    file1 = datadir + '/RCEC.09f.5AF30.TW.A1.HLX.2022.09.18.06.43.22.sac'
-    file2 = datadir + '/RCEC.09f.5AF30.TW.A1.HLY.2022.09.18.06.43.22.sac'
-    file3 = datadir + '/RCEC.09f.5AF30.TW.A1.HLZ.2022.09.18.06.43.22.sac'
-    test_event = obspy.read(file1) + obspy.read(file2) + obspy.read(file3)
-    print(type(test_event))
-    print(type(test_event[0]))
-    colored_image = stream_to_spectrogram_ndarray(test_event)
 
-    print(colored_image.shape)
-
-    # 保存為 PNG 檔案
-    # cv2.imwrite('./Spectrogram_test/test_3channel_merged_image.png', colored_image)
-
-    stream_list = []
     stream_list = []
     Spectrogram_train_data_X = np.array([])
     Spectrogram_train_data_list = []
@@ -103,9 +88,6 @@ if __name__ == "__main__":
     sac_files_Y = [s.replace('X', 'Y') for s in sac_files_X]
     sac_files_Z = [s.replace('X', 'Z') for s in sac_files_X]
 
-    # print(sac_files_X)
-    # print(sac_files_Y)
-    # print(sac_files_Z)
 
     for i in tqdm.trange(len(sac_files_X)):
         stream = Stream()
@@ -120,8 +102,8 @@ if __name__ == "__main__":
 
         stream_list.append(stream)
 
-    # for i in tqdm.trange(len(stream_list)):
-    for i in tqdm.trange(4):
+    for i in tqdm.trange(len(stream_list)):
+    # for i in tqdm.trange(4):
 
         Spectrogram_train_data_append = stream_to_spectrogram_ndarray(stream_list[i])
         Spectrogram_train_data_list.append(Spectrogram_train_data_append)
