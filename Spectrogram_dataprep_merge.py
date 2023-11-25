@@ -25,6 +25,8 @@ def do_Spectrogram_dataprep_merge():
     Xall = np.concatenate((Xevent, Xnoise), axis = 0)
     Yall = np.concatenate((Yevent, Ynoise), axis = 0)
 
+    Xall = np.squeeze(Xall, axis = -1)
+
     print(Xall.shape)
     print(Yall.shape)
 
