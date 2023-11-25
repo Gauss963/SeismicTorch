@@ -90,7 +90,7 @@ def stream_to_spectrogram_ndarray(input_Stream):
         noverlap = nperseg // 2         # 重疊的數據點數
 
         # Draw Spectrogram
-        frequencies, times, Sxx = scipy.signal.spectrogram(trace_acceleration, fs=fs, nperseg=nperseg, noverlap=noverlap)
+        frequencies, times, Sxx = scipy.signal.spectrogram(trace_acceleration, fs = fs, nperseg = nperseg, noverlap = noverlap)
 
         plt.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading = 'auto', cmap = 'gray')
         plt.axis('off')
