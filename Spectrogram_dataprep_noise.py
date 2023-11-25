@@ -1,85 +1,20 @@
-import cv2
-import matplotlib.pyplot as plt
-import numpy as np
-import obspy
-import scipy
-
-from io import BytesIO
-
-
 import os
 import glob
-import random
-import cv2
+import numpy as np
 import obspy
-import scipy
 import torch
-
-from io import BytesIO
-from obspy import Stream
-from obspy import read
-from obspy.taup import TauPyModel
-from obspy.geodetics import gps2dist_azimuth
-from obspy.signal.trigger import classic_sta_lta
-
-import numpy as np 
-import scipy.signal as signal
-import matplotlib.pyplot as plt 
 import tqdm
 
+import functions
 
-def stream_to_spectrogram_ndarray(input_Stream):
-    xyz = ['x', 'y', 'z']
-    array_list = []
-    for i in range(3):
-        trace = input_Stream[i]
-        trace_acceleration = trace.data
 
-        # 設置 Spectrogram 參數
-        fs = trace.stats.sampling_rate  # 取樣率
-        nperseg = 256                   # 每個段的數據點數
-        noverlap = nperseg // 2         # 重疊的數據點數
-
-        # Draw Spectrogram
-        frequencies, times, Sxx = scipy.signal.spectrogram(trace_acceleration, fs=fs, nperseg=nperseg, noverlap=noverlap)
-
-        plt.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading = 'auto', cmap = 'gray')
-        plt.axis('off')
-
-        # Use BytesIO to save Matplotlib image to ram
-        img_stream = BytesIO()
-        plt.savefig(img_stream, format = 'png', bbox_inches = 'tight', pad_inches = 0)
-        img_stream.seek(0)
-
-        # 使用 OpenCV 讀取並縮放圖片
-        img = cv2.imdecode(np.frombuffer(img_stream.read(), dtype=np.uint8), 1)
-        img_resized = cv2.resize(img, (150, 100))
-
-        # 將縮放後的圖片轉換為 NumPy 陣列
-        img_resized_gray = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
-        img_resized_gray_array = np.asarray(img_resized_gray)
-
-        # Plot all three channel (For test)
-        # cv2.imwrite('./Spectrogram_test/' + xyz[i] + '.png', img_resized)
-
-        array_list.append(img_resized_gray_array)
-
-    # 合併成一張彩色圖片 (100, 150, 3)
-    # Also, ues RGB instead of BGR. Easier to read
-    color_image = np.stack([array_list[2], array_list[0], array_list[1]], axis = -1)
-
-    return color_image
-
-if __name__ == "__main__":
+def do_Spectrogram_dataprep_noise():
 
     stream_list = []
     Spectrogram_train_data_X = np.array([])
     Spectrogram_train_data_list = []
 
     file_name_part = 'HLX'
-
-    all = 0
-    useable = 0
 
     datadir = './data_QSIS_Noise'
     file_name_part = 'HLX'
@@ -90,14 +25,14 @@ if __name__ == "__main__":
 
 
     for i in tqdm.trange(len(sac_files_X)):
-        stream = Stream()
-        st = read(sac_files_X[i])
+        stream = obspy.Stream()
+        st = obspy.read(sac_files_X[i])
         stream += st
 
-        st = read(sac_files_Y[i])
+        st = obspy.read(sac_files_Y[i])
         stream += st
 
-        st = read(sac_files_Z[i])
+        st = obspy.read(sac_files_Z[i])
         stream += st
 
         stream_list.append(stream)
@@ -105,7 +40,7 @@ if __name__ == "__main__":
     for i in tqdm.trange(len(stream_list)):
     # for i in tqdm.trange(4):
 
-        Spectrogram_train_data_append = stream_to_spectrogram_ndarray(stream_list[i])
+        Spectrogram_train_data_append = functions.stream_to_spectrogram_ndarray(stream_list[i])
         Spectrogram_train_data_list.append(Spectrogram_train_data_append)
 
     Spectrogram_train_data_X = np.stack(Spectrogram_train_data_list)
@@ -129,3 +64,9 @@ if __name__ == "__main__":
 
     print(Xevent.shape)
     print(Yevent.shape)
+
+
+
+
+if __name__ == "__main__":
+    do_Spectrogram_dataprep_noise()
