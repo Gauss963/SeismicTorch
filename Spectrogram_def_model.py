@@ -1,6 +1,11 @@
+import os
+import sys
 import torch
 import torch.nn as nn
+
+from io import StringIO
 from thop import profile
+from torchviz import make_dot
 
 class SpectrogramCNN(nn.Module):
     def __init__(self):
@@ -60,17 +65,52 @@ class SpectrogramCNN(nn.Module):
 
         return x
 
-if __name__ == "__main__":
+def do_check_SpectrogramCNN_model():
+    # 保存原始的標準輸出流
+    original_stdout = sys.stdout
+
+    # 創建一個StringIO對象，用於捕捉打印內容
+    output_buffer = StringIO()
+
+    # 將標準輸出流設置為StringIO對象
+    sys.stdout = output_buffer
+
+    # 执行模型相關的打印操作
     model_plot = SpectrogramCNN()
     input_tensor = torch.randn(1, 3, 100, 150)
     output = model_plot(input_tensor)
-    # print(output)
     print(output.shape)
 
-    total = sum([param.nelement() for param in model_plot.parameters()])
-    print("Number of parameter: %.2f" % (total))
+    total_params = sum([param.nelement() for param in model_plot.parameters()])
+    print(f"Number of parameters: {total_params:.2f}")
 
-
-    macs, params = profile(model_plot, inputs = (input_tensor, ))
+    macs, params = profile(model_plot, inputs=(input_tensor,))
     flops = macs * 2
     print(f'The model has {flops} FLOPs')
+
+    # 將標準輸出流還原為原始流
+    sys.stdout = original_stdout
+
+    # 獲取StringIO對象中的內容
+    output_content = output_buffer.getvalue()
+
+    # 將內容保存到文件
+    with open('./time_evaluation_info/SpectrogramCNN_model_info.tex', 'w') as file:
+        file.write('\\begin{frame}[fragile]{About Model: Structure}\n')
+        file.write('\\tiny\n')
+        file.write('{\n')
+        file.write('\\begin{verbatim}\n')
+        file.write(output_content)
+        file.write('\\end{verbatim}\n')
+        file.write('}\n')
+        file.write('\end{frame}\n')
+
+    # 生成模型結構圖並保存
+    output = model_plot(input_tensor)
+    dot = make_dot(output, params=dict(model_plot.named_parameters()), show_attrs=False)
+    dot.render("./model_structure/SpectrogramCNN_Model", format = "pdf")
+    os.remove("./model_structure/SpectrogramCNN_Model")
+
+
+if __name__ == "__main__":
+    do_check_SpectrogramCNN_model()

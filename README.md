@@ -29,8 +29,16 @@ The overall accuracy for the pre-train model is 93%.
 ## Code of data preparation functions
 
 ```python
+import cv2
+import matplotlib.pyplot as plt
 import numpy as np
+import scipy
 import scipy.signal as signal
+
+from io import BytesIO
+from obspy.taup import TauPyModel
+from obspy.geodetics import gps2dist_azimuth
+from obspy.signal.trigger import classic_sta_lta
 
 def quantize(A, dtype = np.int16):
     'quantize float data in range [-127,127]'
@@ -99,124 +107,48 @@ def normalize(data):
     max_data[max_data == 0] = 1
     data /= max_data              
     return data
-```
 
-## Code of model training function
-```python
-def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
-    since = time.time()
+def stream_to_spectrogram_ndarray(input_Stream):
+    xyz = ['x', 'y', 'z']
+    array_list = []
+    for i in range(3):
+        trace = input_Stream[i]
+        trace_acceleration = trace.data
 
-    best_model_wts = copy.deepcopy(model.state_dict())
-    best_acc = 0.0
+        # 設置 Spectrogram 參數
+        fs = trace.stats.sampling_rate  # 取樣率
+        nperseg = 256                   # 每個段的數據點數
+        noverlap = nperseg // 2         # 重疊的數據點數
 
-    epoch_arr = np.array([])
-    lr_arr = np.array([])
-    train_loss_arr = np.array([])
-    train_acc_arr = np.array([])
+        # Draw Spectrogram
+        frequencies, times, Sxx = scipy.signal.spectrogram(trace_acceleration, fs=fs, nperseg=nperseg, noverlap=noverlap)
 
-    val_loss_arr = np.array([])
-    val_acc_arr = np.array([])
+        plt.pcolormesh(times, frequencies, 10 * np.log10(Sxx), shading = 'auto', cmap = 'gray')
+        plt.axis('off')
 
-    for epoch in range(num_epochs):
-        print(f'Epoch {epoch}/{num_epochs - 1}')
-        print('-' * 10)
+        # Use BytesIO to save Matplotlib image to ram
+        img_stream = BytesIO()
+        plt.savefig(img_stream, format = 'png', bbox_inches = 'tight', pad_inches = 0)
+        img_stream.seek(0)
 
-        # Each epoch has a training and validation phase
-        for phase in ['train', 'val']:
-            if phase == 'train':
-                model.train()  # Set model to training mode
-            else:
-                model.eval()   # Set model to evaluate mode
+        # 使用 OpenCV 讀取並縮放圖片
+        img = cv2.imdecode(np.frombuffer(img_stream.read(), dtype=np.uint8), 1)
+        img_resized = cv2.resize(img, (150, 100))
 
-            running_loss = 0.0
-            running_corrects = 0
+        # 將縮放後的圖片轉換為 NumPy 陣列
+        img_resized_gray = cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY)
+        img_resized_gray_array = np.asarray(img_resized_gray)
 
-            # These lists will hold all labels and predictions for this epoch
-            # all_labels = []
-            # all_preds = []
+        # Plot all three channel (For test)
+        # cv2.imwrite('./Spectrogram_test/' + xyz[i] + '.png', img_resized)
 
-            all_labels = np.array([])
-            all_preds = np.array([])
+        array_list.append(img_resized_gray_array)
 
-            # Iterate over data.
-            for inputs, labels in dataloaders[phase]:
-                inputs = inputs
-                labels = labels
+    # 合併成一張彩色圖片 (100, 150, 3)
+    # Also, ues RGB instead of BGR. Easier to read
+    color_image = np.stack([array_list[2], array_list[0], array_list[1]], axis = -1)
 
-                # zero the parameter gradients
-                optimizer.zero_grad()
-
-                # forward
-                # track history if only in train
-                with torch.set_grad_enabled(phase == 'train'):
-                    outputs = model(inputs)
-                    _, preds = torch.max(outputs, 1)
-                    _, labels = torch.max(labels.data, 1)
-                    loss = criterion(outputs, labels)
-
-                    # backward + optimize only if in training phase
-                    if phase == 'train':
-                        loss.backward()
-                        optimizer.step()
-
-                # statistics
-                running_loss += loss.item() * inputs.size(0)
-                running_corrects += torch.sum(preds == labels.data)
-
-                # Add current labels and predictions to the lists
-                # all_labels.extend(labels.tolist())
-                # all_preds.extend(preds.tolist())
-
-                all_labels = np.append(all_labels, labels.tolist())
-                all_preds = np.append(all_preds, preds.tolist())
-
-            if phase == 'train':
-                scheduler.step()
-
-            epoch_loss = running_loss / dataset_sizes[phase]
-            epoch_acc = running_corrects / dataset_sizes[phase]
-
-            print(f'{phase} Loss: {epoch_loss:.4f} Acc: {epoch_acc:.4f}')
-
-            # After each epoch, compute and print the confusion matrix
-            if phase == 'val':
-                print("Confusion Matrix:")
-                cm_here = confusion_matrix(all_labels, all_preds)
-                print(cm_here)
-
-            # save the loss and accurracy
-            if phase == 'train':
-                train_loss_arr = np.append(train_loss_arr, epoch_loss)
-                train_acc_arr = np.append(train_acc_arr, epoch_acc.detach().cpu())
-                lr_arr = np.append(lr_arr, optimizer.param_groups[0]['lr'])
-                epoch_arr = np.append(epoch_arr, epoch)
-            elif phase == 'val':
-                val_loss_arr = np.append(val_loss_arr, epoch_loss)
-                val_acc_arr = np.append(val_acc_arr, epoch_acc.detach().cpu())
-
-            # deep copy the model
-            if phase == 'val' and epoch_acc > best_acc:
-                best_acc = epoch_acc
-                best_model_wts = copy.deepcopy(model.state_dict())
-
-    time_elapsed = time.time() - since
-    print(f'Training complete in {time_elapsed // 60:.0f}m {time_elapsed % 60:.0f}s')
-    print(f'Best val Acc: {best_acc:4f}')
-
-    # load best model weights
-    model.load_state_dict(best_model_wts)
-
-    model_class = MyModel(model = model, 
-                          epoch_arr = epoch_arr, 
-                          train_loss_arr = train_loss_arr, 
-                          val_loss_arr = val_loss_arr, 
-                          train_acc_arr = train_acc_arr, 
-                          val_acc_arr = val_acc_arr, 
-                          lr_arr = lr_arr, 
-                          cm = cm_here, 
-                          best_acc = best_acc)
-
-    return model_class
+    return color_image
 ```
 
 ## Time Series Model Definition
@@ -285,10 +217,6 @@ class EarthquakeCNN(nn.Module):
 ## Spectrogram Model Definition
 
 ```python
-import torch
-import torch.nn as nn
-from thop import profile
-
 class SpectrogramCNN(nn.Module):
     def __init__(self):
         super(SpectrogramCNN, self).__init__()
