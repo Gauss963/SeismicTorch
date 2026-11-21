@@ -1,0 +1,62 @@
+{
+  "report_pages": 37,
+  "manuscript_figures": 20,
+  "standalone_matrix_figures": 1,
+  "all_generated_figures_vector_pdf": true,
+  "test_clips": 47,
+  "offset_evaluations": 141,
+  "center_confusion": [
+    [
+      13,
+      1,
+      0
+    ],
+    [
+      0,
+      12,
+      0
+    ],
+    [
+      0,
+      0,
+      21
+    ]
+  ],
+  "center_accuracy": 0.9787234042553191,
+  "positive_offset_accuracy": 0.9574468085106383,
+  "training_pool_unique_centered_inputs": 226,
+  "sensitivity_fits": 60,
+  "sensitivity_aggregate_epochs": 4800,
+  "sensitivity_independent_confirmation_unused": true,
+  "dense_event_samples": 30001,
+  "native_arm64_ci_passed": true,
+  "physical_pi5_tested": false,
+  "exact_replay_epochs": 20,
+  "all_27_state_tensors_equal": true,
+  "model_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "report_sha256": "52b097d5a67c209c234840f002130aef4d2c5c1ed2f3ca0345c2e0752c436a5d",
+  "figure_sha256": {
+    "confidence_and_native_parity.pdf": "79ce1e4c5aeb1bed15dd063a6f58718d8282bc80eac404469a2d94d9f95596d2",
+    "confusion_matrix_historical.pdf": "f61b706806fb63a34d42fe028ffb0376ac629ee039dc05d74e876fc633dbf44c",
+    "confusion_matrix_offsets.pdf": "ab68b3e260ba9592bec0900db21b325eaedcc7360ac8f7c569f57cd2e11b6758",
+    "confusion_matrix_qsis_47.pdf": "8ed7fd506cdaaafc9350464f62afc3f6172099a45385ee950fdf3a8c705c72fe",
+    "confusion_matrix_test.pdf": "6fd6b009de8c496227af6698f4de5d7eeef3e4463344ea415dc213dd9960056b",
+    "dataset_composition.pdf": "670401db659b9f08e726e3abbfeaaf91b30e91d032b28d47f8806a0c0d0a270b",
+    "error_cases.pdf": "cb14306cf78bdacacf360f52051b046d21edc4526ad0ca2f0056390c95c34451",
+    "pipeline_architecture.pdf": "11bf39ff7a7ec586fa0df6a2e011229a12ccacf87e8912b719ed9402294b5fdd",
+    "reference_coverage.pdf": "ead2521f465193d2843518cee81dc30598899e4bda7848f284c12c4501b45c75",
+    "sensitivity_capacity.pdf": "228b8ab310f2422c8fa5e9ec0fe459bde72a6963084032e90cbdc06f6ea2b6a1",
+    "sensitivity_depth.pdf": "ff4e7eeaff80d5eb75ad308cdf0ea34693a20fca3509c4dbb0905dc8fb63bc75",
+    "sensitivity_epochs.pdf": "4130c46b515dde7dbadfad2a77b84494e99f8a5cecfd4f2099371962b7e8dc5d",
+    "spectral_diagnostics.pdf": "2ed26a49b8e5b55558f6d66ef6cc70eda9b4a23b2bba4d924a3ed84d3dcd3e92",
+    "timing_and_uncertainty.pdf": "171ea6b7530c036bf0280a880940d5b41d459aa0e209c22a17ad2bba4f661f2d",
+    "training_cwa.pdf": "18d5822cb7229f436158f73fc69ad65c70c3453f39dcc3129bb431ef7e805e14",
+    "training_final.pdf": "47da57d3c448ae9cbe863476d565454145d6a1d1a19b852368439eef9bf84708",
+    "training_qsis_baseline.pdf": "83f462dfe193c620c7a0726b20ab74020138ad437b4cab3df5b62f4267d6d4e4",
+    "training_stead.pdf": "1e7628accccd8c0ff06cbba533e30c71770d37b11f8293abf1a10828033e39b5",
+    "waveform_examples.pdf": "9bdd0eb4495a86cf4beba7d93d026ed3317fa19dc6b6628946fb2dd355cbb93e",
+    "waveform_inference_event.pdf": "85a63a20d15e19ee159d98f53cb3d97a9f151685dd17f1cb061607caba2d41c9",
+    "waveform_inference_full_record.pdf": "7da8d8a1dba7a78ba07012d2abfd0fcc0cc0152ec09f7d8dbf34f21fec536a80"
+  },
+  "checks": "Source receipts, regenerated predictions, source-weight identity, vector PDF files, manuscript references and nonempty rendered document"
+}

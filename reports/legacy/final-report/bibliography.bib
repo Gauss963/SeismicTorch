@@ -7,7 +7,7 @@
     pages = {2030-2039},
     year = {2023},
     month = {04},
-    abstract = "{Earthquake detection is the critical first step in earthquake early warning (EEW) systems. For robust EEW systems, detection accuracy, detection latency, and sensor density are critical to providing real‐time earthquake alerts. Traditional EEW systems use fixed sensor networks or, more recently, networks of mobile phones equipped with microelectromechanical systems (MEMS) accelerometers. Internet of things edge devices, with built‐in tiny machine learning (tinyML) capable microcontrollers, and always‐on, internet‐connected, stationary MEMS accelerometers provide the opportunity to deploy ML‐based earthquake detection and warning using a single‐station approach at a global scale. Here, I test and evaluate tinyML deep learning algorithms for earthquake detection on a microcontroller. I show that the tinyML earthquake detection models can generalize to earthquakes outside the training set.}",
+    abstract = "{Earthquake detection is the critical first step in earthquake early warning (EEW) systems. For robust EEW systems, detection accuracy, detection latency, and sensor density are critical to providing real-time earthquake alerts. Traditional EEW systems use fixed sensor networks or, more recently, networks of mobile phones equipped with microelectromechanical systems (MEMS) accelerometers. Internet of things edge devices, with built-in tiny machine learning (tinyML) capable microcontrollers, and always-on, internet-connected, stationary MEMS accelerometers provide the opportunity to deploy ML-based earthquake detection and warning using a single-station approach at a global scale. Here, I test and evaluate tinyML deep learning algorithms for earthquake detection on a microcontroller. I show that the tinyML earthquake detection models can generalize to earthquakes outside the training set.}",
     issn = {0895-0695},
     doi = {10.1785/0220220322},
     url = {https://doi.org/10.1785/0220220322},
@@ -29,7 +29,7 @@ DOI = {10.3390/app10082919}
 }
 
 @article{10.1785/0120180080,
-    author = {Ross, Zachary E. and Meier, Men‐Andrin and Hauksson, Egill and Heaton, Thomas H.},
+    author = {Ross, Zachary E. and Meier, Men-Andrin and Hauksson, Egill and Heaton, Thomas H.},
     title = "{Generalized Seismic Phase Detection with Deep Learning}",
     journal = {Bulletin of the Seismological Society of America},
     volume = {108},
@@ -37,7 +37,7 @@ DOI = {10.3390/app10082919}
     pages = {2894-2901},
     year = {2018},
     month = {08},
-    abstract = "{To optimally monitor earthquake‐generating processes, seismologists have sought to lower detection sensitivities ever since instrumental seismic networks were started about a century ago. Recently, it has become possible to search continuous waveform archives for replicas of previously recorded events (i.e., template matching), which has led to at least an order of magnitude increase in the number of detected earthquakes and greatly sharpened our view of geological structures. Earthquake catalogs produced in this fashion, however, are heavily biased in that they are completely blind to events for which no templates are available, such as in previously quiet regions or for very large‐magnitude events. Here, we show that with deep learning, we can overcome such biases without sacrificing detection sensitivity. We trained a convolutional neural network (ConvNet) on the vast hand‐labeled data archives of the Southern California Seismic Network to detect seismic body‐wave phases. We show that the ConvNet is extremely sensitive and robust in detecting phases even when masked by high background noise and when the ConvNet is applied to new data that are not represented in the training set (in particular, very large‐magnitude events). This generalized phase detection framework will significantly improve earthquake monitoring and catalogs, which form the underlying basis for a wide range of basic and applied seismological research.}",
+    abstract = "{To optimally monitor earthquake-generating processes, seismologists have sought to lower detection sensitivities ever since instrumental seismic networks were started about a century ago. Recently, it has become possible to search continuous waveform archives for replicas of previously recorded events (i.e., template matching), which has led to at least an order of magnitude increase in the number of detected earthquakes and greatly sharpened our view of geological structures. Earthquake catalogs produced in this fashion, however, are heavily biased in that they are completely blind to events for which no templates are available, such as in previously quiet regions or for very large-magnitude events. Here, we show that with deep learning, we can overcome such biases without sacrificing detection sensitivity. We trained a convolutional neural network (ConvNet) on the vast hand-labeled data archives of the Southern California Seismic Network to detect seismic body-wave phases. We show that the ConvNet is extremely sensitive and robust in detecting phases even when masked by high background noise and when the ConvNet is applied to new data that are not represented in the training set (in particular, very large-magnitude events). This generalized phase detection framework will significantly improve earthquake monitoring and catalogs, which form the underlying basis for a wide range of basic and applied seismological research.}",
     issn = {0037-1106},
     doi = {10.1785/0120180080},
     url = {https://doi.org/10.1785/0120180080},
@@ -46,10 +46,57 @@ DOI = {10.3390/app10082919}
 
 @ARTICLE{8871127,
   author={Mousavi, S. Mostafa and Sheng, Yixiao and Zhu, Weiqiang and Beroza, Gregory C.},
-  journal={IEEE Access}, 
-  title={STanford EArthquake Dataset (STEAD): A Global Data Set of Seismic Signals for AI}, 
+  journal={IEEE Access},
+  title={STanford EArthquake Dataset (STEAD): A Global Data Set of Seismic Signals for AI},
   year={2019},
   volume={7},
   number={},
   pages={179464-179476},
   doi={10.1109/ACCESS.2019.2947848}}
+
+@misc{iesData,
+ author = {Kumar, Utpal},
+ title = {{IES Building Seismic Response Dataset (SMA-1 and QSIS Hybrid, 1999--2024)}},
+ year = {2025},
+ publisher = {Zenodo},
+ doi = {10.5281/zenodo.17469923},
+ howpublished = {\url{https://zenodo.org/records/17469923}},
+ note = {Published 29 October 2025; accessed 21 November 2026}
+}
+@misc{cwaData,
+ author = {{NLPLabNTUST}},
+ title = {{CWA Benchmark: A Seismic Dataset from Taiwan for Seismic Research}},
+ howpublished = {\url{https://huggingface.co/datasets/NLPLabNTUST/NoMerged-CWA}},
+ note = {Dataset card and TSMIP archive; accessed 21 November 2026}
+}
+@article{phasenet,
+ author = {Zhu, Weiqiang and Beroza, Gregory C.},
+ title = {{PhaseNet}: a deep-neural-network-based seismic arrival-time picking method},
+ journal = {Geophysical Journal International},
+ year = {2019}, volume = {216}, number = {1}, pages = {261--273},
+ doi = {10.1093/gji/ggy423}
+}
+@article{utrans,
+ author = {Saad, Omar M. and Chen, Yangkang and Alkhalifah, Tariq},
+ title = {{U-Trans}: a foundation model for seismic waveform representation and enhanced downstream earthquake tasks},
+ journal = {Scientific Reports}, year = {2026}, volume = {16}, pages = {12657},
+ doi = {10.1038/s41598-026-41454-x}
+}
+@article{phasenext,
+ author = {Naoi, Makoto and Shimojo, Kengo and Tamaribuchi, Koji},
+ title = {{PhaseNeXt}: neural phase picker trained on 20-year records to process the {JMA}-unified data set},
+ journal = {Earth, Planets and Space}, year = {2026}, volume = {78}, pages = {245},
+ doi = {10.1186/s40623-026-02578-6},
+ note = {Published 4 November 2026}
+}
+@article{dtpp,
+ author = {Lv, Shuai and Peng, Yuxiang},
+ journal = {Artificial Intelligence in Geosciences},
+ volume = {7},
+ number = {1},
+ pages = {100189},
+ title = {{DTPP}: An efficient depthwise separable {TCN} for seismic phase picking},
+ year = {2026},
+ doi = {10.1016/j.aiig.2026.100189},
+ note = {Primary publisher record; accessed 21 November 2026}
+}

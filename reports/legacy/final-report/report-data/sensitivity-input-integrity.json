@@ -1,0 +1,8 @@
+{
+  "sources": 226,
+  "unique_centered_inputs": 226,
+  "repeated_input_groups": [],
+  "cross_fold_identical_inputs": [],
+  "passed": true,
+  "training_sources_only": true
+}

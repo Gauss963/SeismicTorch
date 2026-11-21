@@ -1,0 +1,48 @@
+{
+  "id": "IHP-003",
+  "site": "IES",
+  "station": "5AE21",
+  "event": "20221010192442",
+  "origin_utc": "2022-10-10T19:24:42.500000Z",
+  "start_utc": "2022-10-10T19:23:09.306000Z",
+  "origin_offset": 93.194,
+  "sample_rate": 100,
+  "npts": 30001,
+  "paths": [
+    "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLX.2022.10.10.19.23.09.sac",
+    "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLY.2022.10.10.19.23.09.sac",
+    "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLZ.2022.10.10.19.23.09.sac"
+  ],
+  "waveform_sha256": [
+    "21b7fdd7786096a786f042397289bcc03822438763f3eccb68c2bc66e5428ef4",
+    "6baa962fa22ec1005a4951c19a59a46cffb9bdabea2f07079481a43c386b7547",
+    "bdf2737130290c9fb3109224bdcb7f16e2f1ddd1e5f40d9ae36ee2e2bcb57c70"
+  ],
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "binary_version": "1.0.0 model=634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "stride": 1,
+  "threads": 4,
+  "finite_centers": 29802,
+  "nan_centers": 199,
+  "reference_times_after_origin": {
+    "P": 22.85,
+    "S": 38.25
+  },
+  "reference_checks": [
+    {
+      "phase": "P",
+      "center_sample": 11604,
+      "max_probability_error": 8.37885724561463e-09
+    },
+    {
+      "phase": "S",
+      "center_sample": 13144,
+      "max_probability_error": 5.771786423369035e-11
+    }
+  ],
+  "plot_excerpt_after_origin": [
+    -12,
+    70
+  ],
+  "scope": "Full-record preprocessing and dense 100 Hz inference; only the two reviewed phase clips have labels. This is a qualitative display, not continuous detection accuracy."
+}

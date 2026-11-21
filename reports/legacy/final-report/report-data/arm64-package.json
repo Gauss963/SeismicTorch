@@ -1,0 +1,15 @@
+{
+  "ci_url": "https://github.com/Gauss963/SeismicTorch/actions/runs/44905643313",
+  "build_commit": "57117f874d82e859f76e5bbe65329cc9bb1254b3",
+  "release_tag": "v1.0.0",
+  "inference_sources_equal_release_tag": true,
+  "artifact": "seismictorch-1.0.0-linux-arm64.tar.gz",
+  "sha256": "447abd1f25b3740a7145e5e332a63e87ca75ee446835c874347b14c3122b13df",
+  "target": "ARMv8-A Linux, Raspberry Pi 5 with a 64-bit OS",
+  "fully_static": true,
+  "native_arm64_tests_passed": 4,
+  "physical_pi5_tested": false,
+  "existing_release_packages_unchanged": true,
+  "published_four_package_checksums_verified": true,
+  "published_release_url": "https://github.com/Gauss963/SeismicTorch/releases/tag/v1.0.0"
+}

@@ -1,0 +1,80 @@
+{
+  "source_files": {
+    "selected_training": {
+      "path": "models/qsis/current/training.json",
+      "sha256": "0e9449932f21ff2248b4a183b303fe845132cbcc2d41e65ad856e9b3f9a5d283"
+    },
+    "selected_evaluation": {
+      "path": "models/qsis/current/evaluation-ies-confirmation.json",
+      "sha256": "b91a4171618a3ac37f46fc9a41b04548628aca0d4228fdef4d4cec08570cf05f"
+    },
+    "selected_model": {
+      "path": "models/qsis/current/model.pth",
+      "sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424"
+    },
+    "stead_metrics": {
+      "path": "runs/waveform-2026-11-12/stead/metrics.json",
+      "sha256": "50e6e06fd24bde244e77fb96ca6b4f07834dbf8cac52616149df7460108d472b"
+    },
+    "qsis_baseline_metrics": {
+      "path": "runs/waveform-2026-11-12/qsis/metrics.json",
+      "sha256": "53ee18c013f0c4b986e503d68e659952b656ea10a97a8858fdedfff758544f8a"
+    },
+    "cwa_metrics": {
+      "path": "runs/qsis-benchmark/cwa-pretrain-42/metrics.json",
+      "sha256": "900f3b7e28048068c4d723f0c1c12bda53b6616034c5692acdb9cae8ca5a51d9"
+    },
+    "fresh_comparison": {
+      "path": "runs/qsis-ies-hybrid/comparison.json",
+      "sha256": "7f8647a2735f75d566a905a8fc37103ef046e99fc79cfba45f62428cbb0a56c0"
+    },
+    "prior_comparison": {
+      "path": "runs/qsis-prospective-gravity/comparison.json",
+      "sha256": "ecb1076f9cfeaf034257b15f2eb925d7e9424fa388dde34edb99d6ecbacd3dcf"
+    },
+    "supplemental_comparison": {
+      "path": "runs/qsis-prospective-gravity/array-followup/supplemental-comparison.json",
+      "sha256": "fb5ba62dabf2c6604cd0508344e58c5f1012cffb9c819966331d3dc3226f3197"
+    },
+    "archived_comparison": {
+      "path": "runs/qsis-ccul-extra/record-orientation-generalization-controlled.json",
+      "sha256": "c2d32c7a75d15e7cfe6329291b2002682baf52d9f9898631ad26e45004a069d9"
+    },
+    "verification": {
+      "path": "runs/qsis-ies-hybrid/verification.json",
+      "sha256": "b2a0167e22e31ad396a7ecca902fedfae93b7e47dee7dfd2db42529ec34f4a60"
+    },
+    "cpp_parity": {
+      "path": "runs/cpp-inference/parity.json",
+      "sha256": "2747c6cc3510c1c351105ba30285565837a1a4e147788eb0e361c53677256447"
+    },
+    "cpp_release": {
+      "path": "runs/cpp-inference/release.json",
+      "sha256": "2c6d4197f605f5f2c418e650741ca003cd55a04dc792b77a6e092c2d0ad7c755"
+    },
+    "stead_history": {
+      "path": "runs/waveform-2026-11-12/stead/history.jsonl",
+      "sha256": "36e0453c4902a1d4d3c166652d9c711defd32a7bb4fabb534918081c35d1a9da"
+    },
+    "qsis_history": {
+      "path": "runs/waveform-2026-11-12/qsis/history.jsonl",
+      "sha256": "b248620a935940e0747c245063060247e9ac052e72dfe75aeed1df99c7362e96"
+    }
+  },
+  "model_parameter_count": 33795,
+  "training_class_counts": {
+    "0": 33,
+    "1": 47,
+    "2": 146
+  },
+  "training_orientation_counts": {
+    "unchanged": 122,
+    "record_gravity": 104
+  },
+  "test_clips": 47,
+  "test_evaluations": 141,
+  "test_dates": 21,
+  "test_predictions_recomputed": true,
+  "matrix_rows": "reference",
+  "matrix_columns": "prediction"
+}

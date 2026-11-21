@@ -1,0 +1,2400 @@
+{
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "offsets": [
+    -0.2,
+    0,
+    0.2
+  ],
+  "records": [
+    {
+      "id": "GPH-001",
+      "label": 0,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "RCEC",
+      "day": "2023-10-22",
+      "center_sample": 12313,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLX.2023.10.22.06.52.11.sac",
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLY.2023.10.22.06.52.11.sac",
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLZ.2023.10.22.06.52.11.sac"
+      ],
+      "waveform_sha256": [
+        "539218ad295385c6cf92aca538d9602a651d5656b3cea3b6b282bc3d1fd75ae6",
+        "9503d3bd12f0c593d76b24874f18d7c99f980d3e522cfdf7b4287b42cc528e51",
+        "d03b0bcf92b923b5ca2217dae46a86419fe81da9e8e146d05b9e81b18f918c55"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9974229335784912,
+          0.0004598877567332238,
+          0.002117127412930131
+        ],
+        [
+          0.9975746273994446,
+          0.0006655420293100178,
+          0.0017597980331629515
+        ],
+        [
+          0.9928931593894958,
+          0.0002451888285577297,
+          0.006861554924398661
+        ]
+      ]
+    },
+    {
+      "id": "GPH-001",
+      "label": 1,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "RCEC",
+      "day": "2023-10-22",
+      "center_sample": 13263,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLX.2023.10.22.06.52.11.sac",
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLY.2023.10.22.06.52.11.sac",
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLZ.2023.10.22.06.52.11.sac"
+      ],
+      "waveform_sha256": [
+        "539218ad295385c6cf92aca538d9602a651d5656b3cea3b6b282bc3d1fd75ae6",
+        "9503d3bd12f0c593d76b24874f18d7c99f980d3e522cfdf7b4287b42cc528e51",
+        "d03b0bcf92b923b5ca2217dae46a86419fe81da9e8e146d05b9e81b18f918c55"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.19274845719337463,
+          0.8071147203445435,
+          0.00013681525888387114
+        ],
+        [
+          0.07907290756702423,
+          0.920759916305542,
+          0.00016715808305889368
+        ],
+        [
+          0.06782598793506622,
+          0.9263636469841003,
+          0.005810440983623266
+        ]
+      ]
+    },
+    {
+      "id": "GPH-015",
+      "label": 1,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "CCUL",
+      "day": "2025-03-25",
+      "center_sample": 15800,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLX.2025.03.25.01.40.48.sac",
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLY.2025.03.25.01.40.48.sac",
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLZ.2025.03.25.01.40.48.sac"
+      ],
+      "waveform_sha256": [
+        "a1cc9a43020952554d1d5529a2922153b6be5233b294bf4431395f306343dcb0",
+        "6203af601b7389a5465b81426d7f9eb032d7dccfc95d74546c20e462285c20b1",
+        "6cf14a382fb3ec93c27833f63f894cd2e5dc85693d693e5a87fbef34feae4dbd"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0014358223415911198,
+          0.9984325766563416,
+          0.0001316429697908461
+        ],
+        [
+          0.0034478704910725355,
+          0.9964260458946228,
+          0.0001260178250959143
+        ],
+        [
+          0.11332786083221436,
+          0.8861663937568665,
+          0.0005057319649495184
+        ]
+      ]
+    },
+    {
+      "id": "GPH-016",
+      "label": 0,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "HW02",
+      "day": "2025-08-24",
+      "center_sample": 12868,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLX.2025.08.24.12.55.05.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLY.2025.08.24.12.55.05.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLZ.2025.08.24.12.55.05.sac"
+      ],
+      "waveform_sha256": [
+        "c1200fc8f3dc8e4c58ca579d9aaa3551ab0903766cc25a5b84fc251e2e7b1bc8",
+        "9f9d16c721d26d0d858986f915eb275f934380920024b0585ab666bc2bc7c14b",
+        "942430e92b3988385684c6c750809e7d2c6e5e345be84ff425178285ece85d63"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9970670342445374,
+          0.0028170179575681686,
+          0.00011603189341258258
+        ],
+        [
+          0.9983722567558289,
+          0.0015995685243979096,
+          2.8218231818755157e-05
+        ],
+        [
+          0.9986870884895325,
+          0.00126294931396842,
+          5.001563113182783e-05
+        ]
+      ]
+    },
+    {
+      "id": "GPH-016",
+      "label": 1,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "HW02",
+      "day": "2025-08-24",
+      "center_sample": 13543,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLX.2025.08.24.12.55.05.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLY.2025.08.24.12.55.05.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLZ.2025.08.24.12.55.05.sac"
+      ],
+      "waveform_sha256": [
+        "c1200fc8f3dc8e4c58ca579d9aaa3551ab0903766cc25a5b84fc251e2e7b1bc8",
+        "9f9d16c721d26d0d858986f915eb275f934380920024b0585ab666bc2bc7c14b",
+        "942430e92b3988385684c6c750809e7d2c6e5e345be84ff425178285ece85d63"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0006757596274837852,
+          0.9990323781967163,
+          0.00029187442851252854
+        ],
+        [
+          0.0015906562330201268,
+          0.9983149766921997,
+          9.437397966394201e-05
+        ],
+        [
+          0.002308274619281292,
+          0.9976669549942017,
+          2.4852583010215312e-05
+        ]
+      ]
+    },
+    {
+      "id": "GPH-017",
+      "label": 0,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "HW02",
+      "day": "2025-08-27",
+      "center_sample": 14005,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLX.2025.08.27.13.11.00.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLY.2025.08.27.13.11.00.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLZ.2025.08.27.13.11.00.sac"
+      ],
+      "waveform_sha256": [
+        "a3d32c2a67bce8e26c57a7c548bc18661d38608168a6ba8699f1823f08103917",
+        "4c9143c91e08c2d517f20e36724967752ae9f7bb9a861ab8fc65fc009a085130",
+        "4fd53fedbc1202e6021ba62370ac6f3dd982e477da59f00264dbdac208315f22"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.6352198719978333,
+          0.007148159667849541,
+          0.35763201117515564
+        ],
+        [
+          0.9440348744392395,
+          0.001454864046536386,
+          0.054510194808244705
+        ],
+        [
+          0.9808446168899536,
+          0.0009920841548591852,
+          0.018163302913308144
+        ]
+      ]
+    },
+    {
+      "id": "GPH-017",
+      "label": 1,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "HW02",
+      "day": "2025-08-27",
+      "center_sample": 15595,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLX.2025.08.27.13.11.00.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLY.2025.08.27.13.11.00.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLZ.2025.08.27.13.11.00.sac"
+      ],
+      "waveform_sha256": [
+        "a3d32c2a67bce8e26c57a7c548bc18661d38608168a6ba8699f1823f08103917",
+        "4c9143c91e08c2d517f20e36724967752ae9f7bb9a861ab8fc65fc009a085130",
+        "4fd53fedbc1202e6021ba62370ac6f3dd982e477da59f00264dbdac208315f22"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0012862707953900099,
+          0.9981083869934082,
+          0.0006053500692360103
+        ],
+        [
+          0.0019021531334146857,
+          0.9977078437805176,
+          0.00039004621794447303
+        ],
+        [
+          0.005980856250971556,
+          0.9934991598129272,
+          0.0005200942978262901
+        ]
+      ]
+    },
+    {
+      "id": "GPH-018",
+      "label": 1,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "CHY01",
+      "day": "2025-12-23",
+      "center_sample": 15718,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AEA0/5AEA0.TW.HLX.2025.12.23.07.46.09.sac",
+        "runs/qsis-prospective-gravity/sac/5AEA0/5AEA0.TW.HLY.2025.12.23.07.46.09.sac",
+        "runs/qsis-prospective-gravity/sac/5AEA0/5AEA0.TW.HLZ.2025.12.23.07.46.09.sac"
+      ],
+      "waveform_sha256": [
+        "972c8e2f2bf206996f2e70060be81e2c0c9fb4f989ffe68c6ae756f0fb9a7902",
+        "bf95f6e4f9be1e86b2b5496aafae305d7c50a5ca7c71b28a6426ec8c921fd643",
+        "06c5f2c94c1ee22f8850da2bd06eff22685191ed0166ee7c728ff0b97de85f38"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0016834466950967908,
+          0.9982224106788635,
+          9.411232895217836e-05
+        ],
+        [
+          0.00040388162597082555,
+          0.9995294809341431,
+          6.661444786004722e-05
+        ],
+        [
+          8.68602583068423e-05,
+          0.9998985528945923,
+          1.4591252693207934e-05
+        ]
+      ]
+    },
+    {
+      "id": "GPB-001",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "RCEC",
+      "day": "2023-10-22",
+      "center_sample": 2399,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLX.2023.10.22.06.52.11.sac",
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLY.2023.10.22.06.52.11.sac",
+        "runs/qsis-prospective-gravity/sac/5AE0A/5AE0A.TW.HLZ.2023.10.22.06.52.11.sac"
+      ],
+      "waveform_sha256": [
+        "539218ad295385c6cf92aca538d9602a651d5656b3cea3b6b282bc3d1fd75ae6",
+        "9503d3bd12f0c593d76b24874f18d7c99f980d3e522cfdf7b4287b42cc528e51",
+        "d03b0bcf92b923b5ca2217dae46a86419fe81da9e8e146d05b9e81b18f918c55"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.008681262843310833,
+          0.0019312460208311677,
+          0.9893875122070312
+        ],
+        [
+          0.015839753672480583,
+          0.004417479038238525,
+          0.9797428250312805
+        ],
+        [
+          0.005753756500780582,
+          0.003697530599310994,
+          0.9905486702919006
+        ]
+      ]
+    },
+    {
+      "id": "GPB-011",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "CHY01",
+      "day": "2024-05-09",
+      "center_sample": 3670,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE33/5AE33.TW.HLX.2024.05.09.12.36.25.sac",
+        "runs/qsis-prospective-gravity/sac/5AE33/5AE33.TW.HLY.2024.05.09.12.36.25.sac",
+        "runs/qsis-prospective-gravity/sac/5AE33/5AE33.TW.HLZ.2024.05.09.12.36.25.sac"
+      ],
+      "waveform_sha256": [
+        "e4f1b606fa9f800f96f1fdddf1b6e0d63b7c1e50ff531a8ffbaa7c7ce0fe9a37",
+        "98b64ac9c44bd2a77e4bd2b39391c9d7bf5d4b5158ba43f3c93a01f3963c88bf",
+        "19c184a58dec4d29f44fde1c5014e2189fb83d4ecb805a1bc5291e87162be8e4"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.0001079315334209241,
+          0.0002727832179516554,
+          0.9996192455291748
+        ],
+        [
+          3.8292258977890015e-05,
+          0.0008113855146802962,
+          0.999150276184082
+        ],
+        [
+          1.7886351997731254e-05,
+          0.0003204110253136605,
+          0.9996616840362549
+        ]
+      ]
+    },
+    {
+      "id": "GPB-012",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "Fy0",
+      "day": "2024-08-31",
+      "center_sample": 6681,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLX.2024.08.31.18.21.42.sac",
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLY.2024.08.31.18.21.42.sac",
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLZ.2024.08.31.18.21.42.sac"
+      ],
+      "waveform_sha256": [
+        "625844abf8305974c1e184f9a88efb0ceead46d1f34a0e1e9c9ba850f51cedee",
+        "7a58e8ba6a81f26aab6c65796a4ba4a4ecdc788beb8a4c85b353af3194dea4ed",
+        "1ea91d8921604e820bd539e668f106983a117a88c362067b20d2e343f55b5215"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.000688802043441683,
+          0.003741647582501173,
+          0.9955695271492004
+        ],
+        [
+          0.00029719300800934434,
+          0.0011177047854289412,
+          0.9985851049423218
+        ],
+        [
+          5.65269983781036e-05,
+          0.00012364413123577833,
+          0.999819815158844
+        ]
+      ]
+    },
+    {
+      "id": "GPB-013",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "RCEC",
+      "day": "2024-10-24",
+      "center_sample": 5705,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5ADF9/5ADF9.TW.HLX.2024.10.24.15.59.32.sac",
+        "runs/qsis-prospective-gravity/sac/5ADF9/5ADF9.TW.HLY.2024.10.24.15.59.32.sac",
+        "runs/qsis-prospective-gravity/sac/5ADF9/5ADF9.TW.HLZ.2024.10.24.15.59.32.sac"
+      ],
+      "waveform_sha256": [
+        "851dca89997c7996acac5d21bc04b42bb98ca489091e35947ef3d2547fb267c6",
+        "b843bce81b0ba831b7d67e15bfc69a04a93dd1e4e4a7f9fa42010278c858f52c",
+        "dba32b9afc301ead1fe748ea06e48e61bd842947c6bedb7f5426aed631afba3e"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.00019695956143550575,
+          0.0012701416853815317,
+          0.9985328912734985
+        ],
+        [
+          0.0008382092928513885,
+          0.0010548238642513752,
+          0.9981069564819336
+        ],
+        [
+          1.6042957213358022e-05,
+          6.732073234161362e-05,
+          0.999916672706604
+        ]
+      ]
+    },
+    {
+      "id": "GPB-014",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "Fy0",
+      "day": "2024-12-11",
+      "center_sample": 9818,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLX.2024.12.11.20.05.49.sac",
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLY.2024.12.11.20.05.49.sac",
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLZ.2024.12.11.20.05.49.sac"
+      ],
+      "waveform_sha256": [
+        "52baff969f30b1be8caf92bd58d7658bb614fe6cc9e38ac62babd35c6efecc6c",
+        "680461059fb3681640d423629e2afa12f91c316b788c987b5411b7ef13840854",
+        "bf028c3e6fb1b4e7828c8133728b56aecae52fc494bebf3e8f060b1c5ad382aa"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.001778382109478116,
+          1.947391683643218e-05,
+          0.9982020854949951
+        ],
+        [
+          0.0037250870373100042,
+          0.0006619866471737623,
+          0.9956128597259521
+        ],
+        [
+          0.09393114596605301,
+          0.013613293878734112,
+          0.8924556374549866
+        ]
+      ]
+    },
+    {
+      "id": "GPB-015",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "CCUL",
+      "day": "2025-03-25",
+      "center_sample": 7711,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLX.2025.03.25.01.40.48.sac",
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLY.2025.03.25.01.40.48.sac",
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLZ.2025.03.25.01.40.48.sac"
+      ],
+      "waveform_sha256": [
+        "a1cc9a43020952554d1d5529a2922153b6be5233b294bf4431395f306343dcb0",
+        "6203af601b7389a5465b81426d7f9eb032d7dccfc95d74546c20e462285c20b1",
+        "6cf14a382fb3ec93c27833f63f894cd2e5dc85693d693e5a87fbef34feae4dbd"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          4.7279959289880935e-06,
+          2.1524632757063955e-05,
+          0.9999737739562988
+        ],
+        [
+          1.4079586435400415e-05,
+          1.5077557691256516e-05,
+          0.9999707937240601
+        ],
+        [
+          5.002096077078022e-05,
+          0.0007278447155840695,
+          0.9992221593856812
+        ]
+      ]
+    },
+    {
+      "id": "GPB-016",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "HW02",
+      "day": "2025-08-24",
+      "center_sample": 6347,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLX.2025.08.24.12.55.05.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLY.2025.08.24.12.55.05.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLZ.2025.08.24.12.55.05.sac"
+      ],
+      "waveform_sha256": [
+        "c1200fc8f3dc8e4c58ca579d9aaa3551ab0903766cc25a5b84fc251e2e7b1bc8",
+        "9f9d16c721d26d0d858986f915eb275f934380920024b0585ab666bc2bc7c14b",
+        "942430e92b3988385684c6c750809e7d2c6e5e345be84ff425178285ece85d63"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.0027220870833843946,
+          0.0004914840101264417,
+          0.9967864751815796
+        ],
+        [
+          0.044354893267154694,
+          0.005818977952003479,
+          0.9498261213302612
+        ],
+        [
+          0.12421955168247223,
+          0.06962110102176666,
+          0.8061593770980835
+        ]
+      ]
+    },
+    {
+      "id": "GPB-017",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "HW02",
+      "day": "2025-08-27",
+      "center_sample": 7775,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLX.2025.08.27.13.11.00.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLY.2025.08.27.13.11.00.sac",
+        "runs/qsis-prospective-gravity/sac/5AE39/5AE39.TW.HLZ.2025.08.27.13.11.00.sac"
+      ],
+      "waveform_sha256": [
+        "a3d32c2a67bce8e26c57a7c548bc18661d38608168a6ba8699f1823f08103917",
+        "4c9143c91e08c2d517f20e36724967752ae9f7bb9a861ab8fc65fc009a085130",
+        "4fd53fedbc1202e6021ba62370ac6f3dd982e477da59f00264dbdac208315f22"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          5.243154646450421e-06,
+          3.36173216055613e-05,
+          0.9999611377716064
+        ],
+        [
+          0.00023827834229450673,
+          0.0001979296503122896,
+          0.9995637536048889
+        ],
+        [
+          0.00018414910300634801,
+          0.00024201857740990818,
+          0.9995738863945007
+        ]
+      ]
+    },
+    {
+      "id": "GPB-018",
+      "label": 2,
+      "cohort": "prior",
+      "source": "primary_frozen",
+      "site": "CHY01",
+      "day": "2025-12-23",
+      "center_sample": 8133,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AEA0/5AEA0.TW.HLX.2025.12.23.07.46.09.sac",
+        "runs/qsis-prospective-gravity/sac/5AEA0/5AEA0.TW.HLY.2025.12.23.07.46.09.sac",
+        "runs/qsis-prospective-gravity/sac/5AEA0/5AEA0.TW.HLZ.2025.12.23.07.46.09.sac"
+      ],
+      "waveform_sha256": [
+        "972c8e2f2bf206996f2e70060be81e2c0c9fb4f989ffe68c6ae756f0fb9a7902",
+        "bf95f6e4f9be1e86b2b5496aafae305d7c50a5ca7c71b28a6426ec8c921fd643",
+        "06c5f2c94c1ee22f8850da2bd06eff22685191ed0166ee7c728ff0b97de85f38"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          1.427401684850338e-06,
+          9.087461876333691e-06,
+          0.9999895095825195
+        ],
+        [
+          7.178811301855603e-06,
+          2.2644921045866795e-05,
+          0.9999701976776123
+        ],
+        [
+          6.837110049673356e-06,
+          2.64780373981921e-05,
+          0.9999667406082153
+        ]
+      ]
+    },
+    {
+      "id": "GPH-012",
+      "label": 0,
+      "cohort": "prior",
+      "source": "array_followup",
+      "site": "Fy0",
+      "day": "2024-08-31",
+      "center_sample": 14000,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLX.2024.08.31.18.21.42.sac",
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLY.2024.08.31.18.21.42.sac",
+        "runs/qsis-prospective-gravity/sac/5ADEE/5ADEE.TW.HLZ.2024.08.31.18.21.42.sac"
+      ],
+      "waveform_sha256": [
+        "625844abf8305974c1e184f9a88efb0ceead46d1f34a0e1e9c9ba850f51cedee",
+        "7a58e8ba6a81f26aab6c65796a4ba4a4ecdc788beb8a4c85b353af3194dea4ed",
+        "1ea91d8921604e820bd539e668f106983a117a88c362067b20d2e343f55b5215"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9752296209335327,
+          0.02101919986307621,
+          0.0037512597627937794
+        ],
+        [
+          0.9896453619003296,
+          0.008104370906949043,
+          0.0022502944339066744
+        ],
+        [
+          0.8058943748474121,
+          0.1911100298166275,
+          0.0029956044163554907
+        ]
+      ]
+    },
+    {
+      "id": "GPH-013",
+      "label": 1,
+      "cohort": "prior",
+      "source": "array_followup",
+      "site": "RCEC",
+      "day": "2024-10-24",
+      "center_sample": 15330,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5ADF9/5ADF9.TW.HLX.2024.10.24.15.59.32.sac",
+        "runs/qsis-prospective-gravity/sac/5ADF9/5ADF9.TW.HLY.2024.10.24.15.59.32.sac",
+        "runs/qsis-prospective-gravity/sac/5ADF9/5ADF9.TW.HLZ.2024.10.24.15.59.32.sac"
+      ],
+      "waveform_sha256": [
+        "851dca89997c7996acac5d21bc04b42bb98ca489091e35947ef3d2547fb267c6",
+        "b843bce81b0ba831b7d67e15bfc69a04a93dd1e4e4a7f9fa42010278c858f52c",
+        "dba32b9afc301ead1fe748ea06e48e61bd842947c6bedb7f5426aed631afba3e"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.007544633932411671,
+          0.9921472668647766,
+          0.00030804346897639334
+        ],
+        [
+          0.0006128422683104873,
+          0.9993419051170349,
+          4.523120151134208e-05
+        ],
+        [
+          0.0012067403877153993,
+          0.997965931892395,
+          0.0008273391867987812
+        ]
+      ]
+    },
+    {
+      "id": "GPH-015",
+      "label": 0,
+      "cohort": "prior",
+      "source": "array_followup",
+      "site": "CCUL",
+      "day": "2025-03-25",
+      "center_sample": 14205,
+      "paths": [
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLX.2025.03.25.01.40.48.sac",
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLY.2025.03.25.01.40.48.sac",
+        "runs/qsis-prospective-gravity/sac/5AE10/5AE10.TW.HLZ.2025.03.25.01.40.48.sac"
+      ],
+      "waveform_sha256": [
+        "a1cc9a43020952554d1d5529a2922153b6be5233b294bf4431395f306343dcb0",
+        "6203af601b7389a5465b81426d7f9eb032d7dccfc95d74546c20e462285c20b1",
+        "6cf14a382fb3ec93c27833f63f894cd2e5dc85693d693e5a87fbef34feae4dbd"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.15669815242290497,
+          0.8398648500442505,
+          0.00343703618273139
+        ],
+        [
+          0.10729704797267914,
+          0.8841216564178467,
+          0.00858126301318407
+        ],
+        [
+          0.25544896721839905,
+          0.7419797778129578,
+          0.002571229124441743
+        ]
+      ]
+    },
+    {
+      "id": "IHP-003",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-10",
+      "center_sample": 11604,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLX.2022.10.10.19.23.09.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLY.2022.10.10.19.23.09.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLZ.2022.10.10.19.23.09.sac"
+      ],
+      "waveform_sha256": [
+        "21b7fdd7786096a786f042397289bcc03822438763f3eccb68c2bc66e5428ef4",
+        "6baa962fa22ec1005a4951c19a59a46cffb9bdabea2f07079481a43c386b7547",
+        "bdf2737130290c9fb3109224bdcb7f16e2f1ddd1e5f40d9ae36ee2e2bcb57c70"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9965985417366028,
+          0.001905670971609652,
+          0.0014958782121539116
+        ],
+        [
+          0.9975274205207825,
+          0.0021807008888572454,
+          0.0002919306862168014
+        ],
+        [
+          0.9883262515068054,
+          0.01079468335956335,
+          0.0008790635620243847
+        ]
+      ]
+    },
+    {
+      "id": "IHP-003",
+      "label": 1,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-10",
+      "center_sample": 13144,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLX.2022.10.10.19.23.09.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLY.2022.10.10.19.23.09.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLZ.2022.10.10.19.23.09.sac"
+      ],
+      "waveform_sha256": [
+        "21b7fdd7786096a786f042397289bcc03822438763f3eccb68c2bc66e5428ef4",
+        "6baa962fa22ec1005a4951c19a59a46cffb9bdabea2f07079481a43c386b7547",
+        "bdf2737130290c9fb3109224bdcb7f16e2f1ddd1e5f40d9ae36ee2e2bcb57c70"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0021029659546911716,
+          0.9978766441345215,
+          2.0491417672019452e-05
+        ],
+        [
+          0.0006704714032821357,
+          0.9993278980255127,
+          1.6456515368190594e-06
+        ],
+        [
+          0.00012359580432530493,
+          0.9998762607574463,
+          1.072708926130872e-07
+        ]
+      ]
+    },
+    {
+      "id": "IHP-004",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-10",
+      "center_sample": 12308,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE73/IES.3f.5AE73.TW.A2.HLX.2022.10.10.19.23.02.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE73/IES.3f.5AE73.TW.A2.HLY.2022.10.10.19.23.02.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE73/IES.3f.5AE73.TW.A2.HLZ.2022.10.10.19.23.02.sac"
+      ],
+      "waveform_sha256": [
+        "afe49611aaf4ac35c39794a344d8b2e1f476ce7f81e5e00cce7ef8d823daab38",
+        "3cee5a64fd19374f5173416d95cfa824d7a916a2a84e6da4575f121a141b012a",
+        "8993601cbbe68917738e0ce26ddc9243b34a74b84b45561c1d004b5866758fce"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9803712964057922,
+          0.015776680782437325,
+          0.00385198462754488
+        ],
+        [
+          0.9947391152381897,
+          0.0043319473043084145,
+          0.0009289467707276344
+        ],
+        [
+          0.9927836656570435,
+          0.006932187359780073,
+          0.0002841689856722951
+        ]
+      ]
+    },
+    {
+      "id": "IHP-004",
+      "label": 1,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-10",
+      "center_sample": 13848,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE73/IES.3f.5AE73.TW.A2.HLX.2022.10.10.19.23.02.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE73/IES.3f.5AE73.TW.A2.HLY.2022.10.10.19.23.02.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE73/IES.3f.5AE73.TW.A2.HLZ.2022.10.10.19.23.02.sac"
+      ],
+      "waveform_sha256": [
+        "afe49611aaf4ac35c39794a344d8b2e1f476ce7f81e5e00cce7ef8d823daab38",
+        "3cee5a64fd19374f5173416d95cfa824d7a916a2a84e6da4575f121a141b012a",
+        "8993601cbbe68917738e0ce26ddc9243b34a74b84b45561c1d004b5866758fce"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.003284617094323039,
+          0.9966570138931274,
+          5.838628567289561e-05
+        ],
+        [
+          0.0028302527498453856,
+          0.9971663355827332,
+          3.395268322492484e-06
+        ],
+        [
+          0.0006367135210894048,
+          0.9993614554405212,
+          1.7608537064006669e-06
+        ]
+      ]
+    },
+    {
+      "id": "IHP-005",
+      "label": 1,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-28",
+      "center_sample": 9329,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE21/IES.01f.5AE21.TW.A2.HLX.2022.10.28.15.29.32.sac",
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE21/IES.01f.5AE21.TW.A2.HLY.2022.10.28.15.29.32.sac",
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE21/IES.01f.5AE21.TW.A2.HLZ.2022.10.28.15.29.32.sac"
+      ],
+      "waveform_sha256": [
+        "f845bd1037afb9a0f140ee9bf4ec62c11f344c96a9d1318aa83eeac84eba8454",
+        "ef6b7f9354b28857b0facd026a28515f1080cc988cd9cd589bd617197bc480ee",
+        "09ac1dd7ff2e50a444d57437d331d7a63bc8cde724f2adb745c2a3170e94be6f"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.2190006822347641,
+          0.7803688049316406,
+          0.0006305534043349326
+        ],
+        [
+          0.12862810492515564,
+          0.8711463809013367,
+          0.00022551101574208587
+        ],
+        [
+          0.02541966363787651,
+          0.9742323160171509,
+          0.0003479809674900025
+        ]
+      ]
+    },
+    {
+      "id": "IHP-006",
+      "label": 1,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-28",
+      "center_sample": 13129,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE73/IES.03f.5AE73.TW.A2.HLX.2022.10.28.15.28.54.sac",
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE73/IES.03f.5AE73.TW.A2.HLY.2022.10.28.15.28.54.sac",
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE73/IES.03f.5AE73.TW.A2.HLZ.2022.10.28.15.28.54.sac"
+      ],
+      "waveform_sha256": [
+        "d8a71853f49e2abe81f9ee88e44986593b0c8b796d55938693afb7e4bb9bc3ba",
+        "d89579321f46bf79ece10e957058a55b5c727a88979bbbdeb281a811c94b571d",
+        "3d6bef6c293aae861db0948166107fe5d5436dfd4c21899426071b604a3997e4"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.03730909153819084,
+          0.9624128341674805,
+          0.00027810249594040215
+        ],
+        [
+          0.017153579741716385,
+          0.9828102588653564,
+          3.618819755502045e-05
+        ],
+        [
+          0.003745115827769041,
+          0.9962504506111145,
+          4.449632342584664e-06
+        ]
+      ]
+    },
+    {
+      "id": "IHP-007",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-01",
+      "center_sample": 9485,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE73/IES.03f.5AE73.TW.A2.HLX.2022.11.01.08.28.57.sac",
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE73/IES.03f.5AE73.TW.A2.HLY.2022.11.01.08.28.57.sac",
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE73/IES.03f.5AE73.TW.A2.HLZ.2022.11.01.08.28.57.sac"
+      ],
+      "waveform_sha256": [
+        "e890740619738349b6aba1c9f74c64c9aec8e770db41acf954a62b7d99c98c03",
+        "59825318a0c0282e473e7f99ad9e5579d9ce7e248de2c4e496e3ca89fbfc5842",
+        "df86b6161cc5b17cd78abd96306ba062781df26cfa84f45412ea26cc4c3e45e9"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9967032074928284,
+          0.0004096014308743179,
+          0.0028872936964035034
+        ],
+        [
+          0.9962735176086426,
+          0.0010594232007861137,
+          0.0026671639643609524
+        ],
+        [
+          0.9958981871604919,
+          0.0010769638465717435,
+          0.0030248358380049467
+        ]
+      ]
+    },
+    {
+      "id": "IHP-008",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-01",
+      "center_sample": 9396,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE99/IES.02f.5AE99.TW.A2.HLX.2022.11.01.08.28.58.sac",
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE99/IES.02f.5AE99.TW.A2.HLY.2022.11.01.08.28.58.sac",
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE99/IES.02f.5AE99.TW.A2.HLZ.2022.11.01.08.28.58.sac"
+      ],
+      "waveform_sha256": [
+        "2ed544d1075279048d51ae839c1006122f063c1c8d5747c6134a6640039715a2",
+        "f79bf91a09304fec96f08ed7ae7d12ca9edd28700e2f9b105d5c9c6c34eaa968",
+        "d24e5bb89b4b9ac5cca098acf67f8b0fcbc4da7c849d6c18e18e784d596024fc"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9940212368965149,
+          0.0008685130160301924,
+          0.005110296420753002
+        ],
+        [
+          0.997528612613678,
+          0.0005596249829977751,
+          0.0019118021009489894
+        ],
+        [
+          0.9736011624336243,
+          0.003459631698206067,
+          0.022939229384064674
+        ]
+      ]
+    },
+    {
+      "id": "IHP-009",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-20",
+      "center_sample": 8191,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLX.2022.11.20.01.48.33.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLY.2022.11.20.01.48.33.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLZ.2022.11.20.01.48.33.sac"
+      ],
+      "waveform_sha256": [
+        "e3fa662901b97d7ddbc3bbd3e96bbe85bdba17c54480d8d65ca4a2e4d6bf1d5b",
+        "cb4cc57daf89fe6b900fd3a9e94d84027a3ff8c2539c788f7db35bef7a938cdd",
+        "0d467a1ebffbbb14ecd28957dfe1ed5db9e0995ea814571b9436d91f185db3a4"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9988941550254822,
+          0.00014714863209519535,
+          0.0009587471140548587
+        ],
+        [
+          0.9988376498222351,
+          0.0005156397237442434,
+          0.0006467170314863324
+        ],
+        [
+          0.9994341731071472,
+          0.0001828578533604741,
+          0.00038286380004137754
+        ]
+      ]
+    },
+    {
+      "id": "IHP-009",
+      "label": 1,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-20",
+      "center_sample": 9111,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLX.2022.11.20.01.48.33.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLY.2022.11.20.01.48.33.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLZ.2022.11.20.01.48.33.sac"
+      ],
+      "waveform_sha256": [
+        "e3fa662901b97d7ddbc3bbd3e96bbe85bdba17c54480d8d65ca4a2e4d6bf1d5b",
+        "cb4cc57daf89fe6b900fd3a9e94d84027a3ff8c2539c788f7db35bef7a938cdd",
+        "0d467a1ebffbbb14ecd28957dfe1ed5db9e0995ea814571b9436d91f185db3a4"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0037858590949326754,
+          0.9961368441581726,
+          7.732533413218334e-05
+        ],
+        [
+          0.008906274102628231,
+          0.9909961223602295,
+          9.762574336491525e-05
+        ],
+        [
+          0.003112484235316515,
+          0.9968407154083252,
+          4.686869215220213e-05
+        ]
+      ]
+    },
+    {
+      "id": "IHP-010",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-20",
+      "center_sample": 9468,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE73/IES.03f.5AE73.TW.A2.HLX.2022.11.20.01.48.20.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE73/IES.03f.5AE73.TW.A2.HLY.2022.11.20.01.48.20.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE73/IES.03f.5AE73.TW.A2.HLZ.2022.11.20.01.48.20.sac"
+      ],
+      "waveform_sha256": [
+        "945eb18586182ec627fede7e719cd7c345048722297910c3bc823edbd5fe3597",
+        "8c9ad13eed0adaf6553f6b208b4bde696e1e1c3bb5fccdefb732b35b69239338",
+        "39253471fecc96b29eed11ea77f0854cc3c3402ddecd6ad700c7bb4e48fcd3fc"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.992702841758728,
+          0.0012448332272469997,
+          0.00605234457179904
+        ],
+        [
+          0.99842369556427,
+          0.0003697200445458293,
+          0.0012066659983247519
+        ],
+        [
+          0.9992015957832336,
+          0.00030909909401088953,
+          0.0004892993019893765
+        ]
+      ]
+    },
+    {
+      "id": "IHP-010",
+      "label": 1,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-20",
+      "center_sample": 10388,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE73/IES.03f.5AE73.TW.A2.HLX.2022.11.20.01.48.20.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE73/IES.03f.5AE73.TW.A2.HLY.2022.11.20.01.48.20.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE73/IES.03f.5AE73.TW.A2.HLZ.2022.11.20.01.48.20.sac"
+      ],
+      "waveform_sha256": [
+        "945eb18586182ec627fede7e719cd7c345048722297910c3bc823edbd5fe3597",
+        "8c9ad13eed0adaf6553f6b208b4bde696e1e1c3bb5fccdefb732b35b69239338",
+        "39253471fecc96b29eed11ea77f0854cc3c3402ddecd6ad700c7bb4e48fcd3fc"
+      ],
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "probabilities": [
+        [
+          0.0022976333275437355,
+          0.9976563453674316,
+          4.603018896887079e-05
+        ],
+        [
+          0.0006562207126989961,
+          0.999342143535614,
+          1.7241804926015902e-06
+        ],
+        [
+          0.00037569666164927185,
+          0.9996236562728882,
+          6.27776955752779e-07
+        ]
+      ]
+    },
+    {
+      "id": "IHP-012",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2023-10-14",
+      "center_sample": 12314,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2023.10.14.07.51.51.sac",
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2023.10.14.07.51.51.sac",
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2023.10.14.07.51.51.sac"
+      ],
+      "waveform_sha256": [
+        "7b3f38992c524da5b73132282a770ea03fd7804624ddf392bcfc900dd6fed361",
+        "f375fb58e749878a458ab00844ed1475ce6bd9933752773de9d1579686cae9c6",
+        "b510a7fc0f427c385409028a97b73f4b87a66fe30e2b517b0046cfe1ed7aa5fb"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.985929548740387,
+          0.0007802055915817618,
+          0.01329033076763153
+        ],
+        [
+          0.9849371314048767,
+          0.0009132646955549717,
+          0.014149656519293785
+        ],
+        [
+          0.9957224130630493,
+          0.001296636532060802,
+          0.00298091908916831
+        ]
+      ]
+    },
+    {
+      "id": "IHP-013",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2023-10-14",
+      "center_sample": 12323,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2023.10.14.07.51.51.sac",
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2023.10.14.07.51.51.sac",
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2023.10.14.07.51.51.sac"
+      ],
+      "waveform_sha256": [
+        "15330bff2404637657fdd9d8a6ccc0a6af67d3771ddeb9d6440a5213bd65d589",
+        "6ae46ce737cfd707e7add517a9893e5cc45a9006f63509a766696cf19a2e967d",
+        "adac2208f152e22a797a12a89a8c6dc4455cc9102df0689e08c35e2489743073"
+      ],
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "probabilities": [
+        [
+          0.9659389853477478,
+          0.0025293894577771425,
+          0.03153162822127342
+        ],
+        [
+          0.9783324599266052,
+          0.002324396977201104,
+          0.019343171268701553
+        ],
+        [
+          0.9773110747337341,
+          0.0055664158426225185,
+          0.01712249033153057
+        ]
+      ]
+    },
+    {
+      "id": "IHP-017",
+      "label": 0,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2024-04-17",
+      "center_sample": 10245,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20240417091710/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2024.04.17.09.15.51.sac",
+        "runs/qsis-ies-hybrid/sac/20240417091710/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2024.04.17.09.15.51.sac",
+        "runs/qsis-ies-hybrid/sac/20240417091710/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2024.04.17.09.15.51.sac"
+      ],
+      "waveform_sha256": [
+        "e315256e5cdce8cc4ac61df0476314089411dde76ef25953fa1a706466e081b6",
+        "88167ffb12ae013051c95543b59f1ee28d961e20b9f8803b8180e2b87fe0fd99",
+        "1698ef63b4503d00717b7b08f326e8fe961ae6f686b9a72e66afeddb0da0dd97"
+      ],
+      "predictions": [
+        0,
+        0,
+        1
+      ],
+      "probabilities": [
+        [
+          0.9638817310333252,
+          0.02767338417470455,
+          0.008444876410067081
+        ],
+        [
+          0.8382025361061096,
+          0.14692533016204834,
+          0.014872074127197266
+        ],
+        [
+          0.3023558259010315,
+          0.665884256362915,
+          0.03175996243953705
+        ]
+      ]
+    },
+    {
+      "id": "IBG-001",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2021-12-30",
+      "center_sample": 2586,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20211230064709/5AE21/IES.01f.5AE21.TW.A2.HNX.2021.12.30.06.47.09.sac",
+        "runs/qsis-ies-hybrid/sac/20211230064709/5AE21/IES.01f.5AE21.TW.A2.HNY.2021.12.30.06.47.09.sac",
+        "runs/qsis-ies-hybrid/sac/20211230064709/5AE21/IES.01f.5AE21.TW.A2.HNZ.2021.12.30.06.47.09.sac"
+      ],
+      "waveform_sha256": [
+        "8ceb6e5a60c864a1f10bb4acad255036a541d0fa508cbde4f8b168a6a6941ab5",
+        "15216b19384855c578a0ec6ed0d36464ebd8af1cdda1e99af4a0413d5aaebb5c",
+        "c286c8e1c4ca6029f02f0126fbbc7bba845d5dcdae0f9f1361ccb731ddea4572"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.0007757138228043914,
+          0.00015976198483258486,
+          0.9990645051002502
+        ],
+        [
+          0.0006354872602969408,
+          6.639729690505192e-05,
+          0.999298095703125
+        ],
+        [
+          0.02335183136165142,
+          0.0012428247136995196,
+          0.9754053354263306
+        ]
+      ]
+    },
+    {
+      "id": "IBG-003",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-10",
+      "center_sample": 3175,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLX.2022.10.10.19.23.09.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLY.2022.10.10.19.23.09.sac",
+        "runs/qsis-ies-hybrid/sac/20221010192442/5AE21/IES.1f.5AE21.TW.A2.HLZ.2022.10.10.19.23.09.sac"
+      ],
+      "waveform_sha256": [
+        "21b7fdd7786096a786f042397289bcc03822438763f3eccb68c2bc66e5428ef4",
+        "6baa962fa22ec1005a4951c19a59a46cffb9bdabea2f07079481a43c386b7547",
+        "bdf2737130290c9fb3109224bdcb7f16e2f1ddd1e5f40d9ae36ee2e2bcb57c70"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.0009184351074509323,
+          4.716444527730346e-05,
+          0.9990344047546387
+        ],
+        [
+          0.0003058633010368794,
+          1.784094092727173e-05,
+          0.9996763467788696
+        ],
+        [
+          0.0001965756673598662,
+          4.5862459955969825e-05,
+          0.9997575879096985
+        ]
+      ]
+    },
+    {
+      "id": "IBG-005",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-10-28",
+      "center_sample": 1789,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE21/IES.01f.5AE21.TW.A2.HLX.2022.10.28.15.29.32.sac",
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE21/IES.01f.5AE21.TW.A2.HLY.2022.10.28.15.29.32.sac",
+        "runs/qsis-ies-hybrid/sac/20221028153043/5AE21/IES.01f.5AE21.TW.A2.HLZ.2022.10.28.15.29.32.sac"
+      ],
+      "waveform_sha256": [
+        "f845bd1037afb9a0f140ee9bf4ec62c11f344c96a9d1318aa83eeac84eba8454",
+        "ef6b7f9354b28857b0facd026a28515f1080cc988cd9cd589bd617197bc480ee",
+        "09ac1dd7ff2e50a444d57437d331d7a63bc8cde724f2adb745c2a3170e94be6f"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.051327209919691086,
+          0.01214803196489811,
+          0.9365248084068298
+        ],
+        [
+          0.04874066263437271,
+          0.005165187641978264,
+          0.9460941553115845
+        ],
+        [
+          0.005786140915006399,
+          0.0004953305469825864,
+          0.9937185049057007
+        ]
+      ]
+    },
+    {
+      "id": "IBG-007",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-01",
+      "center_sample": 5049,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE73/IES.03f.5AE73.TW.A2.HLX.2022.11.01.08.28.57.sac",
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE73/IES.03f.5AE73.TW.A2.HLY.2022.11.01.08.28.57.sac",
+        "runs/qsis-ies-hybrid/sac/20221101083011/5AE73/IES.03f.5AE73.TW.A2.HLZ.2022.11.01.08.28.57.sac"
+      ],
+      "waveform_sha256": [
+        "e890740619738349b6aba1c9f74c64c9aec8e770db41acf954a62b7d99c98c03",
+        "59825318a0c0282e473e7f99ad9e5579d9ce7e248de2c4e496e3ca89fbfc5842",
+        "df86b6161cc5b17cd78abd96306ba062781df26cfa84f45412ea26cc4c3e45e9"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.006849206984043121,
+          0.0041220965795218945,
+          0.9890286922454834
+        ],
+        [
+          0.0007297172560356557,
+          0.0003156177990604192,
+          0.9989546537399292
+        ],
+        [
+          0.0003876041737385094,
+          0.00042641954496502876,
+          0.9991859793663025
+        ]
+      ]
+    },
+    {
+      "id": "IBG-009",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-11-20",
+      "center_sample": 4996,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLX.2022.11.20.01.48.33.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLY.2022.11.20.01.48.33.sac",
+        "runs/qsis-ies-hybrid/sac/20221120014941/5AE21/IES.01f.5AE21.TW.A2.HLZ.2022.11.20.01.48.33.sac"
+      ],
+      "waveform_sha256": [
+        "e3fa662901b97d7ddbc3bbd3e96bbe85bdba17c54480d8d65ca4a2e4d6bf1d5b",
+        "cb4cc57daf89fe6b900fd3a9e94d84027a3ff8c2539c788f7db35bef7a938cdd",
+        "0d467a1ebffbbb14ecd28957dfe1ed5db9e0995ea814571b9436d91f185db3a4"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.014354359358549118,
+          0.003556027775630355,
+          0.982089638710022
+        ],
+        [
+          0.00217640888877213,
+          0.0017106581944972277,
+          0.9961129426956177
+        ],
+        [
+          0.0034589460119605064,
+          0.010339058935642242,
+          0.9862020611763
+        ]
+      ]
+    },
+    {
+      "id": "IBG-011",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2022-12-15",
+      "center_sample": 2594,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20221215040317/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.12.15.04.02.10.sac",
+        "runs/qsis-ies-hybrid/sac/20221215040317/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.12.15.04.02.10.sac",
+        "runs/qsis-ies-hybrid/sac/20221215040317/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.12.15.04.02.10.sac"
+      ],
+      "waveform_sha256": [
+        "066b42dc28e675718934594f9f6ad90768dcc8423200d55d194977e18ab7db33",
+        "cbe9b087f163d9b15821d4345eb57f6478b4b693fe164097583a461d66c920a8",
+        "ed66faafff554b54669e2fa8cdc4c48d23103af96d5364ea75f091ea36da7bb5"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.0004381936159916222,
+          0.0031351682264357805,
+          0.9964266419410706
+        ],
+        [
+          1.3503257832780946e-05,
+          9.315568604506552e-05,
+          0.999893307685852
+        ],
+        [
+          4.364911092125112e-06,
+          3.430496508372016e-05,
+          0.9999613761901855
+        ]
+      ]
+    },
+    {
+      "id": "IBG-012",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2023-10-14",
+      "center_sample": 4991,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2023.10.14.07.51.51.sac",
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2023.10.14.07.51.51.sac",
+        "runs/qsis-ies-hybrid/sac/20231014075329/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2023.10.14.07.51.51.sac"
+      ],
+      "waveform_sha256": [
+        "7b3f38992c524da5b73132282a770ea03fd7804624ddf392bcfc900dd6fed361",
+        "f375fb58e749878a458ab00844ed1475ce6bd9933752773de9d1579686cae9c6",
+        "b510a7fc0f427c385409028a97b73f4b87a66fe30e2b517b0046cfe1ed7aa5fb"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.028709568083286285,
+          0.010870003141462803,
+          0.9604204297065735
+        ],
+        [
+          0.009614474140107632,
+          0.02034793235361576,
+          0.9700376391410828
+        ],
+        [
+          0.04427940025925636,
+          0.006756243295967579,
+          0.9489644169807434
+        ]
+      ]
+    },
+    {
+      "id": "IBG-016",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2024-04-17",
+      "center_sample": 1855,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20240417091710/5AE99/IES.02f.5AE99.TW.A2.HLX.2024.04.17.09.15.55.sac",
+        "runs/qsis-ies-hybrid/sac/20240417091710/5AE99/IES.02f.5AE99.TW.A2.HLY.2024.04.17.09.15.55.sac",
+        "runs/qsis-ies-hybrid/sac/20240417091710/5AE99/IES.02f.5AE99.TW.A2.HLZ.2024.04.17.09.15.55.sac"
+      ],
+      "waveform_sha256": [
+        "0e233330491af832f46a95b437235f4627a723610f3350c08f084ea3a5ff7abd",
+        "24042739939989f131f61dc43102b8222e2f51b6bc909ce02895edc97f25e9dd",
+        "1ce2c374ab238ebd1c4b63fba7461ece1989c5e0fb96adfc8050c287b770ec68"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.00012383918510749936,
+          0.0004920650972053409,
+          0.9993840456008911
+        ],
+        [
+          4.1338102164445445e-05,
+          0.000578979030251503,
+          0.9993796348571777
+        ],
+        [
+          0.00028018615557812154,
+          0.002265458693727851,
+          0.9974543452262878
+        ]
+      ]
+    },
+    {
+      "id": "IBG-018",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2024-04-23",
+      "center_sample": 1610,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20240423000405/5AE21/IES.01f.5AE21.TW.A2.HLX.2024.04.23.00.02.39.sac",
+        "runs/qsis-ies-hybrid/sac/20240423000405/5AE21/IES.01f.5AE21.TW.A2.HLY.2024.04.23.00.02.39.sac",
+        "runs/qsis-ies-hybrid/sac/20240423000405/5AE21/IES.01f.5AE21.TW.A2.HLZ.2024.04.23.00.02.39.sac"
+      ],
+      "waveform_sha256": [
+        "784f3889a813ad0e5f086857012355db9e7c3749156fa86420fbe7c920dab007",
+        "e75ddb8df81c196feb35e494c0e89c74a9538db03b0fb02741247c2de6328fda",
+        "2e1db30782297f7b7cf849fcd92dbe667d7dc76f10b8d56b34e28f30c1adc2a4"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.0030777070205658674,
+          0.0007955182809382677,
+          0.9961268305778503
+        ],
+        [
+          0.0004909042618237436,
+          8.083248394541442e-05,
+          0.9994282126426697
+        ],
+        [
+          0.0026564456056803465,
+          0.001091384794563055,
+          0.9962522387504578
+        ]
+      ]
+    },
+    {
+      "id": "IBG-022",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2024-06-10",
+      "center_sample": 8368,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20240610035617/5AE21/IES.01f.5AE21.TW.A2.HNX.2024.06.10.03.56.17.sac",
+        "runs/qsis-ies-hybrid/sac/20240610035617/5AE21/IES.01f.5AE21.TW.A2.HNY.2024.06.10.03.56.17.sac",
+        "runs/qsis-ies-hybrid/sac/20240610035617/5AE21/IES.01f.5AE21.TW.A2.HNZ.2024.06.10.03.56.17.sac"
+      ],
+      "waveform_sha256": [
+        "8a9bfa6a55ecf259cd99ec0d878b6dbd08da492df68795ca376090d69c1744c4",
+        "806047ae2e887dd2a05e083cd7fe0978be2b4c2d3089a94afe7f33f93e366d86",
+        "5e3e169e820a6eab5cdcdf3b1d3107ea3a55f6fc61dbdc5db91ac6aa9beb815f"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.12807613611221313,
+          0.0005082521820440888,
+          0.8714155554771423
+        ],
+        [
+          0.10235626995563507,
+          0.0005078216199763119,
+          0.897135853767395
+        ],
+        [
+          0.02112208865582943,
+          0.00034247132134623826,
+          0.9785354733467102
+        ]
+      ]
+    },
+    {
+      "id": "IBG-024",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2024-06-29",
+      "center_sample": 5171,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20240629063902/5AE73/IES.03f.5AE73.TW.A2.HNX.2024.06.29.06.39.02.sac",
+        "runs/qsis-ies-hybrid/sac/20240629063902/5AE73/IES.03f.5AE73.TW.A2.HNY.2024.06.29.06.39.02.sac",
+        "runs/qsis-ies-hybrid/sac/20240629063902/5AE73/IES.03f.5AE73.TW.A2.HNZ.2024.06.29.06.39.02.sac"
+      ],
+      "waveform_sha256": [
+        "087513ab1e9c7edaf53055de82bf0ff88803fa0648b0448433c632e9672e8956",
+        "45bf6706414a1c9fd6de58beaa15a140229e16cd0137e3d12680bf1a3c88afe4",
+        "322ce68708c6dab12ebcdaec98c54c0bfc6db83a18166067c6fdbaad1bec8612"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.002980798250064254,
+          0.001909146667458117,
+          0.9951100945472717
+        ],
+        [
+          0.001603767741471529,
+          0.0007076785550452769,
+          0.9976885318756104
+        ],
+        [
+          0.0007893533329479396,
+          0.0034786658361554146,
+          0.9957320094108582
+        ]
+      ]
+    },
+    {
+      "id": "IBG-028",
+      "label": 2,
+      "cohort": "fresh",
+      "source": "primary_frozen",
+      "site": "IES",
+      "day": "2024-11-30",
+      "center_sample": 3380,
+      "paths": [
+        "runs/qsis-ies-hybrid/sac/20241130090702/5AE21/IES.01f.5AE21.TW.A2.HNX.2024.11.30.09.07.02.sac",
+        "runs/qsis-ies-hybrid/sac/20241130090702/5AE21/IES.01f.5AE21.TW.A2.HNY.2024.11.30.09.07.02.sac",
+        "runs/qsis-ies-hybrid/sac/20241130090702/5AE21/IES.01f.5AE21.TW.A2.HNZ.2024.11.30.09.07.02.sac"
+      ],
+      "waveform_sha256": [
+        "946ea9df129741ffbaad3494bd12b833d6e1dda2050996a2caf161da585b72a4",
+        "d3a4b2fef6700a5a3e1e410ee12fc052f97f36f44418999adda7a5ec4e9544bf",
+        "0526fdb0b81ae4b16d41f92ddf61c1d16357b4ffc5aa8e0beb89a5de1f532a04"
+      ],
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.003298516385257244,
+          0.0003079815360251814,
+          0.9963935017585754
+        ],
+        [
+          0.0020157694816589355,
+          0.00043558893958106637,
+          0.9975486397743225
+        ],
+        [
+          0.000693402485921979,
+          0.0011134909000247717,
+          0.998193085193634
+        ]
+      ]
+    }
+  ],
+  "sets": {
+    "fresh": [
+      {
+        "offset": -0.2,
+        "matrix": [
+          [
+            9,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            12
+          ]
+        ],
+        "n": 27,
+        "correct": 27,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "recall": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_f1": 1.0,
+        "wilson95_clip_iid": [
+          0.8754449702581328,
+          0.9999999999999998
+        ]
+      },
+      {
+        "offset": 0,
+        "matrix": [
+          [
+            9,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            12
+          ]
+        ],
+        "n": 27,
+        "correct": 27,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "recall": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_f1": 1.0,
+        "wilson95_clip_iid": [
+          0.8754449702581328,
+          0.9999999999999998
+        ]
+      },
+      {
+        "offset": 0.2,
+        "matrix": [
+          [
+            8,
+            1,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            12
+          ]
+        ],
+        "n": 27,
+        "correct": 26,
+        "accuracy": 0.9629629629629629,
+        "balanced_accuracy": 0.9629629629629629,
+        "precision": [
+          1.0,
+          0.8571428571428571,
+          1.0
+        ],
+        "recall": [
+          0.8888888888888888,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.9411764705882353,
+          0.923076923076923,
+          1.0
+        ],
+        "macro_f1": 0.9547511312217195,
+        "wilson95_clip_iid": [
+          0.8171653406642414,
+          0.9934318540192149
+        ]
+      }
+    ],
+    "primary": [
+      {
+        "offset": -0.2,
+        "matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ]
+        ],
+        "n": 44,
+        "correct": 44,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "recall": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_f1": 1.0,
+        "wilson95_clip_iid": [
+          0.9197043962415192,
+          1.0
+        ]
+      },
+      {
+        "offset": 0,
+        "matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ]
+        ],
+        "n": 44,
+        "correct": 44,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "recall": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_f1": 1.0,
+        "wilson95_clip_iid": [
+          0.9197043962415192,
+          1.0
+        ]
+      },
+      {
+        "offset": 0.2,
+        "matrix": [
+          [
+            11,
+            1,
+            0
+          ],
+          [
+            0,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ]
+        ],
+        "n": 44,
+        "correct": 43,
+        "accuracy": 0.9772727272727273,
+        "balanced_accuracy": 0.9722222222222222,
+        "precision": [
+          1.0,
+          0.9166666666666666,
+          1.0
+        ],
+        "recall": [
+          0.9166666666666666,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.9565217391304348,
+          0.9565217391304348,
+          1.0
+        ],
+        "macro_f1": 0.9710144927536232,
+        "wilson95_clip_iid": [
+          0.8819229030178671,
+          0.9959767479399467
+        ]
+      }
+    ],
+    "supplemental": [
+      {
+        "offset": -0.2,
+        "matrix": [
+          [
+            13,
+            1,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ]
+        ],
+        "n": 47,
+        "correct": 46,
+        "accuracy": 0.9787234042553191,
+        "balanced_accuracy": 0.9761904761904763,
+        "precision": [
+          1.0,
+          0.9230769230769231,
+          1.0
+        ],
+        "recall": [
+          0.9285714285714286,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.962962962962963,
+          0.9600000000000001,
+          1.0
+        ],
+        "macro_f1": 0.9743209876543211,
+        "wilson95_clip_iid": [
+          0.8888701895837066,
+          0.996234231961403
+        ]
+      },
+      {
+        "offset": 0,
+        "matrix": [
+          [
+            13,
+            1,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ]
+        ],
+        "n": 47,
+        "correct": 46,
+        "accuracy": 0.9787234042553191,
+        "balanced_accuracy": 0.9761904761904763,
+        "precision": [
+          1.0,
+          0.9230769230769231,
+          1.0
+        ],
+        "recall": [
+          0.9285714285714286,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.962962962962963,
+          0.9600000000000001,
+          1.0
+        ],
+        "macro_f1": 0.9743209876543211,
+        "wilson95_clip_iid": [
+          0.8888701895837066,
+          0.996234231961403
+        ]
+      },
+      {
+        "offset": 0.2,
+        "matrix": [
+          [
+            12,
+            2,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            21
+          ]
+        ],
+        "n": 47,
+        "correct": 45,
+        "accuracy": 0.9574468085106383,
+        "balanced_accuracy": 0.9523809523809524,
+        "precision": [
+          1.0,
+          0.8571428571428571,
+          1.0
+        ],
+        "recall": [
+          0.8571428571428571,
+          1.0,
+          1.0
+        ],
+        "f1": [
+          0.923076923076923,
+          0.923076923076923,
+          1.0
+        ],
+        "macro_f1": 0.9487179487179486,
+        "wilson95_clip_iid": [
+          0.8575147232210055,
+          0.9882517240332106
+        ]
+      }
+    ]
+  },
+  "date_bootstrap": {
+    "unit": "UTC date",
+    "dates": 21,
+    "replicates": 10000,
+    "seed": 42,
+    "intervals": [
+      [
+        0.9302325581395349,
+        1.0
+      ],
+      [
+        0.9302325581395349,
+        1.0
+      ],
+      [
+        0.8918772032902468,
+        1.0
+      ]
+    ],
+    "note": "Descriptive percentile interval on selected references; cannot resolve unseen classes/sites or coverage bias."
+  },
+  "layer_parameters": [
+    {
+      "name": "conv1",
+      "parameters": 64
+    },
+    {
+      "name": "bn1",
+      "parameters": 32
+    },
+    {
+      "name": "conv2",
+      "parameters": 1568
+    },
+    {
+      "name": "bn2",
+      "parameters": 64
+    },
+    {
+      "name": "conv3",
+      "parameters": 6208
+    },
+    {
+      "name": "bn3",
+      "parameters": 128
+    },
+    {
+      "name": "fc1",
+      "parameters": 24640
+    },
+    {
+      "name": "fc2",
+      "parameters": 1040
+    },
+    {
+      "name": "fc3",
+      "parameters": 51
+    }
+  ]
+}

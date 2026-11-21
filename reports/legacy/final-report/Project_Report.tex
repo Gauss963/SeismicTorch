@@ -1,223 +1,1253 @@
-\documentclass[a4paper,12pt, oneside]{article}
+\documentclass[a4paper,11pt,oneside]{article}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{fancyhdr}
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{float} 
-\usepackage{epstopdf}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{siunitx}
-\usepackage{enumitem}
-\usepackage{booktabs}
-\usepackage{gensymb}
-\usepackage{makecell}
-\usepackage{indentfirst}
-\usepackage{bigints}
-\usepackage{esint}
-\usepackage{harpoon}
-\usepackage{relsize}
-\usepackage{cite}
-% \usepackage{natbib}
-
-\usepackage{subfig}
-\usepackage{overpic}
-
-\geometry{a4paper,scale = 0.8}
+\usepackage{lmodern,microtype}
+\usepackage{geometry,fancyhdr,graphicx,amsmath,amssymb,booktabs,tabularx,longtable,array}
+\usepackage{enumitem,listings,xcolor,caption,placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\geometry{left=24mm,right=24mm,top=28mm,bottom=25mm,headheight=26pt,headsep=10pt}
+\graphicspath{{figures/}{./}}
 \pagestyle{fancy}
-\fancyhead[R]{Gauss~\textsc{Chang} \\ Department of Physics, NTU}
-\fancyhead[L]{\textsc{Deep Learning Based \\ Seismic Wave Identification}}
+\fancyhf{}
+\fancyhead[L]{\small SeismicTorch: waveform classification}
+\fancyhead[R]{\small Gauss Chang\\2026 project revision}
 \fancyfoot[C]{\thepage}
-
-\setlength{\parindent}{2em}
-
-\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\footrulewidth}{1pt}
-% \renewcommand\thesection{\arabic {section}}
-\renewcommand\thesection{\Roman{section}}
-\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
-\newcommand{\HRule}{\rule{\linewidth}{2pt}}
-
-%[Lenny]
-% \ChNameUpperCase
-% \ChNumVar{\fontsize{80}{42}\usefont{OT1}{ptm}{m}{n}\selectfont}
-% \ChTitleVar{\Huge\sc}
-% \ChRuleWidth{2pt}
-
-%Make Chapter header and footer
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.10}
+\setlist{nosep,leftmargin=1.6em}
+\captionsetup{font=small,labelfont=bf,skip=7pt}
+\definecolor{accent}{HTML}{2475A7}
+\definecolor{codebg}{HTML}{F1F4F7}
+\lstset{basicstyle=\footnotesize\ttfamily,backgroundcolor=\color{codebg},frame=single,
+  rulecolor=\color{black!15},breaklines=true,columns=fullflexible,keepspaces=true,
+  showstringspaces=false,aboveskip=9pt,belowskip=9pt}
+\newcommand{\code}[1]{\nolinkurl{#1}}
+\newcommand{\fig}[5][]{\begin{figure}[htbp]\centering\includegraphics[width=#3\linewidth]{#2.pdf}\caption[#1]{#4}\label{#5}\end{figure}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \makeatletter
-\let\ps@plain\ps@fancy
+\renewcommand{\l@section}[2]{\@dottedtocline{1}{0em}{1.8em}{\bfseries #1}{\bfseries #2}}
 \makeatother
+\hypersetup{pdftitle={Deep Learning Based Seismic Wave Identification},pdfauthor={Gauss Chang},pdfsubject={Verified QSIS waveform CNN, training diagnostics and standalone C++ inference}}
 
-
-%Package and definition for code demo
-\usepackage{listings}
-\usepackage{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\lstset{frame=single,
-language=Python,
-aboveskip=3mm,
-belowskip=3mm,
-showstringspaces=false,
-columns=flexible,
-basicstyle={\small\ttfamily},
-numbers=left,
-numberstyle=\tiny\color{gray},
-keywordstyle=\color{blue},
-commentstyle=\color{dkgreen},
-stringstyle=\color{mauve},
-breaklines=true,
-breakatwhitespace=true,
-tabsize=4}
-
-% \begin{enumerate} [label = (\alph*)]
-% \begin{enumerate} [label = (\roman*)]
-\linespread{1.5}
 \begin{document}
-
-%---------------------------Titlepage---------------------------
-
+\hypersetup{pageanchor=false}
 \begin{titlepage}
-
-\begin{center}
-
-
-% Upper part of the page
-\includegraphics[width = 0.30\textwidth]{IES_logo.pdf} \\ [1cm]
-% \includegraphics[width = 0.15\textwidth]{NTU_logo_st.pdf} \\ [1cm]
-\textsc{\LARGE Institute of Earth Sciences \\ Academia Sinica} \\ [1.5cm]
-\textsc{\Large Summer Internship Program} \\ [0.5cm]
-
-
-% Title
-\HRule \\ % [0.5cm]
-{\huge \bfseries Deep Learning Based \\ Seismic Wave Identification} \\ [0.5cm]
-\HRule \\ [2.5cm]
-
-% Author and supervisor
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author :}\\
-Gauss~\textsc{Chang} \\
-% Department of Physics, NTU
-\end{flushleft}
+\centering
+\vspace*{5mm}
+\includegraphics[width=.27\textwidth]{IES_logo.pdf}\\[9mm]
+{\Large Institute of Earth Sciences\\Academia Sinica\par}
+\vspace{8mm}
+{\large Summer Internship Project / 2026 Technical Revision\par}
+\vspace{12mm}
+\rule{\linewidth}{1.2pt}\\[4mm]
+{\huge\bfseries Deep Learning Based\\[2mm] Seismic Wave Identification\par}
+\vspace{4mm}
+\rule{\linewidth}{1.2pt}\\[7mm]
+{\large Reproducible waveform classification, independent QSIS confirmation,\\and standalone embedded-model inference\par}
+\vspace{17mm}
+\begin{minipage}[t]{.43\textwidth}\raggedright
+\textit{Author}\\Gauss Chang\\Department of Physics, NTU
+\end{minipage}\hfill
+\begin{minipage}[t]{.49\textwidth}\raggedleft
+\textit{Advisors, original project}\\Dr. Kuo-Fong Ma\\Dr. Wen-Tzong Liang
 \end{minipage}
-%
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Advisor :} \\
-Dr.~Kuo-Fong \textsc{Ma} \\
-Dr.~Wen-Tzong \textsc{Liang} \\
-\end{flushright}
-\end{minipage}
-
 \vfill
-
-% Bottom of the page
-{\large \today}
-
-\end{center}
-
+{\large 21 November 2026\par}
+\vspace{5mm}
+{\small Software release: \href{https://github.com/Gauss963/SeismicTorch/releases/tag/v1.0.0}{SeismicTorch v1.0.0}\\
+Evidence-based revision of the original project report.}
 \end{titlepage}
-\setcounter{page}{1}
+\hypersetup{pageanchor=true}
 
-% \begin{enumerate} [label = (\alph*)]
-% \begin{enumerate} [label = (\roman*)]
+\pagenumbering{roman}
+\begin{abstract}
+This project classifies short three-component seismic waveforms into P waves,
+S waves and noise, with an emphasis on QSIS MEMS acceleration recordings in
+Taiwanese buildings. The revived implementation retains a compact waveform
+CNN with convolutional channels $16\rightarrow32\rightarrow64$ and a classifier
+$384\rightarrow64\rightarrow16\rightarrow3$. It contains 33,795 trainable
+parameters and consumes two-second, 40 Hz waveform windows; spectrograms are
+used only for diagnostics. The work includes GPU training on Apple MPS,
+shared preprocessing, recording/event-aware evaluation, model-blind waveform
+reference review and dependency-light native deployment.
 
-%---------------------------Body---------------------------
-\abstract{Abstract}
-Taiwan is a region frequently hit by earthquakes and has a dense population. This situation exerts significant pressure on structural facilities and the earthquake early warning systems. To achieve more timely earthquake warnings and post-seismic structural integrity analysis, we collaborate with QSIS in this project. Our aim is to promptly collect earthquake signals while avoiding the pitfalls of the traditional STA/LTA method \cite{app10082919}, which is prone to false activations \cite{10.1785/0220220322} \cite{10.1785/0120180080}.
+The initial prepared-archive experiment reached 94.14\% on the STEAD test
+archive but only 70.97\% on the QSIS test partition. These results motivated
+arrival-window review, Taiwan strong-motion adaptation, training-only hard
+background examples, data augmentation and per-record gravity alignment.
+The released model was fitted for 20 epochs on 226 source windows initialized
+from a six-epoch CWA adaptation run. An instrumented replay reproduces all
+27 saved state tensors exactly and supplies the missing training curves.
 
-\section{Introduction}
-Taiwan is a region characterized by frequent earthquakes and a dense population. These conditions place immense pressure on building structures and earthquake early warning systems. In pursuit of earthquake early warning and post-quake structural integrity analysis, we introduce ``QSIS''. Harnessing the power of deep-learning, we present an affordable solution for earthquake detection. This project is meant to be:
-\begin{enumerate} [label = \arabic*.]
-	\item Cost-Efficient Alerts: Using MEMS technology, we can widely distribute the sensor at low costs.
-	\item Instantaneous Detection: Real-time alerts for swift precautionary actions.
-	\item Widespread Coverage: Designed for city-wide deployment to ensure comprehensive safety.
-	\item Customization: Fine-tuning capabilities to cater to unique building or location requirements.
-	\item Structural Integrity Monitoring: For different floors in a single building, identify the damaged ones using the waveform.
+On a newly acquired IES archive, the unchanged model correctly classified
+27/27 agreed phase/background references at their centers and 26/27 after a
+$+0.2$ s shift. Two prespecified primary cohorts together scored 44/44 at
+center across 21 dates. Including three supplemental array-context references
+produced 46/47 (97.87\%) at center and 45/47 (95.74\%) at $+0.2$ s. These are
+conditional clip-classification results based on independently obtained,
+model-blind AI visual references, not analyst-certified arrival labels or
+continuous-stream detection accuracy. Limited sample size and unresolved
+phase slots prevent a population-wide 95\% guarantee.
+
+A C++17 implementation embeds the model constants, reads SAC or miniSEED and
+returns three same-length probability vectors. All 141 reference-window
+predictions match Python, with maximum absolute probability error
+$4.17\times10^{-7}$. GitHub CI builds, tests and publishes Linux x86\_64/ARM64, macOS and
+Windows executables under tag v1.0.0. A separate post-release sensitivity study completes 60 fits on date-grouped
+training-pool folds, comparing two, three and four convolutional layers and
+five QSIS epoch budgets. Additional depth shows no robust timing advantage;
+longer fine-tuning gives modest validation gains while retaining a
+fitting/validation gap. All figures in this report are PDF files.
+\end{abstract}
+
+\begin{table}[htbp]\centering\small
+\caption{Principal findings and their distinct evaluation scopes.}
+\begin{tabularx}{\linewidth}{Yrr}
+\toprule Evaluation & Correct / scored & Accuracy \\\midrule
+Prepared STEAD archive test, initial model & 16,426 / 17,449 & 94.14\% \\
+Prepared QSIS test, initial fine-tuning & 176 / 248 & 70.97\% \\
+Fresh IES confirmation, released model & 27 / 27 & 100.00\% \\
+Combined primary confirmation, released model & 44 / 44 & 100.00\% \\
+Primary plus supplemental references, center & 46 / 47 & 97.87\% \\
+Primary plus supplemental references, $+0.2$ s & 45 / 47 & 95.74\% \\\bottomrule
+\end{tabularx}
+\end{table}
+\clearpage
+{\footnotesize\linespread{1.0}\selectfont\setlength{\parskip}{0pt}\tableofcontents}
+\clearpage
+{\small\setlength{\parskip}{0pt}\listoffigures}
+\clearpage
+\pagenumbering{arabic}
+
+\section{Introduction and project scope}
+\subsection{Motivation}
+Dense, inexpensive three-component sensors can support the observation of
+building response and local earthquake shaking. QSIS recordings are a useful
+application domain because an indoor MEMS sensor sees not only regional
+seismic motion but also structural amplification, changes in installation
+orientation, quantization, transient interference and channel faults. A model
+trained on a general seismic archive cannot be assumed to transfer unchanged
+to these conditions. Prior work on phase detection and tinyML demonstrates
+why compact learned waveform representations are relevant to this setting
+\cite{10.1785/0120180080,10.1785/0220220322}.
+
+The concrete objective here is three-class recognition of an already selected
+short window. The project also provides a sliding-window interface for
+continuous recordings. It does not establish event association, earthquake
+location, warning lead time, structural damage assessment or an operational
+false-alarm rate. Those applications require additional labels and downstream
+validation. In particular, assigning a high P probability to a window does not
+by itself establish the arrival time of its first P sample.
+
+\subsection{Questions addressed in the restart}
+The restart addressed four implementation concerns: model dimensions, use of
+GPU training, lack of code organization and an incomplete C++ inference path.
+The verified architecture has three convolutional and three fully connected
+layers. The numbers 16, 32 and 64 are \emph{output channel counts}; every
+convolution uses a $3\times1$ kernel. They should not be confused with kernel
+sizes or temporal pooling dimensions. SpectrogramCNN is outside the retained
+workflow. Training uses CUDA when available, otherwise Apple MPS, otherwise
+CPU; the retained QSIS checkpoint was trained on MPS.
+
+The active Python code is now organized into model, data, training, inference
+and QSIS review modules. Historical scripts and artifacts remain available
+under \code{legacy/} and \code{reports/legacy/}. The native implementation lives
+under \code{cpp/}; the old Xcode prototype has been preserved separately at
+\code{legacy/cpp/}. This report documents the retained model rather than treating
+every exploratory experiment as a production change.
+
+\section{Datasets, provenance and reference construction}
+\subsection{Prepared archives and the initial baseline}
+STEAD is a public collection of three-component earthquake and noise signals
+\cite{8871127}. The local experiment uses prepared arrays derived from that
+resource, not the complete global dataset. Shape checks, finite-value checks,
+one-hot target validation, joint amplitude normalization and duplicate
+screening precede fitting. Identical normalized training inputs are collapsed;
+groups containing inconsistent labels are removed. The archived arrays lack
+full source-event metadata, so the initial STEAD split is not an independently
+verified event-disjoint split of the full upstream archive.
+
+The local QSIS array contains adjacent P/S windows from each event recording
+followed by noise windows. The baseline groups paired P/S windows by recording
+before splitting. This prevents the same recording's P and S examples from
+being assigned to separate partitions, but does not guarantee that different
+stations recording one earthquake stay in the same partition. This baseline
+is therefore distinct from the later event/date-separated confirmation work.
+
+\begin{table}[htbp]\centering\small
+\caption{Actual prepared-window counts in the saved baseline metrics, after
+loading and filtering. These supersede unsourced counts in the old draft.}
+\begin{tabularx}{\linewidth}{Yrrr}
+\toprule Stage & Fitting & Validation & Test \\\midrule
+Prepared STEAD, class-stratified development split & 58,740 & 14,686 & 17,449 \\
+Prepared QSIS, recording-grouped split & 1,160 & 249 & 248 \\\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Taiwan strong-motion adaptation}
+The CWA Benchmark resource supplies TSMIP acceleration recordings at 200 Hz
+and trace metadata \cite{cwaData}. The retained adaptation experiment uses the
+2011 chunk and matching published sample metadata. It checks the component
+order (ZNE), sampling rate, acceleration measurement, completeness flag,
+single-event status and the metadata's manual-pick status, including the
+published misspelling \code{maunal}. Accepted traces must be finite, have
+nonconstant axes and leave sufficient context around the P and S references.
+
+Exactly 2,748 traces survive. Each supplies P, S and pre-P background windows,
+for 8,244 examples, balanced at 2,748 per class. Raw axes are reordered to ENZ.
+The adaptation path detrends and tapers the complete trace, high-pass filters
+at 0.5 Hz at its native rate and downsamples to 100 Hz before producing model
+windows. This historical CWA preparation differs from the final QSIS
+steady-start route; it is not silently described as identical preprocessing.
+
+A seeded event split assigns 292 earthquake IDs to fitting and 73 to
+validation. The resulting partitions contain 6,507 and 1,737 clips,
+respectively. The chosen adaptation checkpoint is epoch 6, with validation
+balanced accuracy 97.99\%. It is an initialization resource, and its validation
+score is not a QSIS test result. The 2011 source period precedes the later QSIS
+evaluation recordings.
+
+\subsection{Final QSIS fitting pool}
+The released checkpoint uses 226 ordered source windows: 33 P, 47 S and 146
+noise windows. This pool combines the earlier 219-source recipe and seven
+additional agreed CCUL training phases. It includes visually reviewed phases,
+screened training proposals and background examples selected on training
+dates. Proposals serve as weak training targets and are not promoted to
+independent evaluation labels. Every source in the receipt records its paths,
+center, target and group identity. The pool contains 63 distinct group
+identifiers; event identifiers and noise-date identifiers have different
+meanings and should not be interpreted as 63 independent earthquakes.
+
+The predominance of noise windows motivates reciprocal-frequency class
+weights. Per-record gravity alignment is usable for 104 fitting windows; the
+remaining 122 retain the acquired axes. There is no station calibration table
+in the released receipt. Training examples are not supplemented with any of
+the fresh IES test clips. Figure~\ref{fig:composition} shows the class counts
+and the exact composition of the confirmation references.
+\fig[Fitting and confirmation class counts]{dataset_composition}{1}{Class composition of fitting and confirmation
+sources. The two primary confirmation cohorts and three supplemental clips
+are disjoint clip sets; they must not be counted a second time as separate
+independent tests after aggregation.}{fig:composition}
+
+\subsection{Prespecified primary confirmation}
+The earlier primary confirmation cohort contains 17 scored references across
+nine UTC dates: 3 P, 5 S and 9 pre-event backgrounds. Station/date enrollment
+and model identities were fixed before target waveform review and scoring.
+Nearby P-Alert recordings provide context, while the reference time is read
+from the target QSIS waveform. Two independent model-blind AI reviewers
+supply the waveform judgments. Of 36 enrolled phase slots across 18 dates,
+eight yield agreed usable phase references. The unresolved slots are retained
+in the coverage accounting rather than assigned convenient targets.
+
+Additional array context later supports three more references on the reserved
+dates: two P and one S. These are reported as a supplemental extension of the
+17-clip set, giving 20 earlier references in total. Their review procedure is
+still model-blind, but they are separated from the original primary enrollment
+to preserve the distinction between prespecified and follow-up evidence.
+
+\subsection{Fresh IES archive confirmation}
+The IES Building Seismic Response Dataset was published on Zenodo in October
+2025 and combines legacy SMA-1 and QSIS recordings \cite{iesData}. The local
+archive inventory contains 3,069 QSIS SAC components, 112 event identifiers
+and 64 event dates. The download is 225,569,391 bytes and matches the
+publisher's MD5, \code{d0e9eef37f0844e349623174984ca8ea}. The original files
+remain unchanged. The source supplies waveform/event metadata, but no usable
+QSIS P/S analyst-arrival file was found in it.
+
+Fifteen dates remain after excluding the original split, all candidate fitting
+dates and all earlier public evaluation cohorts. Before visual inspection,
+enrollment selects the largest listed earthquake per date, the two lowest
+complete instrument codes as targets and up to two additional instruments as
+context. Inputs must be aligned 100 Hz XYZ triplets with at least 30 seconds
+before origin and 120 seconds afterward; nearby previous events are excluded
+using a 120-second embargo. Catalog/SAC clock consistency is checked. Missing
+station coordinates are supplied from the archive's documented IES location,
+with that substitution recorded.
+
+There are 29 enrolled target recordings, hence 58 possible P/S phase slots.
+One target fails raw waveform QC, leaving 28 rendered targets. Two independent
+AI readers examine the target waveforms in three bands, local array energy
+and a wider overview without seeing classifier outputs. Agreement within
+0.6 s yields nine P and six S references across six event dates. The other
+41 rendered phase slots remain unresolved; the failed recording contributes
+two additional QC-excluded slots. This is 15 agreed phase slots out of 58
+enrolled, not an assumed 58/58 fully labelled benchmark.
+
+Backgrounds are selected separately. A CWA catalog screen removes candidate
+centers near regional catalog origins, and the maximum eligible 1 s / 5 s
+STA/LTA peak is chosen in a prespecified pre-event interval. Raw dropouts and
+inadequate filter/context support are excluded. Two readers accept 12 of 14
+rendered background candidates, leaving a staircase-like quantized signal and
+a disputed transient unresolved. The final fresh cohort is 9 P, 6 S and 12
+noise clips on 12 dates. Figure~\ref{fig:coverage} makes the selection coverage
+explicit.
+\fig[Fresh IES reference coverage and exclusions]{reference_coverage}{.95}{Fresh reference coverage. The P and S rows each
+contain 29 enrolled slots; one recording excludes one slot of each phase.
+Accuracy is computed on the agreed references, not on unresolved slots.}{fig:coverage}
+\FloatBarrier
+
+\section{Waveform preprocessing and input representation}
+\subsection{Synchronization and acquired-axis QC}
+The verified Python route expects synchronized 100 Hz acceleration traces in
+X, Y, Z order. All components need the same start, rate and sample count.
+Missing or nonfinite data are rejected by the single-window Python interface.
+The dense native interface instead splits finite segments and fills
+unscorable output positions with NaN.
+
+A center $c$ at 100 Hz uses samples $[c-100,c+100)$, giving exactly 200 raw
+samples per component. A one-second repeated run in any \emph{acquired} axis
+invalidates the window. This test precedes physical rotation: rotating a
+constant or failed channel could otherwise mix motion from healthy axes into
+it and conceal the fault. A zero or nonfinite normalization peak is also
+invalid. Full two-second support is mandatory.
+
+\subsection{Detrending and the steady-start high-pass filter}
+Each complete finite recording is linearly detrended in double precision.
+For a component $x_i$, the fitted line is $a+bi$, where $a,b$ minimize the
+squared residual. A fourth-order Butterworth high-pass filter at 0.5 Hz is
+applied as two second-order sections. Instead of tapering the beginning of a
+recording, the released QSIS path uses steady initial conditions obtained
+from \code{sosfilt_zi} multiplied by the first detrended sample. This avoids a
+taper amplitude ramp while preserving the selected training/inference route.
+The filter is causal, but whole-record detrending uses later samples. The
+current file-based pipeline is therefore \emph{not} a strictly online causal
+picker; streaming deployment would require a separately validated detrending
+and state-handling design.
+
+\subsection{Gravity-derived rotation}
+Stable gravitational offsets can identify the vertical axis of a stationary
+acceleration sensor. The algorithm computes one-second component medians over
+seconds 1--7, then a componentwise median across those six blocks. Let that
+baseline be $\mathbf{g}$ and its normalized direction be
+$\mathbf{u}=\mathbf{g}/\|\mathbf{g}\|$. Alignment requires a magnitude between
+900 and 1,100 gal and a maximum block-vector drift of at most 8 gal, where
+$1\;\mathrm{gal}=1\;\mathrm{cm\,s^{-2}}$. The shortest proper rotation maps
+$\mathbf{u}$ to the positive vertical axis. If the baseline is unusable, the
+identity transform is retained.
+
+For $\mathbf{v}=\mathbf{u}\times\mathbf{e}_z$ and
+$d=\mathbf{u}\cdot\mathbf{e}_z$, the nondegenerate rotation can be written
+\begin{equation}
+ R=I+[\mathbf{v}]_\times+
+ \frac{[\mathbf{v}]_\times^2}{1+d},
+\end{equation}
+with explicit parallel/antiparallel handling. Alignment is applied only from
+center sample 800 onward, so the six-second baseline precedes the complete
+classification window. It determines vertical orientation, not geographic
+azimuth; it cannot establish north/east directions from gravity alone. There
+is no station-name fallback in the deployed model.
+
+\subsection{Fourier resampling and joint normalization}
+After filtering and, when applicable, rotation, a 200-sample cut is
+Fourier-resampled to 80 samples per axis. At 40 Hz this remains a two-second
+window. All components share one peak scale:
+\begin{equation}
+ \widetilde{x}_{t,a}=
+ \frac{x_{t,a}}{\max_{t',a'}|x_{t',a'}|},
+ \qquad t=0,\ldots,79,\quad a\in\{X,Y,Z\}.
+\end{equation}
+The tensor supplied to PyTorch has shape $[B,1,80,3]$ in float32. Joint
+normalization preserves relative component amplitudes, although it removes
+absolute amplitude. Figure~\ref{fig:examples} shows both acquired deviations
+and the actual normalized model inputs for representative held-out clips.
+
+No time-frequency image is supplied to this classifier.
+Figure~\ref{fig:spectral} is an explanatory diagnostic calculated from the
+same reference waveforms; it does not change the inference representation.
+The class spectra describe this small selected sample and do not establish a
+universal spectral boundary between phases or between buildings.
+\fig[Raw and normalized held-out waveform examples]{waveform_examples}{1}{Representative fresh held-out P, S and noise
+windows. Upper panels subtract the per-axis median only for display; lower
+panels show the released pipeline's normalized waveform input. X/Y/Z are
+colored consistently. The captioned softmax values come from the frozen
+checkpoint.}{fig:examples}
+\fig[Class spectra and diagnostic time-frequency view]{spectral_diagnostics}{1}{Waveform diagnostics, not model inputs. Left:
+summed three-axis Welch power from the 80-sample normalized inputs, with
+classwise median and interquartile range across the 47 centered references.
+Right: an STFT of filtered vector magnitude around an example P reference;
+its color is log amplitude and its time scale differs from the two-second
+classification cut.}{fig:spectral}
+\FloatBarrier
+
+\section{CNN architecture}
+Figure~\ref{fig:architecture} summarizes the retained processing chain.
+Convolutions have unit stride, no padding and $3\times1$ kernels. Temporal
+max pooling has kernel and stride $3\times1$. Thus early convolutions share
+temporal filters across the three physical components without convolving
+across the component dimension. The flattened fully connected stage combines
+those component-specific feature responses.
+\fig[Preprocessing and retained CNN architecture]{pipeline_architecture}{1}{Released preprocessing and CNN. Output
+channels are 16/32/64; temporal pooling reduces 80 model samples to two time
+positions. The final feature volume is $64\times2\times3=384$.}{fig:architecture}
+
+\begin{table}[htbp]\centering\small
+\caption{Layer dimensions and trainable parameters; batch dimension omitted.
+BN parameters include learned scale/bias, not running-statistic buffers.}
+\begin{tabularx}{\linewidth}{Yrr}
+\toprule Operation & Output shape & Parameters \\\midrule
+Input waveform & $1\times80\times3$ & 0 \\
+Conv1, $1\to16$, kernel $3\times1$ & $16\times78\times3$ & 64 \\
+BN1, GELU, max pool, dropout 0.1 & $16\times26\times3$ & 32 \\
+Conv2, $16\to32$, kernel $3\times1$ & $32\times24\times3$ & 1,568 \\
+BN2, GELU, max pool, dropout 0.1 & $32\times8\times3$ & 64 \\
+Conv3, $32\to64$, kernel $3\times1$ & $64\times6\times3$ & 6,208 \\
+BN3, GELU, max pool, dropout 0.1 & $64\times2\times3$ & 128 \\
+Flatten & $384$ & 0 \\
+FC1, GELU & $64$ & 24,640 \\
+FC2, GELU & $16$ & 1,040 \\
+FC3, logits & $3$ & 51 \\\midrule
+Total & & \textbf{33,795} \\\bottomrule
+\end{tabularx}
+\end{table}
+
+The exact GELU is $x\Phi(x)$, with $\Phi$ the standard normal cumulative
+function. Softmax maps logits $z_k$ to
+$p_k=\exp(z_k-m)/\sum_j\exp(z_j-m)$, $m=\max_jz_j$. Class order is always
+P, S, Noise, corresponding to indices 0, 1, 2. Dropout is disabled and BN
+uses stored running statistics at evaluation. A longer-input research path
+contains adaptive pooling, but the selected checkpoint and native port use
+exactly 80 input samples and need no adaptive-pooling operation.
+\FloatBarrier
+
+\section{Training recipe and recorded learning curves}
+\subsection{Initial prepared-archive training}
+The saved initial STEAD run uses MPS, PyTorch 2.11.0, seed 42, batch size 256,
+50 epochs and Adam with learning rate $10^{-3}$. StepLR halves the learning
+rate every seven epochs. Validation selects epoch 25, rather than assuming
+the final epoch is best. The held-out prepared archive then scores
+16,426/17,449. Figure~\ref{fig:stead} reproduces the original epoch log.
+
+The initial QSIS archive fine-tuning starts from that STEAD checkpoint,
+uses AdamW, batch size 32, 100 epochs, initial learning rate $10^{-3}$ and
+the same seven-epoch schedule. Validation selects epoch 10. The test score is
+176/248, with substantial P/S confusion. Figure~\ref{fig:qsis-old} shows that
+training accuracy keeps improving while validation largely plateaus. This
+is evidence of a generalization gap, not a reason to report the training
+accuracy as achieved QSIS accuracy. Its test partition is left separate from
+the later reviewed references and their differently defined labels.
+\fig[Prepared STEAD training and validation curves]{training_stead}{1}{Original 50-epoch prepared STEAD training log. The
+vertical line marks the validation-selected checkpoint at epoch 25. Test
+metrics are not evaluated at every epoch or drawn as a selection curve.}{fig:stead}
+\fig[Initial QSIS training and validation curves]{training_qsis_baseline}{1}{Original 100-epoch QSIS archive fine-tuning.
+The selected checkpoint is epoch 10. The fitting/validation gap and persistent
+phase confusion motivate the subsequent review and adaptation work.}{fig:qsis-old}
+
+\subsection{CWA adaptation}
+The CWA stage initializes from the STEAD checkpoint, updates all CNN weights
+using AdamW at $10^{-4}$, batch size 128, six epochs and seed 42. It applies
+time-shift and horizontal-rotation augmentation to training batches. The
+class balance is exact, so ordinary cross-entropy is used. Validation is
+held out by earthquake identifier. All six recorded epochs are shown in
+Figure~\ref{fig:cwa}; the retained epoch-6 checkpoint initializes the final
+QSIS fit. Its checksum is recorded in Appendix~\ref{app:provenance}.
+\fig[CWA adaptation training and validation curves]{training_cwa}{.97}{Six recorded CWA adaptation epochs. Validation is
+held out by CWA event ID and measures the adaptation domain. It is not the
+independent QSIS confirmation set.}{fig:cwa}
+
+\subsection{Released QSIS fine-tuning}
+The final fit updates all layers for a fixed 20 epochs with seed 42 on MPS.
+Batch size is 16; AdamW uses learning rate $3\times10^{-4}$ with its default
+weight decay 0.01, betas $(0.9,0.999)$ and epsilon $10^{-8}$. There is no
+learning-rate scheduler in this final fit. The last epoch is retained; the
+fresh test is not used to select an epoch.
+
+Training augmentation reflects time indices at the clip boundaries rather
+than wrapping them. Each example receives an integer shift from $-8$ to $+8$
+at 40 Hz (up to $\pm0.2$ s), and a horizontal rotation uniformly drawn from
+$\pm30^\circ$. The vertical axis remains unchanged, and joint peak
+normalization is reapplied. These transformed inputs are training views of
+the same 226 source windows; they do not increase the number of independent
+source recordings.
+
+Reciprocal-frequency class weights $w_k=1/n_k$ enter weighted cross-entropy:
+\begin{equation}
+ L_{\mathcal{B}}=
+ -\frac{\sum_{i\in\mathcal{B}}w_{y_i}\log p_{i,y_i}}
+         {\sum_{i\in\mathcal{B}}w_{y_i}}.
+\end{equation}
+The existing epoch logger weights these batch means by batch size before
+averaging. Because class weights and batch compositions vary, that logged
+training objective is not mathematically identical to one weighted reduction
+over the entire epoch. The clean fitting-set diagnostic uses ordinary
+unweighted cross-entropy. Figure~\ref{fig:final-fit} labels the two loss
+reductions explicitly; their numerical gap should not be interpreted solely
+as overfitting.
+
+\subsection{Recovery and verification of the missing final curves}
+The original final fitting function saved weights and source receipts but no
+per-epoch history. To recover truthful curves, the reporting utility reloads
+the 226 source paths/centers in their recorded order and reruns the existing
+fitting function with the same initialization, seed, device, augmentation and
+optimizer. A wrapper records each existing epoch result and evaluates only
+the clean \emph{fitting} inputs in evaluation mode. CPU and MPS random states
+are preserved around the diagnostic. No validation or test reference is read
+by this replay.
+
+After fitting, every state tensor is compared with the released checkpoint
+using exact tensor equality. All 27 tensors match. The curves are therefore
+an instrumented exact replay of the released weights, not fabricated or
+smoothed estimates of an unavailable training log. The clean fitting score
+at epoch 20 is 224/226 (99.12\%); the online augmented training score is
+222/226 (98.23\%). These remain training scores. A high fitting score alone
+cannot demonstrate freedom from overfitting.
+\fig[Exact replay of the final 20-epoch fit]{training_final}{1}{Exact 20-epoch replay of the released final fit.
+Blue curves are online augmented training metrics with dropout active;
+orange curves evaluate the unaugmented fitting inputs after each epoch with
+dropout disabled and stored BN statistics. There is no test/validation curve
+for this final refit. All 27 saved state tensors reproduce exactly.}{fig:final-fit}
+
+\subsection{What constrains overfitting}
+The project uses transfer initialization, a small model, dropout, weight
+decay, class weighting, training augmentation, event/date exclusions and
+separate confirmation cohorts. Exploratory changes are evaluated on
+development data. Larger networks are not adopted merely because their
+training loss improves. Nonetheless, many development comparisons have been
+made, and archived evaluation references were subsequently reused. They are
+reported descriptively, rather than retrospectively relabelled as untouched
+holdouts. The fresh cohort is the clearest additional confirmation because
+both model identities and its enrollment protocol were fixed before its
+waveform review.
+\FloatBarrier
+
+\section{Sensitivity to model depth and training duration}\label{sec:sensitivity}
+\subsection{Study design and separation from confirmation}
+A post-release sensitivity study varies convolutional depth and the number
+of QSIS fitting epochs. Its data are restricted to the 226 fitting sources
+already recorded in the released receipt. None of the 47 independent
+confirmation references is used to select an architecture, an epoch or an
+initialization. This is development cross-validation on the existing fitting
+pool, whose targets include reviewed and weak training labels; its scores
+are not new independent confirmation accuracy.
+
+To avoid recording/date leakage, source-event dates, SAC start dates and
+center-sample dates are joined into connected UTC-date groups. This also
+keeps an earthquake crossing midnight from being split through its start and
+origin dates. The 226 sources form 58 such groups. An exact audit also finds
+226 unique normalized centered inputs and no identical input shared across
+validation folds. Five folds are frozen
+before fitting. Their validation class counts (P/S/Noise) are $(7,10,28)$,
+$(6,10,28)$, $(7,9,30)$, $(7,9,28)$ and $(6,9,32)$. Fold assignment is balanced
+using target counts only, without inspecting predictions. Each validation
+source is held out once per seed. A group's sources cannot appear on both
+sides of its fold.
+
+Three fixed fitting seeds, 42, 43 and 44, are paired across all configurations.
+Every trajectory runs for 80 epochs, saving evaluations at epochs 5, 10, 20,
+40 and 80. All configurations use the same source cuts, five folds, batch
+size 16, AdamW learning rate $3\times10^{-4}$, weight decay 0.01, reciprocal
+\emph{fitting-fold} class weights and original shift/rotation augmentation.
+Raw evaluation windows are recut at $-0.2$, 0 and $+0.2$ s. Validation uses
+evaluation mode and unweighted cross-entropy. No early stopping or adaptive
+rerun is triggered by these validation measurements.
+
+The study completes $4\times3\times5=60$ fits and 4,800 aggregate QSIS
+optimization epochs, or 57,600 optimizer steps. This is the experiment-wide
+budget, not the age of a single model. Predictions from all five validation
+folds are pooled over 226 sources separately for each seed. Tables and plots
+then report the mean and sample standard deviation across the three seeds.
+The five folds and repeated timing views are not counted as independent
+replicates to narrow an error bar. Seed SD is not a confidence interval.
+
+\subsection{Depth variants and a fair initialization comparison}
+The depth comparison keeps the fully connected classifier fixed at
+$384\rightarrow64\rightarrow16\rightarrow3$ and compares two, three and four
+convolutional layers, hence five, six and seven learned Conv/FC layers in
+that counting convention. BN affine operations are not counted as extra
+Conv/FC layers. All three depth variants start from random weights: the
+pretrained three-layer checkpoint cannot initialize a different-width
+architecture without a transfer confound.
+
+\begin{table}[htbp]\centering\small
+\caption{Depth variants. Pooling differences are explicit; this is an
+architecture sensitivity study rather than a claim to change only an
+abstract scalar depth while holding every feature operation identical.}
+\begin{tabularx}{\linewidth}{lrrY}
+\toprule Conv / FC layers & Channels & Parameters & Temporal reduction \\\midrule
+2 / 3 & 16/64 & 29,091 & Two original $3\times1$ max pools leave eight time positions; adaptive average pooling reduces them to two before flattening. \\
+3 / 3 & 16/32/64 & 33,795 & Exact original architecture, with three $3\times1$ max pools. \\
+4 / 3 & 16/32/64/64 & 46,275 & A padded $3\times1$ 64-channel block is inserted before the final max pool; all three temporal downsamplings are retained. \\\bottomrule
+\end{tabularx}
+\end{table}
+
+A fourth configuration uses the exact three-convolution model with the
+original CWA initialization. It tests epoch duration under the released
+transfer recipe without implying that random and pretrained starts are the
+same condition. No alternative model is promoted into the native binary.
+\fig[Depth sensitivity across grouped folds]{sensitivity_depth}{1}{Depth
+sensitivity from random initialization. Each cell is a mean over three seeds
+of pooled five-fold out-of-fold predictions. The right panel takes the
+minimum balanced accuracy across the three fixed raw-window offsets within
+each seed before averaging. The physical source count remains 226.}{fig:sensitivity-depth}
+
+\subsection{Depth results}
+At 20 epochs, centered balanced accuracy is $91.63\pm1.69$\% for two
+convolutions, $93.29\pm1.19$\% for three and $92.86\pm0.78$\% for four.
+At 80 epochs, the corresponding results are $93.65\pm0.67$\%,
+$93.75\pm1.58$\% and $94.01\pm0.96$\%. The four-layer mean is only 0.26
+percentage points above the three-layer mean at epoch 80, while using
+36.93\% more parameters. That difference is small relative to the observed
+seed variation and does not establish a dependable benefit of greater depth.
+
+The two-layer variant has 13.92\% fewer parameters than the original and
+similar centered balanced accuracy at epoch 80. However, the models' timing
+robustness differs: their mean worst-offset balanced accuracies at epoch 80
+are 91.86\%, 91.54\% and 90.33\%, respectively. The deeper variant's slight
+centered gain therefore does not persist under the timing perturbation.
+Figure~\ref{fig:sensitivity-capacity} compares all trajectories and capacity.
+\fig[Model capacity and validation performance]{sensitivity_capacity}{1}{All
+four development trajectories and their parameter counts. Each marker in
+the capacity panel is one prespecified epoch checkpoint; several markers
+share one parameter count. This is not an independent test-set ranking.}{fig:sensitivity-capacity}
+
+\subsection{Epoch sensitivity of the released architecture}
+For the CWA-initialized original CNN, the mean centered accuracy rises from
+93.07\% at five epochs to 95.72\% at 20 and 96.90\% at 80. Centered balanced
+accuracy is $90.03\pm0.92$\%, $92.90\pm0.47$\% and $93.83\pm1.01$\%,
+respectively. Thus the larger 20-to-80-epoch budget improves mean centered
+accuracy by 1.18 percentage points but balanced accuracy by only 0.93 points.
+The fitting-fold accuracy reaches 100\% at epoch 80, while out-of-fold
+accuracy remains 96.90\%; fitting accuracy alone would conceal this gap.
+Mean centered P recall is 87.88\% at both 20 and 80 epochs; S recall rises
+from 92.20\% to 93.62\% and noise recall from 98.63\% to 100\%. The overall
+accuracy gain therefore does not imply that the harder P examples improve.
+The class-recall panel preserves this distinction.
+
+Worst-offset balanced accuracy is 91.22\% at 20 epochs, 91.14\% at 40 and
+91.84\% at 80. The effect is not a simple monotonic improvement at every
+checkpoint. The original random-start CNN's balanced accuracy also drops
+from 93.29\% at epoch 20 to 92.41\% at 40 before recovering to 93.75\% at 80.
+These results argue for measuring grouped validation and timing robustness
+rather than assuming either more epochs or more layers is automatically
+better. The full grid, including all intermediate epochs, is in
+Appendix~\ref{app:sensitivity-grid}.
+\fig[Epoch sensitivity and the generalization gap]{sensitivity_epochs}{1}{Epoch
+sensitivity of the exact original architecture under random and CWA starts.
+Upper left: mean centered out-of-fold balanced accuracy with seed-SD bars.
+Upper right: clean fitting-fold and pooled out-of-fold accuracy. Lower left:
+mean worst-offset balanced accuracy. Lower right: mean centered class recall
+for the CWA start. The independent confirmation set is not evaluated along
+these trajectories.}{fig:sensitivity-epochs}
+
+\subsection{Meaning of total epochs and the retained model}
+The varied epoch count is the final QSIS fitting duration, with preceding
+initialization held fixed to isolate that factor. The CWA start descends from
+STEAD's saved epoch 25 and six CWA adaptation epochs. Its saved-weight
+ancestry therefore contains $25+6+E$ stage epochs: 36, 41, 51, 71 and 111
+for the five values of $E$. The original STEAD job actually executed 50
+epochs while selecting epoch 25; including that discarded work gives
+$50+6+E$ executed pipeline epochs. Neither sum is a common unit of compute,
+because the stages have different dataset sizes and batch sizes. The earlier
+100-epoch prepared-QSIS baseline is a separate experiment, not an ancestor
+of this CWA-initialized checkpoint.
+
+The retained full-data model remains the original 20-epoch checkpoint, and
+its SHA-256 is checked unchanged after this study. The cross-validation
+improvement at 80 epochs is a useful development observation, not permission
+to re-label the existing 47 clips as a new untouched test for an optimized
+model. Any replacement should first be frozen and then confirmed on new
+expert-labelled events and background periods. The 58-group training-pool
+study does not remove its weak-label or single-network limitations.
+\FloatBarrier
+
+\section{Evaluation protocol and statistics}
+\subsection{Units, offsets and metrics}
+The evaluation unit is one two-second reference clip. Its target is the
+phase/noise category of a selected window, not a dense sequence of analyst
+labels at every input sample. Each clip is re-cut from the raw recording at
+center offsets $-0.2$, 0 and $+0.2$ s. Those three views are strongly related;
+47 clips produce 141 evaluations, not 141 independent test examples.
+
+Confusion matrices use reference classes as rows and predicted classes as
+columns, in the order P, S, Noise. For matrix $C$, class recall is
+$C_{kk}/\sum_j C_{kj}$ and precision is $C_{kk}/\sum_i C_{ik}$. Accuracy is
+$\operatorname{tr}(C)/\sum_{ij} C_{ij}$; balanced accuracy averages class recalls,
+and macro F1 averages the three class F1 scores. These definitions make the
+minority P class visible even when noise dominates the overall score.
+
+Report generation reopens each of the 47 references, applies the released
+preprocessing and recomputes all 141 softmax vectors using the frozen model.
+Every argmax prediction matches the saved comparison. The regenerated
+matrices are also checked against the immutable evaluation receipt, so the
+figures and tables use one consistent prediction source.
+
+\subsection{Reference independence and coverage}
+Two independently obtained model-blind AI reviews are separate waveform
+judgments, but they are not seismologist-certified manual arrival files.
+Agreement does not eliminate correlated visual interpretation errors. No
+expert QSIS arrival catalog was supplied. References from unclear targets
+are excluded from accuracy and counted explicitly, as in
+Figure~\ref{fig:coverage}. The 0.6 s reviewer-agreement tolerance should not
+be read as achieved arrival-time error by the classifier.
+
+The combined primary sample has 44 clips across 21 dates; the three
+supplemental references reuse those reserved dates and bring the total to 47.
+Many phase clips share an event, building or recording. The reference counts
+must therefore be accompanied by date/site coverage, not treated as a large
+collection of independent random draws from all future QSIS observations.
+
+\subsection{Uncertainty and the 95\% objective}
+For transparency, Figure~\ref{fig:timing} includes ordinary 95\% Wilson
+intervals treating clips as independent Bernoulli observations. For 46/47,
+that illustrative interval is 88.89--99.62\%; for 44/44 it is approximately
+91.97--100\%. Independence is an approximation because clips cluster by
+UTC date and site. These intervals already show why the observed 97.87\%
+point estimate is not a lower-bound guarantee above 95\%.
+
+A second descriptive analysis resamples all clips jointly by UTC date,
+using 10,000 seeded replicates over the 21 dates. It gives percentile
+intervals 93.02--100\% at center and 89.19--100\% at $+0.2$ s for the
+47-clip set. Resampling the observed dates cannot introduce unseen buildings,
+unresolved reference types or unobserved failures. All-correct subsets can
+also give degenerate bootstrap intervals. Neither calculation removes the
+selection and label-coverage limitations.
+
+Even under an ideal independent-binomial interpretation, 59 consecutive
+correct trials would be required for a one-sided exact 95\% lower bound to
+exceed 95\%, since $0.05^{1/59}>0.95$. A realistic QSIS study also needs
+independent events, sites and noise conditions. This numerical illustration
+is a study-design guide, not a claim that adding a few selected clips would
+resolve the current evidence limitations.
+\FloatBarrier
+
+\section{Results}
+\subsection{Centered confusion matrices}
+Figure~\ref{fig:confusion} presents all three centered confirmation scopes.
+The fresh IES matrix is diagonal with counts $(9,6,12)$. The combined primary
+matrix is diagonal with counts $(12,11,21)$. In the 47-clip set, one of the
+14 reference P clips is classified as S, giving
+\begin{equation}
+ C_{47,0}=\begin{pmatrix}13&1&0\\0&12&0\\0&0&21\end{pmatrix}.
+\end{equation}
+The single centered error remains in every reported aggregate. None of the
+supplemental references is moved back into fitting after inspection.
+\fig[Centered confirmation confusion matrices]{confusion_matrix_test}{1}{Centered confirmation confusion matrices.
+Cells show counts and row-normalized percentages. Left: fresh IES only.
+Middle: the two original primary cohorts. Right: primary plus three
+supplemental array-context references. The panels overlap by construction
+and must not be summed.}{fig:confusion}
+
+\begin{table}[htbp]\centering\small
+\caption{Centered per-class performance on the 47-clip extended confirmation
+set. All precision/recall values are conditional on scored references.}
+\begin{tabular}{lrrrr}
+\toprule Reference class & Support & Precision & Recall & F1 \\\midrule
+P & 14 & 100.00\% & 92.86\% & 96.30\% \\
+S & 12 & 92.31\% & 100.00\% & 96.00\% \\
+Noise & 21 & 100.00\% & 100.00\% & 100.00\% \\\midrule
+Macro average & 47 & 97.44\% & 97.62\% & 97.43\% \\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Timing sensitivity}
+At $-0.2$ s the extended matrix is the same as at center. At $+0.2$ s,
+one additional P reference becomes S:
+\begin{equation}
+ C_{47,+0.2}=\begin{pmatrix}12&2&0\\0&12&0\\0&0&21\end{pmatrix}.
+\end{equation}
+The resulting 45/47 (95.74\%) still exceeds the numerical 95\% point-estimate
+target on the scored references. P recall at this offset falls to 12/14
+(85.71\%), so aggregate accuracy should not conceal a weaker class-specific
+result. The fresh cohort alone has 26/27, with 8/9 P correct.
+\fig[Extended confirmation at fixed timing offsets]{confusion_matrix_offsets}{1}{Extended confirmation matrices at the
+three fixed offsets. The two errors at $+0.2$ s are both P-to-S confusions;
+all scored S and noise windows remain correct.}{fig:offsets}
+\fig[Timing sensitivity and illustrative uncertainty]{timing_and_uncertainty}{1}{Timing sensitivity and sample-size context.
+The left panel shows fixed-offset accuracy for overlapping confirmation
+scopes. The right panel shows illustrative clip-iid Wilson intervals at
+center; dependence and selected-reference coverage prevent their use as a
+population-wide performance guarantee.}{fig:timing}
+
+\subsection{Baseline test results are retained}
+The prepared STEAD and early QSIS test matrices are shown in
+Figure~\ref{fig:old-matrices}. Their denominators and label construction
+differ from the later confirmation cohorts. The early QSIS matrix has
+P recall 41/72, S recall 38/72 and noise recall 97/104; its balanced accuracy
+is 67.66\%. Its 70.97\% accuracy is a concrete domain-transfer warning.
+The revised 97.87\% result should not be described as a controlled
+26.90-percentage-point improvement on an identical test set. Both model
+training and reference definition changed, and the datasets are different.
+\fig[Historical prepared-archive test matrices]{confusion_matrix_historical}{.98}{Saved initial prepared-archive test
+results. Rows are reference classes and cells contain count plus row
+percentage. These are historical baselines, not the final model's
+independent confirmation denominators.}{fig:old-matrices}
+
+\subsection{Failure analysis and probability diagnostics}
+The centered miss is the supplemental CCUL P reference GPH-015 on
+2025-03-25. The retained gravity model predicts S at all three offsets.
+At IES reference IHP-017 on 2024-04-17, the centered P decision changes to S
+at $+0.2$ s. Figure~\ref{fig:errors} shows their local filtered waveforms and
+all three class probabilities. These examples are preserved as errors;
+they are not corrected by changing labels or by tuning a post-hoc threshold
+on the confirmation cohort.
+
+The waveform/probability views help identify overlap and timing sensitivity,
+but they do not establish a unique physical cause for the errors. A dense
+S probability near an already known P reference could reflect later motion
+inside the same two-second cut, sensor/site transfer or a model limitation.
+Analyst review and independent follow-up data are needed to separate these
+possibilities. Probability magnitudes are shown in
+Figure~\ref{fig:confidence}, without claiming calibration from only 47
+selected clips.
+\fig[Two retained P-to-S failures]{error_cases}{1}{The two distinct extended-confirmation P-to-S errors.
+Upper panels show eight seconds of filtered XYZ context and shade the
+centered two-second cut. Lower panels use freshly recomputed frozen-model
+softmax probabilities at the three fixed offsets.}{fig:errors}
+\fig[Reference probabilities and native numerical parity]{confidence_and_native_parity}{1}{Left: probability assigned to each
+centered reference class, with the centered error ringed. This is not a
+reliability/calibration estimate. Right: native-versus-Python maximum
+absolute probability differences on 141 related window evaluations; all
+argmax decisions agree.}{fig:confidence}
+
+\subsection{Direct waveform-to-inference comparison}\label{sec:continuous-display}
+To make the model behavior visible along a recording, the native executable
+processes the complete held-out IHP-003 XYZ triplet from IES station 5AE21.
+The recording contains 30,001 samples at 100 Hz. Dense CPU inference uses
+stride one, produces 29,802 finite probability triples and leaves 199
+unsupported edge centers as NaN. It is run on the entire recording before
+selecting a display interval, so the plot does not accidentally change
+whole-record detrending or filter initialization through a shorter recut.
+At both reviewed reference centers, the native probabilities agree with the
+Python values to within $2\times10^{-6}$.
+
+Figure~\ref{fig:continuous-event} aligns the three acquired axes and class
+probabilities on one time coordinate. A fixed componentwise baseline is
+removed only from the displayed raw waveform; the inference path still uses
+the released preprocessing. Dashed lines mark the model-blind P and S
+reference times, 22.85 and 38.25 s after catalog origin, and shaded bands mark
+their two-second reference windows. Figure~\ref{fig:continuous-full} retains
+the complete approximately 300-second view, including the pre-event interval
+and later coda.
+
+The plotted probabilities are center-window scores, not per-sample onset
+labels. In particular, later shaking alternates between high S and high
+noise scores, and short P-score excursions also occur away from the reviewed
+P reference. The rest of the recording has no dense expert target sequence,
+so these plots neither establish continuous detection accuracy nor measure
+false alarms per hour. They provide the direct waveform/inference comparison
+missing from the earlier clip-only figures.
+\fig[Event waveform and dense class probabilities]{waveform_inference_event}{1}{Waveform
+and dense inference on the same shared time axis, with an 82-second display
+excerpt chosen from the full-record run. Top three panels: acquired XYZ
+acceleration minus a fixed display baseline. Bottom: unsmoothed P/S/Noise
+probabilities at every supported 100 Hz center. Dashed lines and shaded
+windows mark the two reviewed reference centers. The displayed sample
+probabilities are not automatically interpreted as arrival picks.}{fig:continuous-event}
+\fig[Full-record waveform and inference comparison]{waveform_inference_full_record}{1}{The
+same dense inference over the entire 30,001-sample held-out recording.
+The 199 unsupported edge centers are NaN, without artificial Noise labels.
+Only the two reviewed phase windows have reference categories; the complete
+curve is a qualitative diagnostic rather than a continuously labelled test.}{fig:continuous-full}
+
+\subsection{Archived reuse and background stress evidence}
+A separate 215-clip archived reference set scores 210/215 at center for the
+current model, with 211/215 at $-0.2$ s and 209/215 at $+0.2$ s. At center,
+its matrix is $((47,3,0),(2,65,0),(0,0,98))$. These references had already
+been used in development comparisons and are descriptive reuse, not a new
+untouched test. They are not added to the 47-clip confirmation denominator.
+
+The retained model also correctly classifies 35/35 archived trigger-noise
+clips at center, with 34/35 at the negative offset. On 40 reviewed interior
+noise references, date-held-out fitting gives 40/40 across all three offsets
+at seeds 42 and 43. These are useful targeted background checks with their
+own protocols. They do not establish a false-alarm count per hour on an
+uninterrupted noise stream, and their overlapping histories are not pooled
+into a single headline percentage.
+\FloatBarrier
+
+\section{Model comparisons and 2026 research context}
+\subsection{Local comparisons and retained choices}
+The development work considered capacity, context and training-set changes,
+not just additional epochs. Table~\ref{tab:experiments} summarizes selected
+comparisons already recorded in the benchmark notes. Different rows have
+different matched subsets; their percentages must not be ranked as if they
+came from one common test set. They also precede the fresh IES confirmation.
+
+\begin{table}[htbp]\centering\small
+\caption{Selected exploratory comparisons. These are development or archived
+reuse measurements and are not additional independent final tests.}
+\label{tab:experiments}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{.27\linewidth}>{\raggedright\arraybackslash}p{.22\linewidth}Y}
+\toprule Experiment & Matched result & Implication \\\midrule
+Augmented two-second CNN, seeds 42--44 & 42, 42, 41 / 46 & Small seed variation remains; timing shifts matter. \\
+Polarization residual head & 41/46 vs CNN 42/46 & No centered benefit in the matched trial. \\
+Four-second context CNN & 40/46 vs 42/46 & Longer context alone did not improve development recognition. \\
+Real-noise mixing, 8--20 dB & 42, 40, 42 / 46 vs 42, 42, 41 & No consistent gain across the matched seeds. \\
+Frozen U-Trans encoder + regularized head & 35/41 vs CNN 36/41 & Five clips lack 60 s context; this limited adaptation does not favor replacement. \\
+234-source expanded CNN & Same fresh 27/27; 26/27 at $+0.2$ s & Earlier S/noise regressions favor retaining the 226-source model. \\
+Equal probability ensemble & No centered gain over expanded component on 52 phases & More inference cost without consistent benefit. \\\bottomrule
+\end{tabularx}
+\end{table}
+
+A smaller 5,955-parameter TCN, smoothed temporal pooling, multiscale residual
+features and optional history-based refinement remain research alternatives
+in the repository. The released native program implements the selected
+single CNN and its recorded preprocessing; it does not silently add a
+probability ensemble or the optional history head. That choice keeps model
+identity and native parity unambiguous.
+
+\subsection{Recent primary literature}
+PhaseNet established a dense three-component P/S arrival-probability approach
+\cite{phasenet}. Its task differs from assigning one label to a selected
+window. This distinction also applies to newer networks and prevents direct
+comparison of a picking F1 score with QSIS clip accuracy.
+
+DTPP (2026) combines depthwise separable temporal processing and dilations
+for efficient phase picking \cite{dtpp}. Its relevance here is a compact
+longer-context design principle. The local TCN experiment is inspired by
+that general direction; it is not a replication of DTPP and the retained
+CNN is not renamed as that architecture.
+
+U-Trans (March 2026) pretrains a U-Net/convolutional-transformer waveform
+representation by reconstructing corrupted inputs \cite{utrans}. It is a
+reasonable candidate when transferable context representations are needed.
+Our local comparison freezes its backbone and fits a regularized head on
+small QSIS folds. The published framework also studies joint downstream
+fine-tuning, so the local 35/41 comparison is evidence about this restricted
+configuration, not a general refutation of foundation models.
+
+PhaseNeXt was published on 4 November 2026 and studies a neural picker trained
+on twenty years of JMA records \cite{phasenext}. Its ConvNeXt/multiscale context
+and use of carefully checked small-event examples are relevant to future
+QSIS timing work. A local timing pilot used the authors' pinned weights:
+27 of 46 previously reviewed public arrivals passed the raw/band-pass
+agreement filter, and 26 of those were within 0.6 s of the visual reference.
+That is a proposal-quality diagnostic with incomplete retention, not 26/27
+end-to-end QSIS phase classification accuracy. The earlier RED-PAN search
+matched 36 references and the union matched 40; differing search windows
+and preprocessing prevent an architecture-only comparison.
+
+These sources support continued investigation of transferable context and
+label quality. They do not establish that replacing a 33,795-parameter CNN
+with a transformer will improve this small sensor-specific dataset. A useful
+next comparison would freeze a new event/site test protocol, hold out expert
+arrivals, match context availability and measure class recall, timing error,
+continuous false alarms and CPU cost together.
+\FloatBarrier
+
+\section{Standalone C++ inference and reproducible release}
+\subsection{Public API and input decoding}
+The C++17 project exposes standard-library types through
+\code{cpp/include/seismictorch/inference.hh}. Three binary SAC v6/v7 files
+are accepted in X/Y/Z order, including either byte order and the SAC v7
+double footer. Component rates, UTC starts and sample counts must agree.
+A whole miniSEED 2 or 3 file is decoded by a statically linked vendored
+libmseed 3.6.0. Compressed Steim and supported numeric encodings are handled
+without requiring a separately installed decoder at runtime.
+
+miniSEED components are grouped by network, station, location and channel
+family; XYZ, ENZ and 12Z suffixes map to the three axes. An ambiguous
+multi-station file requires an explicit stream selector. Samples are aligned
+to a common UTC grid. Gaps become NaN, while conflicting overlapping samples
+are rejected. Files are limited to 2 GB and the aligned grid to 50 million
+samples. Inputs need calibrated acceleration; the gravity check expects gal.
+Instrument response removal and automatic unit inference are not performed.
+
+\begin{lstlisting}[language=C++]
+#include <seismictorch/inference.hh>
+
+auto wave = seismictorch::read_sac({"X.sac", "Y.sac", "Z.sac"});
+// Or: auto wave = seismictorch::read_mseed("recording.mseed");
+auto scores = seismictorch::infer(wave);
+std::vector<float> P = std::move(scores.p);
+std::vector<float> S = std::move(scores.s);
+std::vector<float> Noise = std::move(scores.noise);
+\end{lstlisting}
+
+Every vector has exactly the aligned input length. The default stride is one
+sample, so every supported sample center is evaluated. The first/last
+unsupported centers, nonfinite gaps, raw dropout windows and zero signals
+remain NaN in all three vectors. They are not fabricated noise predictions.
+Stride values above one explicitly request an approximation with interpolation
+between valid anchors; they are not identical to dense inference.
+
+\subsection{Raspberry Pi 5 / 64-bit ARM Linux}
+The CI matrix now includes \code{linux-arm64} on the native GitHub
+\code{ubuntu-24.04-arm} runner. Its Alpine/musl container builds with baseline
+\code{-march=armv8-a} C/C++ flags, static standard runtimes and the same
+embedded model. CI executes all four CTest checks natively on ARM64, verifies
+the ELF AArch64 machine type and absence of a dynamic interpreter, then runs
+an actual 1,400-sample miniSEED inference outside the build container.
+This is execution verification, not only cross-compilation.
+
+The target is Raspberry Pi 5 with 64-bit Raspberry Pi OS or another 64-bit
+Linux distribution. No matching glibc installation is required. A 32-bit OS
+cannot execute this package. Hosted ARM64 testing does not provide a
+measurement of physical Pi 5 throughput, power use or thermal behavior.
+The ARM64 archive is added to the existing v1.0.0 release together with an
+updated four-package checksum file; the original three archives and tag are
+retained. Future tagged CI releases automatically require all four builds.
+The native ARM64 evidence is
+\href{https://github.com/Gauss963/SeismicTorch/actions/runs/44905643313}{run 44905643313}.
+
+\subsection{Embedded constants and numerical equivalence}
+The Python exporter reads the verified checkpoint and training receipt,
+checks the expected CNN/preprocessing and writes hexadecimal floating-point
+constants to \code{cpp/generated/model_weights.hh}. Batch normalization is
+folded into each convolution:
+\begin{equation}
+ W'_o=\frac{\gamma_o}{\sqrt{\sigma_o^2+\epsilon}}W_o,\qquad
+ b'_o=\frac{\gamma_o(b_o-\mu_o)}{\sqrt{\sigma_o^2+\epsilon}}+\beta_o.
+\end{equation}
+The generated constants are committed, so normal CMake compilation requires
+neither Python nor a model file. Convolutions, exact GELU, pooling, fully
+connected layers and stable softmax execute directly on CPU. The native
+program does not require PyTorch, LibTorch, BLAS or MLX at runtime.
+
+The original verified preprocessing path is 100 Hz. Native rates 40--1000 Hz
+are accepted by constructing the high-pass filter at the acquired rate and
+resampling each two-second window to 80 model samples. Golden preprocessing
+fixtures check 40, 50, 100, 200 and 1000 Hz; this is numerical implementation
+verification, not an accuracy benchmark for every sensor/rate combination.
+
+Full local parity uses 27 actual SAC recordings containing the 47 references,
+recomputed at all three offsets. The native path includes SAC decoding,
+detrending, high-pass initialization, gravity alignment, Fourier resampling
+and the embedded CNN. All 141 decisions match Python; the maximum absolute
+probability difference is $4.1723164\times10^{-7}$. Smaller CI fixtures carry
+the same normalized model windows and independent preprocessing golden cases,
+without transferring the full local waveform archives to every build runner.
+
+\subsection{Cross-platform CMake and GitHub release}
+Owned C++ sources consistently use \code{.cc} and \code{.hh}. Unmodified
+third-party C retains its upstream \code{.c}/\code{.h} extensions and license.
+CMake builds the static library target \code{SeismicTorch::seismictorch} and
+the executable \code{seismictorch-infer}. External CMake consumers can use
+\code{add_subdirectory} and link that alias. A separate consumer build was
+verified to obtain three vectors of length 1,400 from a miniSEED fixture.
+
+\begin{table}[htbp]\centering\small
+\caption{Published v1.0.0 native packages and actual dependency checks.}
+\begin{tabularx}{\linewidth}{lY}
+\toprule Platform & Build and dependency policy \\\midrule
+Ubuntu x86\_64 & Fully static musl executable; no dynamic interpreter, and execution checked outside the build container. \\
+macOS universal & arm64 and x86\_64 slices, deployment target 11.0; only system libSystem/libc++ dependencies. \\
+Linux ARM64 / Pi 5 & Fully static ARMv8-A musl executable; four tests pass on a native ARM64 Linux runner. Requires a 64-bit OS. \\
+Windows x86\_64 & Static Microsoft C/C++ runtime; dependency inspection reports only KERNEL32.dll. \\\bottomrule
+\end{tabularx}
+\end{table}
+
+Four CTest checks pass on each platform: native model/reader/preprocessing
+checks, command help, embedded model/version identity and a full CLI
+roundtrip. The CLI test requires exactly 1,400 data rows and identical CSV
+output for equivalent SAC and miniSEED inputs. Reader tests also cover
+endianness, SAC v7, miniSEED 2/3, compressed samples, CRC rejection, Unicode
+paths, multiple stream families, gaps, overlaps, raw dropout and vector
+lengths. The release job waits for all four builds, packages license notices,
+generates SHA-256 checksums and publishes tagged releases. The original
+v1.0.0 assets passed the three-platform pipeline; a later native ARM64 run
+adds the fourth architecture without changing the compiled inference sources
+or embedded model. Downloaded archives were
+checksum-verified, and the downloaded macOS executable passed universal-slice,
+signature and inference-output checks.
+
+\begin{lstlisting}
+cmake -S cpp -B build/native -DCMAKE_BUILD_TYPE=Release
+cmake --build build/native --config Release --parallel
+ctest --test-dir build/native -C Release --output-on-failure
+
+seismictorch-infer --sac X.sac Y.sac Z.sac --output scores.csv
+seismictorch-infer --mseed recording.mseed --output scores.csv
+\end{lstlisting}
+
+The CSV columns are \code{time_seconds,P,S,Noise}. Time is relative to the
+aligned recording start. Finite entries sum to one; unsupported entries are
+written as \code{nan}. Although the output is dense, its probabilities still
+represent the sliding two-second classifier. Whole-record detrending,
+centered windows and gravity initialization prevent interpreting the current
+program as a zero-latency real-time alert system.
+\FloatBarrier
+
+\section{Limitations and next validation steps}
+The retained model meets the numerical 95\% objective on the scored,
+independently reviewed confirmation references at all three fixed offsets.
+That statement has a defined denominator and should remain attached to it.
+The following limits materially affect interpretation:
+\begin{enumerate}
+\item \textbf{Reference quality.} No analyst-certified QSIS arrivals were
+available. AI visual agreement is useful audit evidence but cannot replace
+external seismological annotation for a deployment claim.
+\item \textbf{Partial phase coverage.} Only 15 of 58 newly enrolled phase
+slots are agreed/scored. Excluding unclear examples makes the task
+conditional on readability; unresolved examples cannot be assumed correct.
+\item \textbf{Sample size and dependence.} Forty-seven clips on 21 dates
+remain small and correlated. The illustrative uncertainty bounds extend below
+95\%; all-correct subsets provide little information about rare failures.
+\item \textbf{Domain coverage.} The new archive emphasizes magnitude-5-or-
+larger earthquakes at one building. Other buildings, weaker arrivals,
+instrument changes and long quiet periods need independent coverage.
+\item \textbf{Historical reuse.} The 215 archived references and many
+exploratory comparisons have informed development. Their scores are not
+fresh final-test evidence.
+\item \textbf{Task mismatch.} Clip accuracy does not measure pick timing,
+event-level detection, missed-event rates or false alarms per hour. A
+continuous stream contains many overlapping windows and many more background
+opportunities than the confirmation clips.
+\item \textbf{Temporal availability.} Centered windows require later samples,
+gravity estimation needs a stable preceding baseline, and whole-record
+linear detrending is offline. A causal runtime would need its own training
+and validation protocol.
+\item \textbf{Probability interpretation.} Softmax values have not been
+independently calibrated. A high maximum value is not a guaranteed
+probability of correctness under a new sensor distribution.
 \end{enumerate}
-%
-\begin{figure}[H]
-\centering
-\includegraphics[width = 3in]{event_threechannel.pdf}
-\includegraphics[width = 3in]{noise_threechannel.pdf}
-\caption{Seismic and Noise Waveform}\label{threechannel}
-\end{figure}
 
-In Figure \ref{threechannel} shows how the seismic and noise waveform look like.
-%
-\newpage
-\subsection{Importance of this Work}
-%
-\newpage
-\subsection{Model Structure}
-Following is a model structure I have used in this project.
-\begin{figure}[H]
-\centering
-\includegraphics[width = 6in]{EarthquakeCNN_Model.pdf}
-\caption{Model Structure}\label{EarthquakeCNN_Model_Structure}
-\end{figure}
-\newpage
-\section{Training Data Structure}
+The next study should obtain expert references, freeze event/site-disjoint
+training/validation/test groups, document all unscorable intervals and
+annotate continuous background hours. Thresholds and debounce logic should
+be selected on validation only. The final test should report per-class
+recall/F1, event-level sensitivity, matched-arrival timing error, false alarms
+per hour, CPU throughput and unavailable-output coverage. A transformer or
+multiscale replacement should be compared on exactly those same frozen
+inputs and resource constraints. Additional training should be motivated by
+those failures rather than tuning against the present confirmation cases.
 
-Given that the QSIS project is still in its early stages, its earthquake information is somewhat lacking compared to more established databases. Therefore, for this initiative, we utilized two databases for training. Initially, we pre-trained our model using data from the STanford EArthquake Dataset (STEAD) \cite{8871127}.
-
-The STEAD database contains 73,582 usable noise and event recordings, divided approximately into 40\% Noise, 30\% P-waves, and 30\% S-waves.
-
-Building on this, we fine-tuned the model using the QSIS dataset, which comprises 241 usable events and 725 noise recordings. The distribution within the QSIS dataset is approximately 60\% Noise, 20\% P-waves, and 20\% S-waves.
-
-Figures \ref{spectrogram} showcase the spectrogram from the QSIS dataset for two different buildings: IES and RCEC. As observed from the diagrams, the earthquake data recorded by IES predominantly has wave durations around \SI{4}{\hertz}, whereas the data recorded by RCEC mostly centers around \SI{1.3}{\hertz}. This suggests that earthquake signals within buildings are highly building- dependent.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width = 3in]{Single_IES_spectrogram.pdf}
-\includegraphics[width = 3in]{Single_RCEC_spectrogram.pdf}
-\caption{Spectrogram of Training Data}\label{spectrogram}
-\end{figure}
-
-\newpage
-\section{Implementation}
-%
-\newpage
-%
-\section{Result}
-\begin{figure}[htbp]
-	\centering
-	\subfloat[2022-09-18 06:44:15(UTC), $23.14^{\circ}$N, $121.2^{\circ}$E, depth: 7km, ML:6.8]{\includegraphics[width=.45\columnwidth]{./event_threechannel.pdf}}\hspace{5pt}
-	\subfloat[2023-07-05 02:21:21(UTC)]{\includegraphics[width=.45\columnwidth]{./noise_threechannel.pdf}}\\
-	\subfloat[Prediction of an Actual Event]{\includegraphics[width=.45\columnwidth]{./Single_event_test.pdf}}\hspace{5pt}
-	\subfloat[Prediction of an Actual Noise]{\includegraphics[width=.45\columnwidth]{./Single_noise_test.pdf}}
-	\caption{Prediction Results}
-\end{figure}
-%
-\newpage
 \section{Conclusion}
+The restart turns the original prototype into a reproducible waveform
+classification and native inference project. The retained architecture is
+verified as a 16/32/64-channel CNN with a 384/64/16/3 classifier, trained on
+Apple MPS and reproduced exactly after code reorganization. The report
+preserves the weak early QSIS baseline and documents how stronger
+arrival-reference review, regional adaptation and preprocessing discipline
+led to a final 46/47 centered extended-confirmation score. The 45/47 positive-
+offset result and two P-to-S failures remain visible.
 
-\newpage
+The standalone v1.0.0 release embeds the selected weights and provides tested
+SAC/miniSEED inference on Linux, macOS and Windows. Numerical agreement with
+Python is established on all 141 fixed-offset evaluations. The date-grouped sensitivity study does not support increasing depth merely
+for a small centered gain. An 80-epoch QSIS fit is a development candidate
+for further confirmation, while the released 20-epoch weights remain fixed.
+The next research
+priority is a larger expert-labelled, event/site-separated and continuous
+QSIS benchmark, so the observed clip-level result can be tested against the
+broader reliability requirements of real deployment.
+
+\clearpage
+\appendix
+\section{Reproduction and artifact guide}\label{app:reproduce}
+\subsection{Report build}
+Run the figure generator in the project's Python environment. All source
+snapshots needed to redraw the report are stored under
+\code{reports/legacy/final-report/report-data/}. The ordinary figure build
+therefore does not require downloading the full local experimental archives.
+All newly generated figures are vector PDF; raster PNGs used for layout
+inspection are temporary and are not manuscript figures.
+\begin{lstlisting}
+.venv/qsis-review/bin/python \
+  reports/legacy/final-report/tools/make_figures.py
+.venv/qsis-review/bin/python \
+  reports/legacy/final-report/tools/make_extended_figures.py
+cd reports/legacy/final-report
+tectonic --keep-logs Project_Report.tex
+\end{lstlisting}
+\code{tectonic} runs the bibliography and required cross-reference passes.
+A conventional LaTeX/BibTeX installation can also build the same source.
+The output is \code{Project_Report.pdf}; the original title/logo, author and
+advisor information are preserved. Scientific text, measurements and figures
+have been rewritten for the current implementation.
+
+\subsection{Refresh measurements from the local waveform evidence}
+The collection script reopens the original local SAC files, records their
+hashes, recomputes all class probabilities, checks saved predictions/matrices
+and snapshots the required histories. The fitting replay is separate and
+requires the original MPS environment and source waveforms. Neither script
+replaces the released model.
+\begin{lstlisting}
+.venv/qsis-review/bin/python \
+  reports/legacy/final-report/tools/collect_evidence.py
+.venv/qsis-review/bin/python \
+  reports/legacy/final-report/tools/reproduce_training.py
+\end{lstlisting}
+
+The complete 226-source training recipe is documented in
+\code{docs/qsis-benchmark.md}; it uses the frozen split, reviewed training
+arrivals, the training-only proposal/trigger pools, CWA initialization,
+20 epochs, seed 42, augmentation, steady-start filtering and gravity alignment.
+The reproduction script uses the selected receipt to recover those exact
+ordered windows and verify the final tensors, avoiding an undocumented new
+fit on a different data subset.
+
+\subsection{Snapshot contents}
+\begin{longtable}{p{.35\linewidth}p{.59\linewidth}}
+\toprule Artifact in report-data & Purpose \\\midrule\endhead
+\code{evidence.json} & Saved baseline metrics, epoch histories, final receipts, cohort comparisons, C++ parity and release evidence. \\
+\code{test-predictions.json} & Forty-seven raw-path references, waveform hashes, all three probability vectors, checked matrices, class metrics and date-bootstrap settings. \\
+\code{sensitivity.json} & Frozen date-grouped protocol, 60 completed fits, all fold/seed predictions, full 20-row depth/epoch grid and initialization scope. \\
+\code{continuous-event.npz} & Full 30,001-sample acquired waveform and native dense probabilities used in the aligned display. \\
+\code{arm64-ci.json} & Successful four-architecture CI job results; ARM package identity and checksum are in \code{arm64-package.json}. \\
+\code{final-training-replay.json} & Twenty recovered epochs, initialization/input/checkpoint hashes, device/version and exact state-tensor equality result. \\
+\code{waveform-panels.npz} & Frozen raw deviations/context inputs and normalized cuts used to redraw waveform/spectral figures. \\
+\code{provenance.json} & Original source paths and SHA-256 checksums, class/orientation counts and matrix conventions. \\
+\bottomrule
+\end{longtable}
+
+\clearpage
+\section{Complete sensitivity grid}\label{app:sensitivity-grid}
+All values below are percentages. Accuracy, balanced accuracy (BA), and
+worst-offset BA are pooled out of fold within each seed, then averaged over
+seeds 42--44. The spread after BA is the sample SD over those three seeds.
+These 20 rows are the complete prespecified grid rather than selected
+favorable checkpoints. Epochs count final QSIS fitting updates. Every model
+keeps three fully connected layers.
+\begingroup\small
+\begin{longtable}{rrrrrrr}
+\caption{Five-fold date-grouped development sensitivity on 226 fitting sources.}\\
+\toprule Conv & Init & Epoch & Parameters & Accuracy & BA $\pm$ SD & Worst BA \\\midrule\endfirsthead
+\toprule Conv & Init & Epoch & Parameters & Accuracy & BA $\pm$ SD & Worst BA \\\midrule\endhead
+\bottomrule\endfoot
+\input{sensitivity_rows.tex}
+\end{longtable}
+\endgroup
+
+\section{Model identity and source integrity}\label{app:provenance}
+The released model is \code{models/qsis/current/model.pth}, with SHA-256:
+\begin{quote}\small\nolinkurl{634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424}\end{quote}
+Its immutable fitting receipt has SHA-256:
+\begin{quote}\small\nolinkurl{0e9449932f21ff2248b4a183b303fe845132cbcc2d41e65ad856e9b3f9a5d283}\end{quote}
+The CWA adaptation initializer has SHA-256:
+\begin{quote}\small\nolinkurl{6911d989b0052d06de5aa9afad47f450b92e3729f22e6551e9631379d95625ea}\end{quote}
+The STEAD pretraining checkpoint has SHA-256:
+\begin{quote}\small\nolinkurl{ecb6502114f64d8730ced85de3f411bc74062e314616604d1b10299a900ccb34}\end{quote}
+
+The model's original fitting receipt retains the status string
+\code{development_candidate_unvalidated}, because it was written before later
+confirmation. The subsequent evaluation receipts, rather than a retroactive
+edit to that training artifact, record the new reviewed evidence. The source
+snapshot/hashes and exact migration replay are recorded in
+\code{docs/reorganization-verification.json}. Its historical C++-prototype
+scope describes the earlier reorganization stage; the later native v1.0.0
+implementation is verified separately.
+
+The native release points to source commit
+\code{6f65971f677abc887ad37192799ccc646733c032}. The complete successful tagged
+CI run is \href{https://github.com/Gauss963/SeismicTorch/actions/runs/44903391622}{GitHub Actions run 44903391622}.
+The published archives and their checksums are at
+\url{https://github.com/Gauss963/SeismicTorch/releases/tag/v1.0.0}.
+
+\section{Every scored confirmation reference}
+Table~\ref{tab:allrefs} lists each distinct reference once. P and S from one
+recording share an identifier but are separate labelled clips. The first
+20 rows are the earlier primary/supplemental cohort; the following 27 are
+fresh IES references. Rows marked by predictions differing from the reference
+are retained in the confusion matrices. Exact raw paths, sample centers,
+source categories and three-way probabilities are in
+\code{test-predictions.json}.
+\begingroup\small
+\begin{longtable}{lllllll}
+\caption{All 47 confirmation clips. Prediction columns are fixed center offsets
+in seconds.}\label{tab:allrefs}\\
+\toprule ID & Reference & UTC date & Site & $-0.2$ & $0$ & $+0.2$ \\\midrule\endfirsthead
+\toprule ID & Reference & UTC date & Site & $-0.2$ & $0$ & $+0.2$ \\\midrule\endhead
+\midrule\multicolumn{7}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+\input{reference_rows.tex}
+\end{longtable}
+\endgroup
+
+\FloatBarrier
+\clearpage
 \bibliographystyle{unsrt}
-\bibliography{bibliography.bib}
-
+\bibliography{bibliography}
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

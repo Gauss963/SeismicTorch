@@ -1,0 +1,36 @@
+The manuscript is Project_Report.tex. Its compiled delivery is Project_Report.pdf.
+The original English title, author, advisor information and IES logo are retained.
+The 2026 scientific content and all 20 manuscript figures have been regenerated.
+A sixteenth, standalone PDF contains the centered 47-clip confusion matrix.
+
+Rebuild in the repository's existing Python environment:
+  source .venv/qsis-review/bin/activate
+  cd reports/legacy/final-report
+  make
+
+Requirements: Tectonic, Python, NumPy, SciPy, Matplotlib and pypdf (verification).
+The activated project environment also provides PyTorch/ObsPy for optional
+refresh/replay. The ordinary figure build reads frozen report-data snapshots
+and does not require downloading the full runs/ waveform archives.
+
+make refresh recomputes the 47 references x 3 offsets from local raw SAC files.
+make replay replays the original 226-source, 20-epoch MPS fitting procedure and
+refuses to save its history unless all 27 released state tensors match exactly.
+Neither operation overwrites models/qsis/current/model.pth.
+
+Scope: the headline matrix contains primary plus supplemental confirmation
+references (46/47 centered), not all available QSIS recordings. Fresh IES
+(27/27) and combined primary (44/44) matrices are shown separately. Historical
+STEAD/QSIS prepared-archive tests remain distinct. Training-only curves and
+baseline validation curves are explicitly labelled; no test curve is fabricated.
+All manuscript graphics are PDF, and all generated figures are vector drawings.
+PNG contact sheets used for layout QA stay under ignored runs/report-review/.
+
+The extension adds full-record waveform/probability displays, the complete
+2/3/4-convolution x 5/10/20/40/80-epoch grid, a matched CWA-initialized epoch
+study, and Raspberry Pi 5 ARM64 release evidence. make sensitivity executes
+(or resumes) 60 fixed-protocol MPS fits on the 226 fitting sources, grouped
+into five date folds and repeated at seeds 42/43/44. It never reads the 47
+confirmation references. make continuous runs dense native inference on one
+full held-out event recording; it requires build/native/seismictorch-infer.
+The extended figure generator redraws both studies from report-data snapshots.
