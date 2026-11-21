@@ -19,6 +19,8 @@ jobs:
         include:
           - platform: ubuntu-x86_64
             runner: ubuntu-24.04
+          - platform: linux-arm64
+            runner: ubuntu-24.04-arm
           - platform: macos-universal
             runner: macos-15
           - platform: windows-x86_64
@@ -34,14 +36,23 @@ jobs:
       - name: Build and test static Linux binary in musl
         if: runner.os == 'Linux'
         shell: bash
+        env:
+          PLATFORM: ${{ matrix.platform }}
         run: |
           docker run --rm -v "$PWD:/src" -w /src alpine:3.22 sh -ec '
             apk add --no-cache build-base cmake ninja libstdc++-dev
+            if [ "$(uname -m)" = aarch64 ]; then
+              export CFLAGS="-march=armv8-a" CXXFLAGS="-march=armv8-a"
+            fi
             cmake -S cpp -B build/native -G Ninja -DCMAKE_BUILD_TYPE=Release -DSEISMICTORCH_STATIC=ON
             cmake --build build/native --parallel 2
             ctest --test-dir build/native --output-on-failure
           '
           file build/native/seismictorch-infer
+          if [[ "$PLATFORM" == linux-arm64 ]]; then
+            test "$(uname -m)" = aarch64
+            readelf -h build/native/seismictorch-infer | grep -q AArch64
+          fi
           if readelf -l build/native/seismictorch-infer | grep -q INTERP; then
             echo "Linux release unexpectedly needs a dynamic loader" >&2
             exit 1
@@ -131,18 +142,19 @@ jobs:
           pattern: native-*
           merge-multiple: true
           path: dist
-      - name: Publish three platform packages
+      - name: Publish four platform packages
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         shell: bash
         run: |
-          test "$(find dist -type f | wc -l)" -eq 3
+          test "$(find dist -type f | wc -l)" -eq 4
           (cd dist && sha256sum *.tar.gz *.zip > SHA256SUMS.txt)
           cat > notes.md <<'NOTES'
           Standalone CPU inference with the verified embedded QSIS waveform CNN.
 
           - Ubuntu x86_64: fully static musl executable.
+          - Linux arm64: fully static ARMv8-A executable for Raspberry Pi 5 with a 64-bit OS.
           - macOS: universal arm64/x86_64 executable, system libraries only.
           - Windows x86_64: executable with static Microsoft C/C++ runtime.
           - Read three binary SAC components or one miniSEED 2/3 file.

@@ -20,6 +20,13 @@ universal Mac executable add `'-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64'` and
 `-DSEISMICTORCH_STATIC=ON`, then verifies there is no dynamic interpreter.
 Ordinary Linux builds use the host's standard runtime unless this flag is set.
 
+The `linux-arm64` package targets Raspberry Pi 5 running **64-bit Raspberry Pi
+OS or Ubuntu**. CI compiles and executes the tests natively on an ARM64 Linux
+runner, using baseline ARMv8-A instructions and a fully static musl runtime.
+It does not require a particular glibc version or additional installed libraries.
+This package does not run on a 32-bit OS. Physical Pi 5 throughput has not
+been measured by the hosted runner.
+
 Our C++ files use `.cc` and `.hh`; unmodified third-party C retains `.c`/`.h`.
 The old Xcode/LibTorch prototype and FK files are archived in `legacy/cpp/`.
 
@@ -106,6 +113,6 @@ raw dropout QC, dense vector lengths and gap/interpolation behavior. The full
 local parity script checks actual SAC decoding plus preprocessing and inference
 against the unchanged Python model, without shipping the large datasets to CI.
 
-GitHub Actions builds/tests Ubuntu, macOS and Windows before publishing all
-three packages on a `v*` tag. Packages include license notices and one standalone
+GitHub Actions builds/tests Linux x86_64, Linux arm64, macOS and Windows before publishing all
+four packages on a `v*` tag. Packages include license notices and one standalone
 inference executable; the notices are not runtime dependencies.
