@@ -47,7 +47,7 @@ jobs:
             exit 1
           fi
           build/native/seismictorch-infer --version
-          build/native/seismictorch-infer --mseed cpp/tests/fixtures/Steim2.mseed --output build/portable.csv
+          build/native/seismictorch-infer --mseed cpp/tests/fixtures/steim2.mseed --output build/portable.csv
           test "$(wc -l < build/portable.csv)" -eq 1401
       - name: Build and test universal macOS binary
         if: runner.os == 'macOS'
