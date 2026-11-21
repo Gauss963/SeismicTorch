@@ -88,8 +88,9 @@ distance analysis. Original figures and reports live under `reports/legacy`.
 | `qsis_utrans.py` | `seismictorch tools utrans` |
 
 The CLI argument meanings, architecture, augmentation and numerical training
-settings remain the same. Reorganization does not promote any experimental
-model or finish the separate C++ inference implementation.
+settings remain the same. The separate [native C++ project](../cpp/README.md)
+embeds this selected model and reproduces its preprocessing and CPU inference.
+The previous Xcode prototype is preserved under `legacy/cpp/`.
 
 ## Reorganization verification
 
@@ -103,6 +104,4 @@ the checkout. Frozen-runtime checks verify all 43 archived source hashes.
 
 The structured checks are in `docs/reorganization-verification.json`; local
 training and wheel details are under `runs/repository-reorganization/`. The
-Git index and commits were left untouched. Directory moves appear as deleted
-old paths plus new destinations in unstaged status until the changes are
-staged; the dataset files themselves remain present under `data/`.
+reorganization was committed as `1ac67d0`; dataset content remains under `data/`.

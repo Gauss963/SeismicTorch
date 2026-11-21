@@ -17,7 +17,7 @@ src/seismictorch/       Active Python package
 models/qsis/current/   Verified checkpoint, training receipt and evaluation
 models/legacy/         Historical saved modules and exports
 data/                  Raw QSIS, prepared datasets, STEAD and reference samples
-cpp/                   Existing C++ prototype and FK source
+cpp/                   Standalone CPU inference, embedded weights and CMake
 legacy/                Original notebooks, scripts and frozen source snapshot
 reports/legacy/        Historical figures, reports and slides
 docs/                  Benchmark results, commands and architecture notes
@@ -72,6 +72,23 @@ from independent model-blind AI waveform reviews. Unresolved arrival slots
 remain outside the score and are explicitly counted in the
 [benchmark report](docs/qsis-benchmark.md#current-verified-result).
 
+## Standalone C++ inference
+
+Download a platform executable from [Releases](https://github.com/Gauss963/SeismicTorch/releases),
+or build from source:
+
+```sh
+cmake -S cpp -B build/native -DCMAKE_BUILD_TYPE=Release
+cmake --build build/native --config Release --parallel
+build/native/seismictorch-infer --sac X.sac Y.sac Z.sac --output probabilities.csv
+build/native/seismictorch-infer --mseed recording.mseed --output probabilities.csv
+```
+
+The CPU model and miniSEED decoder are compiled into the executable. The C++
+API returns three `std::vector<float>` values with one entry per input sample.
+Unsupported edges and gaps are NaN. See [input requirements and API](cpp/README.md)
+for acceleration units, supported rates and CMake integration.
+
 ## Train and review
 
 The [verified QSIS reproduction command](docs/qsis-benchmark.md#reproduce-the-gravity-candidate)
@@ -115,7 +132,8 @@ seismictorch legacy-run --workspace
 Use the active commands for new work. Historical scripts retain their original
 dependencies and limitations. Experiment evidence in `runs/` has not been
 rewritten. See [the migration notes](docs/architecture.md) for paths and scope.
-The C++ code remains a prototype; see [its status](cpp/README.md).
+The original C++ prototype is archived under `legacy/cpp/`. The maintained
+[C++ inference project](cpp/README.md) builds without Python or external model files.
 
 ```sh
 python -m unittest discover -s tests -v

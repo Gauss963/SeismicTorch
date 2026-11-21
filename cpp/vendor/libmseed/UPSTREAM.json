@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/EarthScope/libmseed",
+  "version": "v3.6.0",
+  "commit": "deb2146d3c0bffb5f86f070a24ccdf683fffffa6",
+  "tarball_sha256": "1155f6c2ee942bbca6817a3b369d7783fee1bad1e1d9fb0d668e888f5a4aead4",
+  "files": "Unmodified upstream C sources and headers, URL/curl support disabled"
+}

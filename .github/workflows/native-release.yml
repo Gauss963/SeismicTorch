@@ -1,0 +1,154 @@
+name: Native build and release
+
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: ubuntu-x86_64
+            runner: ubuntu-24.04
+          - platform: macos-universal
+            runner: macos-15
+          - platform: windows-x86_64
+            runner: windows-2022
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          sparse-checkout: cpp
+          lfs: false
+          persist-credentials: false
+      - name: Build and test static Linux binary in musl
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          docker run --rm -v "$PWD:/src" -w /src alpine:3.22 sh -ec '
+            apk add --no-cache build-base cmake ninja libstdc++-dev
+            cmake -S cpp -B build/native -G Ninja -DCMAKE_BUILD_TYPE=Release -DSEISMICTORCH_STATIC=ON
+            cmake --build build/native --parallel 2
+            ctest --test-dir build/native --output-on-failure
+          '
+          file build/native/seismictorch-infer
+          if readelf -l build/native/seismictorch-infer | grep -q INTERP; then
+            echo "Linux release unexpectedly needs a dynamic loader" >&2
+            exit 1
+          fi
+          build/native/seismictorch-infer --version
+          build/native/seismictorch-tests
+      - name: Build and test universal macOS binary
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          cmake -S cpp -B build/native -DCMAKE_BUILD_TYPE=Release '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64' -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
+          cmake --build build/native --parallel 3
+          ctest --test-dir build/native --output-on-failure
+          lipo -verify_arch arm64 x86_64 build/native/seismictorch-infer
+          otool -L build/native/seismictorch-infer
+          otool -L build/native/seismictorch-infer | awk '/^[[:space:]]/ {print $1}' > build/dependencies.txt
+          if grep -Ev '^(/usr/lib/|/System/Library/)' build/dependencies.txt; then
+            echo "Unexpected non-system macOS dependency" >&2
+            exit 1
+          fi
+          codesign --force --sign - build/native/seismictorch-infer
+      - name: Build and test Windows binary with static CRT
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          cmake -S cpp -B build/native -A x64
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cmake --build build/native --config Release --parallel 2
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ctest --test-dir build/native -C Release --output-on-failure
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
+          $dumpbin = Get-ChildItem "$vs\VC\Tools\MSVC\*\bin\Hostx64\x64\dumpbin.exe" | Select-Object -Last 1
+          $dependencies = & $dumpbin.FullName /DEPENDENTS build/native/Release/seismictorch-infer.exe
+          $dependencies | Write-Output
+          if ($dependencies -match '(?i)(vcruntime|msvcp|libmseed|python|torch).*\.dll') {
+            throw "Unexpected redistributable DLL dependency"
+          }
+      - name: Package Unix executable and license notices
+        if: runner.os != 'Windows'
+        shell: bash
+        env:
+          PLATFORM: ${{ matrix.platform }}
+        run: |
+          mkdir -p dist/package
+          cp build/native/seismictorch-infer dist/package/
+          cp LICENSE.txt dist/package/LICENSE.txt
+          cp cpp/vendor/libmseed/LICENSE dist/package/LICENSE-libmseed.txt
+          cp cpp/README.md dist/package/README.md
+          VERSION=$(build/native/seismictorch-infer --version | cut -d' ' -f1)
+          if [[ "$GITHUB_REF" == refs/tags/* && "$GITHUB_REF_NAME" != "v$VERSION" ]]; then
+            echo "Tag and executable version differ" >&2; exit 1
+          fi
+          tar -czf "dist/seismictorch-${VERSION}-${PLATFORM}.tar.gz" -C dist/package .
+      - name: Package Windows executable and license notices
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist/package | Out-Null
+          Copy-Item build/native/Release/seismictorch-infer.exe dist/package/
+          Copy-Item LICENSE.txt dist/package/LICENSE.txt
+          Copy-Item cpp/vendor/libmseed/LICENSE dist/package/LICENSE-libmseed.txt
+          Copy-Item cpp/README.md dist/package/README.md
+          $version = ((& build/native/Release/seismictorch-infer.exe --version) -split ' ')[0]
+          if ($env:GITHUB_REF.StartsWith('refs/tags/') -and $env:GITHUB_REF_NAME -ne "v$version") {
+            throw "Tag and executable version differ"
+          }
+          Compress-Archive -Path dist/package/* -DestinationPath "dist/seismictorch-$version-windows-x86_64.zip"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: native-${{ matrix.platform }}
+          path: |
+            dist/*.tar.gz
+            dist/*.zip
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: native-*
+          merge-multiple: true
+          path: dist
+      - name: Publish three platform packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          test "$(find dist -type f | wc -l)" -eq 3
+          (cd dist && sha256sum *.tar.gz *.zip > SHA256SUMS.txt)
+          cat > notes.md <<'NOTES'
+          Standalone CPU inference with the verified embedded QSIS waveform CNN.
+
+          - Ubuntu x86_64: fully static musl executable.
+          - macOS: universal arm64/x86_64 executable, system libraries only.
+          - Windows x86_64: executable with static Microsoft C/C++ runtime.
+          - Read three binary SAC components or one miniSEED 2/3 file.
+          - Return same-length P, S and Noise probability vectors; CLI writes CSV.
+          - No Python, PyTorch, LibTorch, MLX or external model file at runtime.
+
+          Extract the package and run `seismictorch-infer --help`.
+          Package checksums are in `SHA256SUMS.txt`.
+          NOTES
+          gh release create "$GITHUB_REF_NAME" dist/* --title "SeismicTorch $GITHUB_REF_NAME" --notes-file notes.md --verify-tag

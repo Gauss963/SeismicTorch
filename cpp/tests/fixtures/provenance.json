@@ -1,0 +1,727 @@
+{
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "source": "47 reviewed waveform cases at three offsets; integer synthetic end-to-end reader fixture",
+  "model_cases": [
+    {
+      "id": "GPH-001",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-001",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-001",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-001",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-001",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-001",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-015",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-015",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-015",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-016",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-016",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-016",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-016",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-016",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-016",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-017",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-017",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-017",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-017",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-017",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-017",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-018",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-018",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-018",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "GPB-001",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-001",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-001",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-011",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-011",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-011",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-012",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-012",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-012",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-013",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-013",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-013",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-014",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-014",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-014",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-015",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-015",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-015",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-016",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-016",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-016",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-017",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-017",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-017",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-018",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-018",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "GPB-018",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "GPH-012",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-012",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-012",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "GPH-013",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-013",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-013",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-015",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-015",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "GPH-015",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-003",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-003",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-003",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-003",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-003",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-003",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-004",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-004",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-004",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-004",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-004",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-004",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-005",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-005",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-005",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-006",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-006",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-006",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-007",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-007",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-007",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-008",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-008",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-008",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-009",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-009",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-009",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-009",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-009",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-009",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-010",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-010",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-010",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-010",
+      "offset_samples": -20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-010",
+      "offset_samples": 0,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-010",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IHP-012",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-012",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-012",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-013",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-013",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-013",
+      "offset_samples": 20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-017",
+      "offset_samples": -20,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-017",
+      "offset_samples": 0,
+      "predicted": 0
+    },
+    {
+      "id": "IHP-017",
+      "offset_samples": 20,
+      "predicted": 1
+    },
+    {
+      "id": "IBG-001",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-001",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-001",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-003",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-003",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-003",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-005",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-005",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-005",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-007",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-007",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-007",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-009",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-009",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-009",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-011",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-011",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-011",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-012",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-012",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-012",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-016",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-016",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-016",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-018",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-018",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-018",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-022",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-022",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-022",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-024",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-024",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-024",
+      "offset_samples": 20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-028",
+      "offset_samples": -20,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-028",
+      "offset_samples": 0,
+      "predicted": 2
+    },
+    {
+      "id": "IBG-028",
+      "offset_samples": 20,
+      "predicted": 2
+    }
+  ],
+  "files_sha256": {
+    "float32.mseed": "afd7bcb852ca19e37f032e558506178a9c3c0658d8107135d3ac8624505930a9",
+    "model-cases.bin": "79406fc3dfbd44fae4a8e48c792e94f4a1c0871e68dd7280c27cdf377f29c295",
+    "pipeline-1000.bin": "5d123f16fae7e5e87b36cec8bcc59043a74dfabf57bd55f1a8a45e9112908f6c",
+    "pipeline-200.bin": "1e323e0111db111052f8b4787ce3136e693830206e32968394b86cc5ab11e259",
+    "pipeline-40.bin": "719b4e9ab1eab221ab7c1495ab8e1d6b77c18b892aa206b98d6f999b97bf1fe2",
+    "pipeline-50.bin": "1f599bd06ed957d0af0c167a3e6c6a66eb0a5349019ac86f2e18942a71a8c868",
+    "pipeline.bin": "42619eb5d3f511c0cf0387000f3c27adf9ce58f6349eff76f28a94098cbb7191",
+    "steim2.mseed": "1412e06e26959b0c0fdc3ed33d7774765b2696343145ccf8d992e8ececab91d9",
+    "x-big.sac": "d1bc6924d666845127df0fde33c958e8e91c283af9024d87bbe6cd51783d808a",
+    "x.sac": "480d835b6940fbf9d3fc1c04ddf2c562f5e2b4c4c536a6d4b70460ac6fc3baf1",
+    "y-big.sac": "1091369cd08c2d160e79c70c4698fba9b19fb7048b33cd10278b82c22b87bd4b",
+    "y.sac": "e08c0f15c0cca60d64fc12ee93cedea2cfc57c0082db82c0193543d89a4c168c",
+    "z-big.sac": "7d365fa07135af15216c7e4ff7b73169d06cedff45c207fe8081525695988309",
+    "z.sac": "0632ab1cf4db51f98283560e55eb340c439d16fe73091e2ba3dd6711f41636d9"
+  }
+}
