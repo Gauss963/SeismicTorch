@@ -65,6 +65,11 @@ if(BUILD_TESTING)
   add_test(NAME native-parity-and-readers COMMAND seismictorch-tests)
   add_test(NAME cli-help COMMAND seismictorch-infer --help)
   add_test(NAME cli-model-version COMMAND seismictorch-infer --version)
+  add_test(NAME cli-recording-roundtrip COMMAND ${CMAKE_COMMAND}
+    "-DPROGRAM=$<TARGET_FILE:seismictorch-infer>"
+    "-DFIXTURES=${CMAKE_CURRENT_SOURCE_DIR}/tests/fixtures"
+    "-DWORK=${CMAKE_CURRENT_BINARY_DIR}"
+    -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/cli_roundtrip.cmake")
 endif()
 
 install(TARGETS seismictorch-infer RUNTIME DESTINATION bin)

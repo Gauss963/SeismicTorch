@@ -12,7 +12,7 @@
 namespace {
 const auto fixtures=std::filesystem::path(FIXTURE_DIR);
 void check(bool ok,const std::string& what) {if(!ok) throw std::runtime_error(what);}
-void near(double actual,double expected,double tolerance,const std::string& what) {
+void expect_near(double actual,double expected,double tolerance,const std::string& what) {
   check(std::isfinite(actual)&&std::abs(actual-expected)<=tolerance,what+": "+std::to_string(actual)+" != "+std::to_string(expected));
 }
 struct Binary {
@@ -35,7 +35,7 @@ void model_cases() {
     seismictorch::ModelWindow x{};for(auto& v:x)v=file.f32();
     std::array<float,3> expected{};for(auto& v:expected)v=file.f32();
     auto actual=seismictorch::classify_window(x);
-    for(std::size_t a=0;a<3;++a) {maximum=std::max(maximum,std::abs(double(actual[a])-expected[a]));near(actual[a],expected[a],2e-4,"CNN probability");}
+    for(std::size_t a=0;a<3;++a) {maximum=std::max(maximum,std::abs(double(actual[a])-expected[a]));expect_near(actual[a],expected[a],2e-4,"CNN probability");}
     check(std::max_element(actual.begin(),actual.end())-actual.begin()==std::max_element(expected.begin(),expected.end())-expected.begin(),"CNN class parity");
   }
   std::cout<<"141 real model windows match Python, max probability error "<<maximum<<'\n';
@@ -50,15 +50,15 @@ seismictorch::Waveform pipeline(const std::string& name) {
     auto center=file.integer(4);seismictorch::ModelWindow expected{};for(auto& v:expected)v=file.f32();
     std::array<float,3> probabilities{};for(auto& v:probabilities)v=file.f32();
     auto actual=seismictorch::prepare_window(w,static_cast<std::size_t>(center));check(actual.has_value(),"Prepared window exists");
-    for(std::size_t i=0;i<240;++i)near((*actual)[i],expected[i],2e-5,"Filter/rotation/Fourier parity");
+    for(std::size_t i=0;i<240;++i)expect_near((*actual)[i],expected[i],2e-5,"Filter/rotation/Fourier parity");
     auto p=seismictorch::classify_window(*actual);
-    for(std::size_t a=0;a<3;++a)near(p[a],probabilities[a],2e-4,"End-to-end probability");
+    for(std::size_t a=0;a<3;++a)expect_near(p[a],probabilities[a],2e-4,"End-to-end probability");
   }
   return w;
 }
 void same_wave(const seismictorch::Waveform& a,const seismictorch::Waveform& b) {
-  check(a.size()==b.size(),"Reader lengths");near(a.sample_rate,b.sample_rate,1e-8,"Reader rate");check(a.start_time_ns==b.start_time_ns,"Reader UTC start");
-  for(std::size_t axis=0;axis<3;++axis)for(std::size_t i=0;i<a.size();++i)near(a.xyz[axis][i],b.xyz[axis][i],0,"Decoded sample");
+  check(a.size()==b.size(),"Reader lengths");expect_near(a.sample_rate,b.sample_rate,1e-8,"Reader rate");check(a.start_time_ns==b.start_time_ns,"Reader UTC start");
+  for(std::size_t axis=0;axis<3;++axis)for(std::size_t i=0;i<a.size();++i)expect_near(a.xyz[axis][i],b.xyz[axis][i],0,"Decoded sample");
 }
 void write_records(char* data,int length,void* target) {static_cast<std::ofstream*>(target)->write(data,length);}
 void write_mseed3(const std::filesystem::path& path,const seismictorch::Waveform& w,const char* station="TEST",bool append=false) {
@@ -81,9 +81,9 @@ void dense_cases(const seismictorch::Waveform& w) {
   check(result.p.size()==w.size()&&result.s.size()==w.size()&&result.noise.size()==w.size(),"Equal-length vectors");
   for(std::size_t i=0;i<100;++i)check(std::isnan(result.p[i]),"Leading edge NaN");
   for(std::size_t i=w.size()-99;i<w.size();++i)check(std::isnan(result.noise[i]),"Trailing edge NaN");
-  for(std::size_t c=100;c<=w.size()-100;++c)near(result.p[c]+result.s[c]+result.noise[c],1,2e-6,"Probability sum");
+  for(std::size_t c=100;c<=w.size()-100;++c)expect_near(result.p[c]+result.s[c]+result.noise[c],1,2e-6,"Probability sum");
   auto sparse=seismictorch::infer(w,{13,2});
-  for(std::size_t c=100;c<=w.size()-100;++c)near(sparse.p[c]+sparse.s[c]+sparse.noise[c],1,2e-6,"Interpolated probability sum");
+  for(std::size_t c=100;c<=w.size()-100;++c)expect_near(sparse.p[c]+sparse.s[c]+sparse.noise[c],1,2e-6,"Interpolated probability sum");
   auto dropout=w;std::fill(dropout.xyz[1].begin()+900,dropout.xyz[1].begin()+1000,0);
   check(!seismictorch::prepare_window(dropout,950),"QC before physical rotation");
   auto masked=seismictorch::infer(dropout,{1000,1});check(std::isnan(masked.p[950]),"Never interpolate across raw dropout");
@@ -122,7 +122,7 @@ int main() {
     auto decoded_gap=seismictorch::read_mseed(gappy);check(decoded_gap.size()==expected.size(),"miniSEED gap grid length");
     for(std::size_t a=0;a<3;++a)for(std::size_t i=0;i<expected.size();++i) {
       if(i>=400&&i<420)check(std::isnan(decoded_gap.xyz[a][i]),"miniSEED gap marker");
-      else near(decoded_gap.xyz[a][i],expected.xyz[a][i],0,"miniSEED segment samples");
+      else expect_near(decoded_gap.xyz[a][i],expected.xyz[a][i],0,"miniSEED segment samples");
     }
     auto overlap=temporary/"overlap.mseed";write_mseed3(overlap,expected);
     auto conflicting=expected;conflicting.xyz[0][900]+=1;write_mseed3(overlap,conflicting,"TEST",true);
