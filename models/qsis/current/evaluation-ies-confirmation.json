@@ -1,0 +1,251 @@
+{
+  "status": "verified_target_met_on_reviewed_heldout_clips",
+  "target_accuracy": 0.95,
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "training_receipt_sha256": "0e9449932f21ff2248b4a183b303fe845132cbcc2d41e65ad856e9b3f9a5d283",
+  "fresh_test": [
+    {
+      "offset_s": -0.2,
+      "correct": 27,
+      "scored": 27,
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "offset_s": 0,
+      "correct": 27,
+      "scored": 27,
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          12
+        ]
+      ]
+    },
+    {
+      "offset_s": 0.2,
+      "correct": 26,
+      "scored": 27,
+      "accuracy": 0.9629629629629629,
+      "confusion": [
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          12
+        ]
+      ]
+    }
+  ],
+  "combined_primary": [
+    {
+      "offset_s": -0.2,
+      "correct": 44,
+      "scored": 44,
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ]
+      ]
+    },
+    {
+      "offset_s": 0,
+      "correct": 44,
+      "scored": 44,
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ]
+      ]
+    },
+    {
+      "offset_s": 0.2,
+      "correct": 43,
+      "scored": 44,
+      "accuracy": 0.9772727272727273,
+      "confusion": [
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ]
+      ]
+    }
+  ],
+  "including_supplemental_context": [
+    {
+      "offset_s": -0.2,
+      "correct": 46,
+      "scored": 47,
+      "accuracy": 0.9787234042553191,
+      "confusion": [
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ]
+      ]
+    },
+    {
+      "offset_s": 0,
+      "correct": 46,
+      "scored": 47,
+      "accuracy": 0.9787234042553191,
+      "confusion": [
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ]
+      ]
+    },
+    {
+      "offset_s": 0.2,
+      "correct": 45,
+      "scored": 47,
+      "accuracy": 0.9574468085106383,
+      "confusion": [
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          21
+        ]
+      ]
+    }
+  ],
+  "primary_scored_dates": 21,
+  "actual_cli_checks": [
+    {
+      "id": "IHP-003",
+      "expected": "P-wave",
+      "actual": "P-wave",
+      "waveform_filter": "steady-start",
+      "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424"
+    },
+    {
+      "id": "IHP-003",
+      "expected": "S-wave",
+      "actual": "S-wave",
+      "waveform_filter": "steady-start",
+      "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424"
+    },
+    {
+      "id": "IBG-001",
+      "expected": "Noise",
+      "actual": "Noise",
+      "waveform_filter": "steady-start",
+      "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424"
+    }
+  ],
+  "limitations": [
+    "Independent model-blind AI visual references, no expert QSIS picks supplied",
+    "Phase accuracy covers identifiable agreed target arrivals; all unresolved slots remain reported",
+    "Fresh IES archive selects magnitude >=5 events and one building; earlier primary cohort covers additional sites",
+    "Classification of existing arrival windows, not continuous arrival detection"
+  ],
+  "verification_path_relative_to_runs": "qsis-ies-hybrid/verification.json",
+  "verification_sha256": "b2a0167e22e31ad396a7ecca902fedfae93b7e47dee7dfd2db42529ec34f4a60"
+}

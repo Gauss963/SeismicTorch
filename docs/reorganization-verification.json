@@ -1,0 +1,90 @@
+{
+  "active_package": "src/seismictorch",
+  "entry_points": [
+    "seismictorch",
+    "python -m seismictorch"
+  ],
+  "root_python_scripts": 0,
+  "root_notebooks": 0,
+  "preserved_source_files": 43,
+  "verified_data_aliases": [
+    "data_QSIS_Event",
+    "data_QSIS_Noise",
+    "data_QSIS_pth",
+    "data_train"
+  ],
+  "selected_model_unchanged": true,
+  "selected_model_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "mps_retraining_parity": {
+    "state_tensors_identical": true,
+    "state_tensor_count": 27,
+    "ordered_source_windows_identical": true,
+    "source_window_count": 226,
+    "training_device": "mps",
+    "training_epochs": 20,
+    "original_model_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+    "retrained_model_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+    "source_metadata_note": "Descriptive source tags added by the old experimental fitter differ; ordered path/center/label/group identities and all learned state tensors are identical.",
+    "root_ds_store_unchanged": true,
+    "original_source_snapshot": "legacy/runtime-before-reorganization.zip",
+    "frozen_source_files": 43
+  },
+  "reference_regression": {
+    "clips": 47,
+    "offset_seconds": [
+      -0.2,
+      0,
+      0.2
+    ],
+    "matching_predictions": 141,
+    "unit_tests_passed": 5
+  },
+  "command_help_checks": 19,
+  "wheel_check": {
+    "wheel_bytes": 84129,
+    "packaged_template": true,
+    "external_directory_prediction": "P-wave",
+    "no_datasets_or_experiment_artifacts_bundled": true
+  },
+  "preexisting_desktop_metadata": "The modified root .DS_Store was neither removed nor restored; desktop metadata is outside the code migration.",
+  "scope": "Organization and package boundaries, with unchanged learned model and preprocessing behavior. The C++ inference project remains a prototype.",
+  "source_hashes": {
+    "src/seismictorch/__init__.py": "1f7e1a34688fb96b8649f3e36dc40d75944e9213822547e2c9c0bbde553b9161",
+    "src/seismictorch/__main__.py": "28ea248f99dc4b71bcffcf5db4c114f31947dc46ac8a07cb6c597d21a0fbc789",
+    "src/seismictorch/cli.py": "60de95bea09e8371c942b8f5b1e7206b76177ee4a7d8d3d3015d26c16316a25a",
+    "src/seismictorch/common.py": "e9694dce494a41426fb97424e1921798407f1418d21a5be73eb87f3e6b13f4c1",
+    "src/seismictorch/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/seismictorch/data/archives.py": "87b40377cb75b9ca94b0cf81c104785f779904c3cc7f93dc25e37640d37cfa03",
+    "src/seismictorch/data/orientation.py": "e93240f1abf35b73806804393880b4585bdd98e2bc0fe2a0b2ce2fc7a62c004c",
+    "src/seismictorch/data/preprocessing.py": "b2c8afd4c508a50b61e860d8dd95c21868549305453808b091bf4a620fad4f5a",
+    "src/seismictorch/data/sac.py": "edc670edae799cdbc2b7e1ee97d59d8676ef04a3c0fa30061b86bc3a0cc11ef7",
+    "src/seismictorch/inference/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/seismictorch/inference/history.py": "6c04cb8a6c88653de0604f3d76d92adf3284a82835446f65fe4b2301ff3683ce",
+    "src/seismictorch/inference/waveform.py": "72b035a16291537da8d8e48be4f04155300506277c87ed8bbadbc79cca11c4fe",
+    "src/seismictorch/legacy.py": "6e40a8e1ad94942a2b09eace5f631f6d1a377de309ba00163d08f85464d62941",
+    "src/seismictorch/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/seismictorch/models/waveform.py": "98fee2907219d2a4482a64b8e63cfe516960c009269253b6697f1211a4699bd2",
+    "src/seismictorch/paths.py": "9498f7e5aa45b6e56b91e7835d43ab71e4714478d153418ec367fc364b8e8d6d",
+    "src/seismictorch/qsis/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/seismictorch/qsis/array_proposals.py": "91b7e9716e147c3ac88ebcc8c89d129d2aa00e034566dd33f077b9e8e838a58d",
+    "src/seismictorch/qsis/array_review.py": "ca2022e74944bb3137614e0c6d0cd482d9c6007fef72b4068ae2824443aae771",
+    "src/seismictorch/qsis/candidate.py": "998b4747a7120cb8fd192ef763a3a5ccacee56b2601bdbe89ecde66daab02cfe",
+    "src/seismictorch/qsis/catalog.py": "603473d2d3186f9153d091a2f98db7c96228dff4d4abadb412deb568f55b7a36",
+    "src/seismictorch/qsis/consensus.py": "ab552164e75660e75a27d57a4a0e0e41431efe180210baa753544a1c85aaa834",
+    "src/seismictorch/qsis/noise_audit.py": "6cb278a58c2840297690d4565267f9e6151e5be51f2316ac7da3b5d867406d98",
+    "src/seismictorch/qsis/public.py": "a025f3c5c5c66778b3a402174022544c5beb8527e0a415aa06a21d90666c0ec2",
+    "src/seismictorch/qsis/public_data.py": "29d6a3a1b77e6978d7f32232e271d762867ae14f7a3fe6af5e397702e3b3d86e",
+    "src/seismictorch/qsis/public_score.py": "2e1b84b1eee74d1ab75e9e0b04c158ebc6238836234a0e754a809416a0ad00c5",
+    "src/seismictorch/qsis/redpan.py": "9ffeeff04fd5a48a43b6428123e0ffcf9edf4e440d02111284ee78d26c7953c7",
+    "src/seismictorch/qsis/reference.py": "aac987ab976e3f0a2ef2cf6f5fcf8fd78cd62a510b80469eaeffe3aac557f4f3",
+    "src/seismictorch/qsis/review.py": "13a6cc5b2b9b3d6ea52abdbc6f3047c4cd203f10473f353987e0e4cce3afd979",
+    "src/seismictorch/qsis/split.py": "aec2ed294a48788cbbde24eea986f2ea84e2de33815c4a901a6f338961e7b614",
+    "src/seismictorch/qsis/utrans.py": "75cf1bbcd9d3e34b575dfcfba4979c1f5def526ced45c67ddb8d93dc98d855af",
+    "src/seismictorch/training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/seismictorch/training/cwa.py": "3f213caa0e10e2897a4b6c4c2c7ff78ab48df4859109d5ed29901313eb5d33fa",
+    "src/seismictorch/training/pilot.py": "4a176d16da26a105f711afb37856863daa9def266a5fae3415fc4b957d404361",
+    "src/seismictorch/training/runtime.py": "5dad091c2f7ebb8ccb7b1b2fd6709bf1e2ff0ad5a3765321c42d1c89e6de491f",
+    "src/seismictorch/training/supervised.py": "e257829132c61e38420fe4626fc883eac84793e6869560397f0979a738850784",
+    "src/seismictorch/training/transfer.py": "cb2b5b2994e7a0c720e026c087dce2857f8fb18ed4f3246331bb123cf33bf77e"
+  }
+}

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seismictorch"
+version = "0.2.0"
+description = "Three-component seismic waveform classification and QSIS evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE.txt"}
+dependencies = ["numpy>=1.24", "scipy>=1.10", "torch>=2.2", "obspy>=1.4"]
+
+[project.optional-dependencies]
+training = ["matplotlib>=3.7", "h5py>=3.8"]
+review = ["matplotlib>=3.7", "seisbench>=0.5"]
+pickers = ["tensorflow>=2.15", "seisbench>=0.5", "requests>=2.28"]
+
+[project.scripts]
+seismictorch = "seismictorch.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+seismictorch = ["resources/*.html"]

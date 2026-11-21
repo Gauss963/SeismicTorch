@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QSIS 到時複核</title>
+<style>
+  body { margin: 1.5rem auto; padding: 0 1rem; max-width: 68rem; color: #18232e; background: #f7f8fa; font: 16px/1.5 system-ui, sans-serif; }
+  h1 { margin: 0; font-size: 1.8rem; }
+  p { margin: .5rem 0; }
+  nav, .fields { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin: .9rem 0; }
+  select, button, input, textarea { padding: .35rem .5rem; font: inherit; border: 1px solid #8896a4; border-radius: .25rem; background: white; color: inherit; }
+  button { cursor: pointer; }
+  button[type=submit] { background: #145888; color: white; border-color: #145888; }
+  button:disabled { cursor: default; opacity: .55; }
+  img { width: 100%; display: block; margin: .6rem 0; background: white; }
+  table { border-collapse: collapse; width: 100%; background: white; }
+  td, th { text-align: left; padding: .25rem .5rem; border-bottom: 1px solid #dce1e5; }
+  input { width: 6rem; }
+  textarea { width: min(100%, 36rem); box-sizing: border-box; vertical-align: top; }
+  details { color: #425367; margin-top: .5rem; overflow-wrap: anywhere; }
+</style>
+<h1>QSIS 到時複核</h1>
+<p>在三分量波形上確認 P、S 初動，填入相對於 SAC 事件起始時刻的秒數。無法辨識的震相留空，可在備註說明。</p>
+<p id="plot-guide">藍色是 P，橘色是 S。深色區是重建的舊切窗，淺色區是可能的隨機位移範圍。TauP 與 PhaseNet 提供候選到時。</p>
+<nav aria-label="選擇錄音">
+  <button type="button" id="prev">上一筆</button>
+  <select id="record" aria-label="錄音"></select>
+  <button type="button" id="next">下一筆</button>
+  <span id="progress"></span>
+  <button type="button" id="export">匯出複核 JSON</button>
+</nav>
+<img id="waveform" alt="帶有舊切窗和候選 P／S 到時的三分量波形">
+<table id="candidates">
+  <thead><tr><th>震相</th><th>重建舊窗（秒）</th><th>TauP（秒）</th><th>PhaseNet（秒、分數）</th></tr></thead>
+  <tbody id="times"></tbody>
+</table>
+<details><summary>原始 SAC 路徑</summary><div id="paths"></div></details>
+<form id="review">
+  <div class="fields">
+    <label>P 到時 <input id="p" type="number" step="0.01"></label>
+    <label>S 到時 <input id="s" type="number" step="0.01"></label>
+    <label>備註 <textarea id="notes" rows="2"></textarea></label>
+    <button type="submit">儲存並前往下一筆</button>
+  </div>
+  <p id="status" role="status"></p>
+</form>
+<script>
+const manifest = /*MANIFEST*/null;
+const $ = id => document.getElementById(id);
+const key = 'qsis-review:' + manifest.records[0].paths[0] + ':' + manifest.seed + ':' +
+  (manifest.split || 'audit') + (manifest.catalog_context ? ':catalog' : '');
+if (manifest.blind) {
+  $('plot-guide').textContent = manifest.catalog_context
+    ? '橘色區域是經走時差修正的鄰站目錄估算。請根據目標 QSIS 波形判讀，無法辨認的到時請留空。'
+    : '這批圖供獨立判讀，請根據波形填寫到時。';
+  $('candidates').hidden = true;
+  $('waveform').alt = '三分量波形與到時複核資料';
+}
+let reviews = {};
+try { reviews = JSON.parse(localStorage.getItem(key) || '{}'); } catch {}
+let index = 0;
+const fmt = x => x.toFixed(2);
+for (const [i, row] of manifest.records.entries()) {
+  $('record').add(new Option(row.id + ' · ' + row.station + (row.snr_band ? ' · ' + row.snr_band : ''), i));
+}
+function show(i) {
+  index = Math.max(0, Math.min(i, manifest.records.length - 1));
+  const row = manifest.records[index];
+  const saved = reviews[row.id] || {};
+  $('record').value = index;
+  $('prev').disabled = index === 0;
+  $('next').disabled = index === manifest.records.length - 1;
+  $('waveform').src = 'plots/' + row.id + '.png';
+  $('paths').textContent = row.paths.join(' | ');
+  $('p').value = saved.p ?? '';
+  $('s').value = saved.s ?? '';
+  $('notes').value = saved.notes ?? '';
+  $('times').replaceChildren();
+  for (const phase of manifest.blind ? [] : ['P', 'S']) {
+    const pick = row.phasenet[phase];
+    const cells = [
+      phase, row.legacy[phase]?.map(fmt).join(' 到 ') ?? '無有效搜尋窗',
+      fmt(row.taup[phase]), pick ? fmt(pick.time) + ' / ' + fmt(pick.score) : '無候選',
+    ];
+    const line = $('times').insertRow();
+    for (const value of cells) line.insertCell().textContent = value;
+  }
+  $('progress').textContent = '已複核 ' + Object.keys(reviews).length + ' / ' + manifest.records.length;
+  $('status').textContent = saved.p !== undefined ? '這筆已儲存，可再修正。' : '';
+}
+$('prev').onclick = () => show(index - 1);
+$('next').onclick = () => show(index + 1);
+$('record').onchange = e => show(Number(e.target.value));
+$('review').onsubmit = e => {
+  e.preventDefault();
+  const row = manifest.records[index];
+  const p = $('p').value === '' ? null : Number($('p').value);
+  const s = $('s').value === '' ? null : Number($('s').value);
+  if (p !== null && s !== null && p >= s) {
+    $('status').textContent = '請確認 P 到時早於 S 到時。';
+    return;
+  }
+  reviews[row.id] = {p, s, notes: $('notes').value.trim(), event_key: row.event_key, paths: row.paths};
+  let persisted = true;
+  try { localStorage.setItem(key, JSON.stringify(reviews)); } catch { persisted = false; }
+  show(index + 1);
+  $('status').textContent = persisted ? '已儲存 ' + row.id + '。' : '請在關閉前匯出複核結果。';
+};
+$('export').onclick = () => {
+  const text = JSON.stringify({seed: manifest.seed, split: manifest.split, split_sha256: manifest.split_sha256,
+    catalog_context: manifest.catalog_context, reviews}, null, 2);
+  const url = URL.createObjectURL(new Blob([text], {type: 'application/json'}));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'qsis-arrival-reviews.json';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+show(0);
+</script>
+</html>

@@ -1,0 +1,8 @@
+{
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "training_receipt_sha256": "0e9449932f21ff2248b4a183b303fe845132cbcc2d41e65ad856e9b3f9a5d283",
+  "source_experiment": "runs/qsis-ccul-extra/gravity-record-candidate",
+  "migration_verification": "docs/reorganization-verification.json",
+  "migration_verification_sha256": "63056e8d13a5f8e0b6dd343660f25033a3ad02d8ed064476fce407332ab269e0",
+  "inference_command": "seismictorch predict --center SECONDS --waveform X.sac Y.sac Z.sac"
+}

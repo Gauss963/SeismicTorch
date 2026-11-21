@@ -1,0 +1,181 @@
+{
+  "original_source_sha256": {
+    "Initial_model.py": "32be97fcdd6cd2a52a682c52124b5d28802d6d9f6b03ef1788a8ef02a2cdca34",
+    "ML_distance.py": "b3be46c9631c18dbd539f042988037eed257627ee0a217353500c14fe8b67506",
+    "ML_distance_2.py": "68ec1a671c0bac4fb8a92f598ee4b9280ca029437a6fbcdfa92c583c5f81e019",
+    "ML_distance_3.py": "6cd6aee33d515c6da216117dda740743271f3146afa60c91fbeb1500d7c8850d",
+    "QSIS_BENCHMARK.md": "e2d5358ece7ca8850fb8371a9c88ad7646e98a7d5f10e46ec3913fbd6628eaa7",
+    "README.md": "f95b944071d0ea8b27647424164f2ab10f803c58d670c1c6f63dfb3470e90956",
+    "Spectrogram_dataprep.py": "17b13b95a4c2c038e6e2fd6f7a63eb47e787eb313f5e4ae8e349068f5c6dc4f0",
+    "Spectrogram_dataprep_event.py": "d66522d2cdf4c8db7bc8ea5994b82a9aaa9bc16d329e0fc3d42ee3e07c42536b",
+    "Spectrogram_dataprep_merge.py": "2d3601a1e69dff7dbb4db19ef207a97b93c816745fa36b37a2e3469f8dc3fd58",
+    "Spectrogram_dataprep_noise.py": "d785d9d167e6348e2ca0edcd7a47e40b498834ac87766aa2bb4c49c37e94a8f5",
+    "Spectrogram_def_model.py": "028a84270efeb211224ff771c7cf4bd04b6710daa6f4ef3ece915618624c346d",
+    "Spectrogram_model_train_Torch.py": "1634bd51516cc7b42090b2b2dfb30ef95a254a25366e47626148cb284ffba25e",
+    "convert_to_ONNX.py": "17ed1511cee9fc3dbf335efed8cd9559e36529fc45062035dce90615a755b164",
+    "convert_to_Torch_Script.py": "fba92cf2e294b2a507aac7977177af7be7111c9f35f54d9c1000d58b86e23a37",
+    "convert_to_tf.py": "ca5d36a0bc682ef7e66d293853a7ecc1887680732a6362dd807d833561d4e4b0",
+    "dataprep.py": "05b1d27003ef0421d694ecdfc38a9dd246d40326ab56087a636e1e0c088609f6",
+    "def_model.py": "98fee2907219d2a4482a64b8e63cfe516960c009269253b6697f1211a4699bd2",
+    "functions.py": "235d5e26ac1b9dc5d92b4b13d0687ede8fa9305e8b0293317a1929161c0ee320",
+    "qsis_array_proposals.py": "f979c7f5352143f3b8839110b485da839f65e54e374703384b0078b7c67631c5",
+    "qsis_array_review.py": "58c18014a8a0b9429679d3a432e2b990acfd95f8063b7cddd70f3adef266f251",
+    "qsis_candidate.py": "be08794d2c469630adbc808178d0f09b57121078e86fc90b179888485c06b842",
+    "qsis_catalog.py": "04af96ba5cb1c8eea411748b7923582bfe4a67dcb17d150939fddb564d6483ee",
+    "qsis_consensus.py": "ab552164e75660e75a27d57a4a0e0e41431efe180210baa753544a1c85aaa834",
+    "qsis_cwa.py": "39e70509a054a389429a040b14c8d8a455824b41fa71b22ddf9bbf6b82adfd8c",
+    "qsis_history.py": "6c04cb8a6c88653de0604f3d76d92adf3284a82835446f65fe4b2301ff3683ce",
+    "qsis_noise_audit.py": "207ef50c02a3f9aefa5979d9dcf8733d5c1992e25239ddf207737950eeabb494",
+    "qsis_orientation.py": "e93240f1abf35b73806804393880b4585bdd98e2bc0fe2a0b2ce2fc7a62c004c",
+    "qsis_pilot.py": "04a767c9fac1cc0cf692fab83f2053d93437cb146149dc1ba1695c4cd18d8328",
+    "qsis_public.py": "fde9e377d05e98fc79aacadf0a3f72edae23c54f2e18d1571752428e632da97e",
+    "qsis_public_data.py": "5ca7643ead86a8fbdb9190013a3dc2afb9cc7146f9dce87704108cd25319ccb0",
+    "qsis_public_score.py": "f3580df992dd7682bdb04ea748c346cfd41943a9a7d4d24aedbda09a7ae81ea9",
+    "qsis_redpan.py": "9300b23b9a87a1beeb25b7054bd554b840ed0b79c84fef299c628e15849f8b33",
+    "qsis_reference.py": "ce5c2bbbca22aa96479d53c8a1d1d876372996a8444f9853447ebed7af517023",
+    "qsis_review.html": "18440647fb18350dd296e3649e329674f5f4150a9213dd46605544057bcb9091",
+    "qsis_review.py": "3c1c8f33c46d228d727d48f816c1c7523cc79727c24e3b4f27d9abf3f0b44ae2",
+    "qsis_split.py": "bb0800c065ca65d77fb657cc2bbef6fa0838ce2a8f95aa55b506e8089e179ea9",
+    "qsis_transfer.py": "5f7341022d6c1090f6d988bd6eb3287b94b52555124477c18dced70b5b2a36a4",
+    "qsis_utrans.py": "845807069cfb2bb8ca4d6965d5c4c529032ba8deeec4c494c1d9872f0835407f",
+    "read_accelerometer.py": "c95c2219570285b8f58c77c0fa57b4df7dec5a814886d361e46230f13277f326",
+    "read_accelerometer_class.py": "b40fd313ebcb4c11f6b385e5e5f2fac81bc371402401914d608cd6c4cefb9ac4",
+    "read_data_Torch.py": "a16fc500fdd27dc973919c5c22d2fa3a4b5a286731a3bc5eb4b189e236067e20",
+    "train.py": "2cd8f5a95d6768ba07ea246258687a69e015ad260c7ed56fabdf4611ff272795",
+    "waveform_data.py": "87b40377cb75b9ca94b0cf81c104785f779904c3cc7f93dc25e37640d37cfa03"
+  },
+  "frozen_source_archive": "legacy/runtime-before-reorganization.zip",
+  "active_modules": {
+    "def_model": "models/waveform",
+    "waveform_data": "data/archives",
+    "train": "training/supervised",
+    "qsis_orientation": "data/orientation",
+    "qsis_history": "inference/history",
+    "qsis_cwa": "training/cwa",
+    "qsis_pilot": "training/pilot",
+    "qsis_transfer": "training/transfer",
+    "qsis_catalog": "qsis/catalog",
+    "qsis_public_score": "qsis/public_score",
+    "qsis_array_proposals": "qsis/array_proposals",
+    "qsis_redpan": "qsis/redpan",
+    "qsis_candidate": "qsis/candidate",
+    "qsis_public": "qsis/public",
+    "qsis_array_review": "qsis/array_review",
+    "qsis_noise_audit": "qsis/noise_audit",
+    "qsis_public_data": "qsis/public_data",
+    "qsis_consensus": "qsis/consensus",
+    "qsis_utrans": "qsis/utrans",
+    "qsis_review": "qsis/review",
+    "qsis_reference": "qsis/reference",
+    "qsis_split": "qsis/split"
+  },
+  "directory_moves": [
+    {
+      "old": "data_QSIS_Event",
+      "new": "data/qsis/raw/events",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "data_QSIS_Noise",
+      "new": "data/qsis/raw/noise",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "data_QSIS_pth",
+      "new": "data/qsis/prepared",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "data_train",
+      "new": "data/stead",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Spectrogram_data_pth",
+      "new": "data/spectrogram/prepared",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "dada_QSIS_test",
+      "new": "data/samples/qsis",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "event_noise",
+      "new": "data/samples/event-noise",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "ref_data",
+      "new": "data/reference",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Spectrogram_test",
+      "new": "data/samples/spectrogram",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "model",
+      "new": "models/legacy",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "CPP",
+      "new": "cpp",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Dist_ML_Plot",
+      "new": "reports/legacy/distance",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Final Report",
+      "new": "reports/legacy/final-report",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Result_Finetuing",
+      "new": "reports/legacy/finetuning",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Result_Training",
+      "new": "reports/legacy/training",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Spectrogram_Beamer",
+      "new": "reports/legacy/spectrogram-slides",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "Spectrogram_Result",
+      "new": "reports/legacy/spectrogram",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "model_structure",
+      "new": "reports/legacy/model-structure",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "time_evaluation_info",
+      "new": "reports/legacy/timing",
+      "directory_inode_preserved": true
+    },
+    {
+      "old": "__pycache__",
+      "new": "legacy/generated-cache",
+      "directory_inode_preserved": true
+    }
+  ],
+  "root_data_aliases": [
+    "data_QSIS_Event",
+    "data_QSIS_Noise",
+    "data_QSIS_pth",
+    "data_train"
+  ],
+  "root_ds_store_sha256": "0ab1e9bc05be5e69708d0394e4c0f3e3f2a56e1885627c078a35dfa0cd75089d"
+}

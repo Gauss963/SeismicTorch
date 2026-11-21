@@ -1,0 +1,3960 @@
+{
+  "status": "development_candidate_unvalidated",
+  "model": "cnn",
+  "seed": 42,
+  "waveform_filter": "steady-start",
+  "epochs": 20,
+  "device": "mps",
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "noise_selection_seed": 42,
+  "split_sha256": "8264bed72d8b60ce5bac9325df947bbd67c44980f60b7444985a46e9335fd7ae",
+  "packet_sha256": {
+    "validation": "3b24f9e8d5f676327da8453f43767977d5fdd1de32617dbca3ca6d23370974dc",
+    "test": "f2285b6e6db4435ca8aefd1dbec7572ee63ec9089bfbfac658afc1c9a7b617d7"
+  },
+  "init_sha256": "6911d989b0052d06de5aa9afad47f450b92e3729f22e6551e9631379d95625ea",
+  "proposals_sha256": "76e123c013a8512d54dff694d484f0dd9453bda24e208de75bab575b7edf1d69",
+  "station_review_sha256": null,
+  "public_review": {
+    "sha256": [
+      "4bebd14c6ef3f8d3f83263745e71db4891203e6d2f6747ea10389ce5b76ba458",
+      "84754445ab912c8bf9fe7b2d14c3866c9922135ffe47e0e6a482b832f6ccac79",
+      "3a2495292d1262134edcd5fa5d9736dcefebf37505cd7bfedec9a78d21d6682e"
+    ],
+    "waveform_sha256": {
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.05.19.02.55.21.sac": "c5e7ed4d046dbe4c62e8b894517c0c88994fddbd08fa591a673e60688bd24185",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.05.19.02.55.21.sac": "172d487a2d10303bc0567f892da581c96c0147984a58dbff391c65fcd59fd698",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.05.19.02.55.21.sac": "733b70c22ee378f76d42c09d6cda6fffc11785857b919aa5a7d890c79a0fdd15",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.05.27.21.48.50.sac": "4d7627d55ce254cd7d0ac6281d5d4017bfb9b3727b5875cdbf6b94ac36edd584",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.05.27.21.48.50.sac": "adfaaf45af42964d6ef6fbdf74536819d269cc1f7d69449d26b7fd413261e5f6",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.05.27.21.48.50.sac": "be62dd21ca51c59dfe86ba6073ed1f6ae230dc1d0f09c6f27018932c6440a0ad",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.07.10.19.54.40.sac": "cc503785abfdc11fadf7af0ca4569bf1845e2008c3f2e770b9ec071e389b4950",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.07.10.19.54.40.sac": "910601e9f2243e3046b91e8389bd55b14923f4d1ab4d1c9def05215b50c8b9cb",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.07.10.19.54.40.sac": "f7b1f65d4ef43dfe998c1f13170145d75dff6d03745fde10bbc03144f7472da0",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.08.16.00.16.36.sac": "d517819b39d6c5a1af8ae0a2530857db60d0002177f29ff08ad89884309ba915",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.08.16.00.16.36.sac": "512a2286ea01a34b9a2542e83cf5a67e0fd02b3599385a7f7806cd207f1dd25e",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.08.16.00.16.36.sac": "d6cca903482237ae806fc582b8fa5f644bfda02d0cfa63945c4e48774953ccf0",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.09.02.08.26.25.sac": "1bff024969617f89ad897c8b1668ce688af297a012e07d352e9fa970e477570f",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.09.02.08.26.25.sac": "084d9cd9042324e51b5b422087e5e8f2d3a12b931cf15598679dc266bffa3498",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.09.02.08.26.25.sac": "325e30423fb78b6c827001cc33aa9d2215f8a7764f218e08f13eb72d4e74f645",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.09.11.21.15.49.sac": "f30e7b7568eddc2410843e9e448a40ab9c111a7cb8bee14bb24b890116289157",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.09.11.21.15.49.sac": "342a699416e86e3bc9cae7416b7c72f7734a5e7b4ccd5237eef89557d07d6ef8",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.09.11.21.15.49.sac": "16ed57eadfbe6ca4f6c913509e48667a4c9ea718686be518091f8ce3b62591da",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.09.13.04.59.33.sac": "79841d9c76b9bb9e75b60a6082c718b5b8ff1746ad3ff93d2c5e67f0757c58df",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.09.13.04.59.33.sac": "ceca1790ec649844a0c752a3140c0d4e26f2fb758c65f00a8ba14f00914234b4",
+      "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.09.13.04.59.33.sac": "b5e6d3e8f8e9bcb6de3c8cb678a41ca06358b0927b25a343f14bac3dfdda7d7f",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.10.27.06.19.12.sac": "c3d006fba6e9ac9456dd1418c0e93b20ad731a8eab62aa01c754b83e43d0c2e3",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.10.27.06.19.12.sac": "29eb82aa1059171161d0703984273c95c11b48a3b3759fc8e4b65229452856b2",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.10.27.06.19.12.sac": "a7fe7293b64ddf8603fae895a5235a45475e2ac80805191ccf555567c99664a3",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.16.07.01.41.sac": "234aaf6874b14b01dfa6217db052856c3caf712ffad17f689969e00b08a5641d",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.16.07.01.41.sac": "6d6bca616c167a618334d004c897f815f5beb49c8abb7a4a5e3fc474d2baab57",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.16.07.01.41.sac": "8e1edd3778c73d8d9a0c9b2292f4d829b444f4c4082bbd0cbc3ce787422351c6",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.20.04.23.22.sac": "ad72eed0066f2394d3178dcbb06208362cef4ba71ba2893eb87381cd25103c00",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.20.04.23.22.sac": "6ae81c0aaa459f38320dd67401ae71da0d250d7d4459e0cd194f2ac6b83f85b4",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.20.04.23.22.sac": "dbd766721f7e0a4e1ec3987f9385952d7443437512961a377e0f525cf98a4adb",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.22.12.40.18.sac": "4b70c2df6ba181b0055fce9bd530e44f9ab61f004136c0ab22c534708dd9c52a",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.22.12.40.18.sac": "7db8e2ad2d20bdfb4b027422fb434639bb71b07ed875cb3b791384d1e5e97794",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.22.12.40.18.sac": "4a91f0121b289b857bd64f65b65777cedfc800d313544caff681bfde3c6b8bde",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.12.13.04.26.56.sac": "ab99bb491c22b195fc01df45d29fc287b05493fdc59888b47ada4553639eb066",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.12.13.04.26.56.sac": "b33d95c2efdea398103acb94bd2961fb81fdbbc4bf23bb6dae5ef9c1633442d5",
+      "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.12.13.04.26.56.sac": "6dbf1845cf33e1a3983ecfdfe52006d906943dffc5d52298b8af5910c67cfd15",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.12.29.19.51.36.sac": "699951bc257acbecffa8c4a1dd7a597695a766133a2be4e86527d4cded8d27bf",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.12.29.19.51.36.sac": "b1232190f46b164aa1db67ad1c61bcab03a738c1db5978a33961239f0720ba64",
+      "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.12.29.19.51.36.sac": "64f650c311f1168e08a6db21be22db8db49b30d8a9164f07cc3e9b75a312ba0b"
+    }
+  },
+  "trigger_pool_sha256": "c8a79b8a67b5f109d0d698a4d3321e9a9e3e801ff71b6300a6ed96e5aaa6adb9",
+  "training_classes": {
+    "0": 33,
+    "1": 47,
+    "2": 146
+  },
+  "sources": [
+    {
+      "id": "QSIS-001-P",
+      "group": "2022-01-16T08:15:41.500Z/24.180/122.240",
+      "label": 0,
+      "legacy_center": 35.379999999999995,
+      "onset_center": 20,
+      "paths": [
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLX.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLY.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLZ.2022.01.16.08.15.41.sac"
+      ],
+      "center_sample": 14050,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-001-S",
+      "group": "2022-01-16T08:15:41.500Z/24.180/122.240",
+      "label": 1,
+      "legacy_center": 61.28999999999999,
+      "onset_center": 33.1,
+      "paths": [
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLX.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLY.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLZ.2022.01.16.08.15.41.sac"
+      ],
+      "center_sample": 15360,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-008-S",
+      "group": "2022-03-22T20:29:59.500Z/23.420/121.440",
+      "label": 1,
+      "legacy_center": 70.03599670410156,
+      "onset_center": 55.4,
+      "paths": [
+        "data_QSIS_Event/5AE1C/RCEC.09f.5AE1C.TW.C2.HLX.2022.03.22.20.29.59.sac",
+        "data_QSIS_Event/5AE1C/RCEC.09f.5AE1C.TW.C2.HLY.2022.03.22.20.29.59.sac",
+        "data_QSIS_Event/5AE1C/RCEC.09f.5AE1C.TW.C2.HLZ.2022.03.22.20.29.59.sac"
+      ],
+      "center_sample": 17589,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-010-P",
+      "group": "2022-02-11T16:43:12.500Z/24.010/122.310",
+      "label": 0,
+      "legacy_center": 32.917003784179684,
+      "onset_center": 23.8,
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.11.16.43.12.sac"
+      ],
+      "center_sample": 14429,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-010-S",
+      "group": "2022-02-11T16:43:12.500Z/24.010/122.310",
+      "label": 1,
+      "legacy_center": 51.707003784179676,
+      "onset_center": 40.8,
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.11.16.43.12.sac"
+      ],
+      "center_sample": 16129,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-013-P",
+      "group": "2022-02-07T10:58:25.500Z/24.400/121.960",
+      "label": 0,
+      "legacy_center": 21.195004882812498,
+      "onset_center": 15.3,
+      "paths": [
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLX.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLY.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLZ.2022.02.07.10.58.25.sac"
+      ],
+      "center_sample": 13579,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-013-S",
+      "group": "2022-02-07T10:58:25.500Z/24.400/121.960",
+      "label": 1,
+      "legacy_center": 36.2850048828125,
+      "onset_center": 26.7,
+      "paths": [
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLX.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLY.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLZ.2022.02.07.10.58.25.sac"
+      ],
+      "center_sample": 14719,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-035-S",
+      "group": "2022-03-18T12:50:56.500Z/23.980/122.160",
+      "label": 1,
+      "legacy_center": 57.520999450683604,
+      "onset_center": 39.4,
+      "paths": [
+        "data_QSIS_Event/5AF8A/IES.04f.5AF8A.TW.A2.HLX.2022.03.18.12.50.56.sac",
+        "data_QSIS_Event/5AF8A/IES.04f.5AF8A.TW.A2.HLY.2022.03.18.12.50.56.sac",
+        "data_QSIS_Event/5AF8A/IES.04f.5AF8A.TW.A2.HLZ.2022.03.18.12.50.56.sac"
+      ],
+      "center_sample": 15990,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-041-S",
+      "group": "2022-03-06T03:51:56.500Z/24.810/122.230",
+      "label": 1,
+      "legacy_center": 66.41600433349609,
+      "onset_center": 31,
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.03.06.03.51.56.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.03.06.03.51.56.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.03.06.03.51.56.sac"
+      ],
+      "center_sample": 15149,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-043-S",
+      "group": "2023-06-11T12:25:39.500Z/24.210/122.500",
+      "label": 1,
+      "legacy_center": 64.19399780273437,
+      "onset_center": 36.7,
+      "paths": [
+        "data_QSIS_Event/Taipei101/Taipei101.09f.5AE87.TW.A2.HNX.2023.06.11.12.25.39.sac",
+        "data_QSIS_Event/Taipei101/Taipei101.09f.5AE87.TW.A2.HNY.2023.06.11.12.25.39.sac",
+        "data_QSIS_Event/Taipei101/Taipei101.09f.5AE87.TW.A2.HNZ.2023.06.11.12.25.39.sac"
+      ],
+      "center_sample": 15720,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-064-S",
+      "group": "2022-01-25T14:35:53.500Z/24.630/121.950",
+      "label": 1,
+      "legacy_center": 52.4609994506836,
+      "onset_center": 21.8,
+      "paths": [
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLX.2022.01.25.14.35.53.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLY.2022.01.25.14.35.53.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLZ.2022.01.25.14.35.53.sac"
+      ],
+      "center_sample": 14230,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-066-P",
+      "group": "2022-02-11T16:43:12.500Z/24.010/122.310",
+      "label": 0,
+      "legacy_center": 33.8840054321289,
+      "onset_center": 23.4,
+      "paths": [
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLX.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLY.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLZ.2022.02.11.16.43.12.sac"
+      ],
+      "center_sample": 14390,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-067-P",
+      "group": "2022-01-16T08:15:41.500Z/24.180/122.240",
+      "label": 0,
+      "legacy_center": 35.332998352050794,
+      "onset_center": 19.8,
+      "paths": [
+        "data_QSIS_Event/5AE11/RCEC.02f.5AE11.TW.C2.HLX.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE11/RCEC.02f.5AE11.TW.C2.HLY.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE11/RCEC.02f.5AE11.TW.C2.HLZ.2022.01.16.08.15.41.sac"
+      ],
+      "center_sample": 14030,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-067-S",
+      "group": "2022-01-16T08:15:41.500Z/24.180/122.240",
+      "label": 1,
+      "legacy_center": 63.02299835205079,
+      "onset_center": 32.9,
+      "paths": [
+        "data_QSIS_Event/5AE11/RCEC.02f.5AE11.TW.C2.HLX.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE11/RCEC.02f.5AE11.TW.C2.HLY.2022.01.16.08.15.41.sac",
+        "data_QSIS_Event/5AE11/RCEC.02f.5AE11.TW.C2.HLZ.2022.01.16.08.15.41.sac"
+      ],
+      "center_sample": 15340,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-070-P",
+      "group": "2022-02-11T16:43:12.500Z/24.010/122.310",
+      "label": 0,
+      "legacy_center": 33.9450048828125,
+      "onset_center": 23.2,
+      "paths": [
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLX.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLY.2022.02.11.16.43.12.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLZ.2022.02.11.16.43.12.sac"
+      ],
+      "center_sample": 14369,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-074-P",
+      "group": "2022-01-03T09:46:37.500Z/24.020/122.180",
+      "label": 0,
+      "legacy_center": 31.984005432128896,
+      "onset_center": 22,
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.01.03.09.46.37.sac"
+      ],
+      "center_sample": 14250,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-074-S",
+      "group": "2022-01-03T09:46:37.500Z/24.020/122.180",
+      "label": 1,
+      "legacy_center": 50.15400543212891,
+      "onset_center": 40,
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.01.03.09.46.37.sac"
+      ],
+      "center_sample": 16050,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-078-P",
+      "group": "2022-01-03T09:46:37.500Z/24.020/122.180",
+      "label": 0,
+      "legacy_center": 30.44600433349609,
+      "onset_center": 23.4,
+      "paths": [
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLX.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLY.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLZ.2022.01.03.09.46.37.sac"
+      ],
+      "center_sample": 14389,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-082-P",
+      "group": "2022-03-22T17:41:39.500Z/23.430/121.520",
+      "label": 0,
+      "legacy_center": 40.661998901367184,
+      "onset_center": 31.6,
+      "paths": [
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLX.2022.03.22.17.41.39.sac",
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLY.2022.03.22.17.41.39.sac",
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLZ.2022.03.22.17.41.39.sac"
+      ],
+      "center_sample": 15210,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-091-P",
+      "group": "2022-02-07T10:58:25.500Z/24.400/121.960",
+      "label": 0,
+      "legacy_center": 16.268003234863272,
+      "onset_center": 15.1,
+      "paths": [
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLX.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLY.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLZ.2022.02.07.10.58.25.sac"
+      ],
+      "center_sample": 13559,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-091-S",
+      "group": "2022-02-07T10:58:25.500Z/24.400/121.960",
+      "label": 1,
+      "legacy_center": 36.17800323486327,
+      "onset_center": 26.4,
+      "paths": [
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLX.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLY.2022.02.07.10.58.25.sac",
+        "data_QSIS_Event/5AF48/RCEC.01f.5AF48.TW.C2.HLZ.2022.02.07.10.58.25.sac"
+      ],
+      "center_sample": 14689,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-096-P",
+      "group": "2022-01-03T09:46:37.500Z/24.020/122.180",
+      "label": 0,
+      "legacy_center": 31.570999450683587,
+      "onset_center": 22.6,
+      "paths": [
+        "data_QSIS_Event/5AE1C/RCEC.09f.5AE1C.TW.C2.HLX.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AE1C/RCEC.09f.5AE1C.TW.C2.HLY.2022.01.03.09.46.37.sac",
+        "data_QSIS_Event/5AE1C/RCEC.09f.5AE1C.TW.C2.HLZ.2022.01.03.09.46.37.sac"
+      ],
+      "center_sample": 14310,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-099-P",
+      "group": "2022-03-09T12:22:13.500Z/23.250/121.440",
+      "label": 0,
+      "legacy_center": 40.81999999999999,
+      "onset_center": 30.5,
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.03.09.12.22.13.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.03.09.12.22.13.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.03.09.12.22.13.sac"
+      ],
+      "center_sample": 15100,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "QSIS-100-P",
+      "group": "2022-03-22T17:41:39.500Z/23.430/121.520",
+      "label": 0,
+      "legacy_center": 37.19299835205078,
+      "onset_center": 31.8,
+      "paths": [
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLX.2022.03.22.17.41.39.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLY.2022.03.22.17.41.39.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLZ.2022.03.22.17.41.39.sac"
+      ],
+      "center_sample": 15230,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF5C.TW..HLX.2023.07.12.06.22.47.sac",
+      "group": "2023-07-12",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.12.06.22.47.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.12.06.22.47.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.12.06.22.47.sac"
+      ],
+      "center_sample": 574,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.11.13.05.35.sac",
+      "group": "2023-07-11",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.11.13.05.35.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.11.13.05.35.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.11.13.05.35.sac"
+      ],
+      "center_sample": 9417,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.19.18.12.04.sac",
+      "group": "2023-07-19",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.19.18.12.04.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.19.18.12.04.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.19.18.12.04.sac"
+      ],
+      "center_sample": 9560,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF48.TW..HLX.2023.07.23.19.55.21.sac",
+      "group": "2023-07-23",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.23.19.55.21.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.23.19.55.21.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.23.19.55.21.sac"
+      ],
+      "center_sample": 593,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF8A.TW..HLX.2023.07.10.04.06.05.sac",
+      "group": "2023-07-10",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF8A.TW..HLX.2023.07.10.04.06.05.sac",
+        "data_QSIS_Noise/5AF8A.TW..HLY.2023.07.10.04.06.05.sac",
+        "data_QSIS_Noise/5AF8A.TW..HLZ.2023.07.10.04.06.05.sac"
+      ],
+      "center_sample": 12403,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.17.11.05.56.sac",
+      "group": "2023-07-17",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.17.11.05.56.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.17.11.05.56.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.17.11.05.56.sac"
+      ],
+      "center_sample": 10999,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE99.TW..HLX.2023.07.06.07.47.26.sac",
+      "group": "2023-07-06",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE99.TW..HLX.2023.07.06.07.47.26.sac",
+        "data_QSIS_Noise/5AE99.TW..HLY.2023.07.06.07.47.26.sac",
+        "data_QSIS_Noise/5AE99.TW..HLZ.2023.07.06.07.47.26.sac"
+      ],
+      "center_sample": 571,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.13.17.38.32.sac",
+      "group": "2023-07-13",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.13.17.38.32.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.13.17.38.32.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.13.17.38.32.sac"
+      ],
+      "center_sample": 9595,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AFA8.TW..HLX.2023.07.24.01.25.04.sac",
+      "group": "2023-07-24",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AFA8.TW..HLX.2023.07.24.01.25.04.sac",
+        "data_QSIS_Noise/5AFA8.TW..HLY.2023.07.24.01.25.04.sac",
+        "data_QSIS_Noise/5AFA8.TW..HLZ.2023.07.24.01.25.04.sac"
+      ],
+      "center_sample": 555,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.08.20.34.23.sac",
+      "group": "2023-07-08",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.08.20.34.23.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.08.20.34.23.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.08.20.34.23.sac"
+      ],
+      "center_sample": 4105,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE21.TW..HLX.2023.07.05.05.48.19.sac",
+      "group": "2023-07-05",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE21.TW..HLX.2023.07.05.05.48.19.sac",
+        "data_QSIS_Noise/5AE21.TW..HLY.2023.07.05.05.48.19.sac",
+        "data_QSIS_Noise/5AE21.TW..HLZ.2023.07.05.05.48.19.sac"
+      ],
+      "center_sample": 9614,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF5C.TW..HLX.2023.07.21.00.50.59.sac",
+      "group": "2023-07-21",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.21.00.50.59.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.21.00.50.59.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.21.00.50.59.sac"
+      ],
+      "center_sample": 9452,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.07.19.42.20.sac",
+      "group": "2023-07-07",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.07.19.42.20.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.07.19.42.20.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.07.19.42.20.sac"
+      ],
+      "center_sample": 9551,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.14.16.43.13.sac",
+      "group": "2023-07-14",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.14.16.43.13.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.14.16.43.13.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.14.16.43.13.sac"
+      ],
+      "center_sample": 9609,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF5C.TW..HLX.2023.07.18.03.02.23.sac",
+      "group": "2023-07-18",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.18.03.02.23.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.18.03.02.23.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.18.03.02.23.sac"
+      ],
+      "center_sample": 9326,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE28.TW..HLX.2023.06.30.01.34.48.sac",
+      "group": "2023-06-30",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE28.TW..HLX.2023.06.30.01.34.48.sac",
+        "data_QSIS_Noise/5AE28.TW..HLY.2023.06.30.01.34.48.sac",
+        "data_QSIS_Noise/5AE28.TW..HLZ.2023.06.30.01.34.48.sac"
+      ],
+      "center_sample": 501,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.20.15.02.29.sac",
+      "group": "2023-07-20",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.20.15.02.29.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.20.15.02.29.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.20.15.02.29.sac"
+      ],
+      "center_sample": 9546,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE29.TW..HLX.2023.07.22.20.48.57.sac",
+      "group": "2023-07-22",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.22.20.48.57.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.22.20.48.57.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.22.20.48.57.sac"
+      ],
+      "center_sample": 9724,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE98.TW..HLX.2023.07.15.15.09.49.sac",
+      "group": "2023-07-15",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE98.TW..HLX.2023.07.15.15.09.49.sac",
+        "data_QSIS_Noise/5AE98.TW..HLY.2023.07.15.15.09.49.sac",
+        "data_QSIS_Noise/5AE98.TW..HLZ.2023.07.15.15.09.49.sac"
+      ],
+      "center_sample": 9525,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF30.TW..HLX.2023.07.16.11.37.41.sac",
+      "group": "2023-07-16",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.16.11.37.41.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.16.11.37.41.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.16.11.37.41.sac"
+      ],
+      "center_sample": 23735,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AF48.TW..HLX.2023.07.03.01.49.50.sac",
+      "group": "2023-07-03",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.03.01.49.50.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.03.01.49.50.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.03.01.49.50.sac"
+      ],
+      "center_sample": 12423,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "5AE28.TW..HLX.2023.06.22.06.58.17.sac",
+      "group": "2023-06-22",
+      "label": 2,
+      "paths": [
+        "data_QSIS_Noise/5AE28.TW..HLX.2023.06.22.06.58.17.sac",
+        "data_QSIS_Noise/5AE28.TW..HLY.2023.06.22.06.58.17.sac",
+        "data_QSIS_Noise/5AE28.TW..HLZ.2023.06.22.06.58.17.sac"
+      ],
+      "center_sample": 9402,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 0,
+      "group": "2022-01-23T08:22:38.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.01.23.08.22.38.sac"
+      ],
+      "center_sample": 13451,
+      "onset_center": 14.011998901367193,
+      "teacher_score": 0.6179492473602295,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 0,
+      "group": "2022-01-23T08:22:38.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLX.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLY.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLZ.2022.01.23.08.22.38.sac"
+      ],
+      "center_sample": 13580,
+      "onset_center": 15.304002685546877,
+      "teacher_score": 0.5910073518753052,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-01-23T08:22:38.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.01.23.08.22.38.sac"
+      ],
+      "center_sample": 14343,
+      "onset_center": 22.9360043334961,
+      "teacher_score": 0.9419342279434204,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-01-23T08:22:38.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.01.23.08.22.38.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.01.23.08.22.38.sac"
+      ],
+      "center_sample": 14338,
+      "onset_center": 22.886998901367193,
+      "teacher_score": 0.9366350173950195,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 0,
+      "group": "2022-02-06T23:52:40.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLX.2022.02.06.23.52.40.sac",
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLY.2022.02.06.23.52.40.sac",
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLZ.2022.02.06.23.52.40.sac"
+      ],
+      "center_sample": 13380,
+      "onset_center": 13.298997802734377,
+      "teacher_score": 0.5954607725143433,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-06T23:52:40.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLX.2022.02.06.23.52.40.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLY.2022.02.06.23.52.40.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLZ.2022.02.06.23.52.40.sac"
+      ],
+      "center_sample": 13948,
+      "onset_center": 18.980004882812494,
+      "teacher_score": 0.9291166067123413,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-06T23:52:40.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.02.06.23.52.40.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.02.06.23.52.40.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.02.06.23.52.40.sac"
+      ],
+      "center_sample": 13976,
+      "onset_center": 19.256998901367183,
+      "teacher_score": 0.9196904301643372,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-07T11:00:25.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.07.11.00.25.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.07.11.00.25.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.07.11.00.25.sac"
+      ],
+      "center_sample": 14630,
+      "onset_center": 25.804005432128918,
+      "teacher_score": 0.6986547708511353,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 0,
+      "group": "2022-02-11T03:01:00.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.11.03.01.00.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.11.03.01.00.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.11.03.01.00.sac"
+      ],
+      "center_sample": 13629,
+      "onset_center": 15.79700378417968,
+      "teacher_score": 0.6846988797187805,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-11T03:01:00.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.11.03.01.00.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.11.03.01.00.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.11.03.01.00.sac"
+      ],
+      "center_sample": 14694,
+      "onset_center": 26.447003784179685,
+      "teacher_score": 0.9141215682029724,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-11T03:01:00.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.02.11.03.01.00.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.02.11.03.01.00.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.02.11.03.01.00.sac"
+      ],
+      "center_sample": 14698,
+      "onset_center": 26.482003784179682,
+      "teacher_score": 0.9023035764694214,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 0,
+      "group": "2022-02-20T10:49:44.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLX.2022.02.20.10.49.44.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLY.2022.02.20.10.49.44.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLZ.2022.02.20.10.49.44.sac"
+      ],
+      "center_sample": 14435,
+      "onset_center": 23.8540054321289,
+      "teacher_score": 0.63892662525177,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-20T10:49:44.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.20.10.49.44.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.20.10.49.44.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.20.10.49.44.sac"
+      ],
+      "center_sample": 16332,
+      "onset_center": 42.82500488281249,
+      "teacher_score": 0.7082921862602234,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-20T10:49:44.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.02.20.10.49.44.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.02.20.10.49.44.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.02.20.10.49.44.sac"
+      ],
+      "center_sample": 16334,
+      "onset_center": 42.84800598144531,
+      "teacher_score": 0.5565332770347595,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-02-25T16:42:24.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.02.25.16.42.24.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.02.25.16.42.24.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.02.25.16.42.24.sac"
+      ],
+      "center_sample": 15057,
+      "onset_center": 30.0709994506836,
+      "teacher_score": 0.7184054851531982,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-03T11:33:22.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.03.03.11.33.22.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.03.03.11.33.22.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.03.03.11.33.22.sac"
+      ],
+      "center_sample": 14151,
+      "onset_center": 21.01999725341797,
+      "teacher_score": 0.8047329783439636,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-03T11:33:22.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.03.03.11.33.22.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.03.03.11.33.22.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.03.03.11.33.22.sac"
+      ],
+      "center_sample": 14148,
+      "onset_center": 20.98400268554687,
+      "teacher_score": 0.7478157877922058,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-07T18:05:55.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLX.2022.03.07.18.05.55.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLY.2022.03.07.18.05.55.sac",
+        "data_QSIS_Event/5AFA8/IES.05f.5AFA8.TW.A2.HLZ.2022.03.07.18.05.55.sac"
+      ],
+      "center_sample": 16471,
+      "onset_center": 44.213005981445306,
+      "teacher_score": 0.9187054634094238,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-07T18:05:55.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.03.07.18.05.55.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.03.07.18.05.55.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.03.07.18.05.55.sac"
+      ],
+      "center_sample": 16460,
+      "onset_center": 44.10700653076172,
+      "teacher_score": 0.9123004078865051,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 0,
+      "group": "2022-03-21T23:09:12.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLX.2022.03.21.23.09.12.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLY.2022.03.21.23.09.12.sac",
+        "data_QSIS_Event/5AEBA/RCEC.07f.5AEBA.TW.C2.HLZ.2022.03.21.23.09.12.sac"
+      ],
+      "center_sample": 14605,
+      "onset_center": 25.553003234863283,
+      "teacher_score": 0.5775800347328186,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-21T23:09:12.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AF0F/RCEC.05f.5AF0F.TW.C2.HLX.2022.03.21.23.09.12.sac",
+        "data_QSIS_Event/5AF0F/RCEC.05f.5AF0F.TW.C2.HLY.2022.03.21.23.09.12.sac",
+        "data_QSIS_Event/5AF0F/RCEC.05f.5AF0F.TW.C2.HLZ.2022.03.21.23.09.12.sac"
+      ],
+      "center_sample": 16050,
+      "onset_center": 40.00800323486328,
+      "teacher_score": 0.9053664803504944,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-21T23:09:12.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLX.2022.03.21.23.09.12.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLY.2022.03.21.23.09.12.sac",
+        "data_QSIS_Event/5AE83/RCEC.06f.5AE83.TW.C2.HLZ.2022.03.21.23.09.12.sac"
+      ],
+      "center_sample": 16058,
+      "onset_center": 40.093003234863275,
+      "teacher_score": 0.8934001326560974,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-22T18:37:50.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLX.2022.03.22.18.37.50.sac",
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLY.2022.03.22.18.37.50.sac",
+        "data_QSIS_Event/5AE28/RCEC.04f.5AE28.TW.C2.HLZ.2022.03.22.18.37.50.sac"
+      ],
+      "center_sample": 17171,
+      "onset_center": 51.21099945068359,
+      "teacher_score": 0.8748241066932678,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-22T18:37:50.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLX.2022.03.22.18.37.50.sac",
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLY.2022.03.22.18.37.50.sac",
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLZ.2022.03.22.18.37.50.sac"
+      ],
+      "center_sample": 17265,
+      "onset_center": 52.15800323486327,
+      "teacher_score": 0.849618673324585,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-22T19:35:03.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AF8A/IES.04f.5AF8A.TW.A2.HLX.2022.03.22.19.35.03.sac",
+        "data_QSIS_Event/5AF8A/IES.04f.5AF8A.TW.A2.HLY.2022.03.22.19.35.03.sac",
+        "data_QSIS_Event/5AF8A/IES.04f.5AF8A.TW.A2.HLZ.2022.03.22.19.35.03.sac"
+      ],
+      "center_sample": 17368,
+      "onset_center": 53.185002136230466,
+      "teacher_score": 0.8947246074676514,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-22T19:35:03.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLX.2022.03.22.19.35.03.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLY.2022.03.22.19.35.03.sac",
+        "data_QSIS_Event/5AEE6/IES.06f.5AEE6.TW.A2.HLZ.2022.03.22.19.35.03.sac"
+      ],
+      "center_sample": 17365,
+      "onset_center": 53.15500488281249,
+      "teacher_score": 0.8902168273925781,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-24T00:38:26.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLX.2022.03.24.00.38.26.sac",
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLY.2022.03.24.00.38.26.sac",
+        "data_QSIS_Event/5AE99/IES.02f.5AE99.TW.A2.HLZ.2022.03.24.00.38.26.sac"
+      ],
+      "center_sample": 17066,
+      "onset_center": 50.17200378417968,
+      "teacher_score": 0.9039353132247925,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 1,
+      "group": "2022-03-24T00:38:26.500000Z",
+      "paths": [
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLX.2022.03.24.00.38.26.sac",
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLY.2022.03.24.00.38.26.sac",
+        "data_QSIS_Event/5AE73/IES.03f.5AE73.TW.10.HLZ.2022.03.24.00.38.26.sac"
+      ],
+      "center_sample": 17072,
+      "onset_center": 50.23200378417968,
+      "teacher_score": 0.8347631096839905,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-001",
+      "event_key": "2024-05-19T02:55:21.000Z/24.190/121.780",
+      "group": "2024-05-19T02:55:21.000Z/24.190/121.780",
+      "origin_utc": "2024-05-19T02:55:21.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.05.19.02.55.21.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.05.19.02.55.21.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.05.19.02.55.21.sac"
+      ],
+      "station": "5AF54",
+      "label": 0,
+      "onset_center": 6.125,
+      "center_sample": 12612,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-001",
+      "event_key": "2024-05-19T02:55:21.000Z/24.190/121.780",
+      "group": "2024-05-19T02:55:21.000Z/24.190/121.780",
+      "origin_utc": "2024-05-19T02:55:21.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.05.19.02.55.21.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.05.19.02.55.21.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.05.19.02.55.21.sac"
+      ],
+      "station": "5AF54",
+      "label": 1,
+      "onset_center": 11.24,
+      "center_sample": 13124,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-003",
+      "event_key": "2024-05-27T21:48:50.000Z/24.480/121.890",
+      "group": "2024-05-27T21:48:50.000Z/24.480/121.890",
+      "origin_utc": "2024-05-27T21:48:50.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.05.27.21.48.50.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.05.27.21.48.50.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.05.27.21.48.50.sac"
+      ],
+      "station": "5AF13",
+      "label": 0,
+      "onset_center": 12.375,
+      "center_sample": 13238,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-005",
+      "event_key": "2024-07-10T19:54:40.000Z/24.200/121.720",
+      "group": "2024-07-10T19:54:40.000Z/24.200/121.720",
+      "origin_utc": "2024-07-10T19:54:40.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.07.10.19.54.40.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.07.10.19.54.40.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.07.10.19.54.40.sac"
+      ],
+      "station": "5AF13",
+      "label": 0,
+      "onset_center": 6.93,
+      "center_sample": 12693,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-005",
+      "event_key": "2024-07-10T19:54:40.000Z/24.200/121.720",
+      "group": "2024-07-10T19:54:40.000Z/24.200/121.720",
+      "origin_utc": "2024-07-10T19:54:40.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.07.10.19.54.40.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.07.10.19.54.40.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.07.10.19.54.40.sac"
+      ],
+      "station": "5AF13",
+      "label": 1,
+      "onset_center": 12.15,
+      "center_sample": 13215,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-007",
+      "event_key": "2024-08-16T00:16:36.000Z/23.800/121.650",
+      "group": "2024-08-16T00:16:36.000Z/23.800/121.650",
+      "origin_utc": "2024-08-16T00:16:36.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.08.16.00.16.36.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.08.16.00.16.36.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.08.16.00.16.36.sac"
+      ],
+      "station": "5AF13",
+      "label": 1,
+      "onset_center": 10.575,
+      "center_sample": 13057,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-008",
+      "event_key": "2024-09-02T08:26:25.000Z/23.930/121.670",
+      "group": "2024-09-02T08:26:25.000Z/23.930/121.670",
+      "origin_utc": "2024-09-02T08:26:25.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.09.02.08.26.25.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.09.02.08.26.25.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.09.02.08.26.25.sac"
+      ],
+      "station": "5AF13",
+      "label": 0,
+      "onset_center": 5.91,
+      "center_sample": 12591,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-008",
+      "event_key": "2024-09-02T08:26:25.000Z/23.930/121.670",
+      "group": "2024-09-02T08:26:25.000Z/23.930/121.670",
+      "origin_utc": "2024-09-02T08:26:25.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.09.02.08.26.25.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.09.02.08.26.25.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.09.02.08.26.25.sac"
+      ],
+      "station": "5AF13",
+      "label": 1,
+      "onset_center": 10.01,
+      "center_sample": 13001,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-009",
+      "event_key": "2024-09-11T21:15:49.000Z/24.160/122.110",
+      "group": "2024-09-11T21:15:49.000Z/24.160/122.110",
+      "origin_utc": "2024-09-11T21:15:49.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.09.11.21.15.49.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.09.11.21.15.49.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.09.11.21.15.49.sac"
+      ],
+      "station": "5AF54",
+      "label": 1,
+      "onset_center": 19.25,
+      "center_sample": 13925,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-010",
+      "event_key": "2024-09-13T04:59:33.000Z/23.940/121.730",
+      "group": "2024-09-13T04:59:33.000Z/23.940/121.730",
+      "origin_utc": "2024-09-13T04:59:33.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.09.13.04.59.33.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.09.13.04.59.33.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.09.13.04.59.33.sac"
+      ],
+      "station": "5AF54",
+      "label": 0,
+      "onset_center": 6.115,
+      "center_sample": 12612,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-010",
+      "event_key": "2024-09-13T04:59:33.000Z/23.940/121.730",
+      "group": "2024-09-13T04:59:33.000Z/23.940/121.730",
+      "origin_utc": "2024-09-13T04:59:33.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLX.2024.09.13.04.59.33.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLY.2024.09.13.04.59.33.sac",
+        "runs/qsis-training-sites-2024/sac/5AF54/5AF54.TW.HLZ.2024.09.13.04.59.33.sac"
+      ],
+      "station": "5AF54",
+      "label": 1,
+      "onset_center": 9.995000000000001,
+      "center_sample": 13000,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-012",
+      "event_key": "2024-10-27T06:19:12.000Z/23.420/120.480",
+      "group": "2024-10-27T06:19:12.000Z/23.420/120.480",
+      "origin_utc": "2024-10-27T06:19:12.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.10.27.06.19.12.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.10.27.06.19.12.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.10.27.06.19.12.sac"
+      ],
+      "station": "5AE10",
+      "label": 0,
+      "onset_center": 4.725,
+      "center_sample": 12472,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-013",
+      "event_key": "2024-11-16T07:01:41.000Z/23.200/120.210",
+      "group": "2024-11-16T07:01:41.000Z/23.200/120.210",
+      "origin_utc": "2024-11-16T07:01:41.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.16.07.01.41.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.16.07.01.41.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.16.07.01.41.sac"
+      ],
+      "station": "5AE10",
+      "label": 0,
+      "onset_center": 10.975,
+      "center_sample": 13098,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-013",
+      "event_key": "2024-11-16T07:01:41.000Z/23.200/120.210",
+      "group": "2024-11-16T07:01:41.000Z/23.200/120.210",
+      "origin_utc": "2024-11-16T07:01:41.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.16.07.01.41.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.16.07.01.41.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.16.07.01.41.sac"
+      ],
+      "station": "5AE10",
+      "label": 1,
+      "onset_center": 17.424999999999997,
+      "center_sample": 13743,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-014",
+      "event_key": "2024-11-20T04:23:22.000Z/23.350/120.230",
+      "group": "2024-11-20T04:23:22.000Z/23.350/120.230",
+      "origin_utc": "2024-11-20T04:23:22.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.20.04.23.22.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.20.04.23.22.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.20.04.23.22.sac"
+      ],
+      "station": "5AE10",
+      "label": 0,
+      "onset_center": 7.7,
+      "center_sample": 12770,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-014",
+      "event_key": "2024-11-20T04:23:22.000Z/23.350/120.230",
+      "group": "2024-11-20T04:23:22.000Z/23.350/120.230",
+      "origin_utc": "2024-11-20T04:23:22.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.20.04.23.22.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.20.04.23.22.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.20.04.23.22.sac"
+      ],
+      "station": "5AE10",
+      "label": 1,
+      "onset_center": 13.475,
+      "center_sample": 13348,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-015",
+      "event_key": "2024-11-22T12:40:18.000Z/23.200/120.180",
+      "group": "2024-11-22T12:40:18.000Z/23.200/120.180",
+      "origin_utc": "2024-11-22T12:40:18.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.11.22.12.40.18.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.11.22.12.40.18.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.11.22.12.40.18.sac"
+      ],
+      "station": "5AE10",
+      "label": 0,
+      "onset_center": 10.524999999999999,
+      "center_sample": 13052,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-019",
+      "event_key": "2024-12-13T04:26:56.000Z/23.920/121.680",
+      "group": "2024-12-13T04:26:56.000Z/23.920/121.680",
+      "origin_utc": "2024-12-13T04:26:56.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.12.13.04.26.56.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.12.13.04.26.56.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.12.13.04.26.56.sac"
+      ],
+      "station": "5AF13",
+      "label": 0,
+      "onset_center": 5.279999999999999,
+      "center_sample": 12528,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-019",
+      "event_key": "2024-12-13T04:26:56.000Z/23.920/121.680",
+      "group": "2024-12-13T04:26:56.000Z/23.920/121.680",
+      "origin_utc": "2024-12-13T04:26:56.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLX.2024.12.13.04.26.56.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLY.2024.12.13.04.26.56.sac",
+        "runs/qsis-training-sites-2024/sac/5AF13/5AF13.TW.HLZ.2024.12.13.04.26.56.sac"
+      ],
+      "station": "5AF13",
+      "label": 1,
+      "onset_center": 9.05,
+      "center_sample": 12905,
+      "site": "HW01",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-020",
+      "event_key": "2024-12-29T19:51:36.000Z/23.550/120.690",
+      "group": "2024-12-29T19:51:36.000Z/23.550/120.690",
+      "origin_utc": "2024-12-29T19:51:36.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.12.29.19.51.36.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.12.29.19.51.36.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.12.29.19.51.36.sac"
+      ],
+      "station": "5AE10",
+      "label": 0,
+      "onset_center": 5.75,
+      "center_sample": 12575,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "id": "SITE24-020",
+      "event_key": "2024-12-29T19:51:36.000Z/23.550/120.690",
+      "group": "2024-12-29T19:51:36.000Z/23.550/120.690",
+      "origin_utc": "2024-12-29T19:51:36.000000Z",
+      "paths": [
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLX.2024.12.29.19.51.36.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLY.2024.12.29.19.51.36.sac",
+        "runs/qsis-training-sites-2024/sac/5AE10/5AE10.TW.HLZ.2024.12.29.19.51.36.sac"
+      ],
+      "station": "5AE10",
+      "label": 1,
+      "onset_center": 9.8,
+      "center_sample": 12980,
+      "site": "CCUL",
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-06-22",
+      "paths": [
+        "data_QSIS_Noise/5AE1C.TW..HLX.2023.06.22.01.20.56.sac",
+        "data_QSIS_Noise/5AE1C.TW..HLY.2023.06.22.01.20.56.sac",
+        "data_QSIS_Noise/5AE1C.TW..HLZ.2023.06.22.01.20.56.sac"
+      ],
+      "sha256": [
+        "34ad8347a1ceef19d101f14cd186e62c6a7610722d4e2c2dc27f358d7b48c6db",
+        "974007d5c7ddfab15d30c5fa34a0c8b93662c9df0c1c3a1ccf75fc447bdde633",
+        "8d179df1c601971000f31e34858ba7641793ae37d289cd13d4f2dd479b243108"
+      ],
+      "center_sample": 9695,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-06-22",
+      "paths": [
+        "data_QSIS_Noise/5ADF9.TW..HLX.2023.06.22.02.26.04.sac",
+        "data_QSIS_Noise/5ADF9.TW..HLY.2023.06.22.02.26.04.sac",
+        "data_QSIS_Noise/5ADF9.TW..HLZ.2023.06.22.02.26.04.sac"
+      ],
+      "sha256": [
+        "250d36fb98e65767781518bd10fe110aab04371fb5b3cfbb4a2593e1b868adaa",
+        "7a339f93ec47dd95f106d00adf53d4fb5dad69a629d93924d0b6c9ba4bca71ea",
+        "a9a8c52afcad9e7d784ccc9318209581ed430cdebb296d2508325166b77a661b"
+      ],
+      "center_sample": 9640,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-06-22",
+      "paths": [
+        "data_QSIS_Noise/5ADF9.TW..HLX.2023.06.22.02.06.02.sac",
+        "data_QSIS_Noise/5ADF9.TW..HLY.2023.06.22.02.06.02.sac",
+        "data_QSIS_Noise/5ADF9.TW..HLZ.2023.06.22.02.06.02.sac"
+      ],
+      "sha256": [
+        "13e182e1452b5b3ca1d5db645d0f57308b0fb537ebb509f09787a7e22b3aa6db",
+        "9f4b8c42f83dd5bbd51cc77c8085f642fa1b96bca02eb201a6f53e5a1401e979",
+        "fc0bff05189074b11a00eba277a374a45ac1ad6446fac6a15fb67af7cea62daa"
+      ],
+      "center_sample": 12477,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-06-30",
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.06.30.06.52.32.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.06.30.06.52.32.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.06.30.06.52.32.sac"
+      ],
+      "sha256": [
+        "e8b586ff616e4f62b18a5b32bf98825616c04a4591507bacbfc60a4b8e379cd6",
+        "627beaf5ae2160176cbb054956d6b9b04b1246648eb1139148dc3aba5273c00b",
+        "425e87c2721d4547459fcd991b986b4d4545dce62f453940f81a17d19e1f2420"
+      ],
+      "center_sample": 9617,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-03",
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.03.02.04.04.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.03.02.04.04.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.03.02.04.04.sac"
+      ],
+      "sha256": [
+        "de050ca2634298d865084f2504793bf9db5d6c6531fab96cd4dd8cc75b5e4c86",
+        "7d60513f0f4a342751951722566d1c306504a2d16cc7705cd3edd54d33470dbb",
+        "daaaa6c91df15aaea5815ba1711110f6f7eca80f9506b09e83f554483eaa8aa4"
+      ],
+      "center_sample": 16670,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-03",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.03.01.55.18.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.03.01.55.18.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.03.01.55.18.sac"
+      ],
+      "sha256": [
+        "3258497d110e179e7c1e7dfea76c05e86a0b518dd66fcaaf3d05b08d9092e9d4",
+        "596de22dd86ad269c2db666628612e9680fb705cbce663f035d2e57b7a92b577",
+        "f1e14c4b56a47f20ff74e0a4727979040cfae7b0dd57ab19c0e6fc8291dadbbc"
+      ],
+      "center_sample": 507,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-03",
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.03.05.09.56.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.03.05.09.56.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.03.05.09.56.sac"
+      ],
+      "sha256": [
+        "ab8109a2908e45f796fc6fea8cc75b755ec6530ca78deaffd7f2a86504937c48",
+        "1940b759ca27735870e4d0f0d6d780326070be030ba0bdb10e702a304acb6d17",
+        "d08c55c4faaa050b8ca76bf34988d77b57f93b92c9f6012021645f7a9ddc55c6"
+      ],
+      "center_sample": 9417,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-03",
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.03.01.59.28.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.03.01.59.28.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.03.01.59.28.sac"
+      ],
+      "sha256": [
+        "030af6b96594492c3409c52b43388867ead8fd26a173ec0c133b84933329349d",
+        "fcc2537a176935b529144802bcac1fd0511c92b71c7fb8ddd8086392bfc4f913",
+        "5d5d174773d898041c83590a564cdf39d37f34451e2a64e7bebd324767888f32"
+      ],
+      "center_sample": 9619,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-03",
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.03.02.11.36.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.03.02.11.36.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.03.02.11.36.sac"
+      ],
+      "sha256": [
+        "acf262d3fbfe6c8f98418e098faf27bcc9866e11c77b009783985486b517fbaa",
+        "77961083193860bc5ed9e9884e74a105f4c62e8cd2ae5c6e3f1b646f5a9c1c5d",
+        "687eb5f97af23d36f56bb4a7afbe797f0eaf900489a36fbc162b550bf1c68412"
+      ],
+      "center_sample": 9602,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-03",
+      "paths": [
+        "data_QSIS_Noise/5AF48.TW..HLX.2023.07.03.06.28.21.sac",
+        "data_QSIS_Noise/5AF48.TW..HLY.2023.07.03.06.28.21.sac",
+        "data_QSIS_Noise/5AF48.TW..HLZ.2023.07.03.06.28.21.sac"
+      ],
+      "sha256": [
+        "979a9c35113ed54b50976bb199d1f4ba1b2cd98b28cbb725e07c3384f8547cb2",
+        "96f45b3284d7cd6c8575de2e721acca175426618d56fe049be5d671d62fbdd9c",
+        "0785d819d02788e1d53c87e0b5d53608185dc7d9fdd41a5bc9e30dc3fa774ba5"
+      ],
+      "center_sample": 518,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-05",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.05.22.27.58.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.05.22.27.58.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.05.22.27.58.sac"
+      ],
+      "sha256": [
+        "f2f834e99668f0e26c704806404bfa4dafbbe058441200d6e69715f65552d50e",
+        "4e40a813e19ef59d4187898db82f2fbe32e7f4e3d430125c7d0ba58890dc7e93",
+        "4fe1c187d9aee3c08baba2f4ebb82d057e0392cee615dc5610b390076e835207"
+      ],
+      "center_sample": 9669,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-05",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.05.02.21.21.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.05.02.21.21.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.05.02.21.21.sac"
+      ],
+      "sha256": [
+        "98fc664496fc685c96315145af5be93e696f813e603ea4431a2349280ef62fe2",
+        "cccc5c7c517be91eaf01641a8af4651ee321ed1d436b84932db2c38d0eb71e8f",
+        "9711f4f46320cca0d1ada0e1788abc54e73f9c875666050d663ec0e7575b87e7"
+      ],
+      "center_sample": 11334,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-05",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.05.20.16.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.05.20.16.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.05.20.16.34.sac"
+      ],
+      "sha256": [
+        "0a45751c56414ad68fa31fb553dc4ead4ac09f0442c27d94c8b19b5e035deff9",
+        "249ec9b04dc52e2582b5fd3d1c7a95aadcdbb072cdc4a19a630d419eca14aa80",
+        "85b4563f96a1150d6dec1ec75ac5bd0b6430c4f19a8aee61575dd71c14cef774"
+      ],
+      "center_sample": 521,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-05",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.05.16.04.11.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.05.16.04.11.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.05.16.04.11.sac"
+      ],
+      "sha256": [
+        "5185abd6763c2b2524a1da0d00f5e40ca44d3d24677d452aecb9eb223beef9fe",
+        "0d5b73ea962a9553af367828d3d062e208f9314c45885cc628a1745ff3559eb9",
+        "ae8f8f1c0e9471ed00e94aca3ac36b0ea76473af1a6316a94627157b6fe718e6"
+      ],
+      "center_sample": 9450,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-05",
+      "paths": [
+        "data_QSIS_Noise/5AFA8.TW..HLX.2023.07.05.05.58.03.sac",
+        "data_QSIS_Noise/5AFA8.TW..HLY.2023.07.05.05.58.03.sac",
+        "data_QSIS_Noise/5AFA8.TW..HLZ.2023.07.05.05.58.03.sac"
+      ],
+      "sha256": [
+        "a0284c65bb781cc7026fec76a74638bba6cb6167f4a21d4ab1526213ffd052bb",
+        "af4d0469d0f71acdf3bf20e8a322d2407e1077b99bc1c3e75503bc9068644387",
+        "e01571f963c8d130eb925828e8a57aab0a43e283bbdfd2b83574022da6b35133"
+      ],
+      "center_sample": 9337,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-05",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.05.20.31.15.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.05.20.31.15.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.05.20.31.15.sac"
+      ],
+      "sha256": [
+        "3cd8b4650f0bb49c49d314c02a62177eed064ea6089872209f2f155f22f51875",
+        "aefff946270163bfa098e4388cebaaf3df477d3a8d44bd2d86eb3229737617f2",
+        "d9973b949057a20e615fae2be584d4511f9f4dca31173174389822347546e4e3"
+      ],
+      "center_sample": 9479,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-06",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.06.03.23.29.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.06.03.23.29.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.06.03.23.29.sac"
+      ],
+      "sha256": [
+        "0edb0548a6d86700d69dc23f8d2da7e2e6a677bed9d7d6e7d246c1893d54cb5b",
+        "2b8b76963cb68b01b94241422aec322bf16229084ce91a09f8eccdebc611ff44",
+        "7254e5572efe3156c3db3ec07b4662264253fd62d2aaaeadfdbb917d92955b22"
+      ],
+      "center_sample": 512,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-06",
+      "paths": [
+        "data_QSIS_Noise/5AF8A.TW..HLX.2023.07.06.08.44.55.sac",
+        "data_QSIS_Noise/5AF8A.TW..HLY.2023.07.06.08.44.55.sac",
+        "data_QSIS_Noise/5AF8A.TW..HLZ.2023.07.06.08.44.55.sac"
+      ],
+      "sha256": [
+        "c92ee8bee560e635dd8f689586a1f54bfa7e8e4f5fd56d43929d261f67b2ed5a",
+        "6c12fae43094a610124d10c3c2411336746d82714edd45e1e5efc97cb510e3ad",
+        "ad71129fff90e45d4705283fceb9ca48b6dfab9cf982c1270f3182b1f9ee16a0"
+      ],
+      "center_sample": 9351,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-06",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.06.07.28.27.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.06.07.28.27.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.06.07.28.27.sac"
+      ],
+      "sha256": [
+        "a96d495f958c7a27c88f9c0139e9906cd715d46e3eec73ba3681442d6cae072d",
+        "cffcacf8b3362c4bde1217bc2c3fc72f00e845f2c8fc67c96c19468e29b149ff",
+        "cbffb6a159764a1ed49f0f542d73ae6818ba6dcb1c338b21384f85ea1971f47c"
+      ],
+      "center_sample": 509,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-06",
+      "paths": [
+        "data_QSIS_Noise/5AE99.TW..HLX.2023.07.06.08.06.33.sac",
+        "data_QSIS_Noise/5AE99.TW..HLY.2023.07.06.08.06.33.sac",
+        "data_QSIS_Noise/5AE99.TW..HLZ.2023.07.06.08.06.33.sac"
+      ],
+      "sha256": [
+        "06b42453e5fd7f2b4415a8d648999ed9c173f6401bd898433e339332cbd8645e",
+        "7091f11bcaedeaa6a8973d87f38f5c67c18d5e65725f20733b542431ecda59af",
+        "d0288324048318da82555060296efccca2fb7b5cf1422b6970ba3078c02eb56b"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-06",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.06.07.18.52.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.06.07.18.52.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.06.07.18.52.sac"
+      ],
+      "sha256": [
+        "aec32053f9d1faa90d572c3a69146501bb3b25e1039191cf719bb92f0f2c325d",
+        "85a3e1525e21738b7d8e5fc0ed8bc298fbf8a94a798afd21f64518e915baee47",
+        "0af45d40580580ef6acedd9cfa43ed499360442de699b2c9fb301a47603bf854"
+      ],
+      "center_sample": 502,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-06",
+      "paths": [
+        "data_QSIS_Noise/5AE99.TW..HLX.2023.07.06.07.37.18.sac",
+        "data_QSIS_Noise/5AE99.TW..HLY.2023.07.06.07.37.18.sac",
+        "data_QSIS_Noise/5AE99.TW..HLZ.2023.07.06.07.37.18.sac"
+      ],
+      "sha256": [
+        "fdd3d91d5c26d82bb63bae117e9bb5297404d46ab9eab00dc8d0612bfaf293ef",
+        "21e8d7ffb0a5cfde6bf66a40b09dcd293253edc83e2e412d319f2c250990d10a",
+        "2e66e981938a1dbd18dd2e2ad3c195a5c71313b76374a5c28fe0464bf92c4e41"
+      ],
+      "center_sample": 7458,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-07",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.07.21.05.54.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.07.21.05.54.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.07.21.05.54.sac"
+      ],
+      "sha256": [
+        "def67e1e64ad3abda5c2787b724c7747ea69d87ff303cdd63bd6598df34f886c",
+        "15910962cb2519697c181f7e34ac19909a0faa8f5ba8ab522c5a51af3118e795",
+        "89d1329f031e97a5e5156338670ec904c039fc111681bca526592bc5d62353e3"
+      ],
+      "center_sample": 9402,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-07",
+      "paths": [
+        "data_QSIS_Noise/5ADEE.TW..HLX.2023.07.07.03.58.40.sac",
+        "data_QSIS_Noise/5ADEE.TW..HLY.2023.07.07.03.58.40.sac",
+        "data_QSIS_Noise/5ADEE.TW..HLZ.2023.07.07.03.58.40.sac"
+      ],
+      "sha256": [
+        "4ebd342a4d92c6b96fbe652b9cc87a353c269bf25b29c0a93925132b556708e1",
+        "a9515bb60662a217d74bb95654fdecbf44b874ab2cfb156fd081248c82db59d5",
+        "c96a9c2f976e5b499fee66ab4f8498ff5c1b913cb5329f958745de0e81e72cf1"
+      ],
+      "center_sample": 12442,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-07",
+      "paths": [
+        "data_QSIS_Noise/5AF1E.TW..HLX.2023.07.07.09.57.17.sac",
+        "data_QSIS_Noise/5AF1E.TW..HLY.2023.07.07.09.57.17.sac",
+        "data_QSIS_Noise/5AF1E.TW..HLZ.2023.07.07.09.57.17.sac"
+      ],
+      "sha256": [
+        "75fac3040eee602d4817d43392e141da74db06e56832c400d9eaf98d9d5d267d",
+        "0ee5036ebfc0e1ebd39e8b5fb723be7c3afb1f723d65fee9864dd4b73dc9856f",
+        "14db442e6007a26222955828ccbc8bfbc6f65141661da73fc6b67133419ac3c5"
+      ],
+      "center_sample": 501,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-07",
+      "paths": [
+        "data_QSIS_Noise/5AF1E.TW..HLX.2023.07.07.09.32.04.sac",
+        "data_QSIS_Noise/5AF1E.TW..HLY.2023.07.07.09.32.04.sac",
+        "data_QSIS_Noise/5AF1E.TW..HLZ.2023.07.07.09.32.04.sac"
+      ],
+      "sha256": [
+        "c9366a39a75bb3f412b5ea3638eef1d62130985c4663c4c5e4830a75d574b727",
+        "e94951ff7ac48a3d8e71fb8c26a92919a4debc2ac287562194e8a3b62f4bd70d",
+        "db6e8896c3e443e74c36ca3d51cb7be43d41eadb5b07a8b6bba197cf7c694054"
+      ],
+      "center_sample": 556,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-07",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.07.16.43.15.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.07.16.43.15.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.07.16.43.15.sac"
+      ],
+      "sha256": [
+        "11a54ea32b7fc1e253d7e7d0b6ab0f3a3471eaa6d36702cfe4f21cb7bc7ac112",
+        "41d7141a2a7c5bbac80a3c6dd08ac7b03448b5e578d3bbecab2b53abbc0df48b",
+        "054309a0afdba4d1bf0fd5008a27c76bf2d16c739e5b3e04c644400ac6f47b4b"
+      ],
+      "center_sample": 9318,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-07",
+      "paths": [
+        "data_QSIS_Noise/5AFB5.TW..HLX.2023.07.07.06.03.27.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLY.2023.07.07.06.03.27.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLZ.2023.07.07.06.03.27.sac"
+      ],
+      "sha256": [
+        "b4d9d8fe4fa63110df0febaf5f476a1023fbea738e8ad8b225e1bcca2a469a01",
+        "396d1a75b6d2ad9ea79fda9f749bc0ce7108fd1e650f15c4f4e8e8b0562e2ecf",
+        "16cc66a29750f552dc4fe2320076b007024f0130d80144a2ceb6f2ceda4b578b"
+      ],
+      "center_sample": 502,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-08",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.08.19.59.27.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.08.19.59.27.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.08.19.59.27.sac"
+      ],
+      "sha256": [
+        "212e1bfeb85e3b1d36ff6b592829eaf187707ee46de71644380498846b42a6d0",
+        "2f368e746d66579246c2827d3b81c95e9e316bd473cf4db3deed51a7e2f3802e",
+        "72c23505212c01ccbaabd1e182cbb93f8188996101d8e9328fae6339014b5659"
+      ],
+      "center_sample": 9346,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-08",
+      "paths": [
+        "data_QSIS_Noise/5AFB5.TW..HLX.2023.07.08.06.45.02.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLY.2023.07.08.06.45.02.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLZ.2023.07.08.06.45.02.sac"
+      ],
+      "sha256": [
+        "fbf52b518d02975a06d0001f08677859ec1de2c0e5c24cbf6ca33276d8e1aee5",
+        "5749528efea5b8416d31f6dc88df969fddf34b5a68913b422774e8383df516a9",
+        "f53f4c6d5f8bfc847153b9e026af18d4c88f05931328787f234c27643fb04878"
+      ],
+      "center_sample": 529,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-08",
+      "paths": [
+        "data_QSIS_Noise/5AFB5.TW..HLX.2023.07.08.06.10.31.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLY.2023.07.08.06.10.31.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLZ.2023.07.08.06.10.31.sac"
+      ],
+      "sha256": [
+        "dde02ba94fb8066dca5b7dd02f2eb76ef43c9e8a173aa3ed8f8623e744939a2e",
+        "d8964ca5aed6862e48d7c6e9dc11d235203c20f1831a0ccc1e6181bdf4e346d5",
+        "8a0c6d3fa954364b550c51b6aba3909efbccb68db634119fccbc2efe09669449"
+      ],
+      "center_sample": 500,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-08",
+      "paths": [
+        "data_QSIS_Noise/5AFB5.TW..HLX.2023.07.08.06.23.11.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLY.2023.07.08.06.23.11.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLZ.2023.07.08.06.23.11.sac"
+      ],
+      "sha256": [
+        "541e0280c5d7ecf5e6409bf1a248695bababb272934c9610a7a3721ed9ca332b",
+        "5e0217789c56757776b6d5f2f8e2ab359539e2dc1e9181d1f7552bcd4034b944",
+        "65ef0b2ac44fb78a349b7729904827464a18e846329169040f5e2b186c37d9cf"
+      ],
+      "center_sample": 21685,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-08",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.08.20.09.18.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.08.20.09.18.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.08.20.09.18.sac"
+      ],
+      "sha256": [
+        "55079acf5bda7f76fb2d201bfcdb32008316e46ad16aea0fab7979eac351c35b",
+        "dce0396a1b31d551d8d0c5d9ad29296a5298170ca9d68112484068ce4bf8cdc4",
+        "1d6105ede2bf773773bb5122dc553857649185f68f6d011410b7812d9e41836b"
+      ],
+      "center_sample": 626,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-08",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.08.17.51.29.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.08.17.51.29.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.08.17.51.29.sac"
+      ],
+      "sha256": [
+        "e1a9fabe23a6319f375f723f51429c02e414843ec1c6cca5def8898dec102822",
+        "7bd6aec48781224948b035dffdb8d6cd0ce858d548eb089c7162873801aa493d",
+        "29be480c30ced5ea905363d5184946c281d23ae292eede8469934edd4b0800c0"
+      ],
+      "center_sample": 9561,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-10",
+      "paths": [
+        "data_QSIS_Noise/5AE3E.TW..HLX.2023.07.10.03.44.21.sac",
+        "data_QSIS_Noise/5AE3E.TW..HLY.2023.07.10.03.44.21.sac",
+        "data_QSIS_Noise/5AE3E.TW..HLZ.2023.07.10.03.44.21.sac"
+      ],
+      "sha256": [
+        "98eb02592ba7433a309cf2eae862650f4b06dcd48c52b999cddf1483d636c9eb",
+        "0c55129719d2fc61cc82f5e84afe46863ca90871a68075f2deaf35de3b03b3ce",
+        "ea953b3814e952b1880a08ad7c9d4377f05596eb24552b000464a37efe66c483"
+      ],
+      "center_sample": 500,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-10",
+      "paths": [
+        "data_QSIS_Noise/5AF20.TW..HLX.2023.07.10.08.47.24.sac",
+        "data_QSIS_Noise/5AF20.TW..HLY.2023.07.10.08.47.24.sac",
+        "data_QSIS_Noise/5AF20.TW..HLZ.2023.07.10.08.47.24.sac"
+      ],
+      "sha256": [
+        "a6663590afb6d6e97b9732c2d7cd0678c1a361b903c8987bc29e04fe6070396d",
+        "f63882a998e5a0d8f6818061b01fd43a7f1a3371c07edad6b092eff16ebfe60e",
+        "aba7f677aec8035e4c5a5fc7d2791b4c77e2dde726462723c423161a74b576da"
+      ],
+      "center_sample": 502,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-10",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.10.06.11.00.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.10.06.11.00.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.10.06.11.00.sac"
+      ],
+      "sha256": [
+        "ef73e28828d4a58fcc4c8a462ad1f08bcf2b0bb497a0e17bd7b9aed7f1405ad2",
+        "039f15465fc9a9a75c27cfd45bc3a097f107eec3c9bd19cbcb92af5d01a7ef1a",
+        "a206c856893f4831a353ea593f16cad8a4b5df6ae98cfde4a14bea75670fd446"
+      ],
+      "center_sample": 503,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-10",
+      "paths": [
+        "data_QSIS_Noise/5AF20.TW..HLX.2023.07.10.05.12.45.sac",
+        "data_QSIS_Noise/5AF20.TW..HLY.2023.07.10.05.12.45.sac",
+        "data_QSIS_Noise/5AF20.TW..HLZ.2023.07.10.05.12.45.sac"
+      ],
+      "sha256": [
+        "38f4b559bccb4dc27c976dfdcfa9379c32e56ad26b16b1ba80db2fe7ad34ee8f",
+        "41e870fe6db5d2704c65166bac4b97aa7957a938266d14182bf1e6f7c4d60312",
+        "91c710e8c57daabef2e8a52b44ec51945b039f04481c3f7ce977049d3bf51377"
+      ],
+      "center_sample": 12430,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-10",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.10.18.51.03.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.10.18.51.03.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.10.18.51.03.sac"
+      ],
+      "sha256": [
+        "9e2abbc96a0d2ed213522ff0f113d25f85116cb667d0e08181a07f8b9e737b3f",
+        "4e31a63c0b95bd5c55a69b7e19bbb855b6e5f46b7cca76e558d2ed4031c6d592",
+        "b2527e2ff1bdfa876680519d420c16ffcb71f3e99ab6391cd34783e9c3333266"
+      ],
+      "center_sample": 14816,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-10",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.10.01.46.09.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.10.01.46.09.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.10.01.46.09.sac"
+      ],
+      "sha256": [
+        "168bb5cdc987208f31ea668352bed599de7f22190bc24c2aa2ac399aab7dbeb1",
+        "6d1e6f579f41962d381235e43a8fb6f0f95f91aa44ab75ec7d3916f707a15d84",
+        "6f9ad221a74deeb27a7f3ae3a3f59cf1822abd334f5d3f192eac31bed93b7ae4"
+      ],
+      "center_sample": 3282,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-11",
+      "paths": [
+        "data_QSIS_Noise/5AE28.TW..HLX.2023.07.11.05.13.52.sac",
+        "data_QSIS_Noise/5AE28.TW..HLY.2023.07.11.05.13.52.sac",
+        "data_QSIS_Noise/5AE28.TW..HLZ.2023.07.11.05.13.52.sac"
+      ],
+      "sha256": [
+        "c78e4f28d2f91a91a0f9d97f3a434fe7734970b4c909561519aefa714979ec9e",
+        "f710a7aa83a95b98b0548578cb6df9e848e826d06a16616f7121f96eb4cc391d",
+        "b8e75e580141454dfaba08e2c8742a9e7bf7b972d6b02d13b46d2114de7247c9"
+      ],
+      "center_sample": 511,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-11",
+      "paths": [
+        "data_QSIS_Noise/5AFB5.TW..HLX.2023.07.11.01.51.43.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLY.2023.07.11.01.51.43.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLZ.2023.07.11.01.51.43.sac"
+      ],
+      "sha256": [
+        "430ed9eb5e73970638dd9173de213ce015ec98465e23aedaafa8328992d3bc09",
+        "b040186af155f6cfdaacbc9e5e7d2140b8e11630b5c1797861bb4d906d348731",
+        "317d56c6b78b326a671f92092ebd0ae13c466a8df0198e03d10a3992625ec5df"
+      ],
+      "center_sample": 10091,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-11",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.11.04.16.57.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.11.04.16.57.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.11.04.16.57.sac"
+      ],
+      "sha256": [
+        "8061646c0b64ce3936876f02407e5f3f087ea867a2b9463827ce7c7a1246b77c",
+        "878c18e39620595aa5457ab0c2f3cded74c3c743867e18be672df152c8a68c4f",
+        "934d7c8148520eb9c21316e54bd7cf2d350736042cd89e7a44865a08fa7cd85f"
+      ],
+      "center_sample": 9640,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-11",
+      "paths": [
+        "data_QSIS_Noise/5AFB5.TW..HLX.2023.07.11.02.03.06.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLY.2023.07.11.02.03.06.sac",
+        "data_QSIS_Noise/5AFB5.TW..HLZ.2023.07.11.02.03.06.sac"
+      ],
+      "sha256": [
+        "79273a64bc6e641ecd729b734516e5adbda53cccca57552ab88d5bb563d6b08e",
+        "dd0d784683ff7c24bce72766b62da98e851732c467eabb151abab741f7c61fdb",
+        "526933a43b1e062b60b94bd03cb9539e567fdd7efbdf36dac0b8851081a5923f"
+      ],
+      "center_sample": 638,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-11",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.11.17.06.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.11.17.06.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.11.17.06.34.sac"
+      ],
+      "sha256": [
+        "8d055d732b3bc4031315de4d4b1977c7658e51322dd6c7ab29c1576cff9bf172",
+        "a771963f7b57c169fcaa9d2e2da83ef3b3f57a570e08dabb48275486b5df9f73",
+        "3bd3942385b25fa047ff04c9b54397d535015f9200c00345400614271f3173da"
+      ],
+      "center_sample": 9418,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-11",
+      "paths": [
+        "data_QSIS_Noise/5AE28.TW..HLX.2023.07.11.07.25.37.sac",
+        "data_QSIS_Noise/5AE28.TW..HLY.2023.07.11.07.25.37.sac",
+        "data_QSIS_Noise/5AE28.TW..HLZ.2023.07.11.07.25.37.sac"
+      ],
+      "sha256": [
+        "10fa7ccb58997bf25e8ee35cc9fcea373d61e68fb3322fedb33b6c94b6c5d645",
+        "88d2d3d91f04a58d56241f37056a7cf8b6a55f4bb3bef2619bc87312a1c8ce51",
+        "68c628d47b2031000796e50c940294ddcc3b862d48ec88ab36438e0d36520157"
+      ],
+      "center_sample": 501,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-12",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.12.04.18.54.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.12.04.18.54.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.12.04.18.54.sac"
+      ],
+      "sha256": [
+        "153859b5cf00fbe3065ce13d6001af753f4a78fc25aae912d3cb2e7858bc9023",
+        "b523744f2cbd08fb6b17755e308e81641c3bcc3f476adbef398dfbbaa779b641",
+        "910b87c1a38c957d32aa488d65e644b3338074a887fec5f82a4e10839fdb5d49"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-12",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.12.04.24.32.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.12.04.24.32.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.12.04.24.32.sac"
+      ],
+      "sha256": [
+        "1f409c6652d818086674d770225d41a9102869d35783ba79288f67af64277702",
+        "2ad71b4d009143d0f7950fa95c4817e3dd254119d3cf116cf9f848da72f0f4ff",
+        "516c336f9506727dba40db07dc7f0cf4750d19afdf9d47f5a0d854b01e24eb88"
+      ],
+      "center_sample": 501,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-12",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.12.00.10.21.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.12.00.10.21.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.12.00.10.21.sac"
+      ],
+      "sha256": [
+        "ec021772de6617eb54f5cee50cd656997bb709a67fe86fa66f2d57275cbb8173",
+        "f4032793cf14071be4fa2a8323b39aae0f78678effd66cd4fcce8646b1c5d853",
+        "80118fd0bfa30b009620ad058737a092a5cd1823feaa7c8346fd315fd98881b8"
+      ],
+      "center_sample": 9573,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-12",
+      "paths": [
+        "data_QSIS_Noise/5AE21.TW..HLX.2023.07.12.09.23.25.sac",
+        "data_QSIS_Noise/5AE21.TW..HLY.2023.07.12.09.23.25.sac",
+        "data_QSIS_Noise/5AE21.TW..HLZ.2023.07.12.09.23.25.sac"
+      ],
+      "sha256": [
+        "25e1befd4c29ba19343300422d46e38f30ce4294fffdf7527b1d64fd15a27087",
+        "0abea69423785ef311dced3ca12f9e0986a7ea3dd7ac3104bbd33546ee2007a2",
+        "0a1bced96db590983ebe1213054847d9a4ae6fa81fad871cbd11fb413b5506bb"
+      ],
+      "center_sample": 9678,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-12",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.12.19.58.21.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.12.19.58.21.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.12.19.58.21.sac"
+      ],
+      "sha256": [
+        "27bda4d25aca29306989532c5fef629a18f3a581834f815e091744cf8bfba7ed",
+        "1922941adae14242cc275cc0c24a116ec230ddfd22fc0e9d6e2dff534d241d82",
+        "3ae62ce2192fb2d85f7be8b79811e635324330097c3cba01a73d1700559a1048"
+      ],
+      "center_sample": 9537,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-12",
+      "paths": [
+        "data_QSIS_Noise/5AE21.TW..HLX.2023.07.12.08.06.53.sac",
+        "data_QSIS_Noise/5AE21.TW..HLY.2023.07.12.08.06.53.sac",
+        "data_QSIS_Noise/5AE21.TW..HLZ.2023.07.12.08.06.53.sac"
+      ],
+      "sha256": [
+        "3c36ee660076092fc8497438a2164e8b713a160756385356507c86f34c0465a7",
+        "d0d8cd10ffcc2a4eaaccd8561159842db783eb2d86a88a1f67a227dc142d38e8",
+        "2ed4cd269956572412393af2ae75c32874e04e903ebf1826e054c18fa6226d27"
+      ],
+      "center_sample": 9400,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-13",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.13.02.27.04.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.13.02.27.04.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.13.02.27.04.sac"
+      ],
+      "sha256": [
+        "7ddfbe531fb48aaec9229a737ca00bec50c629efa27b6d3960112ce61ca09512",
+        "2ec32d05c60f433d861de3452630c3bb769b33df9f912cfc0495a4828bfdb3f9",
+        "20a308f89f1f43fff0d08ba92d1ef7036c8507e082da7caea8b13d75d8734415"
+      ],
+      "center_sample": 9618,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-13",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.13.21.36.35.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.13.21.36.35.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.13.21.36.35.sac"
+      ],
+      "sha256": [
+        "87de363fea861ced9a7bed9f8d7c718008057cfdb54484371fe1903115baf1be",
+        "4eed40b76e932d80c68c6a3b4286bea600937b9ebeecc4d1758d528cf43533eb",
+        "4bb25bd28977320210e95a84a9be9ede66d6a0fbc2cd7a3592a95c086e27623f"
+      ],
+      "center_sample": 500,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-13",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.13.04.07.30.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.13.04.07.30.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.13.04.07.30.sac"
+      ],
+      "sha256": [
+        "29477e2988cc82dd9b99edf1fd700a65beda3a95493324f3dbd1ae2443d1171e",
+        "072a3c2dbb4bacada9da84a1114e81da3505d37fd56c72c9d654a24dbac83da4",
+        "744d01ea1722d1e0887195cbc18901aefa40eeace64cdd5af14d8357615258d5"
+      ],
+      "center_sample": 507,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-13",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.13.22.04.57.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.13.22.04.57.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.13.22.04.57.sac"
+      ],
+      "sha256": [
+        "3b2f0f0754b59cceb3356a59893b7c1da7a7e6878dd1ea4e87ad400a0fcaec75",
+        "4e2e73bc3a35f435823522c1d908930f94c92c49eb7d62723e0496ad52a82dcf",
+        "f97d6eef4689fba2c399a8481061abab4236b15ced1a3723cfa746490a56c44a"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-13",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.13.17.14.36.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.13.17.14.36.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.13.17.14.36.sac"
+      ],
+      "sha256": [
+        "cf749313e0e2553728a98531f7728509d1a74265e0c55b30cf1483950898e2e8",
+        "5ca250eb68e7b51b811d0f9597f29a5879beede01d89ee0b5524f65eb9309523",
+        "4b552d2994b2492bd9f9dce5f9108c795b77767b3f86b4510df917aafd00d75d"
+      ],
+      "center_sample": 9626,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-13",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.13.04.45.50.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.13.04.45.50.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.13.04.45.50.sac"
+      ],
+      "sha256": [
+        "c58fba2ffb04040a52728d6835451691c07c73887ebe2c4ea07b5a19f6423036",
+        "c3518df17c2a89a8681ea93e0a865a85880aa0a79190d16d34385c95cee7dd94",
+        "f96efdd36a6393252ddcc8a1aca0fc3f4ed99cb570a78286a02af4ee18baafdc"
+      ],
+      "center_sample": 9998,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-14",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.14.00.55.03.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.14.00.55.03.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.14.00.55.03.sac"
+      ],
+      "sha256": [
+        "8bc7a97318ab9242bec440c898cd011ae3a353c7568ae6259549386bfd49d83c",
+        "e340527ed6e3ae54b8cd7d6dcd7b5157a5da777683df2ea55ded5f56ef529fa9",
+        "aa520994c120d40ff8b38a526452ac164774d996bbde667dde8717aab770d0dd"
+      ],
+      "center_sample": 9448,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-14",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.14.00.13.03.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.14.00.13.03.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.14.00.13.03.sac"
+      ],
+      "sha256": [
+        "00d8b2a3581eba9ec6f785c1667077e7612fa5411524a6690c253e0dcac32d69",
+        "ee1c33951a2f92306f8a852d1a8c990250a751f19961405600482e2753a65919",
+        "248c497c656c532f3a13e5c32a0c62c67d7891d1074a2e3dceaa70f4af6eefb8"
+      ],
+      "center_sample": 9354,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-14",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.14.02.21.55.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.14.02.21.55.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.14.02.21.55.sac"
+      ],
+      "sha256": [
+        "7a3788f432f4c92a9d5af3b4e26f87465b8889b41bb4a60c826c44c50d101c90",
+        "edcb7dbc2330ec3122161b78e8d85c729dc4c25356d3a944a09eda2060539832",
+        "8e5a016c6dbccea6852ade09400d601f33e11fe9fe7f0bc0166ad7277eaf99a3"
+      ],
+      "center_sample": 9574,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-14",
+      "paths": [
+        "data_QSIS_Noise/5AE3E.TW..HLX.2023.07.14.08.42.43.sac",
+        "data_QSIS_Noise/5AE3E.TW..HLY.2023.07.14.08.42.43.sac",
+        "data_QSIS_Noise/5AE3E.TW..HLZ.2023.07.14.08.42.43.sac"
+      ],
+      "sha256": [
+        "1682c143b85ce44a70d74c8f78c65691787db2c1f8671b25c8659af539e7a54b",
+        "197ca6d5d5714e4a389b15a7ce7b92285d86f67d0581b12b9ef2061218647163",
+        "66e7f4929014bc0d860b2b9330f213202e5fff2c75b176c5aef05ae4a1cf66be"
+      ],
+      "center_sample": 9675,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-14",
+      "paths": [
+        "data_QSIS_Noise/5AE2C.TW..HLX.2023.07.14.01.35.09.sac",
+        "data_QSIS_Noise/5AE2C.TW..HLY.2023.07.14.01.35.09.sac",
+        "data_QSIS_Noise/5AE2C.TW..HLZ.2023.07.14.01.35.09.sac"
+      ],
+      "sha256": [
+        "d92ec09baaacca1d23d2cbcc676c5f0339f9c78d337702393c64ae8dcdbb8944",
+        "7a8a057617d275b92f220c78678b7b926510d959001fba309ee0e0efa8529ecf",
+        "17d270300c1b877f0030844cea0b35d65f5c240aaaa754e0dc4751a4e3008cdb"
+      ],
+      "center_sample": 501,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-14",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.14.00.08.26.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.14.00.08.26.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.14.00.08.26.sac"
+      ],
+      "sha256": [
+        "d865e88a5cb49e1e4931d78544fbb1839ac873aa2223cd4f2c11d712a14bd77b",
+        "75079ab35fec9c8607fd865009a6686623a21844a38999e484b0112c020523c1",
+        "2038f4992cb925f657c0a0068141cd83fb6c3ae1b3218163b7c50cb2f2ce5f49"
+      ],
+      "center_sample": 9389,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-15",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.15.05.17.55.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.15.05.17.55.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.15.05.17.55.sac"
+      ],
+      "sha256": [
+        "209d53bdb2e0f5a3f3de9f947b2968ff3ffb7dc057c12980fbb477c0fa450065",
+        "201bda11ed4d4af0b685019b7002d1dd78a764af8b072237641178b7736f8499",
+        "44e0b14edf23f01b85eb9d08da62c21423ccbd16995a30ba744ee3fd79c8ef32"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-15",
+      "paths": [
+        "data_QSIS_Noise/5ADEE.TW..HLX.2023.07.15.10.45.07.sac",
+        "data_QSIS_Noise/5ADEE.TW..HLY.2023.07.15.10.45.07.sac",
+        "data_QSIS_Noise/5ADEE.TW..HLZ.2023.07.15.10.45.07.sac"
+      ],
+      "sha256": [
+        "1ef989edaf66f3cc747128c41c039430d5f225da643c9ea046638294a4d2e826",
+        "8501a86a342c610dcd3c3531adeaf457f323add01bb632ff21a506286affeb57",
+        "2363b256eb430b78acbccd341e95ae1845eeba93144d2a7128ff018c920080f2"
+      ],
+      "center_sample": 9035,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-15",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.15.18.37.56.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.15.18.37.56.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.15.18.37.56.sac"
+      ],
+      "sha256": [
+        "88554ecc8109a86393949be09658fcf3d9c3bd9492c0d0a42a6504bd1865463e",
+        "cd391abc1048740bb397166fb945c888119e362f0fb4f825ec0c27a4505c9862",
+        "9d4a6021b76969cc7eeb18ae0103268123bfb11889324a4f09da590937c06aa0"
+      ],
+      "center_sample": 9634,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-15",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.15.09.59.53.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.15.09.59.53.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.15.09.59.53.sac"
+      ],
+      "sha256": [
+        "6dc9024b7fdddac3dc0db1558416322d15a772bb4b952527221f767aca9286df",
+        "2ad10ebfd3251c8b1cf55182ba0db9992e386d1641d493a4a166e28b2e361454",
+        "35bf3d1b3721dedcc60e57f10798e482ac9b9ceb73e1746c665c48b9787ce0f4"
+      ],
+      "center_sample": 9605,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-15",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.15.09.41.35.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.15.09.41.35.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.15.09.41.35.sac"
+      ],
+      "sha256": [
+        "e3809ec0f851c1d68a5b593ae23f4afdda478ddcd550d502bdab495bded9a3d6",
+        "4fbbd5ae1d32844ae88c907bb62cd910c63c3d03d8dd501f413d4197844ccac2",
+        "f98a4fcfc49a4f13a5a55b9fc4282a4e4de978504472990089054f9c2e737c88"
+      ],
+      "center_sample": 10782,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-15",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.15.19.06.59.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.15.19.06.59.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.15.19.06.59.sac"
+      ],
+      "sha256": [
+        "652f14164b3848805d6ed371b4d6dbc3c9ab22321a8337491dc7900e26cabc64",
+        "e7c1b1942707273a032c22480d3f513472bb8a302a6e284c9f1e270cd347e43f",
+        "e2cd71ed882d7d29226d32fdd3879ba7edbdf7ec2843af706e68eea663054d15"
+      ],
+      "center_sample": 9434,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-16",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.16.18.01.52.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.16.18.01.52.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.16.18.01.52.sac"
+      ],
+      "sha256": [
+        "fffbc5a336bd00abb0c0a6d7035be739e8b71db64a0d3216e7d3960115064d8a",
+        "f6379917c22161da12e359910673b43b4a7635db5342e764e0805eb94fe211e5",
+        "9ab4ddd8c27abc6fa98a75618b09440f19e02e562dac893fc7ae7f55759750f4"
+      ],
+      "center_sample": 8164,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-16",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.16.12.46.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.16.12.46.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.16.12.46.34.sac"
+      ],
+      "sha256": [
+        "bf2830404c76a9b8cd5602130930ecb3d1e6e07a1909f209daa694d58e69519e",
+        "c45c59ea9e2f8faaef33c22cb7ca1d5bf09ec1aea2b2e3eb2f239c50de0906ab",
+        "4cc3bcab9ef56d0d68f5be7c9cbb8b38792109f2d9baddb506bffaa40f23b161"
+      ],
+      "center_sample": 9500,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-16",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.16.22.59.22.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.16.22.59.22.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.16.22.59.22.sac"
+      ],
+      "sha256": [
+        "112b346ed625e7e660c634274b284aa69f14ddf0874ba7356b751d3cfdd20360",
+        "6890ab47c51d5376131f549ca6f33b74bfce0810dbcde3d85ea7ec5c25e3e7e8",
+        "42eba3fd3f43d8ce08e38d5ec5ca862f13613e93b24796b8c513422f9c49ce11"
+      ],
+      "center_sample": 507,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-16",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.16.17.31.13.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.16.17.31.13.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.16.17.31.13.sac"
+      ],
+      "sha256": [
+        "b8f2ce2868fe932ab322cf422a19cd8c0c787e8fe5829041ed311ce5eb8ae5c5",
+        "f180e1e5673bf9dc3414c34b46f54b9e0af45c368f2da7dc548b6485b1a913d4",
+        "2fad12115027cb644dbf99ff6ed951f57ae8db266ed00c8b697eed6d7981c3c7"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-16",
+      "paths": [
+        "data_QSIS_Noise/5AE98.TW..HLX.2023.07.16.16.37.01.sac",
+        "data_QSIS_Noise/5AE98.TW..HLY.2023.07.16.16.37.01.sac",
+        "data_QSIS_Noise/5AE98.TW..HLZ.2023.07.16.16.37.01.sac"
+      ],
+      "sha256": [
+        "c50d019edd533a111ca839782212ebbf9c6e2ea851921f3702d9fdd829d4c898",
+        "1b247a6779d077065e00713cb9f0284754a878266cbddad9bee3021e1204ed13",
+        "eef51c8dee18500e45c43516153e1b0b6b4da6fdc3436c92b389fa2fa05031d6"
+      ],
+      "center_sample": 9598,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-16",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.16.17.19.54.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.16.17.19.54.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.16.17.19.54.sac"
+      ],
+      "sha256": [
+        "6660c9bc8d926a1247c4bef3a50144cf9f38d34ca79ab87b09842bda1545f5c0",
+        "14d94c22ca950b406e7bab96c8f3ceecb0da04c9016b6cede5c783a25ab4f4ce",
+        "08626aa5d2816a7dab64132def867a047bf47a2f8a9bc9443702f536a07458de"
+      ],
+      "center_sample": 12489,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-17",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.17.19.28.42.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.17.19.28.42.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.17.19.28.42.sac"
+      ],
+      "sha256": [
+        "df1ecab12bc3548d15571e1ed0f73f8ce81ab712dcc4dc85906ef6bf4f78b394",
+        "4aafde9a9712e8e448274fde11da08da3941423205b58881316b4a4bb5dd7ad5",
+        "53d99fd5e321fc68efc2ad0002fdbe164fe75154d468d1a7f3bc6058e8e9623c"
+      ],
+      "center_sample": 9439,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-17",
+      "paths": [
+        "data_QSIS_Noise/5AE1C.TW..HLX.2023.07.17.07.05.41.sac",
+        "data_QSIS_Noise/5AE1C.TW..HLY.2023.07.17.07.05.41.sac",
+        "data_QSIS_Noise/5AE1C.TW..HLZ.2023.07.17.07.05.41.sac"
+      ],
+      "sha256": [
+        "ddd0d748ce2fd0301c3ff6dd6c4c4e94d9496a5dbb2ff83559672feded394ab0",
+        "20f80e4670302c4dd098f2da308a58f739fa3d2afbefdca64bf2d70866f22dfd",
+        "2a9031bb31454f720faefb7d44efef8459a7e7fd945886bf157baefad6484ade"
+      ],
+      "center_sample": 12443,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-17",
+      "paths": [
+        "data_QSIS_Noise/5AE1C.TW..HLX.2023.07.17.07.30.36.sac",
+        "data_QSIS_Noise/5AE1C.TW..HLY.2023.07.17.07.30.36.sac",
+        "data_QSIS_Noise/5AE1C.TW..HLZ.2023.07.17.07.30.36.sac"
+      ],
+      "sha256": [
+        "d79d891e68110defef0770871fcc6daa211b7a4bd510d9d8875b426f0910d19a",
+        "8ca1c236ef356f9e39dbce31077f318b610434fd150a2f22acc5dfa9dad44882",
+        "8ac936dcc2f069d08f734a64f1d61efb811ebe5d70cddbfe6e4d81527c7a2b3b"
+      ],
+      "center_sample": 10722,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-17",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.17.06.48.11.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.17.06.48.11.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.17.06.48.11.sac"
+      ],
+      "sha256": [
+        "01335d70ec7a6798c815540392c6005228f3e5c9e926a2221963993f71271e0d",
+        "62055cb706a1d6f550a59eeb84f52c660bbcd597992d05b8f440d43ec2cf808d",
+        "756f08228f225d20c6ee0b6299d6f70a0fe48241dc3c18dc9b4cbb1c515e7177"
+      ],
+      "center_sample": 9631,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-17",
+      "paths": [
+        "data_QSIS_Noise/5AE98.TW..HLX.2023.07.17.10.05.09.sac",
+        "data_QSIS_Noise/5AE98.TW..HLY.2023.07.17.10.05.09.sac",
+        "data_QSIS_Noise/5AE98.TW..HLZ.2023.07.17.10.05.09.sac"
+      ],
+      "sha256": [
+        "171ed2c6bad6a7d6479f2b7edbe1869623b8e7c8b27ec827f36d6afe735116e8",
+        "b52cac853bec6413991c83380b57da3e1f861779b42e348686ce4dfc01244af3",
+        "aa449a006645bd63ae168028b1774edd3228a7c13121ca3b88121b911b856d1c"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-17",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.17.18.01.50.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.17.18.01.50.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.17.18.01.50.sac"
+      ],
+      "sha256": [
+        "2739864588edf99d61b76922edfab5a1deb886b28c051ffd192a5c2ffb783d96",
+        "133f9a0e4764c4ee4429f71983dc0f76f8eb18e7c0a78635840645b790e72aaa",
+        "73f3c56d7db2e40b0b0d9422dac84b595416be24ba84fbf36303d107295b0f83"
+      ],
+      "center_sample": 9415,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-18",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.18.12.17.59.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.18.12.17.59.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.18.12.17.59.sac"
+      ],
+      "sha256": [
+        "abc75772793c77bfd3cf170b05469fd398661db5ec2d07591b7f379d4368f533",
+        "548b094eba5bfdf612cb27c3731d93074fdb07ebc03c6cbde39d42cfad89c7b6",
+        "89310eb7d7fe7572fd872149a5bd749c2e19460c2cd2c87d666783cbbd63a181"
+      ],
+      "center_sample": 16058,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-18",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.18.10.45.50.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.18.10.45.50.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.18.10.45.50.sac"
+      ],
+      "sha256": [
+        "14aea9686aa71eff636114922d1181fcd2fdb97a6a61d7537b2bebedf8910f3a",
+        "a9d81f825f53e59c0baca89eac1987292589b19de8e62548b70fea9234b00b2e",
+        "a75694debf321dc10282d9616f0aa95d3aac675a7fee3462a65f176c99b71adb"
+      ],
+      "center_sample": 9387,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-18",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.18.04.38.57.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.18.04.38.57.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.18.04.38.57.sac"
+      ],
+      "sha256": [
+        "6b856d7466b5d6c8b833513f585ea41f6ad134d73691e5a405cf549482de4b94",
+        "12c4c16403cddb05198f0eae8997438714f2865a969237fe65d1402783167082",
+        "290ad9bbd38dc51f78aafa13710fed95a9c89db4bf9365a86bf4a69d3210d1e8"
+      ],
+      "center_sample": 17110,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-18",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.18.10.58.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.18.10.58.34.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.18.10.58.34.sac"
+      ],
+      "sha256": [
+        "8fea5118cc456fab86ad3877d7b9ec32c165f6f4ab602d82f04ae7c3d7bbf25a",
+        "c43d5f23d17805a59ac2acb2c4acc64ea9b9fefb0a82a17c4a31bab15aadf827",
+        "355b010d91e0fbc7da3a879fd7ab138423e75c11ed8e7d88f451ce5618c64f02"
+      ],
+      "center_sample": 9322,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-18",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.18.04.50.17.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.18.04.50.17.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.18.04.50.17.sac"
+      ],
+      "sha256": [
+        "4d9a77b5b859cd6993b963ee6eb7ac03af886a2078e9d817f8a2ee6f13df9d8c",
+        "54267c249f0ef4edb1ef0e145793e4013a0fdc018f8700a368da1c02f444afe0",
+        "d942a036f84c39db0cf8875fed5553389bf2ea2564e5d4be9bddc77d5bf7c1e4"
+      ],
+      "center_sample": 514,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-18",
+      "paths": [
+        "data_QSIS_Noise/5AE2C.TW..HLX.2023.07.18.01.44.59.sac",
+        "data_QSIS_Noise/5AE2C.TW..HLY.2023.07.18.01.44.59.sac",
+        "data_QSIS_Noise/5AE2C.TW..HLZ.2023.07.18.01.44.59.sac"
+      ],
+      "sha256": [
+        "da44ddb04a4b35c9707b8cef08b6b3df7043eb57810e62a7557906139ce1b15a",
+        "579dc810a2305f605318caa8724cf183d3baea1cee8b382f928551953ce8d017",
+        "0eb68c721ad0f6df5f0fe0ba573050006aa02cb61217097dbe6973b1e8645b25"
+      ],
+      "center_sample": 505,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-19",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.19.01.58.01.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.19.01.58.01.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.19.01.58.01.sac"
+      ],
+      "sha256": [
+        "589cd1d0a9cd3bb0d83435b34821fb4b676a90c1a2f67f4525ed891db75119d7",
+        "642af101d3453174c48c048ff6caa643a89c18f2eede8178431938672534c2b7",
+        "c359a9093b7347463712be3027bded59fd9336d333f69de27fd3fecae4a71d14"
+      ],
+      "center_sample": 583,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-19",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.19.17.51.45.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.19.17.51.45.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.19.17.51.45.sac"
+      ],
+      "sha256": [
+        "436cccb55036cf2d61703c6cea2d66b4fd73a5162ceaf6edd109d67e040a4c15",
+        "9b069e8215df0236acfc3860580fb299cc89c57a4fe152770206b605521ff70f",
+        "fd5339bd08f059145a4c2a387b33fc2332cfebc3068177450622bc31040659bc"
+      ],
+      "center_sample": 16445,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-19",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.19.14.48.39.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.19.14.48.39.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.19.14.48.39.sac"
+      ],
+      "sha256": [
+        "af21aed978524bb6e8b57769625d54fc7c518da65c40465adfc6e83d7b39a0f1",
+        "6c1d7c8014c5466f6e316f5f3d9d6db26115f7b43a4ad6bc620b0a1277c697ba",
+        "4150e6f26734ee475e9d001a6bdb654f5380cddd41743641f2e39877194a0561"
+      ],
+      "center_sample": 9624,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-19",
+      "paths": [
+        "data_QSIS_Noise/5AF8A.TW..HLX.2023.07.19.02.18.10.sac",
+        "data_QSIS_Noise/5AF8A.TW..HLY.2023.07.19.02.18.10.sac",
+        "data_QSIS_Noise/5AF8A.TW..HLZ.2023.07.19.02.18.10.sac"
+      ],
+      "sha256": [
+        "3e876961cc70f35f0615559038907352a1838f55a966b1271dbaa4100656e4cb",
+        "aa493e13be681ad0416fdf2db79054c12545a8adecc406e645ce96fcb00b69f9",
+        "cf85ebedf08386ee1102ed47e14b31c37da92f4ad5928752b986a8f6c823dc15"
+      ],
+      "center_sample": 9613,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-19",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.19.18.33.00.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.19.18.33.00.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.19.18.33.00.sac"
+      ],
+      "sha256": [
+        "c03de4ac5c744626041efcd7bdc5a0d2b41c61c7d657ac850d55f4201eac0e14",
+        "71f12ce2cf36b16f075f943046f3cc21db8e413178f2f4b68a37157a08bb63de",
+        "41368c564a962bc207888e38d3a78049d8b6485bf1dcac60707888e560969a08"
+      ],
+      "center_sample": 9522,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-19",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.19.03.53.18.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.19.03.53.18.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.19.03.53.18.sac"
+      ],
+      "sha256": [
+        "be78d23344c145d4259a7118ff871301803777f470a534727c1eca17f73cd8a5",
+        "683771821c6e14574caa6a391261e3e47ac485c23def98869f58c3d53ec38749",
+        "15ea5e64937bd2c34e0aaffebafca8bcc0cc3796f1e2d3c96710cd8882bd1cc0"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-20",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.20.02.12.03.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.20.02.12.03.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.20.02.12.03.sac"
+      ],
+      "sha256": [
+        "458ccb3fee7d0284ad93b434d27225a0da5abdf2216344e60f63f2dde6e0f13d",
+        "5fa37d99b9be20593d954d28f6eb5fb57199e24a416b8d6acf6735415feaca0d",
+        "b0cce19bcb9b83e217e121edfb4b63a4bfd406d62a37050b95c6f9fd94f93051"
+      ],
+      "center_sample": 9621,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-20",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.20.03.50.02.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.20.03.50.02.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.20.03.50.02.sac"
+      ],
+      "sha256": [
+        "a7ae5b7b5591772b7fa0bd192e7338b3e0cd816e89878d3b86a3b902a241f8f3",
+        "8fcca44523f4453faa5aa74043e619c9cae472709c8ff699d3e22f56b283612b",
+        "66dddeb9f3173b10476f4adc6c0bd3068b3282569386d246a77c706fda9a2685"
+      ],
+      "center_sample": 9544,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-20",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.20.17.28.26.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.20.17.28.26.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.20.17.28.26.sac"
+      ],
+      "sha256": [
+        "fcf930e6691f49c3140203c2911070b4086ad5ad43feaba0e725920dd4b426f9",
+        "1644c74a49398b91083708dd50d225ca4fb0b2d5e43eb1f54b2dbe8e44262335",
+        "b154f7d06d85cb25db368e07a4d1ea2bf1469406d040d6e9b53d7f427dbb90c2"
+      ],
+      "center_sample": 9557,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-20",
+      "paths": [
+        "data_QSIS_Noise/5AE28.TW..HLX.2023.07.20.04.44.44.sac",
+        "data_QSIS_Noise/5AE28.TW..HLY.2023.07.20.04.44.44.sac",
+        "data_QSIS_Noise/5AE28.TW..HLZ.2023.07.20.04.44.44.sac"
+      ],
+      "sha256": [
+        "64b05a3ccb88d4a98c2e7582680b04d2b107a70e0c190e77bf9c5626f45710e8",
+        "0e77fffad7d1ce687b916be42e4cf63fab56cf1b686c011ce845d8cf18e29dc4",
+        "b7898f41ee51131ab5c2f190f6fd5fa636089d0a3f318283553c8371f021219b"
+      ],
+      "center_sample": 525,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-20",
+      "paths": [
+        "data_QSIS_Noise/5AE12.TW..HLX.2023.07.20.03.10.14.sac",
+        "data_QSIS_Noise/5AE12.TW..HLY.2023.07.20.03.10.14.sac",
+        "data_QSIS_Noise/5AE12.TW..HLZ.2023.07.20.03.10.14.sac"
+      ],
+      "sha256": [
+        "5e3e376212b92ea07146532331cdb050051816a914039661aa78c84b6e9e6cd1",
+        "18f03e22af877de15a8b1f0dc4a1e43e1cd78bdb7feff083f8090452fbe8a03f",
+        "5eb7c289475a2d95d5c266228aaf0aff51a2e99d2745abc8098de2e3f66b5ad6"
+      ],
+      "center_sample": 511,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-20",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.20.05.15.57.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.20.05.15.57.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.20.05.15.57.sac"
+      ],
+      "sha256": [
+        "f365c11f8e6a40d77a05c7a19b984e003085f88d4cdb4b27c4137b977dfac573",
+        "6486f14da74be1b563407aaf6d83943af7506bb11fde7dad619e2d2bb310b9e2",
+        "48f271d9508ec5ad2d7c003f6aaaa3810ae05a722faf22095a058855587be109"
+      ],
+      "center_sample": 9671,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-21",
+      "paths": [
+        "data_QSIS_Noise/5AE28.TW..HLX.2023.07.21.04.12.33.sac",
+        "data_QSIS_Noise/5AE28.TW..HLY.2023.07.21.04.12.33.sac",
+        "data_QSIS_Noise/5AE28.TW..HLZ.2023.07.21.04.12.33.sac"
+      ],
+      "sha256": [
+        "b4be2d260961d127124142ba4089177b92f877dc5b42c9ec1b6a11a8632e24e2",
+        "496c5742ab80396d2452d04c7b7014099a5be0e286061701398ab8c8f527157e",
+        "f06053c809ab769e88c6ab9d5b16af3657aa115c9b4d4c2612c7b30891fc4e0d"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-21",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.21.04.01.17.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.21.04.01.17.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.21.04.01.17.sac"
+      ],
+      "sha256": [
+        "bc3cee8ba83d098dcc2edf8c149716be8f1efc395384a481dd3176e6764891fc",
+        "829c049543b131ad126e0be1ff3e412bc94855ffb626e3e9e4c9bc3e332820e6",
+        "a9d1c37915eb9fb86e3c68532cfd4f97ce4ab36d10002038c6ea68c5c37c6cb9"
+      ],
+      "center_sample": 503,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-21",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.21.19.20.28.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.21.19.20.28.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.21.19.20.28.sac"
+      ],
+      "sha256": [
+        "5b410f2b662105ab25339f4474e429759cc421d9b66760757363c17091975ea6",
+        "be4a50629d57c3b1e5d931f53d11d4a5389cd70944ce5b9fee5f506931209454",
+        "89ef6afc4e0fa43746636a8955d83381ca3de0792dac54edec24a214f74c0946"
+      ],
+      "center_sample": 9568,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-21",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.21.15.10.13.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.21.15.10.13.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.21.15.10.13.sac"
+      ],
+      "sha256": [
+        "cacc7b0c3631861ddac411344cfa60d1b4dcc93e7096735f625f7f51b3af3672",
+        "3bb66c412b27c0b341ca26706e819c084115160f7ea16c8953a48ce011db003f",
+        "9c2f78e2b0cd727532d68f3760956279792984e101bbbf4cdfb18216262b78f3"
+      ],
+      "center_sample": 9347,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-21",
+      "paths": [
+        "data_QSIS_Noise/5AF0F.TW..HLX.2023.07.21.01.59.00.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLY.2023.07.21.01.59.00.sac",
+        "data_QSIS_Noise/5AF0F.TW..HLZ.2023.07.21.01.59.00.sac"
+      ],
+      "sha256": [
+        "5c51ffb4f1454e942441070560809844ee8939cb07a46f449d7f9357329a2dcc",
+        "e3da282156ae30d7d50ebdeb99e98642031120f4313a4b75af77f5208c300285",
+        "ef409f9e5f260a1c7fa0fbfb175d13c316e50d6c320ac64974eae22656b7df23"
+      ],
+      "center_sample": 504,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-21",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.21.01.51.57.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.21.01.51.57.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.21.01.51.57.sac"
+      ],
+      "sha256": [
+        "0a9f57be5a80ec51085b6f765575c82931aca681bf7d475d4e3e1088e25431b8",
+        "8267b52a2670e5b914607f4e801f2ac5235655d558100d59939be8e52adbaf35",
+        "31da3d54049d10596fa2edee1b261804d9bd5b26afdd8e820b04dee2b5200fee"
+      ],
+      "center_sample": 9399,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-22",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.22.14.45.25.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.22.14.45.25.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.22.14.45.25.sac"
+      ],
+      "sha256": [
+        "c6b829d8075d6af93ace88cfc1ad999d8e65aa672bbefc4b3b3fbe76228ceb59",
+        "92fcedb88aca77e988ba270806ee45d3142f38ce4ba3c3e812947052c4934fbd",
+        "9a041291cecb23262347b2d13c140c4d7da3ac78fdc32dc669560f4277fb7a46"
+      ],
+      "center_sample": 9458,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-22",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.22.17.43.10.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.22.17.43.10.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.22.17.43.10.sac"
+      ],
+      "sha256": [
+        "dede119e5e9f46cf318c4bbd4712be73dd5b1663b647c0ccdae5db69f8a93cc9",
+        "c0c088337d0689b0cbf3b17f4d9f1098d581fe9b767c336487d1741f5211876d",
+        "f3f95cb80c07e2eaa9c2b743d197a825d9917e5ed4965bf5c8ad5a0be0847aa7"
+      ],
+      "center_sample": 9448,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-22",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.22.22.31.18.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.22.22.31.18.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.22.22.31.18.sac"
+      ],
+      "sha256": [
+        "e7ba62c00f978862ce40edc069700483ffe9d0dc143f03b6473cf15c103752cc",
+        "93a8020639310e89398f029a01933f0713247e84711eb8b3361be557ef1e53f3",
+        "a1b5aeb614f9c04c2bf47e963734e46736e9fa180da2a1c30d331ced6ba6a100"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-22",
+      "paths": [
+        "data_QSIS_Noise/5ADEE.TW..HLX.2023.07.22.06.30.36.sac",
+        "data_QSIS_Noise/5ADEE.TW..HLY.2023.07.22.06.30.36.sac",
+        "data_QSIS_Noise/5ADEE.TW..HLZ.2023.07.22.06.30.36.sac"
+      ],
+      "sha256": [
+        "0bea1e8933af3087359835ab307c1aad4a6f020a851dabbbdf3b1104fde4bd1e",
+        "86fa6ee2b5c2aedf328896a2a9655be4a907cca6f51e9e891e7f0f1d741f8b6b",
+        "192c670fed018e4d30757f12d49e5445cf8e0fedce0d9b1979992b6c8755eb7b"
+      ],
+      "center_sample": 9614,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-22",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.22.10.07.20.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.22.10.07.20.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.22.10.07.20.sac"
+      ],
+      "sha256": [
+        "8c177ec6f4afb3b7fc093f0f20a03844564768b82274e6a7accd8fcfe7404384",
+        "a870f6e8a3625bfebab1fb88b283a7f477abfc0252d5c652783e924bb633557e",
+        "b95f60feb37647cabdcb6f570490116f6642301d9733296d1c65b79501d81880"
+      ],
+      "center_sample": 9567,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-22",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.22.20.10.03.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.22.20.10.03.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.22.20.10.03.sac"
+      ],
+      "sha256": [
+        "278d770f850e978c91b5c2ec94baee37a2251becf1e804548241b053b08bbeb9",
+        "5ff6b7cbdbe9c61e3adf65bc5073378c31ffb1a08dff475fd998c47a01c33f16",
+        "d89a94a00757fdb4cdfb0e1e2043269549df9bbf40eeaeb5414006b452880e78"
+      ],
+      "center_sample": 9661,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-23",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.23.18.08.17.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.23.18.08.17.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.23.18.08.17.sac"
+      ],
+      "sha256": [
+        "a1eb2ce138a434921a99a9199a4d805d1609c0d7834ea5949e0d1206d9b182b5",
+        "56b507a6512f5535320b8a4612ab96b0fa2e493ccde8f26b36e7143c1eca6ef8",
+        "f2bf4a2f7649010d597f03ef8e7d201af783ad6736719039d4532035880c5491"
+      ],
+      "center_sample": 12419,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-23",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.23.21.38.24.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.23.21.38.24.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.23.21.38.24.sac"
+      ],
+      "sha256": [
+        "681f14e409250995731a0803db87fbf1dcbec6bf3367f740c062bbfdbd96e5ac",
+        "b64e587bca07aca7b4fe3a2de718eff802f0eb9c3f09f7af2e7ddccceb3be05a",
+        "861f6d82b2eb5c602ee9e231cd2f692dea569a60e5116a71a29ac7c7065d6829"
+      ],
+      "center_sample": 9658,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-23",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.23.01.41.42.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.23.01.41.42.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.23.01.41.42.sac"
+      ],
+      "sha256": [
+        "1e880f9a27e4405e7ca0143411880854575d20a907d759f8825a63d7b25697c9",
+        "aff8ff3c6e340e7aef55d9560e9fb0a9fc1dabbdfda8cf4716fb19a8ab9ee930",
+        "81770563b214d2604c5278c1a3dddaa28c821053180ecd7cb10fc87c27ffe685"
+      ],
+      "center_sample": 2331,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-23",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.23.20.51.46.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.23.20.51.46.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.23.20.51.46.sac"
+      ],
+      "sha256": [
+        "38248ecf51f2b756cf904406d84b8bb65af61547eb228c8a81f298afa6d2ca59",
+        "8a48e7f53da2e5b5e71aa6e349c50e2d8d5a182d01a728beae3ad7e5920981f3",
+        "b7b1983ebaf5c1bde49ab0a8251d89351b6796e66f3846748f5e3822e9884207"
+      ],
+      "center_sample": 8695,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-23",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.23.20.32.52.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.23.20.32.52.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.23.20.32.52.sac"
+      ],
+      "sha256": [
+        "e41fac5570a187e6bfdf2294a2a7831e7058788db2d60b2a5c8057b64b350722",
+        "caf67454d1d673ce20d5fad73864d1ca5a870bcf10fcb12288f3c937b5ff3b8d",
+        "f9d32d25526a26ef1d5c9ace390c116c3376df9594330347e6126f82053eb034"
+      ],
+      "center_sample": 9577,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-23",
+      "paths": [
+        "data_QSIS_Noise/5AE29.TW..HLX.2023.07.23.19.44.51.sac",
+        "data_QSIS_Noise/5AE29.TW..HLY.2023.07.23.19.44.51.sac",
+        "data_QSIS_Noise/5AE29.TW..HLZ.2023.07.23.19.44.51.sac"
+      ],
+      "sha256": [
+        "c54528f5578bc7e2bb8a9cc33fa3af3db747eba9491451ec57e2dbcd351c57dc",
+        "487324b0b7689af2321c5eb938a54cf7d1aabd4d685ecb3cb47f040b77bedbce",
+        "b74ec33d77dd4ed8ee1b30e74c56e75c510f6862fdc497dfd4d60a6db4545b34"
+      ],
+      "center_sample": 9440,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-24",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.24.05.31.41.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.24.05.31.41.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.24.05.31.41.sac"
+      ],
+      "sha256": [
+        "18a64e5be767b8f4e8727bd9f9c698e1bbe0e2db603d54ab8abddfe4d400197b",
+        "8a950081cfc5a7ed8c64e009d1b042bc501196bb105dd9984cff9720ddf7fd47",
+        "e1e3d5caed6024648319605ba9af8dcc9522af69ec3424311bc74f321e751974"
+      ],
+      "center_sample": 500,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-24",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.24.03.45.32.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.24.03.45.32.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.24.03.45.32.sac"
+      ],
+      "sha256": [
+        "838263d224760ff8d20cfda9b71f0ce83ce8c68631731fde75d1851e2ca3463c",
+        "a6556e28d4ffe81f4ec8b55fed9e2ad91574fe4ec152f920891649bff4870006",
+        "d3f6f36743f391a7b83aa725e6310391905f4803bbca17817048aa34c73ee6e3"
+      ],
+      "center_sample": 14387,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-24",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.24.00.59.50.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.24.00.59.50.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.24.00.59.50.sac"
+      ],
+      "sha256": [
+        "0adf2332b448ba21416028d947624c8f72f726f3782603dd233fbcd70f1372c0",
+        "68af215dba765e1e22ce3fdb6056cde2a3cceba93d69f3619c12a89aad16d54d",
+        "2d40f68139210748e49eb8a40b10cc8c97227c2455a9fce7d8ab640d31143f86"
+      ],
+      "center_sample": 9422,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-24",
+      "paths": [
+        "data_QSIS_Noise/5AF30.TW..HLX.2023.07.24.02.15.38.sac",
+        "data_QSIS_Noise/5AF30.TW..HLY.2023.07.24.02.15.38.sac",
+        "data_QSIS_Noise/5AF30.TW..HLZ.2023.07.24.02.15.38.sac"
+      ],
+      "sha256": [
+        "2a63abaf71249a1a6caa7041d3264a8d8da5b864f00b4325e74f49678700f6ee",
+        "0931ce6dd6673ab60ddb945e23c92699dd35703e0264d0d9c688180c070a0728",
+        "01ed3c30be689092f73f886766cb5a3f89f0c327b5e6367a5a7ca89a7543c5d9"
+      ],
+      "center_sample": 12416,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-24",
+      "paths": [
+        "data_QSIS_Noise/5AF5C.TW..HLX.2023.07.24.02.33.00.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLY.2023.07.24.02.33.00.sac",
+        "data_QSIS_Noise/5AF5C.TW..HLZ.2023.07.24.02.33.00.sac"
+      ],
+      "sha256": [
+        "bff013060057b523c0f64fd604abee16bf8bf50ab4b222aef0100247b32add60",
+        "e2cc45996260f1cf297d100e2c1460a2ab8bd767bf91c478d643a269651f0501",
+        "650cdfa77fd6a5895f9cc160085206a4373b45251d73455b8b4cd5da9b7123a4"
+      ],
+      "center_sample": 544,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "label": 2,
+      "group": "2023-07-24",
+      "paths": [
+        "data_QSIS_Noise/5AE2C.TW..HLX.2023.07.24.03.07.06.sac",
+        "data_QSIS_Noise/5AE2C.TW..HLY.2023.07.24.03.07.06.sac",
+        "data_QSIS_Noise/5AE2C.TW..HLZ.2023.07.24.03.07.06.sac"
+      ],
+      "sha256": [
+        "39a9aec57fc7090bf92f84b8d50c6f2b6ba517a8570e86787b4e955747996df4",
+        "7a84ed20ef2e43519136f762b182adaf2247b4383bb96f78df86b09bd5132dca",
+        "9241d9dbd89ae4c4f260ded51b54ad1666e86222f6fab1fc6812c24bf0ace67e"
+      ],
+      "center_sample": 499,
+      "site": null,
+      "source": "existing"
+    },
+    {
+      "id": "CCT-001",
+      "event_key": "2023-10-11T10:36:56.000Z/23.250/121.340",
+      "group": "2023-10-11T10:36:56.000Z/23.250/121.340",
+      "origin_utc": "2023-10-11T10:36:56.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra/sac/5AE10/5AE10.TW.HLX.2023.10.11.10.36.56.sac",
+        "runs/qsis-ccul-extra/sac/5AE10/5AE10.TW.HLY.2023.10.11.10.36.56.sac",
+        "runs/qsis-ccul-extra/sac/5AE10/5AE10.TW.HLZ.2023.10.11.10.36.56.sac"
+      ],
+      "station": "5AE10",
+      "label": 1,
+      "onset_center": 29.9,
+      "center_sample": 13517,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra"
+    },
+    {
+      "id": "CCT-007",
+      "event_key": "2024-02-29T05:26:28.000Z/23.470/120.300",
+      "group": "2024-02-29T05:26:28.000Z/23.470/120.300",
+      "origin_utc": "2024-02-29T05:26:28.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra/sac/5AE48/5AE48.TW.HLX.2024.02.29.05.26.28.sac",
+        "runs/qsis-ccul-extra/sac/5AE48/5AE48.TW.HLY.2024.02.29.05.26.28.sac",
+        "runs/qsis-ccul-extra/sac/5AE48/5AE48.TW.HLZ.2024.02.29.05.26.28.sac"
+      ],
+      "station": "5AE48",
+      "label": 0,
+      "onset_center": 5.375,
+      "center_sample": 12233,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra"
+    },
+    {
+      "id": "CCT-007",
+      "event_key": "2024-02-29T05:26:28.000Z/23.470/120.300",
+      "group": "2024-02-29T05:26:28.000Z/23.470/120.300",
+      "origin_utc": "2024-02-29T05:26:28.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra/sac/5AE48/5AE48.TW.HLX.2024.02.29.05.26.28.sac",
+        "runs/qsis-ccul-extra/sac/5AE48/5AE48.TW.HLY.2024.02.29.05.26.28.sac",
+        "runs/qsis-ccul-extra/sac/5AE48/5AE48.TW.HLZ.2024.02.29.05.26.28.sac"
+      ],
+      "station": "5AE48",
+      "label": 1,
+      "onset_center": 9.7,
+      "center_sample": 12666,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra"
+    },
+    {
+      "id": "CCX-009",
+      "event_key": "2024-05-07T12:48:42.000Z/23.780/121.560",
+      "group": "2024-05-07T12:48:42.000Z/23.780/121.560",
+      "origin_utc": "2024-05-07T12:48:42.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLX.2024.05.07.12.48.42.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLY.2024.05.07.12.48.42.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLZ.2024.05.07.12.48.42.sac"
+      ],
+      "station": "5AE62",
+      "label": 1,
+      "onset_center": 35.225,
+      "center_sample": 15522,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra-supplement"
+    },
+    {
+      "id": "CCX-010",
+      "event_key": "2024-05-11T11:09:18.000Z/23.920/121.580",
+      "group": "2024-05-11T11:09:18.000Z/23.920/121.580",
+      "origin_utc": "2024-05-11T11:09:18.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLX.2024.05.11.11.09.18.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLY.2024.05.11.11.09.18.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLZ.2024.05.11.11.09.18.sac"
+      ],
+      "station": "5AE62",
+      "label": 0,
+      "onset_center": 23.975,
+      "center_sample": 14398,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra-supplement"
+    },
+    {
+      "id": "CCX-011",
+      "event_key": "2024-05-13T07:57:27.000Z/23.820/120.960",
+      "group": "2024-05-13T07:57:27.000Z/23.820/120.960",
+      "origin_utc": "2024-05-13T07:57:27.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLX.2024.05.13.07.57.27.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLY.2024.05.13.07.57.27.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLZ.2024.05.13.07.57.27.sac"
+      ],
+      "station": "5AE62",
+      "label": 0,
+      "onset_center": 12.0,
+      "center_sample": 10779,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra-supplement"
+    },
+    {
+      "id": "CCX-011",
+      "event_key": "2024-05-13T07:57:27.000Z/23.820/120.960",
+      "group": "2024-05-13T07:57:27.000Z/23.820/120.960",
+      "origin_utc": "2024-05-13T07:57:27.000000Z",
+      "paths": [
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLX.2024.05.13.07.57.27.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLY.2024.05.13.07.57.27.sac",
+        "runs/qsis-ccul-extra-supplement/sac/5AE62/5AE62.TW.HLZ.2024.05.13.07.57.27.sac"
+      ],
+      "station": "5AE62",
+      "label": 1,
+      "onset_center": 20.45,
+      "center_sample": 11624,
+      "site": "CCUL",
+      "source": "qsis-ccul-extra-supplement"
+    }
+  ],
+  "augmentation": "\u00b10.2 s shift and \u00b130\u00b0 horizontal rotation",
+  "orientation": {
+    "method": "gravity-v1",
+    "calibrations": []
+  },
+  "orientation_calibration_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "orientation_source_sha256": "604323f471b5996e7fc74011a1cdd8099b5a50a12aa737f123e98ebd2c081e17",
+  "orientation_development_sha256": "8885d2d463ffa69dbcc765dcbf6e65fb58a325aa81ac5281bdbdd42760d843a2",
+  "orientation_module_sha256": "e93240f1abf35b73806804393880b4585bdd98e2bc0fe2a0b2ce2fc7a62c004c",
+  "orientation_by_source": [
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity",
+    "record_gravity",
+    "unchanged",
+    "unchanged",
+    "record_gravity",
+    "record_gravity"
+  ],
+  "ccul_sources": {
+    "qsis-benchmark/split.json": "8264bed72d8b60ce5bac9325df947bbd67c44980f60b7444985a46e9335fd7ae",
+    "qsis-filter-boundaries/cwa-hard-steady-start/training.json": "a91c25bd2875a27d2354c3b6d835478d697356fe3db94124a1431d60ad46fb5a",
+    "qsis-ccul-holdout/cohort.json": "fc2ec10dd5d318fb8a188e1c28932356b3e786ac77a63a562ce794196d418634",
+    "qsis-training-sites-2024/phase-manifest.json": "84754445ab912c8bf9fe7b2d14c3866c9922135ffe47e0e6a482b832f6ccac79",
+    "qsis-ccul-extra/cohort.json": "d8a18e550ca10dec6cfeb975bb6727b59727826fbd4b24c7e7ceb9c26da770d4",
+    "qsis-ccul-extra/download.json": "cc542ed874a9cfaf919af135a56178cd3df5d142baefe92c0b578bd8703f26ed",
+    "qsis-ccul-extra/phase-manifest.json": "3c0641456a3cb5b3825cd8b3f011443f436477edc8054b874b7c3144980a4dcd",
+    "qsis-ccul-extra/references.json": "d4b751bf110da8e9d1603cf242ceb6afa49c338a097cd1b6df7c1fcaabf326e3",
+    "qsis-ccul-extra-supplement/download.json": "e1713c43779a3725bdeada9ea48939d4b3201f2272152f48fdd40488b8394c5e",
+    "qsis-ccul-extra-supplement/phase-manifest.json": "070e526e7acf7233f56a25d26229ed7563d93b955ec9a133c560c1c604c5c4be",
+    "qsis-ccul-extra-supplement/references.json": "85b8db2ddbfbc2a4de97366fd4f3ae2e048be92daa7c54ba34d49b8262fe89bf"
+  },
+  "coverage": {
+    "qsis-ccul-extra": {
+      "P-wave:insufficient_clear": 5,
+      "S-wave:agreed": 2,
+      "S-wave:insufficient_clear": 4,
+      "P-wave:agreed": 1
+    },
+    "qsis-ccul-extra-supplement": {
+      "P-wave:insufficient_clear": 1,
+      "S-wave:agreed": 2,
+      "P-wave:agreed": 2,
+      "S-wave:insufficient_clear": 1
+    }
+  }
+}

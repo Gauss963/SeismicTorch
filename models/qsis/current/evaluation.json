@@ -1,0 +1,82 @@
+{
+  "checkpoint_sha256": "634eea951ff2f8e4a42f4bbf12174aaa0a8aa6699d15726d4cba9e8cf90fe424",
+  "training_receipt_sha256": "0e9449932f21ff2248b4a183b303fe845132cbcc2d41e65ad856e9b3f9a5d283",
+  "status": "evaluated_with_reference_coverage_limits",
+  "primary": {
+    "correct": [
+      17,
+      17,
+      17
+    ],
+    "scored": 17,
+    "class_counts": [
+      3,
+      5,
+      9
+    ],
+    "scored_dates": 9,
+    "enrolled_dates": 18,
+    "clear_phase_slots": 8,
+    "enrolled_phase_slots": 36,
+    "label_source": "Two independent model-blind AI waveform reviewers with neighboring P-Alert context"
+  },
+  "archived_trigger_noise": {
+    "correct": [
+      34,
+      35,
+      35
+    ],
+    "scored": 35,
+    "dates": 8
+  },
+  "reviewed_interior_noise_crossvalidation": {
+    "correct_by_seed": {
+      "42": [
+        40,
+        40,
+        40
+      ],
+      "43": [
+        40,
+        40,
+        40
+      ]
+    },
+    "scored": 40,
+    "dates": 22,
+    "out_of_fold_by_utc_date": true
+  },
+  "secondary_scope": "The 215-clip transfer summary reuses archived evaluation references",
+  "source_artifact_sha256": {
+    "qsis-prospective-gravity/comparison.json": "ecb1076f9cfeaf034257b15f2eb925d7e9424fa388dde34edb99d6ecbacd3dcf",
+    "qsis-ccul-extra/record-gravity-archived-noise.json": "18db8bc6cd78ca0174abb0caf8884c8dc3156e6956cf9865162d7c2478ee50c3",
+    "qsis-interior-trigger-audit/comparison.json": "c377a0fd652dc830e223f14cd4d694e7204c923337371613fe2403badea95164",
+    "qsis-ccul-extra/record-orientation-generalization-controlled.json": "c2d32c7a75d15e7cfe6329291b2002682baf52d9f9898631ad26e45004a069d9",
+    "qsis-ccul-extra/cli-reproduction-check.json": "a3b110d4d1ab041ac1c4d20d8de9abce4da79387ba604a5f7672f9330ddb1f1b",
+    "qsis-prospective-gravity/array-followup/supplemental-comparison.json": "fb5ba62dabf2c6604cd0508344e58c5f1012cffb9c819966331d3dc3226f3197"
+  },
+  "supplemental_array_context": {
+    "comparison_sha256": "fb5ba62dabf2c6604cd0508344e58c5f1012cffb9c819966331d3dc3226f3197",
+    "correct": [
+      19,
+      19,
+      19
+    ],
+    "scored": 20,
+    "class_correct": [
+      4,
+      6,
+      9
+    ],
+    "class_totals": [
+      5,
+      6,
+      9
+    ],
+    "additional_phases": {
+      "P": 2,
+      "S": 1
+    },
+    "scope": "Additional model-blind context on the reserved event dates"
+  }
+}
